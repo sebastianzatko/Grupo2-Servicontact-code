@@ -1,0 +1,367 @@
+
+a{
+	text-decoration: none;
+	color: white;
+
+}
+.container{
+	
+	width: 95%;
+	
+	
+}
+.imagen{
+    position: relative;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-left: 550px;
+    margin-top: -150px;
+
+}
+
+.form-control{  
+     transition: 2s;
+     background: rgba(0,0,0,0.4);
+     color: white;
+     
+     border-bottom-color:white;
+     border-bottom-style: groove;
+     border-right: none;
+     border-left: none;
+     border-top: none;
+     border-width: 3px;
+
+}
+.form-control:hover{
+        transition: .8s;
+        background-color: rgba(55,71,79,.5);
+        box-shadow: inset;
+        border-bottom-color: red;
+}
+.form-control:focus{
+    transition: .8s;
+    border-bottom-color: #055F6F;
+
+}
+.perfiles{
+    position: absolute;
+   display: flex;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   margin-left:-260px;
+   margin-top: -45px;
+}
+.perfil{
+   position: absolute;
+   display: none;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   margin-left:45px;
+   margin-top: 5px;
+
+}
+.icons{
+    color: white;
+}
+
+ #letras{
+    text-decoration: none;
+    color: black;
+ }
+
+.galeria{
+   
+    display: flex;
+    width: 100%;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+
+   
+}
+
+.perf{
+    width: 70%;
+    height: 50px;
+}
+
+
+
+
+
+
+
+.fom{
+    margin-left: 450px;
+    
+
+}
+
+.nomb a{
+    display: none;
+}
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background: white;
+}
+ #boton{
+    border-color:white;
+    
+ }
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color:#0768B4;
+    border-color: black;
+    color: black;
+
+}
+#buscar2{
+    display: none;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #0768B4;
+   color: black;
+   
+    
+}
+@media (max-width: 1000px){
+ 	.form-group{
+       position: relative;
+       display: flex;
+        margin-left:0;
+
+
+        
+    }
+    button{
+        
+
+    }
+    .form-control{
+        width: 60%;
+
+    }
+    .container-fluid{
+        width: 95%;
+       
+        
+    }
+    
+    .imagen{
+        margin-left:550px;
+        }
+    .perf{
+     display: none;
+        }
+ 	.container{
+    
+    width: 90%;
+    
+    
+    }
+  
+
+    .nav>li>a:focus, .nav>li>a:hover {
+        text-decoration: none;
+        background-color: #0D2B5F;
+        color: white;
+        margin: .2rem 0;
+    }
+ 	 
+ 	 
+ }
+
+ @media (max-width: 750px){
+   
+    .perfil{
+
+         margin-left:0;
+         margin-top:-5px;
+        display: block;
+    }
+    .nomb{
+        margin-top:18px;
+    }
+    .perfiles{
+        display: none;
+    }
+
+#bucar1{
+    display: none;
+}
+#form1{
+    display: none;
+}
+#buscar2{
+    width: 70%;
+    font-size:20px;
+    color:white;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    display: block;
+    margin-top: 5px;
+    
+
+}
+.navbar-dark{
+    background: #2850A7;
+}
+.navbar-inverse{
+    background: black;
+   
+}
+.navbar-inverse .navbar-nav  li a{
+   color: white;
+   
+}
+}
+#buscar2::placeholder{
+      color: white;
+      opacity: 0.6;
+      
+    }
+.sidebarNavigation .left-navbar-toggle {
+    float: left;
+    margin-right: 0;
+    margin-left: 0;
+}
+.navbar-toggle .icon-bar{
+    width: 28px;
+    height: 3px;
+
+}
+
+
+.container{
+    width: 100%;
+}
+    
+ }
+
+
+ @media(max-width: 650px){
+    
+    .dropdown-menu li a{
+         color: white;
+        }
+        .imo{
+       height: 250px;
+       width: 100%;
+        margin-left:0;
+    }
+    
+ }
+
+
+@media (max-width:450px){
+       .form-group{
+       
+         margin-left:0;
+        
+    }
+    .container-fluid{
+        width: 80%;
+       
+        
+    }
+    .imo{
+       height: 200px;
+       width: 100%;
+        margin-left:0;
+    }
+    .imagen{
+        margin-left:235px;
+        }
+    #boton{
+        background: black
+        
+    }
+      .margin1{
+         margin-left:20px;
+         font-size:11px;
+        
+
+        }
+    
+    .form-control{
+        width: 60%;
+    }
+    .imagen{
+        margin-left:135px;
+        }
+    .dropdown-menu{
+        font-size:14px;
+       
+    }
+     .icons{
+        font-size: 20px;
+     }
+     .icons1{
+        font-size: 20px;
+     }
+     .icons1{
+    color: #FFC300;
+        }
+    .icons2{
+        font-size: 20px;
+     }
+     .icons2{
+    color: #1A81F7;
+        }
+    .icons3{
+        font-size: 20px;
+     }
+     .icons3{
+    color: #1A81F7;
+    }
+     .icons4{
+        font-size: 20px;
+     }
+     .icons4{
+    color: #FFC300;
+        }
+   .icons5{
+        font-size: 20px;
+     }
+     .icons5{
+    color: #FFC300;
+        }
+     .container{
+        width: 100%;
+        }
+  
+ }
+
+ @media (max-width:380px){
+         .form-group{
+       display: none;
+         margin-left:0;
+        
+    }
+      
+      .margin1{
+         margin-left:15px;
+         font-size:10px;
+         
+
+        }
+    .form-control{
+    width: 55%;
+    }
+    .imagen{
+        margin-left:120px;
+        }
+    .dropdown-menu{
+        font-size:14px;
+       
+    }
+ }

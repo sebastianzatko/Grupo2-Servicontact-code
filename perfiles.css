@@ -1,0 +1,115 @@
+
+
+.margin1{
+    position: relative;
+    display: flex;
+    margin-left:480px;
+    color: black;
+    text-decoration: none;
+    margin-top: -15px;
+  }
+.imagen1{
+   
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    
+    
+}
+.imo{
+	
+	display: flex;
+	height: 300px;
+	width: 60%;
+	margin-left: 250px;
+}  
+
+#nombr{
+	font-size: 20px;
+	top: 20px;
+	border-top-color:transparent;
+    border-bottom-color: transparent;
+     border-left-color:transparent;
+    border-right-color: transparent;
+
+}
+.dropdown-menu a{
+	color: black;
+}
+#caja{
+ width: 70%;
+    font-size:20px;
+    color:black;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background: transparent;
+    display: block;
+    margin-top: 5px;
+}
+.modal-header{
+	background:#337AB7;
+	border-radius: 5px;
+}
+#nombr:hover{
+	background: transparent;
+	border-top-color:transparent;
+    border-bottom-color: transparent;
+     border-left-color:transparent;
+    border-right-color: transparent;
+}
+.fotos{
+	padding: 2px;
+	width: 40%;
+	
+	position:relative;
+	border-radius: 5px;
+}
+.fil{
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+.icon{
+	font-size: 25px;
+	margin-left: 60px;
+
+}
+#letras{
+	background: transparent;
+    border-right-color: black;
+    border-left-color: black;
+    border-top-color:transparent;
+    border-bottom-color: transparent;
+    
+
+}
+#ciudad{
+    width: 61%;
+}
+#letras:hover{
+   background: transparent;
+}
+.container-fluid{
+	width: 100%;
+}
+
+.ula li a :hover{
+     color: black;
+     background-color: transparent;
+}
+.ula li a{
+     color: black;
+     text-decoration: none;
+}
+.ula{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+}
