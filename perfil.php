@@ -18,11 +18,11 @@
             <head>
             	<title></title>
               <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
-            
+            <script src="includes/js/jquery-3.3.1.min.js"></script>
             	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
               <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-            	<script src="includes/js/jquery-3.3.1.min.js"></script>
+            	
               <script src="includes/js/jquery.js"></script> 
             	<script src="bootstrap/bootstrap.js"></script>
               <link rel="stylesheet" type="text/css" href="includes/css/sidebarNavigation.css">

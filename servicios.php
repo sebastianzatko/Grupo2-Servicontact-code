@@ -15,7 +15,7 @@
   <script src="includes/js/jquery.js"></script> 
 	<script src="bootstrap/bootstrap.js"></script>
   <link rel="stylesheet" type="text/css" href="includes/css/sidebarNavigation.css">
-  <script src="includes/css/sidebarNavigation.js"></script>
+  <script src="includes/js/sidebarNavigation.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="includes/css/switchery.css">
   <link rel="stylesheet" type="text/css" href="includes/css/checkbox.css">

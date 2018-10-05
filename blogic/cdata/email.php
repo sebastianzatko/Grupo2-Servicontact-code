@@ -1,7 +1,7 @@
 <?php
 define('__ROOT__', dirname(dirname(__FILE__)));
 use PHPMailer\PHPMailer\PHPMailer;
-require $_SERVER['DOCUMENT_ROOT'] . '/../vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/../vendor/autoload.php';
 class changeromail
 {
     public function validaremail($to,$name,$validacion)
