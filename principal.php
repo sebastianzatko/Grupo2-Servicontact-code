@@ -22,12 +22,12 @@
      		<center>
      		<div class="form-group">
      		
-     			<input type="email" name="login" class="form-control" required  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required title="Correo invalido" placeholder="Correo Electronico" >
+     			<input type="email" name="login" class="form-control" required  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required title="Debe introducir una direccion de correo valido" minlenght="10" maxlenght="120" placeholder="Correo Electronico" >
      			
      		
      		<br>
      		
-     			<input type="password" name="contra" class="form-control" required  placeholder="password">
+     			<input type="password" name="contra" class="form-control" minlenght="8" maxlenght="60" required  placeholder="password">
      			
      		<br>
     

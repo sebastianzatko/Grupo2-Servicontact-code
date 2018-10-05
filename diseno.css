@@ -10,12 +10,22 @@ a{
 	
 	
 }
+#tan{
+    height: 400px;
+}
+.imge{
+ width: 100%;
+
+}
+.container-fluid{
+    width: 75%;
+}
 .imagen{
     position: relative;
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    margin-left: 550px;
+    margin-left: 570px;
     margin-top: -150px;
 
 }
@@ -50,7 +60,7 @@ a{
    width: 40px;
    height: 40px;
    border-radius: 50%;
-   margin-left:-260px;
+   margin-left:-280px;
    margin-top: -45px;
 }
 .perfil{
@@ -67,21 +77,27 @@ a{
     color: white;
 }
 
+
+
+
  #letras{
     text-decoration: none;
     color: black;
  }
 
-.galeria{
-   
-    display: flex;
-    width: 100%;
-    justify-content:space-around;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: auto;
-
-   
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 5px 5px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #e01515;
+    border-radius: 50%;
 }
 
 .perf{
@@ -89,7 +105,9 @@ a{
     height: 50px;
 }
 
-
+.tamaño{
+    width: 80%;
+}
 
 
 
@@ -131,6 +149,14 @@ a{
    
     
 }
+.form-group{
+       position: relative;
+       display: flex;
+        margin-left:120px;
+
+
+        
+    }
 @media (max-width: 1000px){
  	.form-group{
        position: relative;
@@ -148,11 +174,7 @@ a{
         width: 60%;
 
     }
-    .container-fluid{
-        width: 95%;
-       
-        
-    }
+    
     
     .imagen{
         margin-left:550px;
@@ -192,6 +214,7 @@ a{
     .perfiles{
         display: none;
     }
+
 
 #bucar1{
     display: none;
@@ -268,8 +291,11 @@ a{
          margin-left:0;
         
     }
+    #tan{
+    height: 200px;
+    }
     .container-fluid{
-        width: 80%;
+        width: 100%;
        
         
     }
@@ -286,7 +312,7 @@ a{
         
     }
       .margin1{
-         margin-left:20px;
+         margin-left:90px;
          font-size:11px;
         
 
@@ -349,7 +375,7 @@ a{
     }
       
       .margin1{
-         margin-left:15px;
+         margin-left:80px;
          font-size:10px;
          
 

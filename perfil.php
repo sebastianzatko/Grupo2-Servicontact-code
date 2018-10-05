@@ -30,6 +30,7 @@
             	<meta name="viewport" content="width=device-width, initial-scale=1">
                <link rel="stylesheet" type="text/css" href="perfiles.css">
             	<link href="diseno.css" rel="stylesheet">
+            	<script type="application/javascript" src="js/notify.js"></script>
              
              
             </head>
@@ -62,7 +63,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                   <center><input type="text"  class=" form-control" name="buscar1" id="buscar2" placeholder="&#128269;Buscar servicios"></center>
+                   <center><input type="text"  class="" name="buscar1" id="buscar2" placeholder="&#128269;Buscar servicios"></center>
                  
                 </div>
             
@@ -170,28 +171,28 @@
             				<form action="updateuser.php" method="POST" enctype="multipart/form-data">
                              <div class="modal-body">
                                  <p>Nombre</p>
-                                 <input type="text" name="nombre"  required pattern=".{3,30}" title="nombre muy largo" value="<?php echo $row["NOMBRE"]; ?>" id="caja" class="form-control">
+                                 <input type="text" name="nombre"  required pattern=".{3,40}" title="El nombre debe tener entre 3 y 40 caracteres" minlenght="3" maxlength="40" value="<?php echo $row["NOMBRE"]; ?>" id="caja" class="">
                                   <p>Apellido</p>
-                                 <input type="text" name="apellido" pattern=".{3,30}" title="apellido demasiado largo"  required value="<?php echo $row["APELLIDO"]; ?>" id="caja"  class="form-control">
+                                 <input type="text" name="apellido" pattern=".{3,40}" title="El apellido debe tener entre 3 y 40 caracteres" minlenght="3" maxlength="40" required value="<?php echo $row["APELLIDO"]; ?>" id="caja"  class="">
                                   <p>Telefono</p>
-                                 <input type="text" name="telefono" pattern=".{8,11}"  title="no es telefono pocos caracteres"  required value="<?php echo $row["TELEFONO"]; ?>" id="caja"  class="form-control">
+                                 <input type="text" name="telefono" minlenght="8" maxlength="11" pattern=".{8,11}"  title="Un numero de telefono debe tener entre 8 y 11 caracteres"  required value="<?php echo $row["TELEFONO"]; ?>" id="caja"  class="">
                                   <p>Direccion</p>
-                                 <input type="text" name="direccion"  pattern=".{3,30}" title="direcion  muy largo o corta" required value="<?php echo $row["DIRECCION"]; ?>" id="caja"  class="form-control">
+                                 <input type="text" name="direccion"  pattern=".{7,80}" minlenght="7" maxlength="80" title="La direccion debe tener entre 7 y 80 caracteres" required value="<?php echo $row["DIRECCION"]; ?>" id="caja"  class="">
                                  <br>
-                                  <select id="provincia" name="provincia" class="btn btn-info  dropdown-toggle" type="button"data-toggle="dropdown" required>Provincias
+                                  <select id="provincia" name="provincia" class="btn btn-primary  dropdown-toggle" type="button"data-toggle="dropdown" required>Provincias
                 				
                                  </select>       
             					</br>
             					            					</br>
             					            					            					
-                				<select id="ciudad" name="ciudad" class="btn btn-info  dropdown-toggle" type="button"data-toggle="dropdown" required>Localidades<span class="caret"></span>
+                				<select id="ciudad" name="ciudad" class="btn btn-primary  dropdown-toggle" type="button"data-toggle="dropdown" required>Localidades<span class="caret"></span>
                 				</select>
             					<br>
             					<output id="list"></output>
             					<br>
             					<div class="fotos btn btn-primary">
-            					    <p ><i class="fas fa-camera-retro"></i> Cambiar de Perfil</p>
-            					    <input type="file" class="fil"  name="imagen" id="fil">
+            					    <p ><i class="fas fa-camera-retro"></i> Editar Foto </p>
+            					    <input type="file" class=""  name="imagen" id="fil">
                                   </div>
                              </div>
                              <div class="modal-footer">
@@ -223,7 +224,7 @@
             					$("#provincia").append(opcion);
             				})
             				var selecionado=$("#provincia").find('option:selected').data('id');
-            				console.log(selecionado);
+            			
             				$.getJSON('ciudades-argentinas.json',function(result){
             				$.each(result,function(ciudad,nombreciudad){
             				if(selecionado==nombreciudad.id){
@@ -234,7 +235,7 @@
             							selecionado="selected";
             						}
             						var opcion="<option "+selecionado+" value='"+city.nombre+"'>"+city.nombre+"</option>";
-            						console.log(opcion);
+            						
             						$("#ciudad").append(opcion);
             					})
             					

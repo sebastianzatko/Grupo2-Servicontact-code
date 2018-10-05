@@ -10,6 +10,7 @@
 	
 	
 	
+	
 	require "blogic/User.php";
 
     $usuario=new b_user;

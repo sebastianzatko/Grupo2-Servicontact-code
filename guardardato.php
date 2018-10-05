@@ -5,13 +5,13 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="https://code.jquery.com/jquery-3.3.1.min">
+	
 	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
 	<link href="registro.css" rel="stylesheet">
 	<script type="text/javascript" src="jquery.js"></script>
 	<script src="validacion.js"></script>
-	<script src="jquery-3.3.1.min.js"></script>
 	<script type="application/javascript" src="js/notify.js"></script>
+	<script src="bootstrap/bootstrap.min.js"></script>
 	 <script>
         function sololetras(e) {
             key = e.keyCode || e.which;
@@ -44,18 +44,18 @@
  		<center>
  		<div class="form-group ">
  				<div class=" contenedor">
-		 			<input type="text" id="txtnombre" minlenght="3"  name="nombre"  onkeypress="return sololetras(event)" class=" cinc form-control"   placeholder="Nombre" pattern=".{3,30}" title="nombre muy largo" aria-describedby="emailHelp" placeholder="Enter email" required>
+		 			<input type="text" id="txtnombre" minlenght="3" maxlenght="40"  name="nombre"  onkeypress="return sololetras(event)" class=" cinc form-control"   placeholder="Nombre" pattern=".{3,40}" title="El nombre debe tener entre 3 y 40 caracteres" aria-describedby="emailHelp" placeholder="Enter email" required>
 		 			
-		 			<input type="text" id="txtapellido" minlenght="3"  name="apellido"  onkeypress="return sololetras(event)" class=" cinc form-control"  pattern=".{3,30}" title="apellido demasiado largo"  placeholder="Apellido" aria-describedby="emailHelp" placeholder="Enter email" required>
+		 			<input type="text" id="txtapellido" minlenght="3" maxlenght="40" name="apellido"  onkeypress="return sololetras(event)" class=" cinc form-control"  pattern=".{3,40}" title="El apellido debe contener entre 3 y 40 caracteres"  placeholder="Apellido" aria-describedby="emailHelp" placeholder="Enter email" required>
 		 			<br>
 		 			
 		 			<br>
 		 		
-		 			<input type="email" class=" cinc form-control" minlenght="8" id="txtmail" name="email"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"  title="Correo invalido"  placeholder="mail" required >
+		 			<input type="email" class=" cinc form-control" id="txtmail" name="email"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"  title="Debe introducir una direccion de correo valida" minlenght="10" maxlenght="120" placeholder="mail" required >
 		 		
-		 			<input type="password" id="txtcontra" name="contrasena" minlenght="4" pattern=".{6,}"  title="minimo 6 caracteres" maxlength="15" class="cinc form-control"   placeholder="password" required >
+		 			<input type="password" id="txtcontra" name="contrasena" minlenght="8" maxlenght="60" pattern=".{8,60}"  title="La contraseña debe contener entre 8 y 60 caracteres" maxlength="15" class="cinc form-control"   placeholder="password" required >
 		 			<br>
-		 			<input type="text" name="telefono"  pattern=".{8,11}" minlenght="8" title="minimo 6 caracteres" maxlength="15" class="cien form-control"   placeholder="telefono" required >
+		 			<input type="text" name="telefono"  pattern=".{8,11}" minlenght="8" title="Debe introduccir un telefono valido de entre 8 y 11 caracteres" minlenght="8" maxlength="11" class="cien form-control"   placeholder="telefono" required >
 		 			<br>
 		 			
 		 			<br>
@@ -71,19 +71,17 @@
 				
                     	<br>
                         <br>
-					<input type="" class="cien form-control" id="txtdir" name="dir" minlenght="5" class="ciem" placeholder="Direccion" aria-describedby="emailHelp" placeholder="Enter email">
+					<input type="" class="cien form-control" id="txtdir" name="dir" minlenght="5" class="ciem" placeholder="Direccion" aria-describedby="emailHelp"  pattern=".{3,30}" title="direccion demasiado largo" placeholder="Enter email"required>
 	 			</div>
 				 <output id="list"></output>
 	 			<div class="fotos btn btn-success">
 	 				<p ><i class="icon fas fa-download"></i> Foto de Perfil</p>
-	 			<input type="file"  name="imagen"  id="fil">
+	 			<input type="file"  name="imagen" required  id="fil">
 	 			</div>
 	 		  <br>
 	 		  <br>
-
-	 		   <button type="submit" name="submit" id="boton"  class="btn btn-primary" value="Upload"><p>Registrarse</p></button>
-	 
- 		
+            
+	 		   <button type="submit" name="submit" id="boton"  class="btn btn-primary" value="Upload"<p>Registrarse</p></button>
  	     </div>
 		</center>
 		<div id="alerta"></div>

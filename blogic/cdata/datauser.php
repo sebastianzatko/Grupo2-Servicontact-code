@@ -1,4 +1,5 @@
 <?php
+require_once('email.php');
     
     class d_User{
 
@@ -34,25 +35,10 @@
                 
                 
                 if($stmt->execute()){
-
-                  
-                        
-                        $from = "no-reply@changero.online";
-                        $to = $mail;
-                        $subject = "Changuero Verificacion de Cuenta";
-                        $message = "
-                        Verificacion de Correo Electronico
-                        Para verificar su correo electronico de click al siguiente link: http://beta.changero.online/verify.php?mail=$mail&codigo=$validacionHash
-                        ";
-                        $headers = "From:" . $from;
-                        mail($to,$subject,$message, $headers);
-                       
-                  
-                    
-                    //$mensaje="Verificacion de Correo ElectronicoPara verificar su correo electronico de click alsiguiente link: http://beta.changero.online/verify.php?mail=$mail&codigo=$validacionHash";
-                    //esta funcion no rinde muy bien, hay que reemplazarla
-                    //mail($mail,"Changuero Verificacion de Cuenta",$mensaje,"From:no-reply@changero.online");
-                    
+                    $s_email = new changeromail();
+                    $url = 'http://beta.changero.online/verify.php?mail='.$mail.'&codigo='.$validacionHash;
+                    $nombreusuario = $nombre.' '.$apellido;
+                    $s_email->validaremail($mail,$nombreusuario,$url);
                 }else{
                    
                 }

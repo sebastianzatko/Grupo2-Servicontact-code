@@ -18,7 +18,7 @@
         
         if($usuario->registrar($nombre,$apellido,$telefono,$email,$password,$imagen,$direccion,$provincia,$ciudad)){
             //caso de exito
-            header('Location: espere.php ');
+            header('Location:espere.php');
         }else{
             //aca iria otro error de que no se pudo registrar porque ya existe la cuenta o los parametros no concuerdan
             header('Location:guardardato.php?error=2');

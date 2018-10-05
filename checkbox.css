@@ -9,7 +9,9 @@
 .spa{
 	margin-left: 480px;
 }
-
+.list-group{
+	margin-top:-20px;
+}
 @media (max-width: 750px){
 	.list-group-item{
 				width: 100%;
@@ -19,6 +21,9 @@
 	margin-left: 180px;
 
 	}
+	.list-group{
+	margin-top:-21px;
+}
 	#bot{
 	margin-left: 100px;
 	width: 40%;

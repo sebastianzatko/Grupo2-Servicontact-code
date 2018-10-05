@@ -6,14 +6,11 @@
 <html>
 <head>
 	<title></title>
-	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
-  
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link href="tabla.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="jquery-3.3.1.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="jquery.js"></script> 
-	<script src="bootstrap/bootstrap.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	
   <link rel="stylesheet" type="text/css" href="sidebarNavigation.css">
   <script src="sidebarNavigation.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,7 +48,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <center><input type="text"  class=" form-control" name="buscar1" id="buscar2" placeholder="&#128269;Buscar servicios"></center>
+       <center><input type="text"  class=" " name="buscar1" id="buscar2" placeholder="&#128269;Buscar servicios"></center>
      
     </div>
 
@@ -68,7 +65,7 @@
           
             <li><a href='index.php'><i class='icons iconos fas fa-home'></i></a></li>
             <li><a href='#'><i class='icons3 far fa-image'></i> Herramientas</a></li>
-            <li><a href='#'><i class='icons4 iconos fas fa-wrench'></i> Galeria</a></li>";
+            <li><a href='galeria.php'><i class='icons4 iconos fas fa-wrench'></i> Galeria</a></li>";
          }else{
            
          }
@@ -119,7 +116,38 @@
   </div><!-- /.container-fluid -->
 </nav>
 
- </div>
+<div class="container-fluid">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+      <div class="tomaño">
+        <div class="carousel-inner">
+          <div class="item active">
+            <img class="imge d-block w-100" src="images/casa.jpg"  id="tan" alt="First slide">
+          </div>
+          <div class="item">
+            <img class="imge d-block w-100" src="images/casael.jpg" id="tan"  alt="Second slide">
+          </div>
+          <div class="item">
+            <img class="imge d-block w-100" src="images/electri.jpg" id="tan"  alt="Third slide">
+          </div>
+        </div>
+      </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+</div>
+ 
+
          
   
 </body>

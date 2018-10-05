@@ -1,26 +1,26 @@
-<?php 
-    session_start();
-    if(isset($_SESSION["nombre"]) and isset($_SESSION["foto"]) and isset($_SESSION["id"])):
-?>
+<?php
 
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
-	<meta charset="utf-8"/>
+  
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link href="tabla.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="jquery-3.3.1.min.js"></script>
   <script src="jquery.js"></script> 
 	<script src="bootstrap/bootstrap.js"></script>
   <link rel="stylesheet" type="text/css" href="sidebarNavigation.css">
   <script src="sidebarNavigation.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="switchery.css">
-  <link rel="stylesheet" type="text/css" href="checkbox.css">
-  <script type="text/javascript" src="switchery.js"></script>
+		<link href="galeria.css" rel="stylesheet">
 	<link href="diseno.css" rel="stylesheet">
+	
+	
  
 </head>
 <body>
@@ -69,7 +69,7 @@
           
             <li><a href='index.php'><i class='icons iconos fas fa-home'></i></a></li>
             <li><a href='#'><i class='icons3 far fa-image'></i> Herramientas</a></li>
-            <li><a href='#'><i class='icons4 iconos fas fa-wrench'></i> Galeria</a></li>";
+            <li><a href='galeria.php'><i class='icons4 iconos fas fa-wrench'></i> Galeria</a></li>";
          }else{
            
          }
@@ -120,106 +120,68 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-    <div class="container">
-    <div class="row">
-      <div class="col-md-4"></div>
-      <ul class="list-group"></ul>
-		<?php
-			require "blogic/Services.php";
-			
-			
-			$servicios=new services;
-			
-			$listaservicios=$servicios->getservicios();
-			
-			if(isset($_SESSION['idpro'])){
-			    require "blogic/Professional.php";
-			    $profesional=new Professional;
-			    $serviciosactivos=$profesional->get_servicios((int)$_SESSION['idpro']);
-			    $dataSer=json_decode($serviciosactivos , true);
-			}
-			else{
-			    
-			}
-			
-			
-			
-			$dataAr = json_decode($listaservicios , true);
-            
+ </div>
+         
+  
 
-			foreach($dataAr as $data)
-			{
-			    if(isset($dataSer)){
-    				if(in_array($data[0], $dataSer)){
-    				    $check="checked";
-    				}
-    				else{
-    				    $check="";
-    				}
-			    }else{
-			        $check="";
-			    }
-				
-				echo "<li class='list-group-item'><input type='checkbox' ".$check." name='services[]' class='js-switch' value='".$data[0]."'  /><span class='spa'> <i class='".$data[2]."'></i> " .$data[1]."</span></li>";
-				
+<img src="<?php echo $_SESSION["foto"]; ?>" class="im2">
 
-			}
-			
-		?>
-      
-      <script type="text/javascript">
-        
-        var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+<div class="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a aria-controls="" data-toggle="tab"  role="tab" href="#">Mis trabajo</a></li>
+      <li role="presentation"><a aria-controls="">Juan gonzales</a></li>
+      <li role="presentation"><a aria-controls="" data-toggle="modal"  role="tab" href="#ventana"><i class="fas fa-camera-retro"></i> subir foto</a></li>
+         <div class="modal fade" id="ventana">
+             <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h2 class="modal-title">Subir Foto</h2>
 
-            elems.forEach(function(html) {
+                </div>
+                 <div class="modal-body">
+                     
+                     
+                      <select id="provincia" name="provincia" class="btn btn-info  dropdown-toggle" type="button"data-toggle="dropdown" required>Provincias
+                        
+                                 </select>       
+                      </br>
+                               </br>
+
+                          <button type="button" id="fot1" class="btn btn-primary" ><i class="fas fa-camera-retro"></i>Elegir foto</button>
+
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button"  data-dismiss="modal" class="btn btn-default">Cerrar</button>
+
+                   <button type="button"  class="btn btn-success" >Guardar cambios</button>
+                 </div>
+              </div>
               
-              var switchery = new Switchery (html, {disabled: true ,
+             </div>
+           </div>
+    </ul>
+</div>
+<div class="galeria">    
+    <img src="images/casa.jpg" >
+    <img src="images/casael.jpg" >
+    <img src="images/electri.jpg" >
+    <img src="images/casa.jpg" >
+    <img src="images/casael.jpg" >
+    <img src="images/electri.jpg" >
+    <img src="images/casa.jpg" >
+    <img src="images/casael.jpg" >
+    <img src="images/electri.jpg" >
+    <img src="images/casa.jpg" >
+    <img src="images/casael.jpg" >
+    <img src="images/electri.jpg" >
+    <img src="images/casa.jpg" >
+    <img src="images/casa.jpg" >
+    <img src="images/casael.jpg" >
+    <img src="images/electri.jpg" >
 
-
-               color              :  '#5CA3F5',
-               size: 'small'
-                });
-                 
-
-                  });
-      </script>
-      </div>
-    </div>
-    </div>
-    
-      
-       
-        
-	<script>
-		$( document ).ready(function() {
-			$( ":checkbox" ).each(function(){
-				var id=$(this).val();
-				$(this).change(function(){
-				    var xmlhttp=new XMLHttpRequest();
-					if($(this).is(':checked')){
-						//llamar a habilitar
-						
-						xmlhttp.open("GET","serviceproces.php?id="+id+"&&in=1",true);
-						xmlhttp.send();
-						console.log("enviado");
-					}
-					else{
-						xmlhttp.open("GET","serviceproces.php?id="+id+"&&in=0",true);
-						xmlhttp.send();
-						console.log("enviado negativo");
-					}
-				})
-			});
-		});
-	</script>
+</div>
+         
   
 </body>
 </html>
-
-
-<?php
-    else:
-        header("Location:principal.php");
-        
-    endif;
-?>
