@@ -7,14 +7,14 @@
 <head>
 	<title></title>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="jquery.js"></script> 
+  <script src="includes/js/jquery.js"></script> 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	
-  <link rel="stylesheet" type="text/css" href="sidebarNavigation.css">
-  <script src="sidebarNavigation.js"></script>
+  <link rel="stylesheet" type="text/css" href="includes/css/sidebarNavigation.css">
+  <script src="includes/js/sidebarNavigation.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="diseno.css" rel="stylesheet">
+	<link href="includes/css/diseno.css" rel="stylesheet">
 	
 	
  

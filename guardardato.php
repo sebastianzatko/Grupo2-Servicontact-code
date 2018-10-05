@@ -7,10 +7,10 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	
 	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
-	<link href="registro.css" rel="stylesheet">
-	<script type="text/javascript" src="jquery.js"></script>
-	<script src="validacion.js"></script>
-	<script type="application/javascript" src="js/notify.js"></script>
+	<link href="includes/css/registro.css" rel="stylesheet">
+	<script type="text/javascript" src="includes/js/jquery.js"></script>
+	<script src="includes/js/validacion.js"></script>
+	<script type="application/javascript" src="includes/js/notify.js"></script>
 	<script src="bootstrap/bootstrap.min.js"></script>
 	 <script>
         function sololetras(e) {

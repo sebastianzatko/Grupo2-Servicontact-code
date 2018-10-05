@@ -9,16 +9,16 @@
 	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
   
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link href="tabla.css" rel="stylesheet">
+  <link href="includes/css/tabla.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="jquery-3.3.1.min.js"></script>
-  <script src="jquery.js"></script> 
+	<script src="includes/js/jquery-3.3.1.min.js"></script>
+  <script src="includes/js/jquery.js"></script> 
 	<script src="bootstrap/bootstrap.js"></script>
-  <link rel="stylesheet" type="text/css" href="sidebarNavigation.css">
-  <script src="sidebarNavigation.js"></script>
+  <link rel="stylesheet" type="text/css" href="includes/css/sidebarNavigation.css">
+  <script src="includes/js/sidebarNavigation.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="galeria.css" rel="stylesheet">
-	<link href="diseno.css" rel="stylesheet">
+		<link href="includes/css/galeria.css" rel="stylesheet">
+	<link href="includes/css/diseno.css" rel="stylesheet">
 	
 	
  

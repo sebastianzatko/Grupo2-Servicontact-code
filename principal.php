@@ -6,12 +6,12 @@
     <!DOCTYPE html>
     <html>
     <head>
-    	<title></title>
+    	<title>Log In-Changero</title>
     	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
-    	<link href="stylo.css" rel="stylesheet">
-    	<script src="jquery-3.3.1.min.js"></script>
-    	<script type="application/javascript" src="js/notify.js"></script>
+    	<link href="includes/css/stylo.css" rel="stylesheet">
+    	<script src="includes/js/jquery-3.3.1.min.js"></script>
+    	<script type="application/javascript" src="includes/js/notify.js"></script>
     </head>
     <body>
     	<br>
