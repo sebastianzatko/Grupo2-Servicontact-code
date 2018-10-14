@@ -7,7 +7,7 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!--<script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>-->
+	
 	<script src="includes/js/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -17,6 +17,7 @@
 	<link href="includes/css/muro.css" rel="stylesheet">
 	<link href="includes/css/diseno.css" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />
+	<script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
 	<script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
 	<script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
 </head>
@@ -152,30 +153,12 @@
          <div class="container1">
    
       
-    <center><h3>Categorias Populares</h3>
-      
-        
-          
-             
-           
-        
-            
-                    
-                    <img src="images/juan.jpg" alt="Park" class="img-responsive img-thumbnail">
-                   
-          
-             
-                    <img src="images/gasista.jpg" alt="Park" class="img-responsive img-thumbnail">
-                    
-                    <img src="images/electri.jpg" alt="Park" class="img-responsive img-thumbnail">
-                   
-             
-             
-           
-                   
-                    <img src="images/plomeros.jpg" alt="Park" class="img-responsive img-thumbnail">
-        
-       </center>
+    <center><h3>Categorias Populares</h3>    
+         <img src="images/juan.jpg" alt="Park" class="img-responsive img-thumbnail">
+         <img src="images/gasista.jpg" alt="Park" class="img-responsive img-thumbnail">
+         <img src="images/electri.jpg" alt="Park" class="img-responsive img-thumbnail">
+         <img src="images/plomeros.jpg" alt="Park" class="img-responsive img-thumbnail">
+     </center>
   </div>
 </body>
 
