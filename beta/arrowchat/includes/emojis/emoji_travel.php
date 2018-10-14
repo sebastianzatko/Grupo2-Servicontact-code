@@ -1,0 +1,95 @@
+<?php
+
+	// ########################## INCLUDE BACK-END ###########################
+	require_once (dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . 'cache' . DIRECTORY_SEPARATOR . 'data_admin_options.php');
+	
+	$path = $base_url . "includes/emojis/img/32/";
+
+?>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f697.png" alt="" data-id="1f697.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f695.png" alt="" data-id="1f695.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f687.png" alt="" data-id="1f687.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f699.png" alt="" data-id="1f699.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f68c.png" alt="" data-id="1f68c.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f68e.png" alt="" data-id="1f68e.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f693.png" alt="" data-id="1f693.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f691.png" alt="" data-id="1f691.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f692.png" alt="" data-id="1f692.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f690.png" alt="" data-id="1f690.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f69a.png" alt="" data-id="1f69a.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f69b.png" alt="" data-id="1f69b.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f69c.png" alt="" data-id="1f69c.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f6b2.png" alt="" data-id="1f6b2.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f6a8.png" alt="" data-id="1f6a8.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f68d.png" alt="" data-id="1f68d.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f698.png" alt="" data-id="1f698.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f694.png" alt="" data-id="1f694.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f696.png" alt="" data-id="1f696.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f6a1.png" alt="" data-id="1f6a1.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f6a0.png" alt="" data-id="1f6a0.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f69f.png" alt="" data-id="1f69f.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f683.png" alt="" data-id="1f683.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f68b.png" alt="" data-id="1f68b.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f69d.png" alt="" data-id="1f69d.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f684.png" alt="" data-id="1f684.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f685.png" alt="" data-id="1f685.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f688.png" alt="" data-id="1f688.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f69e.png" alt="" data-id="1f69e.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f682.png" alt="" data-id="1f682.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f686.png" alt="" data-id="1f686.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f68a.png" alt="" data-id="1f68a.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f689.png" alt="" data-id="1f689.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f681.png" alt="" data-id="1f681.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>2708.png" alt="" data-id="2708.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>26f5.png" alt="" data-id="26f5.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f6a4.png" alt="" data-id="1f6a4.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f680.png" alt="" data-id="1f680.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f4ba.png" alt="" data-id="1f4ba.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>2693.png" alt="" data-id="2693.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f6a7.png" alt="" data-id="1f6a7.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>26fd.png" alt="" data-id="26fd.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f68f.png" alt="" data-id="1f68f.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f6a6.png" alt="" data-id="1f6a6.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f6a5.png" alt="" data-id="1f6a5.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3c1.png" alt="" data-id="1f3c1.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f6a2.png" alt="" data-id="1f6a2.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3a1.png" alt="" data-id="1f3a1.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3a2.png" alt="" data-id="1f3a2.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3a0.png" alt="" data-id="1f3a0.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f301.png" alt="" data-id="1f301.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f5fc.png" alt="" data-id="1f5fc.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3ed.png" alt="" data-id="1f3ed.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>26f2.png" alt="" data-id="26f2.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f391.png" alt="" data-id="1f391.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f5fb.png" alt="" data-id="1f5fb.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f30b.png" alt="" data-id="1f30b.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f5fe.png" alt="" data-id="1f5fe.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f305.png" alt="" data-id="1f305.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f304.png" alt="" data-id="1f304.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f307.png" alt="" data-id="1f307.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f306.png" alt="" data-id="1f306.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f303.png" alt="" data-id="1f303.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f309.png" alt="" data-id="1f309.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f30c.png" alt="" data-id="1f30c.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f387.png" alt="" data-id="1f387.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f386.png" alt="" data-id="1f386.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f308.png" alt="" data-id="1f308.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3f0.png" alt="" data-id="1f3f0.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3ef.png" alt="" data-id="1f3ef.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f5fd.png" alt="" data-id="1f5fd.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3e0.png" alt="" data-id="1f3e0.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3e1.png" alt="" data-id="1f3e1.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3e2.png" alt="" data-id="1f3e2.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3ec.png" alt="" data-id="1f3ec.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>26fa.png" alt="" data-id="26fa.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3e3.png" alt="" data-id="1f3e3.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3e4.png" alt="" data-id="1f3e4.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3e5.png" alt="" data-id="1f3e5.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3e6.png" alt="" data-id="1f3e6.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3e8.png" alt="" data-id="1f3e8.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3ea.png" alt="" data-id="1f3ea.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3eb.png" alt="" data-id="1f3eb.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f3e9.png" alt="" data-id="1f3e9.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f492.png" alt="" data-id="1f492.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>26ea.png" alt="" data-id="26ea.png" /></div>
+<div class="arrowchat_emoji"><img src="<?php echo $path; ?>1f320.png" alt="" data-id="1f320.png" /></div>

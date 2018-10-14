@@ -1,0 +1,187 @@
+.sblue {
+	height:50px;
+	font-family:Arial, Helvetica, sans-serif;
+	background-color:#fff;
+	padding:0;
+}
+
+.sblue a {text-decoration:none;}
+
+.sblue > li > a {
+	color: #5f5f5f;
+	font-weight:normal;
+	font-size:13px;
+	line-height:16px;
+	padding:17px 24px 17px;
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+}
+.sblue > li:hover > a {
+	background-color:#f8f8f8;
+	border-left: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+}
+
+.sblue > li {}
+.sblue > li > a {border-left:1px solid #4c8bcb;border-left:1px solid rgba(255, 255, 255, .20);}
+.sblue > li.floatr {
+	border-right:none;
+	border-left:1px solid #0d3f72;
+	border-left:1px solid rgba(0, 0, 0, .33);
+}
+
+.sblue > li > a img, .sblue li > ul > li > a img {
+	border:0;
+	margin-right:5px;
+}
+
+/* notification bubbles ------------------ */
+
+.sblue > li > a .bubble, .sblue li > a .bubble-alt {
+	font-size:11px;
+	line-height:11px;
+	padding:1px 4px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	margin-left:7px;
+	position:relative;
+	top:-1px;
+}
+.sblue > li > a .bubble {
+	color:#fff;
+	background-color:#df0a0a;
+	text-shadow:0 1px #9d0707;
+	
+	-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .4), 0 1px #4982b6;
+	-moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .4), 0 1px #4982b6;
+	box-shadow:inset 0 1px 1px rgba(0, 0, 0, .4), 0 1px #4982b6;
+}
+.sblue > li > a .bubble-alt {
+	color:#fff;
+	background-color:#043d71;
+	text-shadow:0 1px #032b4f;
+	
+	-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .4), 0 1px #4d85b8;
+	-moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .4), 0 1px #4d85b8;
+	box-shadow:inset 0 1px 1px rgba(0, 0, 0, .4), 0 1px #4d85b8;
+}
+.sblue > li:hover > a .bubble {
+	text-shadow:none;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+
+.sblue ul > li .bubble {
+	font-size:11px;
+	line-height:12px;
+	padding:1px 4px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	position:absolute;
+	right:6px;
+	top:16px;
+	color:#fff;
+	background-color:#043d71;
+	text-shadow:0 1px #242424;
+	-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .4), 0 1px #4d85b8;
+	-moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .4), 0 1px #4d85b8;
+	box-shadow:inset 0 1px 1px rgba(0, 0, 0, .4), 0 1px #4d85b8;
+}
+
+.sblue > li > a .bubble-top {
+	position:absolute;
+	font-size:10px;
+	line-height:14px;
+	color:#fff;
+	padding:0 3px;
+	right:7px;
+	text-shadow:none;
+	
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	
+	background-color: #fa3e3e;
+}
+
+/* sub menu ------------------------------ */
+
+.sblue ul {
+	background-color:#f7f7f7;
+	border:1px solid #e9e9e9;
+	border-top:none;
+}
+.sblue > li.floatr > ul {right:-1px;left:auto;}
+.sblue > li.floatr > ul ul {left:-127px;}
+.sblue ul a {
+	color:#5f5f5f;
+	font-weight:normal;
+	font-size:12px;
+	line-height:18px;
+	padding:15px 20px;
+}
+.sblue ul a:hover {
+	background-color:#f1f1f1;
+}
+.sblue ul ul li:first-child a {border-top-color:#06345e;}
+
+/* mega menu ----------------------------- */
+
+.sblue li > div {
+	background-color:#216fb8;
+	border:1px solid #06345e;
+	border-top:none;
+	left:-1px;
+	-webkit-box-shadow:0 2px #ddd, inset 1px 0 #4d8cc6;
+	-moz-box-shadow:0 2px #ddd, inset 1px 0 #4d8cc6;
+	box-shadow:0 2px #ddd, inset 1px 0 #4d8cc6;
+	padding:4px;
+}
+.sblue > li.floatr > div {right:-1px;left:auto;}
+.sblue h4, .sblue h5 {margin:0;padding:0;}
+.sblue h4 {
+	font-size:15px;
+	color:#b3cbe2;
+	font-weight:normal;
+	margin:10px 10px 5px;
+	padding-bottom:10px;
+	border-bottom:1px solid #508ac1;
+}
+.sblue h5 {
+	font-size:14px;
+	color:#fff;
+	font-weight:bold;
+	margin:10px 10px 0;
+	text-shadow:0 -1px #0d3f72;
+}
+.sblue ol {
+	list-style:none;
+	margin:7px 10px;
+	padding:0;
+}
+
+.sblue ol a {
+	color:#b8d3ec;
+	font-size:12px;
+	padding:3px 0;
+}
+.sblue ol a:hover {
+	color:#fff;
+}
+.sblue p {
+	color:#fff;
+	font-size:12px;
+	line-height:18px;
+	margin:9px 10px;
+	padding:0;
+}
+.sblue p a {
+	color:#b8d3ec;
+	text-decoration:underline;
+}
+.sblue p a:hover {
+	color:#fff;
+}
