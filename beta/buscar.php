@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title></title>
-	
+	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -14,8 +14,12 @@
  <script src="includes/js/jquery.js"></script> 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="includes/js/switchery.js"></script>
+   <script type="text/javascript" src="includes/js/search.js"></script>
   <link href="includes/css/buscar.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <link rel="stylesheet" href="includes/css/estrellas.css" />
+  <link rel="stylesheet" href="includes/css/resultadosbusqueda.css" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 </head>
 <body>
 <nav id="nav" class="navbar navbar-dark bg-primary sidebarNavigation" data-sidebarClass="navbar-inverse">
@@ -45,7 +49,9 @@
         <li><a href="#"><i class="icons4 iconos fas fa-wrench"></i> Galeria</a></li>
        
       </ul>
-
+		
+		
+		
       <ul class="navbar-form navbar-left" id="form1" onsubmit="return enviar();" method="POST">
        <div class="form-group">
        
@@ -74,95 +80,43 @@
   </div><!-- /.container-fluid -->
 </nav>
 
- <div class="container1">
-              <div class="row">
-                          <div class="col-lg-12">
-                             <div class="button-group">
-                               <center> <button type="button" id="buscar2" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Buscar servicios <span class="caret"></span></button>
-                        <ul class="dropdown-menu" style="width: 100%;">
-                          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"  class="js-switch"/>&nbsp;Electrisita</a></li>
-                          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox" class="js-switch"/>&nbsp;GASISITA</a></li>
-                          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox" class="js-switch"/>&nbsp;PLOMERO</a></li>
-                          <li><a href="#" class="js-switch" class="small" data-value="option4" tabIndex="-1"><input type="checkbox" class="js-switch"/>&nbsp;ALBAÑIL</a></li>
-                          <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox" class="js-switch"/>&nbsp;CERRAJERO</a></li>
-                          <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox" class="js-switch"/>&nbsp;CARPINTERO</a></li>
-                           <script type="text/javascript">
-            
-                              var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
-
-                                  elems.forEach(function(html) {
-                                    
-                                    var switchery = new Switchery (html, {disabled: true ,
-
-
-                                     color              :  '#3BBD4B',
-                                     secondaryColor:'#CBCDCE',
-                                     size: 'small'
-                                      });
-                                       
-
-                                        });
-                            </script>
-                        </ul></center>
-                          </div>
-                        </div>
-                  </div>
-            </div>
-
+		
       <div class="container-fluid">
     <br>
-    <div class="col-md-5">
-      <div class="media">
-        <div class="media-left">
-          <a href="profesionnal.php"><img src="images/juan.jpg" style="width: 90px;height: 90px;"></a>
-        </div>
-        <div class="media-body">
-          <p>juan gonzales</p>
-          <p> los lunes nunca viene</p>
-        </div>
-      </div>
-      <div class="media">
-        <div class="media-left">
-          <a href="profesionnal.php"><img src="images/jose.jpg" style="width: 90px;height: 90px;"></a>
-        </div>
-        <div class="media-body">
-          <p>ramon</p>
-          <p>albanil borrachin los viernes nunca viene</p>
-        </div>
-      </div>
-      <div class="media">
-        <div class="media-left">
-          <a href="profesionnal.php"><img src="images/ramon.jpg" style="width: 90px;height: 90px;"></a>
-        </div>
-        <div class="media-body">
-          <p>jose</p>
-          <p> los sabados nunca viene</p>
-        </div>
-      </div>
-      <div class="media">
-        <div class="media-left">
-          <a href="profesionnal.php"><img src="images/ramon.jpg" style="width: 90px;height: 90px;"></a>
-        </div>
-        <div class="media-body">
-          <p>jose</p>
-          <p> los sabados nunca viene</p>
-        </div>
-      </div>
-       <div class="media">
-        <div class="media-left">
-          <a href="profesionnal.php"><img src="images/jose.jpg" style="width: 90px;height: 90px;"></a>
-        </div>
-        <div class="media-body">
-          <p>ramon</p>
-          <p> los viernes nunca viene</p>
-        </div>
-      </div>
-    </div>
+	<div class="row">
+	<?php
+			require "blogic/Services.php";
+			
+			
+			$servicios=new services;
+			
+			$listaservicios=$servicios->getservicios();
+			
+			$dataAr = json_decode($listaservicios , true);
+            
+
+			foreach($dataAr as $data)
+			{
+			    
+				
+				echo "<button  name='services[]' class='btn btn-primary' value='".$data[0]."'  /><span class='spa'> <i class='".$data[2]."'></i> " .$data[1]."</span></button>";
+				
+
+			}
+			
+		?>
+		</div>
+		<div id="contenido">
+			<h3 class="head text-center">Empieze a buscar con Changero<sup>™</sup> <span style="color:#f48260;">♥</span></h3>
+			  <p class="narrow text-center">
+				  Para comenzar la busqueda debe seleccionar los servicios que desea encontrar
+			  </p>
+                          
+			<p class="text-center">
+		</div>
 
     <br>
-  
-      
-    
+	 
   </div>
    
 </body>
@@ -192,4 +146,6 @@ $( '.dropdown-menu a' ).on( 'click', function( event ) {
    return false;
 });
 </script>
+
+<script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>
 </html>
