@@ -1,89 +1,166 @@
-<?php //00574
-// ARROWCHAT TRIAL EDITION
-// EXPIRES AFTER 10 DAYS OF USE
-// Please purchase at http://www.arrowchat.com if you like it
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo("Site error: the ".(php_sapi_name()=='cli'?'ionCube':'<a href="http://www.ioncube.com">ionCube</a>')." PHP Loader needs to be installed. This is a widely used PHP extension for running ionCube protected PHP code, website security and malware blocking.\n\nPlease visit ".(php_sapi_name()=='cli'?'get-loader.ioncube.com':'<a href="http://get-loader.ioncube.com">get-loader.ioncube.com</a>')." for install assistance.\n\n");exit(199);
+<?php
+
+	/*
+	|| #################################################################### ||
+	|| #                             ArrowChat                            # ||
+	|| # ---------------------------------------------------------------- # ||
+	|| #    Copyright ©2010-2012 ArrowSuites LLC. All Rights Reserved.    # ||
+	|| # This file may not be redistributed in whole or significant part. # ||
+	|| # ---------------- ARROWCHAT IS NOT FREE SOFTWARE ---------------- # ||
+	|| #   http://www.arrowchat.com | http://www.arrowchat.com/license/   # ||
+	|| #################################################################### ||
+	*/
+	
+	// ########################## INCLUDE BACK-END ###########################
+	require_once (dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . 'bootstrap.php');
+
+	if (preg_match('#public/mobile#', $_SERVER[REQUEST_URI]))
+		$home_url = "../../../";
+	else
+		$home_url = "../../";
 ?>
-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
-M7RV0JfYNRKfGWG3YfxAh1Ezaaa=
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Mobile Chat</title>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png"/> 
+		<link rel="stylesheet" href="<?php echo $base_url; ?><?php echo AC_FOLDER_PUBLIC; ?>/mobile/includes/css/jquery-mobile.css" />
+		<link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="<?php echo $base_url; ?><?php echo AC_FOLDER_PUBLIC; ?>/mobile/includes/css/style.css" charset="utf-8" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+		<script type="text/javascript" src="<?php echo $base_url; ?><?php echo AC_FOLDER_INCLUDES; ?>/js/jquery.js"></script>
+		<script type="text/javascript" charset="utf-8" src="<?php echo $base_url; ?><?php echo AC_FOLDER_PUBLIC; ?>/mobile/includes/js/jquery-mobile.js"></script>
+		<script type="text/javascript" src="<?php echo $base_url; ?>external.php?type=djs" charset="utf-8"></script> 
+		<script type="text/javascript" src="<?php echo $base_url; ?>external.php?type=mjs" charset="utf-8"></script> 
+	</head>
+    <body>
+        <div data-role="page" id="page1">
+            <div data-theme="b" data-role="header" data-position="fixed" data-tap-toggle="false">
+                <h3>
+                    <?php echo $language[110]; ?>
+					
+                </h3>
+				<a data-role="button" id="home-button" data-iconshadow="false" data-iconpos="notext" data-ajax="false" data-theme="b" href="<?php echo $home_url; ?>" data-icon="home" data-shadow="false" data-corners="false"></a>
+				<a id="settings-button" data-iconpos="notext" data-iconshadow="false" data-theme="b" data-rel="dialog" data-transition="slidedown" href="#settings-page" data-icon="gear" data-shadow="false" data-corners="false"></a>
+            </div>
+            <div data-role="content">
+				<ul id="buddylist-container-chatroom" data-role="listview" data-divider-theme="c" data-inset="false"></ul>
+				<ul id="buddylist-container-recent" data-role="listview" data-divider-theme="c" data-inset="false"></ul>
+                <ul id="buddylist-container-available" data-role="listview" data-divider-theme="c" data-inset="false"></ul>
+				<ul id="buddylist-container-away" data-role="listview" data-divider-theme="c" data-inset="false"></ul>
+            </div>
+        </div>
+		<div data-role="page" id="page2">
+            <div data-theme="b" data-role="header" data-position="fixed" data-tap-toggle="false">
+                <h3 id="username-header">
+					<?php echo $language[110]; ?>
+					
+                </h3>
+                <a data-role="button" id="back-button" data-direction="reverse" data-transition="slide" data-theme="b" href="#page1" data-icon="arrow-l" data-iconshadow="false" data-iconpos="left" class="back_buttons">
+					<?php echo $language[113]; ?>
+				</a>
+            </div>
+            <div data-role="content" class="chat_user_content">
+            </div>
+            <div data-theme="d" data-role="footer" data-position="fixed" data-tap-toggle="false">
+                <div data-role="fieldcontain">
+					<div style="width:100%; float:left; margin-top:-5px;padding-right:80px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing: border-box;">
+						<input id="textinput1" placeholder="" value="" type="text" />
+					</div>
+					<a id="send_button" data-role="button" data-inline="true" data-transition="none" data-theme="b" href="javascript:;" style="float:right; margin-right: 10px; margin-top:-35px">
+						<?php echo $language[114]; ?>
+					</a>
+                </div>
+            </div>
+		</div>
+		<div data-role="page" id="page3">
+			<div data-role="panel" data-theme="a" data-position="right" id="user-panel">
+				<ul id="chatroom-users-list" data-role="listview" data-divider-theme="c" data-inset="false"></ul>
+			</div>
+            <div data-theme="b" data-role="header" data-position="fixed" data-tap-toggle="false">
+                <h3 id="chatroom-header">
+					<?php echo $language[128]; ?>
+                </h3>
+                <a data-role="button" id="back-button-chatroom" data-direction="reverse" data-transition="slide" data-theme="b" href="#page1" data-icon="arrow-l" data-iconshadow="false" data-iconpos="left" class="back_buttons">
+					<?php echo $language[113]; ?>
+				</a>
+				<a data-role="button" id="users-button-chatroom" data-display="push" data-theme="b" data-icon="bars" href="#user-panel" data-iconpos="notext"></a>
+            </div>
+            <div data-role="content" class="chat_room_content">
+            </div>
+            <div data-theme="d" data-role="footer" data-position="fixed" data-tap-toggle="false">
+                <div data-role="fieldcontain">
+					<div style="width:100%; float:left; margin-top:-5px;padding-right:80px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing: border-box;">
+						<input id="textinput2" placeholder="" value="" type="text" />
+					</div>
+					<a id="send_button_chatroom" data-role="button" data-inline="true" data-iconshadow="false" data-transition="none" data-theme="b" href="javascript:;" style="float:right; margin-right: 10px; margin-top:-35px">
+						<?php echo $language[114]; ?>
+					</a>
+                </div>
+            </div>
+		</div>
+		<div data-role="page" id="password-page">
+			<div data-theme="b" data-role="header" data-tap-toggle="false">
+				<h1><?php echo $language[128]; ?></h1>
+			</div>
+			<div data-theme="d" data-role="content" id="chatroom-message">
+				<label for="room-password"><?php echo $language[138]; ?></label>
+				<input type="text" name="room-password" id="room-password" value="" />
+				<a href="#page3" data-theme="b" data-role="button" id="submit-chatroom-password"><?php echo $language[139]; ?></a>
+			</div>
+		</div>
+		<div data-role="dialog" id="chatroom-error">
+			<div data-theme="b" data-role="header" data-tap-toggle="false">
+				<h1><?php echo $language[128]; ?></h1>
+			</div>
+			<div data-theme="d" data-role="content" id="chatroom-error-content"></div>
+		</div>
+		<div data-role="dialog" id="user-options">
+			<div data-theme="b" data-role="header" data-tap-toggle="false">
+				<h1></h1>
+			</div>
+			<div data-theme="d" data-role="content" id="user-options-content"></div>
+		</div>
+		<div data-role="page" id="settings-page">
+			<div data-theme="b" data-role="header" data-tap-toggle="false">
+				<h1><?php echo $language[129]; ?></h1>
+			</div>
+			<div data-theme="d" data-role="content">
+				<div style="margin-bottom:60px" id="chatroom-settings-container">
+					<div style="float:left; width: 60%; margin-top: 11px; font-size:18px">
+						<?php echo $language[130]; ?>
+					</div>
+					<div style="float:right;">
+						<form>
+							<select name="flip-show-chatroom" id="flip-show-chatroom" data-role="slider">
+								<option value="off"><?php echo $language[133]; ?></option>
+								<option value="on"><?php echo $language[132]; ?></option>
+							</select>
+						</form>
+					</div>
+				</div>
+				<div>
+					<div style="float:left; width: 60%; margin-top: 11px; font-size:18px">
+						<?php echo $language[131]; ?>
+					</div>
+					<div style="float:right;">
+						<form>
+							<select name="flip-show-idle" id="flip-show-idle" data-role="slider">
+								<option value="off"><?php echo $language[133]; ?></option>
+								<option value="on"><?php echo $language[132]; ?></option>
+							</select>
+						</form>
+					</div>
+					<div class="arrowchat_clearfix"></div>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
