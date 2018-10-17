@@ -12,6 +12,9 @@
 	$status['offline']		=	"Estoy desconectado";								// Default offline status message
 	$status['invisible']	=	"Estoy desconectado";								// Default invisible status message
 	$language[83]			=	"Invitado";									// Displayed if the user has no username
+	$language[240]			=	"Ausente";										// Idle user status
+	$language[241]			=	"Desconectado";									// Offline user status
+
 
 	// ####################### SERVICE UPDATES ########################
 	$language[27]			=	"El chat est&aacute; temporalmente en mantenimiento.";  // Hover message when chat is in maintenance mode
@@ -34,6 +37,7 @@
 	$language[80]			=	"meses";								// Displayed after the time in notifications (months)
 	$language[81]			=	"a&ntilde;o";									// Displayed after the time in notifications (year)
 	$language[82]			=	"a&ntilde;os";								// Displayed after the time in notifications (years)
+	$language[144]			=	"Nuevo mensaje de ";						// DISPLAYS USERNAME AFTER - The title for HTML5 notifications
 
 	// ######################### BUDDY LIST ###########################
 	$language[4]			=	"Chat"; 									// Displayed in the title bar of the buddy list popup
@@ -44,6 +48,17 @@
 	$language[23]			=	"Opciones";									// Button to show options in the buddy list
 	$language[25]			=	"Cargando...";								// Text to show while the buddy list is loading
 	$language[26]			=	"No se han encontrado contactos.";						// Displayed when no friends are found after searching
+	$language[119]			=	"Enter a name to chat with";				// Displayed in the guest username box
+	$language[120]			=	"Debes ingresar un nombre.";					// Error message when the user enters no guest name
+	$language[121]			=	"Solo se permiten letras y/o numeros.";	// Error message when the user enters a guest name with more than letter/numbers
+	$language[122]			=	"Hay una palabra bloqueada en tu nombre: ";	// DISPLAYS BLOCKED WORD AFTER - Error message when the user enters a blocked word guest name
+	$language[123]			=	"No puedes cambiar tu nombre de nuevo.";		// Error message when user trys to change guest name again
+	$language[124]			=	"Este nombre ya existe.";				// Error message when duplicate guest name is selected
+	$language[125]			=	"Tu nombre no puede contener mas de 25 caracteres";// Error message when guest name is too long
+	$language[140]			=	"Conectar con Facebook";						// Text to connect to Facebook
+	$language[141]			=	"Desconectarse de Facebook";						// Text to logout from Facebook
+	$language[142]			=	"Site Users";								// Text to display for site user's group
+	$language[143]			=	"Amigos de Facebook";							// Text to display for facebook friend's group
 
 	// ########################### OPTIONS ############################
 	$language[5]			=	"Disponible para chatear";						// Option to go offline text
@@ -57,6 +72,10 @@
 	$language[108]			=	"Selecciona el dise&ntilde;o que deseas usar";			// Text to display when a user is choosing a theme
 	$language[109]			=	"Elegir";									// Text to display on the choose theme button
 	$language[118]			=	"Seleccionar";									// Text to display on the selection for the block menu
+	$language[222]			=	"Cancelar";									// Displayed on UI buttons to cancel an action
+	$language[242]			=	"Cambiar tu nombre...";						// Option to manage guest name
+	$language[243]			=	"Aceptar";									// Button to submit name change
+	$language[244]			=	"Ingresa el nombre que deseas usar";			// Text for guest name change menu
 
 	// ######################## APPLICATIONS ##########################
 	$language[16]  		 	=   "Aplicaciones";								// Displayed in the title bar of the applications popup
@@ -73,6 +92,9 @@
 	// ######################## POPOUT CHAT ############################
 	$language[10]   		=   "Convertir en ventana";								// Option to pop out chat
 	$language[11]   		=   "Convertir en barra";								// Option to pop in chat
+	$language[221]			=	"Ver perfil";								// Title text for the profile link
+	$language[229]			=	"Ocultar panel izquierdo";							// Setting to hide the left panel in pop out chat
+
 
 	// ############################ CHAT ###############################
 	$language[13]  	 		=   "&eacute;ste usuario est&aacute; desconectado, pero recibir&aacute; tu mensaje cuando se conecte.";		// DISPLAYS USERNAME FIRST - Shown when a message is sent to an offline user
@@ -97,6 +119,23 @@
 	$language[90]			=	"Tu";																	// Displays on mosueover of your own chat text
 	$language[102]			=	"El mensaje no se ha enviado. &eacute;ste usuario te ha bloqueado.";						// Displays this when a user tries to send a message to another user who has them blocked
 	$language[103]			=	"El usuario ha sido bloqueado. No recibir&aacute;s m&aacute;s mensajes suyos."; // Displays when a user is blocked
+	$language[134]			=	"Desliza hacia abajo para ver mensajes nuevos.";										// Displays when a chat window is not scrolled down on a new message
+	$language[135]			=	"Ocurrio un error al enviar tu mensaje. Intentalo mas tarde.";			// Error message when a message fails to send
+	$language[146]			=	"Las Videollamadas no se encuentran disponibles.";								// Displays when mouseover the video chat icon and user is offline
+	$language[151]			=	"Ocurrio un erro al subir el archivo.";								// File upload error message
+	$language[209]			=	"Sending messages has been disabled for your user group.";				// Error message when a bad user group tries to send a message
+	$language[213]			=	"Escribe un mensaje...";													// Displayed in the input box to message someone
+	$language[214]			=	"Buscar GIFs...";														// Placeholder on the Giphy Input for GIFs
+	$language[215]			=	"Minimizar Chat";														// The title for the minimized users tab
+	$language[230]			=	"Emoticones y Personas";														// Tooltip for smiley emojis
+	$language[231]			=	"Animales y Naturaleza";														// Tooltip for animal emojis
+	$language[232]			=	"Comidas y Bebidas";															// Tooltip for food emojis
+	$language[233]			=	"ACtividades";															// Tooltip for activity emojis
+	$language[234]			=	"Viajes y Cuidades";														// Tooltip for travel emojis
+	$language[235]			=	"Objetos";																// Tooltip for object emojis
+	$language[236]			=	"Simbolos";																// Tooltip for symbol emojis
+	$language[237]			=	"Banderas";																// Tooltip for flag emojis
+	$language[238]			=	"Mas emoticones";	
 
 	// ######################### CHAT ROOMS #############################
 	$language[19]			=	"Salas de Chat";								// Displayed in the chatrooms popup and tab
@@ -114,6 +153,7 @@
 	$language[41]			=	"Mensaje privado";							// Send user a private messages
 	$language[42]			=	"Visitar Perfil";							// Visit the user's profile
 	$language[43]			=	"Invitado";									// The user's title in the chatroom - shown when the user is a guest
+	$language[212]			=	"Miembro";									// The user's title in the chatroom - shown when the user is a member
 	$language[44]			=	"Moderador";								// The user's title in the chatroom - shown when the user is a moderator
 	$language[45]			=	"Administrador";							// The user's title in the chatroom - shown when the user is an administrator
 	$language[46]			= 	"&eacute;ste usuario tiene los mensajes privados deshabilitados"; // The text that the alert box will display when a user trys to PM with blocked chat
@@ -126,6 +166,8 @@
 	$language[53]			=	"Banear usuario";									// Ban/Kick the user from the chatroom
 	$language[55]			=	"Est&aacute;s baneado en &eacute;sta sala permanentemente.";					// Shown when a user is permanently banned
 	$language[56]			=	"Est&aacute;s baneado en &eacute;sta sala durante los siguientes minutos: ";		// DISPLAYS MINUTES AFTER - shown when a user is kicked
+	$language[219]			=	" por ";									// DISPLAYS CHATROM NAME BEFORE AND MINUTES AFTER - shown when a user is temporarily banned
+	$language[220]			=	" minuto(s)";									// DISPLAYS MINUTES BEFORE - shown when a user is temporarily banned
 	$language[57]			=	"Escribe el n&uacute;mero de minutos que el usuario ser&aacute; baneado. De 0 a permanente.";	// Message to show when banning a user.  Typing 0 will permanently ban the user
 	$language[91]			=	"Escribe el nombre de la sala de chat que quieres crear.";		// Message to display when creating a chat room
 	$language[92]			=	"Abandonar la sala de chat";							// Tooltip when mousover the leave chat room icon
@@ -138,6 +180,72 @@
 	$language[106]			=	" has sido convertido en moderador por ";			// DISPLAYS USERNAME FIRST/MODERATOR AFTER - Shown after a user is made a moderator
 	$language[107]			=	" has sido expulsado de la sala por ";	// DISPLAYS USERNAME FIRST/MODERATOR AFTER - Shown after a user is kicked
 	$language[117]			=	"Convertir en ventana";							// Option to pop out the chat room
+	$language[127]			=	"There are too many users in this chat room.  Please try again later.";	// Displayed when a user tries to enter a chat room with too many online.	
+	$language[136]			=	" (Admin)";									// Will display after a username when an administrator
+	$language[137]			=	" (Mod)";									// Will display after a username when a moderator
+	$language[147]			=	"Users";									// Text to display for chat room's user group
+	$language[148]			=	"Admins";									// Text to display for chat room's admin group
+	$language[149]			=	"Mods";										// Text to display for chat room's mod group
+	$language[150]			=	"User-created chat room";					// Text for chat rooms that have no description entered
+	$language[152]			=	"Always Show Names";						// Option to always show names in a chat room
+	$language[153]			=	"Edit Welcome Message...";					// Option to edit the welcome message
+	$language[154]			=	"Enter the welcome message that you would like to be displayed when users enter this chat room. Enter a blank value for no welcome message.";	// Prompt for the mod/admin to edit the welcome message
+	$language[155]			=	"The settings have been successfully saved.";	// Notice when an admin or mod saves settings
+	$language[156]			=	" has had their moderator status taken away by ";	// DISPLAYS USERNAME FIRST/MODERATOR AFTER - Shown after a user is made a moderator
+	$language[157]			=	"Edit Description...";						// Option to edit the description
+	$language[158]			=	"Enter the description that you would like to be displayed in the chat room list.";	// Prompt for the mod/admin to edit the description
+	$language[159]			=	"Message deleted by ";						// DISPLAYS USERNAME AFTER - Shown when a chat room message is deleted in replacement of the message
+	$language[160]			=	"Delete Message";							// Tooltip to show on the delete message icon
+	$language[161]			=	"Silence User";								// Option to silence a user
+	$language[162]			=	"Enter the number in seconds that the user should be silenced for.  Maximum time is 300 seconds.";	// Message to show when silencing a user
+	$language[163]			=	" has been silenced by ";					// DISPLAYS USERNAME FIRST/MODERATOR AFTER - Shown after a user is silenced
+	$language[164]			=	"You are silenced for another ";			// DISPLAYS SECONDS AFTER - The first half of the user is silenced error message.
+	$language[165]			=	" seconds.";								// DISPLAYS SECONDS BEFORE - The second half of the user is silenced error message.
+	$language[169]			=	"You have exceeded the flood limit and must wait ";	// DISPLAYS SECONDS AFTER - The first half of the flood message
+	$language[170]			=	" more seconds to chat.";					// DISPLAYS SECONDS BEFORE - The second half of the flood message
+	$language[171]			=	"Edit Chat Flood...";						//	Option to change the chat room flood limits
+	$language[172]			=	"Select your chat flood settings";			// Text to display in the flood menu
+	$language[173]			=	"Save";										// Button text for the flood menu save
+	$language[174]			=	"message(s) every";							// In between the flood message and time
+	$language[175]			=	"second(s)";								// After the flood time
+	$language[210]			=	"Your user group is not permitted to enter this room.";	// Error displayed when a disallowed user group enters the chat room
+	$language[217]			=	"Join another chat room";					// Tooltip for the button to add another chat room
+	$language[218]			=	"You may only be in 3 chat rooms at once.";	// Error message to display when trying to enter a 4th chat room
+	$language[223]			=	"Options +";								// Options link for user created chat rooms
+	$language[224]			=	"Password";									// Label for the password on user created chat rooms
+	$language[225]			=	"Description";								// Label for the description on user created chat rooms
+	$language[226]			=	"Welcome Message";							// Label for the welcome message on user created chat rooms
+	$language[227]			=	"Featured Chat Rooms";						// Text for featured chat rooms
+	$language[228]			=	"More Chat Rooms";							// Text for other chat rooms
+	
+	// ########################## MODERATORS #############################
+	$language[166]			=	"Moderation";								// Displayed in the moderators popup and tab
+	$language[167]			=	"Report Spam/Abuse";						// Option in 1-on-1 chat settings to report a person
+	$language[168]			=	"Thank you for your report.";				// Message after a report is filed
+	$language[177]			=	"Report From";								// Header for the reports from column
+	$language[178]			=	"Report About";								// Header for the reports about column
+	$language[179]			=	"Report Time";								// Header for the reports time column
+	$language[180]			=	"Total Reports";							// DISPLAYS # OF REPORTS FIRST - Used in the title to show total number of reports
+	$language[181]			=	"Reports On User";							// The header for the reports list
+	$language[182]			=	"Someone else is already working on this report.";	// Error message when a report is already being worked on
+	$language[183]			=	"Ban User";									// Option to ban the user
+	$language[184]			=	"Warn User";								// Option to warn the user
+	$language[185]			=	"Close Report";								// Option to close the report
+	$language[186]			=	"Back to Lobby";							// Option to go back to the reports list
+	$language[187]			=	"Report #";									// DISPLAYS REPORT NUMBER AFTER - shown in the reports on user list
+	$language[188]			=	"No additional reports";				 	// Displays when no other reports are available
+	$language[189]			=	"There are no reports, hooray!";			// Displays in the lobby when there are no reports
+	$language[190]			=	"About: ";									// DISPLAYS ABOUT USER AFTER - The pretext for the user the report is about
+	$language[191]			=	"From: ";									// DISPLAYS FROM USER AFTER - The pretext for the user the report is from
+	$language[192]			=	"Previous Warnings: ";						// DISPLAYS WARNINGS AFTER - The pretext for the number of previous warnings
+	$language[193]			=	"Time: ";									// DISPLAYS TIME AFTER - The pretext for the time of the report
+	$language[194]			=	"The user was reported here";				// Displays in the report history where the user was reported
+	$language[195]			=	"Are you sure you want to PERMANENTLY ban this user?  The user will have to be unbanned from the ArrowChat admin panel.";	// Prompt when the ban user option is clicked
+	$language[196]			=	"Enter a reason for the warning.  THIS WILL BE SHOWN TO THE WARNED USER.";	// Prompt when after to enter a warning reason
+	$language[197]			=	"This user has been warned in the past 24 hours.  Are you sure you want to warn again?";	// Prompt when the user has been warning in the past 24 hours
+	$language[198]			=	"I Understand";								// The text that closes a warning notification
+	$language[199]			=	"You have been warned by a moderator. Continued spam or abuse of the chat system could lead to a permanent ban. The reason that the moderator has given for the warning is below:";	
+		
 	
 	// ######################### MOBILE CHAT #############################
 	$language[110]			=	"Chat m&oacute;vil";			// Displays in the header of the mobile chat
@@ -147,5 +255,30 @@
 	$language[114]			=	"Enviar";					// Text for the send button
 	$language[115]			=	"Nuevo";					// Text to display when a new message is received
 	$language[116]			=	"Debes entrar en tu cuenta para usar el chat m&oacute;vil";	// Text to display when user is not logged in using mobile
+	$language[126]			=	"Inicio";					// Displays as a button to return to the website when in mobile chat
+	$language[128]			=	"Salas de Chat";			// Displays in the header for the chat room list
+	$language[129]			=	"Configuracion";				// Displays in the header for the settings
+	$language[130]			=	"Mostrar salas de Chat";	// The option to show chat rooms
+	$language[131]			=	"Mostrar lista de ausentes";	// The option to show idle users
+	$language[132]			=	"On";					// The on option for a toggle
+	$language[133]			=	"Off";					// The off option for a toggle
+	$language[138]			=	"Ingresa la contraseña de la sala:";	// Text to display for the chat room password input
+	$language[139]			=	"Entrar a la sala.";		// The submit button to enter a chat room
+	$language[145]			=	"Chat movil";			// The text to appear on mobile chat tab
+	$language[176]			=	"Conversaciones recientes";			// Displays in the header for the recent chat list
+	$language[208]			=	"Escribe un mensaje...";	// Text placeholder for the message inputs
+	$language[211]			=	"Ocultar el boton de chat movil en el sitio.";	// Setting that will hide the floating mobile chat tab for the user
+	$language[216]			=	"Movil";				// Status displayed when a user is on a mobile device
+	$language[239]			=	"Iniciar Sesión";				// Text to display on a login button
+	
+		// ######################### VIDEO CHAT #############################
+	$language[200]			=	"Video Chat";					// The title for the video chat page
+	$language[201]			=	"Invitar a Video Chat";			// The title for the invite user to chat page
+	$language[202]			=	"Invita a alguien para chat de video contigo, enviandole este link.";	// Directions to invite a user to video
+	$language[203]			=	"El videochat finalizó.";	// Tokbox - Displays when the session ends
+	$language[204]			=	"Finalizar llamada";						// Tokbox - Text to end the call
+	$language[205]			=	"Invitar";						// Tokbox - Text to invite a user
+	$language[206]			=	"Activar Video";				// Tokbox - Text to turn on video
+	$language[207]			=	"Desactivar Video";				// Tokbox - Text to turn off video
 
 ?>
