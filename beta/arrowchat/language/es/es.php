@@ -248,7 +248,7 @@
 		
 	
 	// ######################### MOBILE CHAT #############################
-	$language[110]			=	"Chat m&oacute;vil";			// Displays in the header of the mobile chat
+	$language[110]			=	"Chat Móvil";			// Displays in the header of the mobile chat
 	$language[111]			=	"Usuarios conectados";			// Displays in the header for the online user list
 	$language[112]			=	"Usuarios inactivos";			// Displays in the header for the idle user list
 	$language[113]			=	"Volver";					// Displays on the back button when viewing a chat
@@ -260,11 +260,11 @@
 	$language[129]			=	"Configuracion";				// Displays in the header for the settings
 	$language[130]			=	"Mostrar salas de Chat";	// The option to show chat rooms
 	$language[131]			=	"Mostrar lista de ausentes";	// The option to show idle users
-	$language[132]			=	"On";					// The on option for a toggle
-	$language[133]			=	"Off";					// The off option for a toggle
+	$language[132]			=	"Si";					// The on option for a toggle
+	$language[133]			=	"No";					// The off option for a toggle
 	$language[138]			=	"Ingresa la contraseña de la sala:";	// Text to display for the chat room password input
 	$language[139]			=	"Entrar a la sala.";		// The submit button to enter a chat room
-	$language[145]			=	"Chat movil";			// The text to appear on mobile chat tab
+	$language[145]			=	"Chat Móvil";			// The text to appear on mobile chat tab
 	$language[176]			=	"Conversaciones recientes";			// Displays in the header for the recent chat list
 	$language[208]			=	"Escribe un mensaje...";	// Text placeholder for the message inputs
 	$language[211]			=	"Ocultar el boton de chat movil en el sitio.";	// Setting that will hide the floating mobile chat tab for the user
