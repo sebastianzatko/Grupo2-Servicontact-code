@@ -63,7 +63,7 @@
 	 * values blank and change the no friend system value.
 	 */
 	define('DB_USERTABLE','USUARIOS'); 
-	define('DB_USERTABLE_NAME',"NOMBRE"); 
+	define('DB_USERTABLE_NAME','NOMBRE, APELLIDO'); 
 	define('DB_USERTABLE_USERID','idUSUARIO'); 
 	define('DB_USERTABLE_AVATAR','FOTO_DE_PERFIL'); 
 	
