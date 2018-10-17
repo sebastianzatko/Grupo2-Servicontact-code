@@ -4,7 +4,7 @@ require_once('conexion/conectionpdo.php');
 		
 		public function buscarServiciosSinFiltro($arrayServicios){
 			$con = new Conexion();
-			
+			session_start(); //la idea es que no muestre resultados con la misma id de sesion , pero crashea al habiltiarlo
 			$servicios="";
 			$arrayServicios=json_decode($arrayServicios);
 			foreach($arrayServicios as $idservicio){
@@ -15,7 +15,10 @@ require_once('conexion/conectionpdo.php');
 				}
 				
 			}
-			
+			$idusuario="";
+			if(isset($_SESSION["id"])){
+			    $idusuario=" AND USUARIOS.idUSUARIO!=".(string)$_SESSION["id"]." ";
+			}
 			
 			$sql="SELECT
 						USUARIOS.idUSUARIO,
@@ -34,7 +37,7 @@ require_once('conexion/conectionpdo.php');
 					WHERE
 						USUARIOS.idUSUARIO = PROFESIONALES.USUARIO_idUSUARIO AND OFICIOS.PROFESIONAL_idPROFESIONAL = PROFESIONALES.idPROFESIONAL AND OFICIOS.SERVICIOS_idSERVICIO = SERVICIOS.idSERVICIO AND(
 							".$servicios."
-						) AND OFICIOS.HABILITADO=1";
+						) AND OFICIOS.HABILITADO=1".$idusuario;
 			$query = $con->prepare($sql);
 			if($query->execute()){
 				$result = $query->fetchAll();

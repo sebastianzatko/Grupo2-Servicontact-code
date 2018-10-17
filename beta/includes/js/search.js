@@ -4,23 +4,19 @@ var latlong="";
 function getIP(json) {
 	console.log("My public IP address is: ", json.ip);
 	latlong=json.loc;
+	console.log(latlong);
 }
 
 
 $(document).ready(function(){
-	$("button").click(function(){
+	$("button[type='search']").click(function(){
 		var serviciosABuscar=[];
 		$(this).toggleClass("active");
 		$("button.active").each(function(){
 			serviciosABuscar.push($(this).val());
 		});
 		
-		var ip;
 		
-		$.get('http://jsonip.com', function (res) {
-			ip= res.ip;
-		});
-		console.log(ip);
 		
 		
 		
@@ -29,12 +25,13 @@ $(document).ready(function(){
 		$("#contenido").append(strincargando);
 		$.ajax({
 			data:{ 
-				servicios:JSON.stringify(serviciosABuscar), 
+				servicios:JSON.stringify(serviciosABuscar),
+				localizacion:latlong
 			},
 			url:"includes/php/search.php",
 			type:"POST",
 			success:function(data){
-				if(data!=false){
+				if(data!==false){
 					$("#contenido").empty();
 					var datos=JSON.parse(data);
 					console.log(datos);
