@@ -9,14 +9,13 @@
 	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
 	<link href="includes/css/registro.css" rel="stylesheet">
 	<script type="text/javascript" src="includes/js/jquery.js"></script>
-	<script src="includes/js/validacion.js"></script>
 	<script type="application/javascript" src="includes/js/notify.js"></script>
 	<script src="bootstrap/bootstrap.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 	<script src="https://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
-    <script>
-    
-    </script>
+	<script src="includes/js/validacion.js"></script>
+    <script src="includes/js/scriptguardardato.js"></script>
+
 </head>
 <body>
 	<br>
@@ -76,7 +75,7 @@
     				    <select id="provincia" name="provincia" class="cinc btn btn-primary  dropdown-toggle" type="button"data-toggle="dropdown" required>Provincias
     				    <span class="caret"></span>
     				    </select>
-    				    <select id="ciudad" name="ciudad" class="cinc btn btn-primary  dropdown-toggle" type="button"data-toggle="dropdown" required>Localidades<span class="caret"></span>
+    				    <select id="ciudad" name="ciudad" class="cinc btn btn-primary  dropdown-toggle" type="button" data-toggle="dropdown" required>Localidades<span class="caret"></span>
     				    </select>
     				</div>
     				
@@ -174,85 +173,6 @@
  </form>
 </div>
 
-		<!-- Para las provincias y ciudades, es una mountrocidad lose, si alguien lo quiere cambiar es bienvenido-->
-	<script>
-	
-	$( document ).ready(function() {
-		
-		
-		$.getJSON('ciudades-argentinas.json',function(result){
-				$.each(result,function(i,provincia){
-					var opcion="<option value='"+provincia.nombre+"' data-id='"+provincia.id+"'>"+provincia.nombre+"</option>";
-					$("#provincia").append(opcion);
-				})
-				var selecionado=$("#provincia").find('option:first').data('id');
-				console.log(selecionado);
-				$.getJSON('ciudades-argentinas.json',function(result){
-				$.each(result,function(ciudad,nombreciudad){
-				if(selecionado==nombreciudad.id){
-					$.each(nombreciudad.ciudades,function(i,city){
-						
-						var opcion="<option value='"+city.nombre+"'>"+city.nombre+"</option>";
-						$("#ciudad").append(opcion);
-					})
-					
-				}
-				})
-				})
-			})		
-	});
-
-	$("#provincia").change(function(){
-		$('#ciudad').attr('disabled', false)
-		var idprovincia=$(this).find(":selected").data('id');
-		$("#ciudad option").each(function() {
-			$(this).remove();
-		});
-		$.getJSON('ciudades-argentinas.json',function(result){
-			$.each(result,function(ciudad,nombreciudad){
-				if(idprovincia==nombreciudad.id){
-					$.each(nombreciudad.ciudades,function(i,city){
-						
-						var opcion="<option value='"+city.nombre+"'>"+city.nombre+"</option>";
-						$("#ciudad").append(opcion);
-					})
-					
-				}
-			})
-		})
-	}
-);
-			
-	</script>
-
-
-		<!-- Para el placeholder de la imagen-->
-	<script>
-              function archivo(evt) {
-                  var files = evt.target.files; // FileList object
-             
-                  // Obtenemos la imagen del campo "file".
-                  for (var i = 0, f; f = files[i]; i++) {
-                    //Solo admitimos imágenes.
-                    if (!f.type.match('image.*')) {
-                        continue;
-                    }
-             
-                    var reader = new FileReader();
-             
-                    reader.onload = (function(theFile) {
-                        return function(e) {
-                          // Insertamos la imagen
-                         document.getElementById("list").innerHTML = ['<img class="thumb img-circle thumbnailmascota" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
-                        };
-                    })(f);
-             
-                    reader.readAsDataURL(f);
-                  }
-              }
-             
-              document.getElementById('fil').addEventListener('change', archivo, false);
-      </script>
 
 			  <!-- Para el error-->
 			  <!-- Posiblemente inservible
@@ -278,35 +198,9 @@
 -->
 	<!-- Para la validacion -->
 
-<script>
-	$("#formguardard").submit(function(){
-		event.preventDefault();
-		console.log(validar());
-		if(validar()){
-			
-			var formData = new FormData($(this)[0]);
-			
-			$.ajax({
-				data:formData,
-				url:this.action,
-				type:this.method,
-				processData: false,
-				contentType: false,
-				success: function (data) {
-					if(data=="Se ha registrado exitosamente"){
-						$('#ventana').modal('show'); 
-						$.notify(data, "success");
-					}else{
-						$.notify(data, "error",{
-							autoHide: false,
-							clickToHide: true});
-						console.log(data);
-					}
-				}
-			})
-		}
-	});
-</script>
 
 </body>
+
+	<script src="includes/js/scriptguardardato.js"></script>
+
 </html>
