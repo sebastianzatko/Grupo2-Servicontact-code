@@ -180,6 +180,61 @@
     <br>
 	 
   </div>
+   <div class="container-fluid">
+    <br>
+    <div class="col-md-5">
+      <div class="media">
+        <div class="media-left">
+          <a href="profesionnal.php"><img src="images/juan.jpg" style="width: 90px;height: 90px;"></a>
+        </div>
+        <div class="media-body">
+          <p>juan gonzales</p>
+          <p>asiestaria copado q devuelva tipo facebook</p>
+        </div>
+      </div>
+      <div class="media">
+        <div class="media-left">
+          <a href="profesionnal.php"><img src="images/jose.jpg" style="width: 90px;height: 90px;"></a>
+        </div>
+        <div class="media-body">
+          <p>ramon</p>
+          <p>albanil borrachin los viernes nunca viene</p>
+        </div>
+      </div>
+      <div class="media">
+        <div class="media-left">
+          <a href="profesionnal.php"><img src="images/ramon.jpg" style="width: 90px;height: 90px;"></a>
+        </div>
+        <div class="media-body">
+          <p>jose</p>
+          <p>albanil borrachin los sabados nunca viene</p>
+        </div>
+      </div>
+      <div class="media">
+        <div class="media-left">
+          <a href="profesionnal.php"><img src="images/ramon.jpg" style="width: 90px;height: 90px;"></a>
+        </div>
+        <div class="media-body">
+          <p>jose</p>
+          <p>albanil borrachin los sabados nunca viene</p>
+        </div>
+      </div>
+       <div class="media">
+        <div class="media-left">
+          <a href="profesionnal.php"><img src="images/jose.jpg" style="width: 90px;height: 90px;"></a>
+        </div>
+        <div class="media-body">
+          <p>ramon</p>
+          <p>albanil borrachin los viernes nunca viene</p>
+        </div>
+      </div>
+    </div>
+
+    <br>
+  
+      
+    
+  </div>
    <center><nav aria-label="...">
   <ul class="pagination">
     <li class="page-item disabled">
