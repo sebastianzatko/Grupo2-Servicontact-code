@@ -209,7 +209,9 @@ a{
  }
 
  @media (max-width: 750px){
-   
+   .ocultar{
+        display: none;
+    }
     .perfil{
 
          margin-left:0;

@@ -33,3 +33,11 @@ hgroup h2.lead { font: normal normal 1.125em "Roboto",Arial,Verdana,sans-serif; 
 #contenido{
 	margin-top:50px;
 }
+
+@media (max-width: 760px)
+{
+	.ocultar{
+		display: none;
+	}
+}
+
