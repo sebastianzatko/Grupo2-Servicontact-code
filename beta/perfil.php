@@ -13,14 +13,10 @@ if (isset($_SESSION["id"])){
 					if(mysqli_num_rows($resultado)==1){
 					
 						$row = mysqli_fetch_assoc($resultado);
-					}
-					else{header('Location: index.php');}
-				}
-			}else{header('Location: index.php');}
-		else{header('Location: index.php');}
-}
-
-else{header('Location: index.php');}
+					}else{header('Location: index.php');}
+			}else{header('Location: index.php');}	
+		}else{header('Location: index.php');}
+}else{header('Location: index.php');}
     	    
 ?>
 
