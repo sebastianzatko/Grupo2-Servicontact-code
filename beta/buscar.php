@@ -120,11 +120,7 @@
 
 
 <script type="text/javascript">
-  function paginate (array, page_size, page_number) {
-  --page_number; // because pages logically start with 1, but technically with 0
-  return array.slice(page_number * page_size, (page_number + 1) * page_size);
-}
-var datos=[];
+  
 var index="";
 var latlong="";
 
@@ -173,58 +169,19 @@ var options = [];
 			if(data!==false){
 				$("#contenido").empty();
 			    console.log(data);
-				datos=JSON.parse(data);
-			    var datosseparados=paginate(datos, 2, 1)
-			    console.log(Math.ceil(datos.length/2));
-			    var limite=Math.ceil(datos.length/2);
-			    for(var x=0;x<limite;x++){
-			        $("#paginacion").append("<li class='page-item'><a class='page-link' value="+(x+1)+" href='#'>"+(x+1)+"</a></li>");
-			        
-			    }
-			    //nada , no llegue
-			    $(".page-link").click(function(){
-			        index=$(this).val();
-			        var separadosporpagina=paginate(datos, 2, index);
-			        for(var i=0;i<datosseparados.length;i++){
-					    $("#contenido").empty();
-    					var mediaright="";
-    					for(var y=0;y<datosseparados[i][6].length;y++){
-    						var puntuacionfinal="";
-    						if(datosseparados[i][4][y]!=null && datosseparados[i][5][y]!=null){
-    							puntuacionfinal=((parseInt(datosseparados[i][4][y])/parseInt(datosseparados[i][5][y]))/5)*100;
-    						
-    							var puntuacionfinalRedondeado=`${Math.round(puntuacionfinal / 10) * 10}%`;
-    						
-    							puntuacionfinal="<div class='stars-outer'><div class='stars-inner' style=width:"+String(puntuacionfinalRedondeado)+"!important></div></div>";
-    							
-    								
-    							
-    						}else{
-    							puntuacionfinal="<b>Este servicio todavia no ha sido calificado</b>";
-    						}
-    						mediaright=mediaright+"<li><i class='"+datosseparados[i][7][y]+"'></i><span>"+datosseparados[i][6][y]+":"+puntuacionfinal+"</span></li>";
-    					}
-    					
-    					
-    					
-    					
-    					var htmlstring="<section class='hidden-xs col-sm-12 col-md-12 thumbnail'><article class='search-result row'><div class='col-xs-12 col-sm-3 col-md-3'><a href='#' title='Lorem ipsum' class='thumbnail'><img src='"+datosseparados[i][3]+"' alt='"+datosseparados[i][1]+" "+datosseparados[i][2]+"' /></a></div><div class='col-xs-12 col-sm-3 col-md-3 excerpet separado'><h3><a href='#' title=''>"+datosseparados[i][1]+" "+datosseparados[i][2]+"</a></h3></div><div class='col-xs-12 col-sm-6 col-md-6'><ul class='meta-search'>"+mediaright+"</ul></div></article></section><div class='media col-xs-12 hidden-sm hidden-md hidden-lg'><div class='media-left'><a href='profesionnal.php'><img src='"+datosseparados[i][3]+"' style='width: 90px;height: 90px;'></a></div><div class='media-body'><p>"+datosseparados[i][1]+" "+datosseparados[i][2]+"</p><p>"+mediaright+"</p></div></div>";
-    					
-    				    
-    				
-    					$("#contenido").append(htmlstring);
-    					mediaright="";
-			        }
-			    });
+				var datos=JSON.parse(data);
 			    
-				for(var i=0;i<datosseparados.length;i++){
+			    //nada , no llegue
+			    
+			    
+				for(var i=0;i<datos.length;i++){
 					
 					
 					var mediaright="";
-					for(var y=0;y<datosseparados[i][6].length;y++){
+					for(var y=0;y<datos[i][6].length;y++){
 						var puntuacionfinal="";
-						if(datosseparados[i][4][y]!=null && datosseparados[i][5][y]!=null){
-							puntuacionfinal=((parseInt(datosseparados[i][4][y])/parseInt(datosseparados[i][5][y]))/5)*100;
+						if(datos[i][4][y]!=null && datos[i][5][y]!=null){
+							puntuacionfinal=((parseInt(datos[i][4][y])/parseInt(datos[i][5][y]))/5)*100;
 						
 							var puntuacionfinalRedondeado=`${Math.round(puntuacionfinal / 10) * 10}%`;
 						
@@ -235,13 +192,13 @@ var options = [];
 						}else{
 							puntuacionfinal="<b>Este servicio todavia no ha sido calificado</b>";
 						}
-						mediaright=mediaright+"<li><i class='"+datosseparados[i][7][y]+"'></i><span>"+datosseparados[i][6][y]+":"+puntuacionfinal+"</span></li>";
+						mediaright=mediaright+"<li><i class='"+datos[i][7][y]+"'></i><span>"+datos[i][6][y]+":"+puntuacionfinal+"</span></li>";
 					}
 					
 					
 					
 					
-					var htmlstring="<section class='hidden-xs col-sm-12 col-md-12 thumbnail'><article class='search-result row'><div class='col-xs-12 col-sm-3 col-md-3'><a href='#' title='Lorem ipsum' class='thumbnail'><img src='"+datosseparados[i][3]+"' alt='"+datosseparados[i][1]+" "+datosseparados[i][2]+"' /></a></div><div class='col-xs-12 col-sm-3 col-md-3 excerpet separado'><h3><a href='#' title=''>"+datosseparados[i][1]+" "+datosseparados[i][2]+"</a></h3></div><div class='col-xs-12 col-sm-6 col-md-6'><ul class='meta-search'>"+mediaright+"</ul></div></article></section><div class='media col-xs-12 hidden-sm hidden-md hidden-lg'><div class='media-left'><a href='profesionnal.php'><img src='"+datosseparados[i][3]+"' style='width: 90px;height: 90px;'></a></div><div class='media-body'><p>"+datosseparados[i][1]+" "+datosseparados[i][2]+"</p><p>"+mediaright+"</p></div></div>";
+					var htmlstring="<section class='hidden-xs col-sm-12 col-md-12 thumbnail'><article class='search-result row'><div class='col-xs-12 col-sm-3 col-md-3'><a href='profesionnal.php?idprofile="+datos[i][0]+"' title='Foto de perfil' class='thumbnail'><img src='"+datos[i][3]+"' alt='"+datos[i][1]+" "+datos[i][2]+"' /></a></div><div class='col-xs-12 col-sm-3 col-md-3 excerpet separado'><h3><a  href='profesionnal.php?idprofile="+datos[i][0]+"' title=''>"+datos[i][1]+" "+datos[i][2]+"</a></h3></div><div class='col-xs-12 col-sm-6 col-md-6'><ul class='meta-search'>"+mediaright+"</ul></div></article></section><div class='media col-xs-12 hidden-sm hidden-md hidden-lg'><div class='media-left'><a href='profesionnal.php?idprofile="+datos[i][0]+"' ><img src='"+datos[i][3]+"' style='width: 90px;height: 90px;'></a></div><div class='media-body'><a class='redireccionamiento' href='profesionnal.php?idprofile="+datos[i][0]+"'><p>"+datos[i][1]+" "+datos[i][2]+"</p></a><p>"+mediaright+"</p></div></div>";
 					
 				    
 				
