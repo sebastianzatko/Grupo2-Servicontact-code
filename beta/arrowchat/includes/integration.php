@@ -127,7 +127,7 @@
 	{
 		global $base_url;
 		
-		return $base_url . '../perfil.php?id=' . $link;
+		return $base_url . '../profesionnal.php?idprofile=' . $link;
 	}
 
 	/**
