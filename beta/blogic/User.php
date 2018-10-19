@@ -16,12 +16,12 @@ define('__DIRECTORIO__', 'https://beta.changero.online');
 
 
 
-        public function ingresar($email,$contrasena){
+        public function ingresar($email,$contrasena,$lat,$long){
             include "cdata/datauser.php";
 
             $datos=new d_user;
             if(strlen($email)<120){
-                if($datos->dataIngresar($email,$contrasena)){
+                if($datos->dataIngresar($email,$contrasena,$lat,$long)){
                     return true;
                 }else{
                     return false;

@@ -6,28 +6,33 @@
     <!DOCTYPE html>
     <html>
     <head>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
     	<title>Log In-Changero</title>
     	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
     	<link href="includes/css/stylo.css" rel="stylesheet">
     	<script src="includes/js/jquery-3.3.1.min.js"></script>
     	<script type="application/javascript" src="includes/js/notify.js"></script>
+    	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+		<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    	<script src="includes/js/validacioningreso.js"></script>
+    	
     </head>
     <body>
     	<br>
     	<div class="container">
     		
     	<center><img src="images/trabajos.png" class="logo"></center>
-     	<form method="POST" action="login.php">
+     	<form method="POST" id="formingresar">
      		<center>
      		<div class="form-group">
      		
-     			<input type="email" name="login" class="form-control" required  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required title="Debe introducir una direccion de correo valido" minlenght="10" maxlenght="120" placeholder="Correo Electronico" >
+     			<input type="email" name="login" class="form-control" required  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required title="Debe introducir una direccion de correo valido" minlenght="10" maxlenght="120" id="email" placeholder="Correo Electronico" >
      			
      		
      		<br>
      		
-     			<input type="password" name="contra" class="form-control" minlenght="8" maxlenght="60" required  placeholder="password">
+     			<input type="password" name="contra" class="form-control" id="contraseña" minlenght="8" maxlenght="60" required  placeholder="password">
      			
      		<br>
     
@@ -41,7 +46,7 @@
      </form>
     </div>
     
-     <!-- Para el error-->
+     <!-- Para el error, esta obsoleto
     <script>
     	
     	$(document).ready(function(){
@@ -58,6 +63,13 @@
     	
     
     </script>
+    
+    
+    -->
+    
+    
+    <!-- Para localizacion -->
+    <script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>
     </body>
     
     </html>

@@ -92,7 +92,7 @@ require_once('email.php');
                 echo $error;
             }
         }
-        public function dataIngresar($email,$contrasena){
+        public function dataIngresar($email,$contrasena,$lat,$long){
             require "conexion/conection.php";
             $sql="SELECT idUSUARIO,CONTRASENA,NOMBRE,FOTO_DE_PERFIL,TIPO_USUARIO FROM USUARIOS WHERE MAIL=? AND ESTADO<>0 LIMIT 1";
             if($stmt=$mysqli->prepare($sql)){
@@ -119,6 +119,7 @@ require_once('email.php');
                             require "dataprofessional.php";
                             $profesional=new dataprofessional;
                             $_SESSION['idpro']=$profesional->get_idprofesional($_SESSION["id"]);
+                            $profesional->actualizarcoordenadas($lat,$long,$_SESSION['idpro']);
                         }
 						$_SESSION["email"]=$email;
                         return true;

@@ -8,12 +8,11 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
   <script src="includes/js/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="includes/css/sidebarNavigation.css">
-  <script src="includes/js/sidebarNavigation.js"></script>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="includes/css/muro.css" rel="stylesheet">
   <link href="includes/css/diseno.css" rel="stylesheet">
@@ -21,9 +20,14 @@
   <script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
   <script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
   <script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="includes/js/switchery.js"></script>
-  <link rel="stylesheet" type="text/css" href="includes/css/switchery.css">
+  
   <link href="includes/css/buscar.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="includes/css/sidebarNavigation.css">
+  <script src="includes/js/sidebarNavigation.js"></script>
+    <script type="text/javascript" src="includes/js/switchery.js"></script>
+     <link rel="stylesheet" type="text/css" href="includes/css/switchery.css">
+  <link rel="stylesheet" href="includes/css/estrellas.css" />
+    <link rel="stylesheet" href="includes/css/resultadosbusqueda.css" />
 </head>
 <body>
 <nav id="nav" class="navbar navbar-dark bg-primary sidebarNavigation" data-sidebarClass="navbar-inverse">
@@ -106,61 +110,49 @@
 </nav>
 
 		
-      <div class="container-fluid">
+      <div class="container-fluid" id="contenedorcontenido ">
     <br>
-  <div class="ocultar">
-      <div class="row">
-      	<?php
-      			require "blogic/Services.php";
-      			
-      		
-      			$servicios=new services;
-      			
-      			$listaservicios=$servicios->getservicios();
-      			
-      			$dataAr = json_decode($listaservicios , true);
-                  
-
-      			foreach($dataAr as $data)
-      			{
-      			    
-      				
-      				echo "<button type='search' name='services[]' class='btn btn-primary' value='".$data[0]."'  /><span class='spa'> <i class='".$data[2]."'></i> " .$data[1]."</span></button>";
-      				
-
-      			}
-      			
-      		?>
-      		</div>
-    </div>
-
+  
     <div class="container1">
               <div class="row">
-                          <div class="col-lg-12">
+                          <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
                              <div class="button-group">
                                <center> <button type="button" id="buscar2" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Buscar servicios <span class="caret"></span></button>
                         <ul class="dropdown-menu" style="width: 100%;">
-                          <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"  class="js-switch"/>&nbsp; Electrisita</a></li>
-                          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox" class="js-switch"/>&nbsp; GASISITA</a></li>
-                          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox" class="js-switch"/>&nbsp; PLOMERO</a></li>
-                          <li><a href="#" class="js-switch" class="small" data-value="option4" tabIndex="-1"><input type="checkbox" class="js-switch"/>&nbsp; ALBAÑIL</a></li>
-                          <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox" class="js-switch"/>&nbsp; CERRAJERO</a></li>
-                          <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox" class="js-switch"/>&nbsp; CARPINTERO</a></li>
-                           <script type="text/javascript">
+                            
+                        <?php
+                            
+                            
+                            require "blogic/Services.php";
+			
+			
+                			$servicios=new services;
+                			
+                			$listaservicios=$servicios->getservicios();
+                			
+                			$dataAr = json_decode($listaservicios , true);
+                            foreach($dataAr as $data)
+                  			{
+                  			    
+                  				
+                                                    
+                                
+                                echo "<li><a class='small' data-value='option1' data-id='".$data[0]."' tabIndex='-1'><input type='checkbox' class='js-switch' value='".$data[0]."'/><span class='spa'> <i class='".$data[2]."'></i> " .$data[1]."</span></a></li>";
+                  			}
+                        
+                        
+                        ?>
+                        <script type="text/javascript">
             
                               var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
-
                                   elems.forEach(function(html) {
                                     
                                     var switchery = new Switchery (html, {disabled: true ,
-
-
                                      color              :  '#3BBD4B',
                                      secondaryColor:'#CBCDCE',
                                      size: 'small'
                                       });
                                        
-
                                         });
                             </script>
                         </ul></center>
@@ -180,103 +172,169 @@
     <br>
 	 
   </div>
-   <div class="container-fluid">
-    <br>
-    <div class="col-md-5">
-      <div class="media">
-        <div class="media-left">
-          <a href="profesionnal.php"><img src="images/juan.jpg" style="width: 90px;height: 90px;"></a>
-        </div>
-        <div class="media-body">
-          <p>juan gonzales</p>
-          <p>asiestaria copado q devuelva tipo facebook</p>
-        </div>
-      </div>
-      <div class="media">
-        <div class="media-left">
-          <a href="profesionnal.php"><img src="images/jose.jpg" style="width: 90px;height: 90px;"></a>
-        </div>
-        <div class="media-body">
-          <p>ramon</p>
-          <p>albanil borrachin los viernes nunca viene</p>
-        </div>
-      </div>
-      <div class="media">
-        <div class="media-left">
-          <a href="profesionnal.php"><img src="images/ramon.jpg" style="width: 90px;height: 90px;"></a>
-        </div>
-        <div class="media-body">
-          <p>jose</p>
-          <p>albanil borrachin los sabados nunca viene</p>
-        </div>
-      </div>
-      <div class="media">
-        <div class="media-left">
-          <a href="profesionnal.php"><img src="images/ramon.jpg" style="width: 90px;height: 90px;"></a>
-        </div>
-        <div class="media-body">
-          <p>jose</p>
-          <p>albanil borrachin los sabados nunca viene</p>
-        </div>
-      </div>
-       <div class="media">
-        <div class="media-left">
-          <a href="profesionnal.php"><img src="images/jose.jpg" style="width: 90px;height: 90px;"></a>
-        </div>
-        <div class="media-body">
-          <p>ramon</p>
-          <p>albanil borrachin los viernes nunca viene</p>
-        </div>
-      </div>
-    </div>
-
-    <br>
+   
   
       
     
   </div>
    <center><nav aria-label="...">
-  <ul class="pagination">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Anterior</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item active">
-      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Siguiente</a>
-    </li>
+  <ul class="pagination" id="paginacion">
+    
+    
+    
   </ul>
 </nav></center>
+
+    
+    
 </body>
  
 
+
 <script type="text/javascript">
-  var options = [];
+  function paginate (array, page_size, page_number) {
+  --page_number; // because pages logically start with 1, but technically with 0
+  return array.slice(page_number * page_size, (page_number + 1) * page_size);
+}
+var datos=[];
+var index="";
+var latlong="";
 
+function getIP(json) {
+    console.log("la concha de tu madre");
+	console.log("My public IP address is: ", json.ip);
+	latlong=json.loc;
+	console.log(latlong);
+}
 $( '.dropdown-menu a' ).on( 'click', function( event ) {
+    return false;
+})
 
-   var $target = $( event.currentTarget ),
-       val = $target.attr( 'data-value' ),
-       $inp = $target.find( 'input' ),
-       idx;
+var options = [];
+    $( '.dropdown-menu a' ).on( 'click', function( event ) {
+       var $target = $( event.currentTarget ),
+           val = $target.attr( 'data-id' ),
+           $inp = $target.find( 'input' ),
+           idx;
+       if ( ( idx = options.indexOf( val ) ) > -1 ) {
+          options.splice( idx, 1 );
+          setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
+       } else {
+          options.push( val );
+          setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
+       }
+       $( event.target ).blur();
+         
+        	var serviciosABuscar=options;
+	
+	console.log(serviciosABuscar);
+	
 
-   if ( ( idx = options.indexOf( val ) ) > -1 ) {
-      options.splice( idx, 1 );
-      setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
-   } else {
-      options.push( val );
-      setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
-   }
-
-   $( event.target ).blur();
-      
-   console.log( options );
-   return false;
-});
+	
+	$("#contenido").empty();
+	var strincargando="<div class='row'><h3>Cargando datos... Por favor espere.</h3><div class='progress progress-striped active page-progress-bar'><div class='progress-bar' style='width: 100%;'></div></div></div>";
+	$("#contenido").append(strincargando);
+	$.ajax({
+		data:{ 
+			servicios:JSON.stringify(serviciosABuscar),
+			localizacion:latlong
+		},
+		url:"includes/php/search.php",
+		type:"POST",
+		success:function(data){
+			if(data!==false){
+				$("#contenido").empty();
+			    console.log(data);
+				datos=JSON.parse(data);
+			    var datosseparados=paginate(datos, 2, 1)
+			    console.log(Math.ceil(datos.length/2));
+			    var limite=Math.ceil(datos.length/2);
+			    for(var x=0;x<limite;x++){
+			        $("#paginacion").append("<li class='page-item'><a class='page-link' value="+(x+1)+" href='#'>"+(x+1)+"</a></li>");
+			        
+			    }
+			    //nada , no llegue
+			    $(".page-link").click(function(){
+			        index=$(this).val();
+			        var separadosporpagina=paginate(datos, 2, index);
+			        for(var i=0;i<datosseparados.length;i++){
+					    $("#contenido").empty();
+    					var mediaright="";
+    					for(var y=0;y<datosseparados[i][6].length;y++){
+    						var puntuacionfinal="";
+    						if(datosseparados[i][4][y]!=null && datosseparados[i][5][y]!=null){
+    							puntuacionfinal=((parseInt(datosseparados[i][4][y])/parseInt(datosseparados[i][5][y]))/5)*100;
+    						
+    							var puntuacionfinalRedondeado=`${Math.round(puntuacionfinal / 10) * 10}%`;
+    						
+    							puntuacionfinal="<div class='stars-outer'><div class='stars-inner' style=width:"+String(puntuacionfinalRedondeado)+"!important></div></div>";
+    							
+    								
+    							
+    						}else{
+    							puntuacionfinal="<b>Este servicio todavia no ha sido calificado</b>";
+    						}
+    						mediaright=mediaright+"<li><i class='"+datosseparados[i][7][y]+"'></i><span>"+datosseparados[i][6][y]+":"+puntuacionfinal+"</span></li>";
+    					}
+    					
+    					
+    					
+    					
+    					var htmlstring="<section class='hidden-xs col-sm-12 col-md-12 thumbnail'><article class='search-result row'><div class='col-xs-12 col-sm-3 col-md-3'><a href='#' title='Lorem ipsum' class='thumbnail'><img src='"+datosseparados[i][3]+"' alt='"+datosseparados[i][1]+" "+datosseparados[i][2]+"' /></a></div><div class='col-xs-12 col-sm-3 col-md-3 excerpet separado'><h3><a href='#' title=''>"+datosseparados[i][1]+" "+datosseparados[i][2]+"</a></h3></div><div class='col-xs-12 col-sm-6 col-md-6'><ul class='meta-search'>"+mediaright+"</ul></div></article></section><div class='media col-xs-12 hidden-sm hidden-md hidden-lg'><div class='media-left'><a href='profesionnal.php'><img src='"+datosseparados[i][3]+"' style='width: 90px;height: 90px;'></a></div><div class='media-body'><p>"+datosseparados[i][1]+" "+datosseparados[i][2]+"</p><p>"+mediaright+"</p></div></div>";
+    					
+    				    
+    				
+    					$("#contenido").append(htmlstring);
+    					mediaright="";
+			        }
+			    });
+			    
+				for(var i=0;i<datosseparados.length;i++){
+					
+					
+					var mediaright="";
+					for(var y=0;y<datosseparados[i][6].length;y++){
+						var puntuacionfinal="";
+						if(datosseparados[i][4][y]!=null && datosseparados[i][5][y]!=null){
+							puntuacionfinal=((parseInt(datosseparados[i][4][y])/parseInt(datosseparados[i][5][y]))/5)*100;
+						
+							var puntuacionfinalRedondeado=`${Math.round(puntuacionfinal / 10) * 10}%`;
+						
+							puntuacionfinal="<div class='stars-outer'><div class='stars-inner' style=width:"+String(puntuacionfinalRedondeado)+"!important></div></div>";
+							
+								
+							
+						}else{
+							puntuacionfinal="<b>Este servicio todavia no ha sido calificado</b>";
+						}
+						mediaright=mediaright+"<li><i class='"+datosseparados[i][7][y]+"'></i><span>"+datosseparados[i][6][y]+":"+puntuacionfinal+"</span></li>";
+					}
+					
+					
+					
+					
+					var htmlstring="<section class='hidden-xs col-sm-12 col-md-12 thumbnail'><article class='search-result row'><div class='col-xs-12 col-sm-3 col-md-3'><a href='#' title='Lorem ipsum' class='thumbnail'><img src='"+datosseparados[i][3]+"' alt='"+datosseparados[i][1]+" "+datosseparados[i][2]+"' /></a></div><div class='col-xs-12 col-sm-3 col-md-3 excerpet separado'><h3><a href='#' title=''>"+datosseparados[i][1]+" "+datosseparados[i][2]+"</a></h3></div><div class='col-xs-12 col-sm-6 col-md-6'><ul class='meta-search'>"+mediaright+"</ul></div></article></section><div class='media col-xs-12 hidden-sm hidden-md hidden-lg'><div class='media-left'><a href='profesionnal.php'><img src='"+datosseparados[i][3]+"' style='width: 90px;height: 90px;'></a></div><div class='media-body'><p>"+datosseparados[i][1]+" "+datosseparados[i][2]+"</p><p>"+mediaright+"</p></div></div>";
+					
+				    
+				
+					$("#contenido").append(htmlstring);
+					mediaright="";
+					
+				}
+			}else{
+				console.log(data);
+				var contenidoerrorstring="<div class='row'><div class='col-md-12'><div class='error-template'><h1>Oops!</h1><h2>404 No Encontrado</h2><div class='error-details'>Lo sentimos pero ha ocurrido un error en la busqueda</div><div class='error-actions'><a href='index.php' class='btn btn-primary btn-lg'><span class='glyphicon glyphicon-home'></span>Volver al home </a></div></div></div></div>";
+				$("#contenido").addClass("mensaje");
+				$("#contenido").empty();
+				$("#contenido").append(contenidoerrorstring);
+				
+			}
+			
+		}
+	});
+	
+       
+    });
 </script>
-
 <script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>
 </html>

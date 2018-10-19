@@ -69,6 +69,15 @@ class dataprofessional{
 	        return $datos;
         }
     }
+    public function actualizarcoordenadas($lat,$long,$idprofesional){
+        $con=new Conexion();
+        $query=$con->prepare("UPDATE PROFESIONALES SET LATITUD=? , LONGUITUD=? WHERE idPROFESIONAL=?");
+        if($query->execute(array($lat,$long,$idprofesional))){
+            return true;
+        }else{
+            return false;
+        }
+    }
     
 }
 

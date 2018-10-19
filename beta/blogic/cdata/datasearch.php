@@ -2,7 +2,7 @@
 require_once('conexion/conectionpdo.php');
 	class d_search{
 		
-		public function buscarServiciosSinFiltro($arrayServicios){
+		public function buscarServiciosSinFiltro($arrayServicios,$lat,$long){
 			$con = new Conexion();
 			session_start(); //la idea es que no muestre resultados con la misma id de sesion , pero crashea al habiltiarlo
 			$servicios="";

@@ -148,7 +148,15 @@ a{
 
 }
 #buscar2{
-    display: none;
+    width: 100%;
+    font-size:20px;
+    color:white;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background:#055C81;
+    display: block;
+    margin-top: 5px;
 }
 .nav>li>a:focus, .nav>li>a:hover {
     text-decoration: none;
@@ -296,13 +304,13 @@ a{
     width: 100%;
 }
     
- }
+ 
 
 
  @media(max-width: 650px){
     
     .dropdown-menu li a{
-         color: white;
+         /*color: white;*/
         }
         .imo{
        height: 250px;
