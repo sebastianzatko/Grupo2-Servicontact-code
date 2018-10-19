@@ -24,11 +24,15 @@
  
   <link rel="stylesheet" type="text/css" href="includes/css/sidebarNavigation.css">
   <script src="includes/js/sidebarNavigation.js"></script>
-    <script type="text/javascript" src="includes/js/switchery.js"></script>
-     <link rel="stylesheet" type="text/css" href="includes/css/switchery.css">
+  <script type="text/javascript" src="includes/js/switchery.js"></script>
+  <link rel="stylesheet" type="text/css" href="includes/css/switchery.css">
   <link rel="stylesheet" href="includes/css/estrellas.css" />
-    <link rel="stylesheet" href="includes/css/resultadosbusqueda.css" />
-     <link href="includes/css/buscar.css" rel="stylesheet">
+  <link rel="stylesheet" href="includes/css/resultadosbusqueda.css" />
+  <link href="includes/css/buscar.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />
+	<script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
+	<script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
 </head>
 <body>
 <?php
@@ -223,4 +227,6 @@ var options = [];
     });
 </script>
 <script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>
+<script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
+<script type="text/javascript" src="https://www.arrowchat.com/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>
 </html>

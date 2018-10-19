@@ -53,8 +53,10 @@ else{header('Location: index.php');}
    <link rel="stylesheet" type="text/css" href="includes/css/fotos.css">
  <link rel="stylesheet" type="text/css" href=" https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
   <link href="includes/css/diseno.css" rel="stylesheet">
- 
- 
+  <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />
+	<script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
+	<script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
 </head>
 <body>
  
@@ -343,4 +345,6 @@ else{header('Location: index.php');}
     baguetteBox.run('.tz-gallery');
 </script>
 </body>
+<script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
+<script type="text/javascript" src="https://www.arrowchat.com/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>
 </html>

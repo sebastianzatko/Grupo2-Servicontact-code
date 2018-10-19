@@ -269,7 +269,7 @@
 	$language[208]			=	"Escribe un mensaje...";	// Text placeholder for the message inputs
 	$language[211]			=	"Ocultar el boton de chat movil en el sitio.";	// Setting that will hide the floating mobile chat tab for the user
 	$language[216]			=	"Movil";				// Status displayed when a user is on a mobile device
-	$language[239]			=	"Iniciar Sesión";				// Text to display on a login button
+	$language[239]			=	"Iniciar Sesi&oacute;n";				// Text to display on a login button
 	
 		// ######################### VIDEO CHAT #############################
 	$language[200]			=	"Video Chat";					// The title for the video chat page

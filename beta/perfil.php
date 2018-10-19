@@ -43,7 +43,10 @@ if (isset($_SESSION["id"])){
             	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 				<script src="https://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
             	<script src="includes/js/validacion_formperfil.js"></script>
-             
+				<link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />
+				<script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
+				<script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
+				<script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
              
             </head>
             <body>
@@ -359,5 +362,7 @@ if (isset($_SESSION["id"])){
 
 </script>
 </body>
+<script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
+<script type="text/javascript" src="https://www.arrowchat.com/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>
 </html>
 <?php ?>

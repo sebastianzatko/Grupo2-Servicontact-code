@@ -15,7 +15,8 @@
               $responsiveprofile= "
               <ul class='nav navbar-nav navbar-right'>
                   <li><a href=''><i class='icons5 far fa-star'></i> Mi puntuacion</a></li>
-                  <li><a href='#'><i class='icons far fa-comments'></i></a></li>
+                  <li class='hidden-xs hidden-sm'><a href=''><i class='icons far fa-comments'></i></a></li>
+                  <li class='hidden-md hidden-lg'><a href='arrowchat/public/mobile/'><i class='icons far fa-comments'></i> Chat Móvil</a></li>
                   <li><a href='#'><i class='icons1 far fa-bell'></i></a></li>
                   <li class='dropdown'>
                     <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><i class='icons2 far fa-user'></i> Mi perfil<span class='caret'></span></a>
