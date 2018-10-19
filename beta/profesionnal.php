@@ -2,32 +2,32 @@
 session_start();
 
 if(isset($_GET["idprofile"])){
-	
-		$idactual=$_GET["idprofile"];
-		require "blogic/User.php";
-		$user=new b_user;
-		$resultado=$user->obtenerDatosDeUsuario($idactual);
-		
-			if(mysqli_num_rows($resultado)==1){
-			
-				$row = mysqli_fetch_assoc($resultado);
-				
-				require "blogic/Professional.php";
-			    $profesional=new Professional;
-				$idprofesional=$profesional->getid($idactual);
-			    $serviciosactivos=$profesional->get_servicios((int)$idprofesional);
-			    $dataSer=json_decode($serviciosactivos , true);
-				
-				
-			}
-			else{header('Location: index.php');}
-		}
-	
+  
+    $idactual=$_GET["idprofile"];
+    require "blogic/User.php";
+    $user=new b_user;
+    $resultado=$user->obtenerDatosDeUsuario($idactual);
+    
+      if(mysqli_num_rows($resultado)==1){
+      
+        $row = mysqli_fetch_assoc($resultado);
+        
+        require "blogic/Professional.php";
+          $profesional=new Professional;
+        $idprofesional=$profesional->getid($idactual);
+          $serviciosactivos=$profesional->get_servicios((int)$idprofesional);
+          $dataSer=json_decode($serviciosactivos , true);
+        
+        
+      }
+      else{header('Location: index.php');}
+    }
+  
 else{header('Location: index.php');}
 
 
 
-    	    
+          
 ?>
 
 
@@ -35,10 +35,10 @@ else{header('Location: index.php');}
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+  <title></title>
   
 
-	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -57,32 +57,16 @@ else{header('Location: index.php');}
  
 </head>
 <body>
-  <script type="text/javascript">
+ 
+  <?php
+    require "templates/menu.php";
     
-    function enviar(){
-     var buscar1= document.getElementById('buscar1').value;
-
-    var datean ='buscar1=' =buscar1;
-    $.ajax({
-      type:'POST',
-      url:'ima.php',
-      data:datean,
-      success:function(resp){
-          $("#respa").html(resp);
-      }
-    });
-    return false
-    }
-  </script>
-	<?php
-		require "templates/menu.php";
-		
-		echo $htmlmenu;
-		
-	?>
+    echo $htmlmenu;
+    
+  ?>
 <img src="images/casa.jpg" class="imo">
 <img src="<?php echo $row["FOTO_DE_PERFIL"]; ?>" class="imagen">
- 
+ <a  id="nombr" href=""><?php echo $row["NOMBRE"]." ".$row["APELLIDO"]; ?></a>
  <div class=" container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -91,7 +75,7 @@ else{header('Location: index.php');}
 
 
         <ul  class="ula nav navbar-nav">
-           <li><a class="btn btn-default" id="nombr" href=""><?php echo $row["NOMBRE"]." ".$row["APELLIDO"]; ?></a></li>
+           
           <li><i class="iconsn far fa-user"></i><a class="btn btn-primary" id="letras" data-toggle="modal" href="#ventana">Informacion</a></li>
            <li><i class="iconsn2 far fa-address-book"></i><a href="#ventana2" class="btn btn-default" id="letras1" data-toggle="modal">Servicios</a></li>
            <li><i class="iconsn3 fas fa-chalkboard-teacher"></i><a href="#ventana1" class="btn btn-default" data-toggle="modal" id="letras2" data-toggle="modal">Contactar</a></li>
