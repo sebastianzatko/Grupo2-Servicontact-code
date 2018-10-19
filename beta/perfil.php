@@ -2,18 +2,22 @@
 session_start();
 if (isset($_SESSION["id"])){
 		if(isset($_GET["idprofile"])){
-		$idactual=$_GET["idprofile"];
-		$fotop=$_SESSION['foto'];
-		$nombrep=$_SESSION['nombre'];
-		require "blogic/User.php";
-		$user=new b_user;
-		$resultado=$user->obtenerDatosDeUsuario($idactual);
-		
-			if(mysqli_num_rows($resultado)==1){
-			
-				$row = mysqli_fetch_assoc($resultado);
-			}
-		}
+			if((int)$_SESSION["id"]==(int)$_GET["idprofile"]){
+				$idactual=$_GET["idprofile"];
+				$fotop=$_SESSION['foto'];
+				$nombrep=$_SESSION['nombre'];
+				require "blogic/User.php";
+				$user=new b_user;
+				$resultado=$user->obtenerDatosDeUsuario($idactual);
+				
+					if(mysqli_num_rows($resultado)==1){
+					
+						$row = mysqli_fetch_assoc($resultado);
+					}
+					else{header('Location: index.php');}
+				}
+			}else{header('Location: index.php');}
+		else{header('Location: index.php');}
 }
 
 else{header('Location: index.php');}

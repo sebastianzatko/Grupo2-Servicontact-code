@@ -1,3 +1,37 @@
+<?php
+session_start();
+
+if(isset($_GET["idprofile"])){
+	
+		$idactual=$_GET["idprofile"];
+		require "blogic/User.php";
+		$user=new b_user;
+		$resultado=$user->obtenerDatosDeUsuario($idactual);
+		
+			if(mysqli_num_rows($resultado)==1){
+			
+				$row = mysqli_fetch_assoc($resultado);
+				
+				require "blogic/Professional.php";
+			    $profesional=new Professional;
+				$idprofesional=$profesional->getid($idactual);
+			    $serviciosactivos=$profesional->get_servicios((int)$idprofesional);
+			    $dataSer=json_decode($serviciosactivos , true);
+				
+				
+			}
+			else{header('Location: index.php');}
+		}
+	
+else{header('Location: index.php');}
+
+
+
+    	    
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,64 +74,14 @@
     return false
     }
   </script>
-	<nav id="nav" class="navbar navbar-dark bg-primary sidebarNavigation" data-sidebarClass="navbar-inverse">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-
-      <button type="button" class="navbar-toggle left-navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-        <center><a href="buscar.php"><button type="button"  class="btn btn-primary " name="buscar1" id="buscar2" >Buscar Servicios</button></a></center>
-     
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-     
-      <ul class="nav navbar-nav">
-        
-        <li><a href="#"><img src="images/jug.png" class="perfil"></a></li>
-        <li><a href="#" class="nomb">Juan</a></li>
-       
-        <li><a href="index.php"><i class="icons iconos fas fa-home"></i></a></li>
-        <li><a href="#"><i class="icons3 far fa-image"></i> Herramientas</a></li>
-        <li><a href="#"><i class="icons4 iconos fas fa-wrench"></i> Galeria</a></li>
-       
-      </ul>
-
-      <ul class="navbar-form navbar-left" id="form1" onsubmit="return enviar();" method="POST">
-       <div class="form-group">
-       
-          <input type="text" class="form-control" name="buscar1" id="buscar1" placeholder="Buscar servicios">
-        
-        	<button name="enviando" class="btn btn-primary" id="boton"><i class="icons iconos fas fa-search"></i> Buscar</button>
-          
-    	 </div>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href=""><i class="icons5 far fa-star"></i> Mi puntuacion</a></li>
-      	<li><a href="#"><i class="icons far fa-comments"></i></a></li>
-        <li><a href="#"><i class="icons1 far fa-bell"></i></a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="icons2 far fa-user"></i> Mi perfil<span class="caret"></span></a>
-          <img src="images/jug.png" class="perfiles">
-          <ul class="dropdown-menu">
-            <li><a href="sesion.php">ver perfil</a></li>
-            <li><a href="servicios.php">Mis servicios</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Salir</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+	<?php
+		require "templates/menu.php";
+		
+		echo $htmlmenu;
+		
+	?>
 <img src="images/casa.jpg" class="imo">
-<img src="images/jug.png" class="imagen">
+<img src="<?php echo $row["FOTO_DE_PERFIL"]; ?>" class="imagen">
  
  <div class=" container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -107,7 +91,7 @@
 
 
         <ul  class="ula nav navbar-nav">
-           <li><a class="btn btn-default" id="nombr" href="">juan gonzalez</a></li>
+           <li><a class="btn btn-default" id="nombr" href=""><?php echo $row["NOMBRE"]." ".$row["APELLIDO"]; ?></a></li>
           <li><i class="iconsn far fa-user"></i><a class="btn btn-primary" id="letras" data-toggle="modal" href="#ventana">Informacion</a></li>
            <li><i class="iconsn2 far fa-address-book"></i><a href="#ventana2" class="btn btn-default" id="letras1" data-toggle="modal">Servicios</a></li>
            <li><i class="iconsn3 fas fa-chalkboard-teacher"></i><a href="#ventana1" class="btn btn-default" data-toggle="modal" id="letras2" data-toggle="modal">Contactar</a></li>
@@ -145,10 +129,10 @@
                 </div>
                  <div class="modal-body">
                      
-                     <h4>Juan</h4>
+                     <h4><?php echo $row["NOMBRE"]; ?></h4>
 
                      <br>
-                     <p>TELEFONO</p>
+                     <p><?php echo $row["TELEFONO"]; ?></p>
                      <br>
 
                           <a href=""><button type="button" id="fot1" style="color: white;" class="btn btn-primary" ><i class="far fa-comment-alt" style="color: white;"></i> Mensaje privado</button></a>
@@ -172,19 +156,19 @@
 
                 </div>
                  <div class="modal-body">
-                     <h3>JUAN</h3>
-                     <h3>Gonzalez</h3>
+                     <h3><?php echo $row["NOMBRE"]; ?></h3>
+                     <h3><?php echo $row["APELLIDO"]; ?></h3>
                     
                     
-                      <h4>DIR:Monte grande 123</h4>
+                      <h4>DIR:<?php echo $row["DIRECCION"]; ?></h4>
                    
                      <br>
-                      <h4>Localidad :Monte grande</h4>
+                      <h4>Localidad :<?php echo $row["LOCALIDAD"]; ?></h4>
                       
                       
                        <br>
 
-                       <h4>Provincia :Buenos Aires</h4>  
+                       <h4>Provincia :<?php echo $row["PROVINCIA"]; ?></h4>  
                               
                       
 
