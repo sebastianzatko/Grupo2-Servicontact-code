@@ -135,7 +135,7 @@ require_once('email.php');
         }
         public function obtenerDatosDeUsuario($idUsuario){
             require "conexion/conection.php";
-            $sql="SELECT idUSUARIO,NOMBRE,APELLIDO,TELEFONO,MAIL,CONTRASENA,FOTO_DE_PERFIL,DIRECCION,LOCALIDAD,PROVINCIA FROM USUARIOS WHERE idUSUARIO=?";
+            $sql="SELECT idUSUARIO,NOMBRE,APELLIDO,TELEFONO,MAIL,FOTO_DE_PERFIL,DIRECCION,LOCALIDAD,PROVINCIA FROM USUARIOS WHERE idUSUARIO=?";
             if($stmt=$mysqli->prepare($sql)){
                 $stmt->bind_param("i",$idUsuario);
                 $stmt->execute();
