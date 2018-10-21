@@ -6,23 +6,26 @@
 <html>
 <head>
 	<title></title>
-	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link href="includes/css/tabla.css" rel="stylesheet">
+  <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="includes/js/jquery-3.3.1.min.js"></script>
-  <script src="includes/js/jquery.js"></script> 
-	<script src="bootstrap/bootstrap.js"></script>
+  <link href="includes/css/tabla.css" rel="stylesheet">
+  <link href="includes/css/galeria.css" rel="stylesheet">
+  <link href="includes/css/diseno.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="includes/css/sidebarNavigation.css">
+  
+  <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />
+  
+  <script src="includes/js/jquery-3.3.1.min.js"></script>
   <script src="includes/js/sidebarNavigation.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="includes/css/galeria.css" rel="stylesheet">
-	<link href="includes/css/diseno.css" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />
-	<script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
-	<script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
-	<script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
+  <script src="includes/js/scriptfuncionesrepetidas.js"></script>
+  <script src="bootstrap/bootstrap.js"></script>
+
+  <script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
+  <script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
 	
 </head>
 <body>
@@ -31,7 +34,7 @@
     function enviar(){
      var buscar1= document.getElementById('buscar1').value;
 
-    var datean ='buscar1=' =buscar1;
+    var datean ='buscar1=';
     $.ajax({
       type:'POST',
       url:'ima.php',

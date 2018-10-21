@@ -7,20 +7,25 @@
 <html>
 <head>
 	<title></title>
-	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<meta charset="utf-8"/>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link href="includes/css/tabla.css" rel="stylesheet">
-	<script src="includes/js/jquery-3.3.1.min.js"></script>
-  <script src="includes/js/jquery.js"></script> 
-	<script src="bootstrap/bootstrap.js"></script>
+
   <link rel="stylesheet" type="text/css" href="includes/css/sidebarNavigation.css">
-  <script src="includes/js/sidebarNavigation.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="includes/css/switchery.css">
   <link rel="stylesheet" type="text/css" href="includes/css/checkbox.css">
-  <script type="text/javascript" src="includes/js/switchery.js"></script>
 	<link href="includes/css/buscar.css" rel="stylesheet">
+
+  <script src="includes/js/jquery.js"></script>
+  <script src="includes/js/jquery-3.3.1.min.js"></script>
+  <script src="bootstrap/bootstrap.js"></script>
+  <script src="includes/js/sidebarNavigation.js"></script>
+  <script type="text/javascript" src="includes/js/switchery.js"></script>
+  
  
 </head>
 <body>

@@ -7,33 +7,29 @@
 <html>
 <head>
   <title></title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-  <script src="includes/js/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link href="includes/css/muro.css" rel="stylesheet">
   <link href="includes/css/diseno.css" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />
-  <script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
-  <script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
-  <script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
-  
- 
-  <link rel="stylesheet" type="text/css" href="includes/css/sidebarNavigation.css">
-  <script src="includes/js/sidebarNavigation.js"></script>
-  <script type="text/javascript" src="includes/js/switchery.js"></script>
-  <link rel="stylesheet" type="text/css" href="includes/css/switchery.css">
+  <link rel="stylesheet" href="includes/css/sidebarNavigation.css">
+  <link rel="stylesheet" href="includes/css/switchery.css">
   <link rel="stylesheet" href="includes/css/estrellas.css" />
   <link rel="stylesheet" href="includes/css/resultadosbusqueda.css" />
   <link href="includes/css/buscar.css" rel="stylesheet">
   <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />
+
+  <script src="includes/js/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="includes/js/sidebarNavigation.js"></script>
+  <script type="text/javascript" src="includes/js/switchery.js"></script>
 	<script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
 	<script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
-	<script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
 </head>
+
 <body>
 <?php
     require "templates/menu.php";
@@ -41,39 +37,23 @@
     echo $htmlmenu2;
     
   ?>
-
-    
-      <div class="container-fluid" id="contenedorcontenido ">
+  <div class="container-fluid" id="contenedorcontenido ">
     <br>
-  
     <div class="container1">
-              <div class="row">
-                          <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-                             <div class="button-group">
-                               <center> <button type="button" id="buscar2" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Buscar servicios <span class="caret"></span></button>
-                        <ul class="dropdown-menu" style="width: 100%;">
-                            
-                        <?php
-                            
-                            
-                            require "blogic/Services.php";
-      
-      
-                      $servicios=new services;
-                      
-                      $listaservicios=$servicios->getservicios();
-                      
-                      $dataAr = json_decode($listaservicios , true);
-                            foreach($dataAr as $data)
-                        {
-                            
-                          
-                                                    
-                                
+      <div class="row">
+        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+          <div class="button-group">
+            <center><button type="button" id="buscar2" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Buscar servicios <span class="caret"></span></button>
+              <ul class="dropdown-menu" style="width: 100%;">
+                <?php
+                require "blogic/Services.php";
+                $servicios=new services;
+                $listaservicios=$servicios->getservicios();
+                $dataAr = json_decode($listaservicios , true);
+                foreach($dataAr as $data)
+                        {                            
                                 echo "<li><a class='small' data-value='option1' data-id='".$data[0]."' tabIndex='-1'><input type='checkbox' class='js-switch' value='".$data[0]."'/><span class='spa'> <i class='".$data[2]."'></i> " .$data[1]."</span></a></li>";
                         }
-                        
-                        
                         ?>
                         <script type="text/javascript">
             
@@ -87,43 +67,28 @@
                                       });
                                        
                                         });
-                            </script>
-                        </ul></center>
-                          </div>
-                        </div>
+                                      </script>
+                                    </ul>
+                                  </center>
+                      </div>
+                    </div>
                   </div>
-  </div>
-    <div id="contenido">
-      <h3 class="head text-center">Empieze a buscar con Changero<sup>™</sup> <span style="color:#f48260;">♥</span></h3>
-        <p class="narrow text-center">
-          Para comenzar la busqueda debe seleccionar los servicios que desea encontrar
-        </p>
-                          
-      <p class="text-center">
-    </div>
-
-    <br>
-   
-  </div>
-   
-  
-      
-    
-  </div>
+                </div>
+                <div id="contenido">
+                  <h3 class="head text-center">Empieze a buscar con Changero<sup>™</sup> <span style="color:#f48260;">♥</span></h3>
+                  <p class="narrow text-center">
+                    Para comenzar la busqueda debe seleccionar los servicios que desea encontrar</p>
+                    <p class="text-center">
+                    </div>
+                    <br>
+                  </div>
+                </div>
    <center><nav aria-label="...">
   <ul class="pagination" id="paginacion">
-    
-    
-    
   </ul>
-</nav></center>
-
-    
-    
+</nav></center>    
 </body>
  
-
-
 <script type="text/javascript">
   
 var index="";
