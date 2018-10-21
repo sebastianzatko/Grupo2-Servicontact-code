@@ -8,7 +8,7 @@
     margin-left:35px;
     color: black;
     text-decoration: none;
-    margin-top: 0px;
+    margin-top: -15px;
   }
 .imagen1{
    
@@ -23,25 +23,25 @@
     color: black;
 }
 .imo{
-    
-    display: flex;
-    height: 300px;
-    width: 60%;
-    margin-left: 230px;
+	
+	display: flex;
+	height: 300px;
+	width: 60%;
+	margin-left: 230px;
 }  
 .container-fluid li a{
    list-style: none;
 }
 #nombr  {
-    position: relative;
+	position: relative;
    
-    margin-left: 140px;
+    margin-left: 125px;
   
-    font-size: 20px;
-    bottom: 30px;
+	font-size: 20px;
+	bottom: 24px;
     color: black;
     background: transparent;
-    border-top-color:transparent;
+	border-top-color:transparent;
     border-bottom-color: transparent;
     border-left-color:transparent;
     border-right-color: transparent;
@@ -49,7 +49,7 @@
 
 }
 .dropdown-menu a{
-    color: black;
+	color: black;
 }
 .modal-title{
     opacity: 0.5;
@@ -67,41 +67,41 @@
 }
 
 #nombr:hover{
-    background: transparent;
-    border-top-color:transparent;
+	background: transparent;
+	border-top-color:transparent;
     border-bottom-color: transparent;
      border-left-color:transparent;
     border-right-color: transparent;
 }
 #letras1:hover{
-    background: transparent;
-    border-top-color:transparent;
+	background: transparent;
+	border-top-color:transparent;
     border-bottom-color: transparent;
     border-left-color:transparent;
     border-right-color: transparent;
 }
 #letras2:hover{
-    background: transparent;
-    border-top-color:transparent;
+	background: transparent;
+	border-top-color:transparent;
     border-bottom-color: transparent;
      border-left-color:transparent;
     border-right-color: transparent;
 }
 #letras:hover{
-    background: transparent;
-    border-top-color:transparent;
+	background: transparent;
+	border-top-color:transparent;
     border-bottom-color: transparent;
      border-left-color:transparent;
     border-right-color: transparent;
 }
 .icon{
-    font-size: 25px;
-    margin-left: 60px;
+	font-size: 25px;
+	margin-left: 60px;
 
 }
 #letras{
 background: transparent;
-    border-top-color:transparent;
+	border-top-color:transparent;
     border-bottom-color: transparent;
      border-left-color:transparent;
     border-right-color: transparent;
@@ -111,8 +111,8 @@ background: transparent;
 
 }
 #letras2{
-    background: transparent;
-    border-top-color:transparent;
+	background: transparent;
+	border-top-color:transparent;
     border-bottom-color: transparent;
      border-left-color:transparent;
     border-right-color: transparent;
@@ -124,8 +124,8 @@ background: transparent;
 }
 
 #letras1{
-    background: transparent;
-    border-top-color:transparent;
+	background: transparent;
+	border-top-color:transparent;
     border-bottom-color: transparent;
      border-left-color:transparent;
     border-right-color: transparent;
@@ -136,28 +136,28 @@ background: transparent;
 
 }
 .iconsn2{
-    color: #1A81F7;
-    font-size: 25px;
-    margin-left: 40px;
+	color: #1A81F7;
+	font-size: 25px;
+	margin-left: 40px;
 
 }
 .iconsn3{
-    color: #1A81F7;
-    font-size: 25px;
-    margin-left:40px;
+	color: #1A81F7;
+	font-size: 25px;
+	margin-left:40px;
 
 }
 .iconsn{
-    color: #1A81F7;
-    font-size: 25px;
-    margin-left: 0px;
+	color: #1A81F7;
+	font-size: 25px;
+	margin-left: 0px;
 
 }
 #letras:hover{
    background: transparent;
 }
 .container-fluid{
-    width: 100%;
+	width: 100%;
 }
 
 .ula li a :hover{
