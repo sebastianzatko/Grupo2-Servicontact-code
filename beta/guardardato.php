@@ -106,7 +106,7 @@
  								<br>
  								<br> 
  								<div class="col-xs-12 col-sd-6 col-md-8 col-lg-12">
- 									<button type="submit" name="submit" class="btn btn-primary fotos"  value="Upload">Registrar</button>
+ 									<button type="submit" name="submit" id="boton" class="btn btn-primary fotos"  value="Upload">Registrar</button>
  								</div>
  								<br>
  								<br>
