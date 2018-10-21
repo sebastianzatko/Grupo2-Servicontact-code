@@ -2,12 +2,16 @@
 <html>
 <head>
 	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-	
+
 	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
 	<link href="includes/css/registro.css" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script type="text/javascript" src="includes/js/jquery.js"></script>
 	<script type="application/javascript" src="includes/js/notify.js"></script>
 	<script src="bootstrap/bootstrap.min.js"></script>
@@ -19,8 +23,8 @@
 </head>
 <body>
 	<br>
-	<div class="container">
-	<center><img src="images/trabajos.png" class="logo"></center>
+
+
 	
 	
 	<div class="modal fade" id="ventana">
@@ -45,51 +49,74 @@
 	
 	
  	<form action="includes/php/register.php" name="formadd" method="POST" id="formguardard" enctype="multipart/form-data">
-
  		<center>
- 		<div class="form-group ">
-		
-				<div class="contenedor">
-					<div class="col-6">
-						<input type="text" class="form-control"  id="txtnombre" name="nombre" placeholder="Nombre">	
-					</div>
-					<div class="col-6">
-		 			    <input type="text" class="form-control" id="txtapellido" name="apellido" placeholder="Apellido">
-					</div>
-		 			<br>		 			
-		 			<br>
-					<div class="col-6">
-		 			    <input type="text" class="form-control" id="txtmail" name="email"  placeholder="E-Mail">
-					</div>
-					 <div class="col-6">
-		 			    <input type="password" class="form-control" id="txtcontra" name="contrasena" placeholder="Contraseña">
-					</div>
-		 			<br>
-					<div class="col-12">
-		 			    <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" >
-					</div>
-		 			<br>
-		 			<br>
-					<!-- Para las provincias y ciudades-->
-					<div class="col-12">
-    				    <select id="provincia" name="provincia" class="cinc btn btn-primary  dropdown-toggle" type="button"data-toggle="dropdown" required>Provincias
-    				    <span class="caret"></span>
-    				    </select>
-    				    <select id="ciudad" name="ciudad" class="cinc btn btn-primary  dropdown-toggle" type="button" data-toggle="dropdown" required>Localidades<span class="caret"></span>
-    				    </select>
-    				</div>
-    				
-                    	<br>
-                        <br>
-					<div class="col-md-12 col-lg-12">
-						<input type="text" class="form-control"  id="txtdir" name="dir" placeholder="Dirección" >
-					</div>
-	 			</div>
-		
-		
-		
-		
-				
+ 
+ 			<div class="container">
+ 				<div class="row">
+ 					<div class="col-xs-12 col-sd-6 col-md-2 col-lg-2"></div>
+ 					<div class="col-xs-12 col-sd-6 col-md-8 col-lg-8">
+ 						<div class="form-group containercss">
+ 							<div>
+ 								<center><img src="images/trabajos.png" class="logo"></center>
+ 								<div class="col-xs-12 col-sd-6 col-md-8	col-lg-6 inputs">
+ 									<input type="text" class="form-control"  id="txtnombre" name="nombre" placeholder="Nombre">
+ 								</div>
+ 								<div class="col-xs-12 col-sd-6 col-md-8	col-lg-6">
+ 									<input type="text" class="form-control" id="txtapellido" name="apellido" placeholder="Apellido">
+ 								</div>
+ 								<br>		 			
+ 								<br>
+ 								<div class="col-xs-12 col-sd-6 col-md-8	col-lg-6">
+ 									<input type="text" class="form-control" id="txtmail" name="email"  placeholder="E-Mail">
+ 								</div>
+ 								<div class="col-xs-12 col-sd-6 col-md-8 col-lg-6">
+ 									<input type="password" class="form-control" id="txtcontra" name="contrasena" placeholder="Contraseña">
+ 								</div>
+ 								<br>
+ 								<br>
+ 								<br>
+ 								<!-- Para las provincias y ciudades-->
+ 								<div class="col-xs-12 col-sd-6 col-md-8	col-lg-6">
+ 									<select id="provincia" name="provincia" class="cinc btn btn-primary  dropdown-toggle" type="button"data-toggle="dropdown" required>Provincias
+ 										<span class="caret"></span>
+ 									</select>
+ 								</div>
+ 								<div class="col-xs-12 col-sd-6 col-md-8	col-lg-6">
+ 									<select id="ciudad" name="ciudad" class="cinc btn btn-primary  dropdown-toggle" type="button" data-toggle="dropdown" required>Localidades<span class="caret"></span>
+ 									</select>
+ 								</div>
+ 								<br>
+ 								<br>
+ 								<div class="col-xs-12 col-sd-6 col-md-8	col-lg-4">
+ 									<input type="number" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
+ 								</div>
+ 								<div class="col-xs-12 col-sd-6 col-md-8	col-lg-8">
+ 									<input type="text" class="form-control"  id="txtdir" name="dir" placeholder="Dirección">
+ 								</div>
+ 								<br>
+ 								<br>
+
+ 								<div class="col-xs-12 col-sd-6 col-md-8 col-lg-12">
+ 									<output id="list"></output>
+ 									<div class="fotos btn btn-success">
+ 										<p><i class="icon fas fa-download"></i>Foto de Perfil</p>
+ 										<input type="file"  name="imagen" accept="image/*" id="fil">
+ 									</div>
+ 								</div>
+ 								<br>
+ 								<br> 
+ 								<div class="col-xs-12 col-sd-6 col-md-8 col-lg-12">
+ 									<button type="submit" name="submit" class="btn btn-primary fotos"  value="Upload">Registrar</button>
+ 								</div>
+ 								<br>
+ 								<br>
+ 							</div>
+ 						</div>
+ 					</div>
+ 				</div>
+ 				<div class="col-xs-12 col-sd-6 col-md-2 col-lg-2"></div>
+ 			</div>
+ 		</center>
 				<!-- CONTENEDOR NUEVO 
 				<div class=" contenedor">
 					
@@ -158,16 +185,12 @@
 	 			</div>
 				
 				-->
-				 <output id="list"></output>
-	 			<div class="fotos col-12 btn btn-success">
-	 				<p ><i class="icon fas fa-download"></i>Foto de Perfil</p>
-	 			<input type="file"  name="imagen" accept="image/*" id="fil">
-	 			</div>
-	 		  <br>
-	 		  <br> 
-	 		   <button type="submit" name="submit" id="boton"  class="btn btn-primary"  value="Upload">Registrar</button>
- 	     </div>
-		</center>
+
+ 	    
+ 	 
+ 	 
+
+
 	
 		<div id="alerta"></div>
  </form>
