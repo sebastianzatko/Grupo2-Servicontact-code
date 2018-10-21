@@ -20,7 +20,7 @@
   
   <script src="includes/js/jquery-3.3.1.min.js"></script>
   <script src="includes/js/sidebarNavigation.js"></script>
-  <script src="includes/js/scriptfuncionesrepetidas.js"></script>
+
   <script src="bootstrap/bootstrap.js"></script>
 
   <script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>

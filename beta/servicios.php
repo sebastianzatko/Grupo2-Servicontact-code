@@ -18,7 +18,7 @@
   <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="includes/css/switchery.css">
   <link rel="stylesheet" type="text/css" href="includes/css/checkbox.css">
-	<link href="includes/css/buscar.css" rel="stylesheet">
+  <link href="includes/css/buscar.css" rel="stylesheet">
 
   <script src="includes/js/jquery.js"></script>
   <script src="includes/js/jquery-3.3.1.min.js"></script>

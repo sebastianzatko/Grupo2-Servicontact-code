@@ -11,6 +11,7 @@
     	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
     	<link href="includes/css/stylo.css" rel="stylesheet">
+        
     	<script src="includes/js/jquery-3.3.1.min.js"></script>
     	<script type="application/javascript" src="includes/js/notify.js"></script>
     	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>

@@ -23,7 +23,7 @@
   <script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
   <script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
   <script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
-  <script src="includes/js/scriptfuncionesrepetidas.js"></script>
+  
 </head>
 <body>
   <script type="text/javascript">
