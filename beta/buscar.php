@@ -100,12 +100,12 @@ function getIP(json) {
   latlong=json.loc;
   console.log(latlong);
 }
-$( '.dropdown-menu a' ).on( 'click', function( event ) {
+$( '.dropdown-menu .small' ).on( 'click', function( event ) {
     return false;
 })
 
 var options = [];
-    $( '.dropdown-menu a' ).on( 'click', function( event ) {
+    $( '.dropdown-menu .small' ).on( 'click', function( event ) {
        var $target = $( event.currentTarget ),
            val = $target.attr( 'data-id' ),
            $inp = $target.find( 'input' ),
