@@ -8,12 +8,12 @@ class changeromail
     {
         $mail = new PHPMailer;
         $mail->isSMTP();
-        $mail->SMTPDebug = 0;
-        $mail->Host = 'mx1.hostinger.com.ar';
+        $mail->SMTPDebug = 5;
+        $mail->Host = '	mx1.hostinger.com.ar';
         $mail->Port = 587;
         $mail->SMTPAuth = true;
         $mail->Username = 'no-reply@changero.online';
-        $mail->Password = 'vVlAzU8PyiZK';
+        $mail->Password = 'jHr2qB6oeptt';
         $mail->setFrom('no-reply@changero.online', 'Changero Online');
         $mail->addReplyTo('no-reply@changero.online', 'Changero Online');
         $mail->addAddress($to, $name);
@@ -39,6 +39,6 @@ class changeromail
         }
     }
 }
-//$s = new changeromail();
+//$sd = new changeromail();
 //$sd->validaremail('diego.ba.rodriguez@gmail.com','Diego','http://www.google.com');
 ?>

@@ -28,7 +28,12 @@ require_once('conexion/conectionpdo.php');
 						OFICIOS.PUNTUACIÓN,
 						OFICIOS.CANTIDAD_DE_PUNTUACIONES,
 						SERVICIOS.TIPO,
-						SERVICIOS.FACLASS
+						SERVICIOS.FACLASS,
+						(
+                            ACOS(
+                                SIN(".$lat.") * SIN(PROFESIONALES.LATITUD) + COS(".$lat.") * COS(PROFESIONALES.LATITUD) * COS(PROFESIONALES.LONGUITUD -(".$long."))
+                            ) * 6371
+                        ) AS DISTANCIA
 					FROM
 						USUARIOS,
 						OFICIOS,
@@ -37,13 +42,18 @@ require_once('conexion/conectionpdo.php');
 					WHERE
 						USUARIOS.idUSUARIO = PROFESIONALES.USUARIO_idUSUARIO AND OFICIOS.PROFESIONAL_idPROFESIONAL = PROFESIONALES.idPROFESIONAL AND OFICIOS.SERVICIOS_idSERVICIO = SERVICIOS.idSERVICIO AND(
 							".$servicios."
-						) AND OFICIOS.HABILITADO=1".$idusuario;
+						) AND OFICIOS.HABILITADO=1".$idusuario."
+						ORDER BY
+                            ACOS(
+                                SIN(".$lat.") * SIN(PROFESIONALES.LATITUD) + COS(".$lat.") * COS(PROFESIONALES.LATITUD) * COS(PROFESIONALES.LONGUITUD -(".$long."))
+                            ) * 6371
+                        DESC";
 			$query = $con->prepare($sql);
 			if($query->execute()){
 				$result = $query->fetchAll();
 				$datos = array();
 				foreach($result as $row){
-					array_push($datos,[$row['idUSUARIO'],$row['NOMBRE'],$row['APELLIDO'],$row['FOTO_DE_PERFIL'],[$row['PUNTUACIÓN']],[$row['CANTIDAD_DE_PUNTUACIONES']],[$row['TIPO']],[$row['FACLASS']]]);
+					array_push($datos,[$row['idUSUARIO'],$row['NOMBRE'],$row['APELLIDO'],$row['FOTO_DE_PERFIL'],[$row['PUNTUACIÓN']],[$row['CANTIDAD_DE_PUNTUACIONES']],[$row['TIPO']],[$row['FACLASS']],$row['DISTANCIA']]);
 				}
 				return $datos;
 			}else{

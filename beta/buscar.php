@@ -138,42 +138,56 @@ var options = [];
     success:function(data){
       if(data!==false){
         $("#contenido").empty();
-          console.log(data);
         var datos=JSON.parse(data);
           
           //nada , no llegue
-          
-          
-        for(var i=0;i<datos.length;i++){
-          
-          
-          var mediaright="";
-          for(var y=0;y<datos[i][6].length;y++){
-            var puntuacionfinal="";
-            if(datos[i][4][y]!=null && datos[i][5][y]!=null){
-              puntuacionfinal=((parseInt(datos[i][4][y])/parseInt(datos[i][5][y]))/5)*100;
-            
-              var puntuacionfinalRedondeado=`${Math.round(puntuacionfinal / 10) * 10}%`;
-            
-              puntuacionfinal="<div class='stars-outer'><div class='stars-inner' style=width:"+String(puntuacionfinalRedondeado)+"!important></div></div>";
-              
-                
-              
-            }else{
-              puntuacionfinal="<b>Este servicio todavia no ha sido calificado</b>";
-            }
-            mediaright=mediaright+"<li><i class='"+datos[i][7][y]+"'></i><span>"+datos[i][6][y]+":"+puntuacionfinal+"</span></li>";
-          }
-          
-          
-          
-          
-          var htmlstring="<section class='hidden-xs col-sm-12 col-md-12 thumbnail'><article class='search-result row'><div class='col-xs-12 col-sm-3 col-md-3'><a href='profesionnal.php?idprofile="+datos[i][0]+"' title='Foto de perfil' class='thumbnail'><img src='"+datos[i][3]+"' alt='"+datos[i][1]+" "+datos[i][2]+"' /></a></div><div class='col-xs-12 col-sm-3 col-md-3 excerpet separado'><h3><a  href='profesionnal.php?idprofile="+datos[i][0]+"' title=''>"+datos[i][1]+" "+datos[i][2]+"</a></h3></div><div class='col-xs-12 col-sm-6 col-md-6'><ul class='meta-search'>"+mediaright+"</ul></div></article></section><div class='media col-xs-12 hidden-sm hidden-md hidden-lg'><div class='media-left'><a href='profesionnal.php?idprofile="+datos[i][0]+"' ><img src='"+datos[i][3]+"' style='width: 90px;height: 90px;'></a></div><div class='media-body'><a class='redireccionamiento' href='profesionnal.php?idprofile="+datos[i][0]+"'><p>"+datos[i][1]+" "+datos[i][2]+"</p></a><p>"+mediaright+"</p></div></div>";
-          
-            
+           
+            if(datos.length===undefined){
+                var htmlstring="<div class='row'><div class='col-xs-12 text-center'><div id='noresults'><h4><strong>No hay resultados :(</strong></h4></div></div></div>";
+                $("#contenido").addClass("mensaje");
+                $("#contenido").append(htmlstring);
+                   
         
-          $("#contenido").append(htmlstring);
-          mediaright="";
+            }else{
+                for(var i=0;i<datos.length;i++){
+                      var mediaright="";
+                      for(var y=0;y<datos[i][6].length;y++){
+                        var puntuacionfinal="";
+                        if(datos[i][4][y]!=null && datos[i][5][y]!=null){
+                          puntuacionfinal=((parseInt(datos[i][4][y])/parseInt(datos[i][5][y]))/5)*100;
+                        
+                          var puntuacionfinalRedondeado=`${Math.round(puntuacionfinal / 10) * 10}%`;
+                        
+                          puntuacionfinal="<div class='stars-outer'><div class='stars-inner' style=width:"+String(puntuacionfinalRedondeado)+"!important></div></div>";
+                          
+                            
+                          
+                        }else{
+                          puntuacionfinal="<b>Este servicio todavia no ha sido calificado</b>";
+                        }
+                        mediaright=mediaright+"<li><i class='"+datos[i][7][y]+"'></i><span>"+datos[i][6][y]+":"+puntuacionfinal+"</span></li>";
+                      }
+                      var distancia="";
+                      console.log(datos[i][8]);
+                      if(datos[i][8]==null || datos[i][8]==" " || datos[i][8]==undefined){
+                          distancia="No se ha registrado la distancia de este usuario"
+                          
+                      }else{
+                          var distanciaprimitiva=(parseFloat(datos[i][8])*1.60934);
+                          console.log(distancia);
+                          distancia="Se encuentra a "+String(distanciaprimitiva) +" kilometros aproximadamente"
+                      }
+                      
+                      
+                      var htmlstring="<section class='hidden-xs col-sm-12 col-md-12 thumbnail'><article class='search-result row'><div class='col-xs-12 col-sm-3 col-md-3'><a href='profesionnal.php?idprofile="+datos[i][0]+"' title='Foto de perfil' class='thumbnail'><img src='"+datos[i][3]+"' alt='"+datos[i][1]+" "+datos[i][2]+"' /></a></div><div class='col-xs-12 col-sm-3 col-md-3 excerpet separado'><h3><a  href='profesionnal.php?idprofile="+datos[i][0]+"' title=''>"+datos[i][1]+" "+datos[i][2]+"</a></h3></div><div class='col-xs-12 col-sm-6 col-md-6'><ul class='meta-search'>"+mediaright+"</ul></div><small>"+distancia+"</small></article></section><div class='media col-xs-12 hidden-sm hidden-md hidden-lg'><div class='media-left'><a href='profesionnal.php?idprofile="+datos[i][0]+"' ><img src='"+datos[i][3]+"' style='width: 90px;height: 90px;'></a></div><div class='media-body'><a class='redireccionamiento' href='profesionnal.php?idprofile="+datos[i][0]+"'><p>"+datos[i][1]+" "+datos[i][2]+"</p></a><p>"+mediaright+"</p></div><small>"+distancia+"</small></div>";
+                      
+                        
+                    
+                      $("#contenido").append(htmlstring);
+                      mediaright="";
+            }  
+          
+        
           
         }
       }else{

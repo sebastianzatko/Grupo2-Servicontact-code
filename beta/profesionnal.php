@@ -13,9 +13,9 @@ if(isset($_GET["idprofile"])){
         $row = mysqli_fetch_assoc($resultado);
         
         require "blogic/Professional.php";
-          $profesional=new Professional;
-        $idprofesional=$profesional->getid($idactual);
-          $serviciosactivos=$profesional->get_servicios((int)$idprofesional);
+          $profesional=new Professional();
+            $idprofesional=$profesional->getid((int)$idactual);
+          $serviciosactivos=$profesional->obtenerPuntuacionYServicios((int)$idprofesional);
           $dataSer=json_decode($serviciosactivos , true);
         
         
@@ -53,6 +53,10 @@ else{header('Location: index.php');}
    <link rel="stylesheet" type="text/css" href="includes/css/fotos.css">
  <link rel="stylesheet" type="text/css" href=" https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
   <link href="includes/css/diseno.css" rel="stylesheet">
+  
+  
+  <!-- Cuidado con este estilo de estrellas, pues se utiliza en buscar.php , si queres modificar las estrellas de este index es recomendable que hagas otro css y copies el contenido de este, obviamente reemplazar con el nuevo estilo de css, pues este nunca debera ser tocado, y si es tocado alguien morira a manos del Capitan Jack, Calico Jack -->
+  <link rel="stylesheet" href="includes/css/estrellas.css" />
  
  
 </head>
@@ -84,18 +88,37 @@ else{header('Location: index.php');}
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h2 class="modal-title">Servicios que realizo</h2>
+                  <h2 class="modal-title">Servicios</h2>
 
                 </div>
                  <div class="modal-body">
-                     <h3>Albañil <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h3>
-                     <h3>Plomero <i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300"class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h3>
-                     <h3>Pintor <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h3>
+                     <?php
+                        
+                        foreach($dataSer as $data)
+            			{
+            			    if($data[0]!=null and $data[1]!=null){
+            			        $puntuacionporcentaje=(((int)$data[0]/(int)$data[1])/5)*100;
+            			        $puntuacionredondeado=(floor(($puntuacionporcentaje/10)*10));
+            			        
+            			        $puntuacionfinal="<div class='stars-outer'><div class='stars-inner' style=width:".(string)$puntuacionredondeado."%!important></div></div>";
+            			        
+            			    }else{
+            			        $puntuacionfinal="Este servicio todavia no ha sido calificado";
+            			    }
+            			    
+            			    
+            				
+            				echo "<i class=".$data[2]."></i><h3>".$data[3]."</h3>".$puntuacionfinal;
+            				
+            
+            			}
                      
+                     
+                     ?>
                       
                  </div>
                  <div class="modal-footer">
-                   <button type="button"  data-dismiss="modal" class="btn btn-default">Salir</button>
+                   <button type="button"  data-dismiss="modal" class="btn btn-success">Cerrar</button>
 
                   
                  </div>
@@ -113,19 +136,26 @@ else{header('Location: index.php');}
                 </div>
                  <div class="modal-body">
                      
-                     <h4><?php echo $row["NOMBRE"]; ?></h4>
-
-                     <br>
-                     <p><?php echo $row["TELEFONO"]; ?></p>
-                     <br>
-
-                          <a href=""><button type="button" id="fot1" style="color: white;" class="btn btn-primary" ><i class="far fa-comment-alt" style="color: white;"></i> Mensaje privado</button></a>
+                     <h2><?php echo $row["NOMBRE"]; ?></h2>
+                     <hr>
+                    <?php
+                        if(isset($_SESSION["id"])){
+                            //aca faltaria el boton para que abra el mensaje instantaneo y eso
+                            echo "<label>Telefono:</label><p><b>".$row["TELEFONO"]."</b></p><br><a href=''><button type='button' id='fot1' style='color: white;' class='btn btn-primary' ><i class='far fa-comment-alt' style='color: white;'></i> Mensaje privado</button></a>";
+                        }else{
+                            //aca va para ingresar sesion
+                            echo "<small>Para contactarse con este profesional debe iniciar sesion</small><br><a href='principal.php'><button type='button' class='btn btn-primary' style='color: white;'><span class='glyphicon glyphicon-log-in'></span>  Iniciar Sesion</button></a>";
+                        }
+                    
+                    
+                    ?>
+                     
 
                  </div>
                  <div class="modal-footer">
                    
 
-                   <button type="button" data-dismiss="modal" class="btn btn-success" >Salir</button>
+                   <button type="button" data-dismiss="modal" class="btn btn-success" >Cerrar</button>
                  </div>
               </div>
               
@@ -158,7 +188,7 @@ else{header('Location: index.php');}
 
                  </div>
                  <div class="modal-footer">
-                   <button type="button"  data-dismiss="modal" class="btn btn-default">Cerrar</button>
+                   <button type="button"  data-dismiss="modal" class="btn btn-success">Cerrar</button>
 
                    
                  </div>

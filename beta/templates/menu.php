@@ -61,14 +61,12 @@
         ".$profile."
       </ul>
 
-      <ul class='navbar-form navbar-left' id='form1' onsubmit='return enviar();' method='POST'>
-       <div class='form-group'>
-       
-          <input type='text' class='form-control' name='buscar1' id='buscar1' placeholder='Buscar servicios'>
-        
-        	<button name='enviando' class='btn btn-primary' id='boton'><i class='icons iconos fas fa-search'></i> Buscar</button>
+      <ul class='navbar-form navbar-left'>
+          <div class='form-group'>
+            <a href='index.php'><i class='icons iconos fas fa-home'></i></a>
+        	<a href='buscar.php'><button name='enviando' class='btn btn-primary' id='boton'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
           
-    	 </div>
+            </div>
       </ul>
       
           ".$responsiveprofile."
@@ -91,8 +89,16 @@ $htmlmenu2="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
       </button>
-         <center><a href='index.php' id='buscar3'><i class='fas fa-arrow-left'></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHANGERO </a></center>
-     
+      <div class='container'>
+        <div class='row'>
+            <div class='col-xs-1 col-md-8 col-sm-6 col-lg-4'>
+                <a href='index.php' id='buscar3'><i class='fas fa-arrow-left'></i></a>
+            </div>
+            <div class='col-xs-10 col-md-8 col-sm-6 col-lg-4'>
+               <center><spam>CHANGERO</spam></center>
+            </div>
+        </div>
+        </div>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -102,13 +108,14 @@ $htmlmenu2="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
         ".$profile."
         
       </ul>
-
-      <ul class='navbar-form navbar-left' id='form1' onsubmit='return enviar();' method='POST'>
+    
+      <ul class='navbar-form navbar-left'>
+        
        <div class='form-group'>
        
-          <input type='text' class='form-control' name='buscar1' id='buscar1' placeholder='Buscar servicios'>
-        
-        	<button name='enviando' class='btn btn-primary' id='boton'><i class='icons iconos fas fa-search'></i> Buscar</button>
+      
+            
+        	<a href='buscar.php'><button name='enviando' class='btn btn-primary' id='boton'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
           
     	 </div>
       </ul>

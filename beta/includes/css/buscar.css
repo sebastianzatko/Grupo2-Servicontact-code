@@ -37,6 +37,7 @@ a{
 
 }
 #buscar3{
+    text-decoration:none;
     display: none;
 }
 
@@ -260,12 +261,12 @@ a{
     width: 100%;
 }
 #buscar3{
+    text-decoration:none;
     display: block;
     width: 90%;
     font-size:20px;
     color:white;
     border: none;
-    border-bottom: 1px solid #fff;
     outline: none;
     background:transparent;
     display: block;
