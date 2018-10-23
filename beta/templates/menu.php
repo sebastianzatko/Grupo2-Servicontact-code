@@ -5,8 +5,8 @@
             <li><a href='#' class='nomb'>".$_SESSION["nombre"]."</a></li>
           
             <li><a href='index.php'><i class='icons iconos fas fa-home'></i></a></li>
-            <li><a href='#'><i class='icons3 far fa-image'></i> Herramientas</a></li>
-            <li><a href='galeria.php'><i class='icons4 iconos fas fa-wrench'></i> Galeria</a></li>";
+           
+            <li><a href='galeria.php'><i class='icons3 far fa-image'></i> Galeria</a></li>";
          }else{
            $profile="";
          }
@@ -61,9 +61,9 @@
         ".$profile."
       </ul>
 
-      <ul class='navbar-form navbar-left'>
+      <ul class='navbar-form navbar-left' id='form1'>
           <div class='form-group'>
-            <a href='index.php'><i class='icons iconos fas fa-home'></i></a>
+           
         	<a href='buscar.php'><button name='enviando' class='btn btn-primary' id='boton'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
           
             </div>
@@ -95,11 +95,12 @@ $htmlmenu2="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
                 <a href='index.php' id='buscar3'><i class='fas fa-arrow-left'></i></a>
             </div>
             <div class='col-xs-10 col-md-8 col-sm-6 col-lg-4'>
-               <center><spam>CHANGERO</spam></center>
+               <center><spam id='buscar3'>Seleccion de Servicio Changero</spam></center>
             </div>
         </div>
         </div>
     </div>
+    
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
@@ -132,6 +133,56 @@ $htmlmenu2="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
 
 
 
+$htmlmenu1="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation' data-sidebarClass='navbar-inverse'>
+  <div class='container'>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class='navbar-header'>
+
+      <button type='button' class='navbar-toggle left-navbar-toggle' data-toggle='collapse' style='display: none' data-target='#bs-example-navbar-collapse-1' aria-expanded='false'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <div class='container'>
+        <div class='row'>
+            <div class='col-xs-1 col-md-8 col-sm-6 col-lg-4'>
+                <a href='index.php' id='buscar3'><i class='fas fa-arrow-left'></i></a>
+            </div>
+            <div class='col-xs-10 col-md-8 col-sm-6 col-lg-4'>
+               <center><spam id='buscar3'> Servicios Changero</spam></center>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+     
+      <ul class='nav navbar-nav'>
+        ".$profile."
+        
+      </ul>
+    
+      <ul class='navbar-form navbar-left'>
+        
+       <div class='form-group'>
+       
+      
+            
+        	<a href='buscar.php'><button name='enviando' class='btn btn-primary' id='boton'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
+          
+    	 </div>
+      </ul>
+		".$responsiveprofile."
+          
+          
+          
+        
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>";
 
 
 

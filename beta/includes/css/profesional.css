@@ -8,7 +8,7 @@
     margin-left:35px;
     color: black;
     text-decoration: none;
-    margin-top: -15px;
+   	top:40px;
   }
 .imagen1{
    
@@ -35,10 +35,10 @@
 #nombr  {
 	position: relative;
    
-    margin-left: 125px;
+    margin-left: -155px;
   
 	font-size: 20px;
-	bottom: 24px;
+	top:20px;
     color: black;
     background: transparent;
 	border-top-color:transparent;
@@ -51,9 +51,7 @@
 .dropdown-menu a{
 	color: black;
 }
-.modal-title{
-    opacity: 0.5;
-}
+
 #caja{
     width: 70%;
     font-size:20px;
@@ -105,6 +103,111 @@ background: transparent;
     border-bottom-color: transparent;
      border-left-color:transparent;
     border-right-color: transparent;
+   margin-left:100px;
+ color: black;
+    
+
+}
+#letras2{
+	background: transparent;
+	border-top-color:transparent;
+    border-bottom-color: transparent;
+     border-left-color:transparent;
+    border-right-color: transparent;
+   margin-left: 180px;
+   color: black;
+   
+    
+
+}
+
+#letras1{
+	background: transparent;
+	border-top-color:transparent;
+    border-bottom-color: transparent;
+     border-left-color:transparent;
+    border-right-color: transparent;
+   margin-left: 155px;
+   color: black;
+   
+    
+
+}
+.iconsn2{
+	color: #1A81F7;
+	font-size: 25px;
+	margin-left: 190px;
+
+}
+.iconsn3{
+	color: #1A81F7;
+	font-size: 25px;
+	margin-left:220px;
+
+}
+.iconsn{
+	color: #1A81F7;
+	font-size: 25px;
+	margin-left: 150px;
+
+}
+#letras:hover{
+   background: transparent;
+}
+.container-fluid{
+	width: 100%;
+}
+
+.ula li a :hover{
+     color: black;
+     background-color: transparent;
+}
+.ula li a{
+     color: black;
+     text-decoration: none;
+}
+.ula{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+}
+
+@media (max-width: 750px){
+        #nombr  {
+    	position: relative;
+       
+        margin-left: 115px;
+      
+    	font-size: 20px;
+    	top:-10px;
+        color: black;
+        background: transparent;
+    	border-top-color:transparent;
+        border-bottom-color: transparent;
+        border-left-color:transparent;
+        border-right-color: transparent;
+        
+    
+    }
+    .imo{
+	
+	display: flex;
+	height: 300px;
+	width: 60%;
+	margin-left: 230px;
+}  
+  .icon{
+	font-size: 25px;
+	margin-left: 60px;
+
+}
+#letras{
+background: transparent;
+	border-top-color:transparent;
+    border-bottom-color: transparent;
+     border-left-color:transparent;
+    border-right-color: transparent;
    margin-left:-40px;
  color: black;
     
@@ -135,6 +238,14 @@ background: transparent;
     
 
 }
+.margin1{
+    position: relative;
+    display: flex;
+    margin-left:35px;
+    color: black;
+    text-decoration: none;
+   	top:20px;
+  }
 .iconsn2{
 	color: #1A81F7;
 	font-size: 25px;
@@ -153,25 +264,5 @@ background: transparent;
 	margin-left: 0px;
 
 }
-#letras:hover{
-   background: transparent;
+    
 }
-.container-fluid{
-	width: 100%;
-}
-
-.ula li a :hover{
-     color: black;
-     background-color: transparent;
-}
-.ula li a{
-     color: black;
-     text-decoration: none;
-}
-.ula{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    color: black;
-}
-

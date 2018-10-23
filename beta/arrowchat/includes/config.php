@@ -4,7 +4,7 @@
 	|| #################################################################### ||
 	|| #                             ArrowChat                            # ||
 	|| # ---------------------------------------------------------------- # ||
-	|| #    Copyright ©2010-2012 ArrowSuites LLC. All Rights Reserved.    # ||
+	|| #    Copyright Â©2010-2012 ArrowSuites LLC. All Rights Reserved.    # ||
 	|| # This file may not be redistributed in whole or significant part. # ||
 	|| # ---------------- ARROWCHAT IS NOT FREE SOFTWARE ---------------- # ||
 	|| #   http://www.arrowchat.com | http://www.arrowchat.com/license/   # ||
@@ -67,10 +67,10 @@
 	define('DB_USERTABLE_USERID','idUSUARIO'); 
 	define('DB_USERTABLE_AVATAR','FOTO_DE_PERFIL'); 
 	
-	define('DB_FRIENDSTABLE','CHAT'); 
-	define('DB_FRIENDSTABLE_USERID', 'id_usuario'); 
-	define('DB_FRIENDSTABLE_FRIENDID', 'id_usuario2'); 
-	define('DB_FRIENDSTABLE_FRIENDS', 'friends');
+	define('DB_FRIENDSTABLE','CONTACTOS'); 
+	define('DB_FRIENDSTABLE_USERID', 'idUSERCLIENTE'); 
+	define('DB_FRIENDSTABLE_FRIENDID', 'idUSERPROFESIONAL'); 
+	define('DB_FRIENDSTABLE_FRIENDS', 'ESTADO');
 	
 	/**
 	 * Friend System

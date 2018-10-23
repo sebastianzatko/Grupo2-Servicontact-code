@@ -34,7 +34,7 @@
 <?php
     require "templates/menu.php";
     
-    echo $htmlmenu2;
+    echo $htmlmenu1;
     
   ?>
   <div class="container-fluid" id="contenedorcontenido ">
@@ -95,7 +95,7 @@ var index="";
 var latlong="";
 
 function getIP(json) {
-    console.log("la concha de tu madre");
+
   console.log("My public IP address is: ", json.ip);
   latlong=json.loc;
   console.log(latlong);

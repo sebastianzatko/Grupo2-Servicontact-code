@@ -42,9 +42,7 @@ else{header('Location: index.php');}
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="includes/js/jquery-3.3.1.min.js"></script>
-  <script src="jquery.js"></script> 
+   <script src="includes/js/jquery-3.3.1.min.js"></script>
   <script src="bootstrap/bootstrap.js"></script>
   <link rel="stylesheet" type="text/css" href="includes/css/sidebarNavigation.css">
   <script src="includes/js/sidebarNavigation.js"></script>
@@ -53,6 +51,9 @@ else{header('Location: index.php');}
    <link rel="stylesheet" type="text/css" href="includes/css/fotos.css">
  <link rel="stylesheet" type="text/css" href=" https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
   <link href="includes/css/diseno.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />
+  <script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
   
   
   <!-- Cuidado con este estilo de estrellas, pues se utiliza en buscar.php , si queres modificar las estrellas de este index es recomendable que hagas otro css y copies el contenido de este, obviamente reemplazar con el nuevo estilo de css, pues este nunca debera ser tocado, y si es tocado alguien morira a manos del Capitan Jack, Calico Jack -->
@@ -136,12 +137,12 @@ else{header('Location: index.php');}
                 </div>
                  <div class="modal-body">
                      
-                     <h2><?php echo $row["NOMBRE"]; ?></h2>
+                     <h2><?php echo $row["NOMBRE"]; ?> <?php echo $row["APELLIDO"]; ?></h2>
                      <hr>
                     <?php
                         if(isset($_SESSION["id"])){
                             //aca faltaria el boton para que abra el mensaje instantaneo y eso
-                            echo "<label>Telefono:</label><p><b>".$row["TELEFONO"]."</b></p><br><a href=''><button type='button' id='fot1' style='color: white;' class='btn btn-primary' ><i class='far fa-comment-alt' style='color: white;'></i> Mensaje privado</button></a>";
+                            echo "<label>Telefono:</label><p><b>".$row["TELEFONO"]."</b></p><br><button type='button' style='color: white;' class='btn btn-primary' id='contactar' data-idpro='".$idactual."' data-idclient='".$_SESSION["id"]."' ><i class='far fa-comment-alt' style='color: white;' ></i> Mensaje privado</button>";
                         }else{
                             //aca va para ingresar sesion
                             echo "<small>Para contactarse con este profesional debe iniciar sesion</small><br><a href='principal.php'><button type='button' class='btn btn-primary' style='color: white;'><span class='glyphicon glyphicon-log-in'></span>  Iniciar Sesion</button></a>";
@@ -170,11 +171,11 @@ else{header('Location: index.php');}
 
                 </div>
                  <div class="modal-body">
-                     <h3><?php echo $row["NOMBRE"]; ?></h3>
-                     <h3><?php echo $row["APELLIDO"]; ?></h3>
+                     <h3><i class="far fa-user"></i> <?php echo $row["NOMBRE"]; ?> <?php echo $row["APELLIDO"]; ?></h3>
                     
                     
-                      <h4>DIR:<?php echo $row["DIRECCION"]; ?></h4>
+                    
+                      <h4>Direccion:<?php echo $row["DIRECCION"]; ?></h4>
                    
                      <br>
                       <h4>Localidad :<?php echo $row["LOCALIDAD"]; ?></h4>
@@ -372,5 +373,23 @@ else{header('Location: index.php');}
 <script>
     baguetteBox.run('.tz-gallery');
 </script>
+<script>
+    $("#contactar").click(function(){
+        var idcliente=$(this).data("idclient");
+        var idprofesional=$(this).data("idpro");
+        jqac.arrowchat.chatWith(idprofesional);
+        $.ajax({
+			data:{idcliente:idcliente,idprofesional:idprofesional},
+			url:"includes/php/newcontact.php",
+			type:"POST",
+			success: function (data) {
+				    console.log(data);
+				}
+			}
+		)
+    });
+</script>
+<script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
+<script type="text/javascript" src="https://www.arrowchat.com/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>
 </body>
 </html>

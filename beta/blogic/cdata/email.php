@@ -2,20 +2,22 @@
 define('__ROOT__', dirname(dirname(__FILE__)));
 use PHPMailer\PHPMailer\PHPMailer;
 require_once $_SERVER['DOCUMENT_ROOT'] . '/../vendor/autoload.php';
+//require_once $_SERVER['DOCUMENT_ROOT'] . '/../vendor/phpmailer/phpmailer/src/PHPMailer.php';
+//require_once $_SERVER['DOCUMENT_ROOT'] . '/../vendor/phpmailer/phpmailer/src/SMTP.php';
 class changeromail
 {
     public function validaremail($to,$name,$validacion)
     {
-        $mail = new PHPMailer;
+        $mail = new PHPMailer(true);
         $mail->isSMTP();
-        $mail->SMTPDebug = 5;
-        $mail->Host = '	mx1.hostinger.com.ar';
+        $mail->SMTPDebug = 0;
+        $mail->Host = 'mx1.hostinger.com.ar';
         $mail->Port = 587;
         $mail->SMTPAuth = true;
-        $mail->Username = 'no-reply@changero.online';
-        $mail->Password = 'jHr2qB6oeptt';
-        $mail->setFrom('no-reply@changero.online', 'Changero Online');
-        $mail->addReplyTo('no-reply@changero.online', 'Changero Online');
+        $mail->Username = 'changero@changero.online';
+        $mail->Password = '6u]F0PnFnLJ4';
+        $mail->setFrom('changero@changero.online', 'Changero Online');
+        $mail->addReplyTo('changero@changero.online', 'Changero Online');
         $mail->addAddress($to, $name);
         $mail->Subject = 'Changero - Validacion de email';
         $body = file_get_contents(__ROOT__."/../templates/email_val.html");
@@ -32,6 +34,7 @@ class changeromail
         $mail->AltBody = 'This is a plain text message body';
         //$mail->addAttachment(''); 
         $mail->Body = $body;
+        $mail->IsHTML(true);
         if (!$mail->send()) {
             return 'Mailer Error: ' . $mail->ErrorInfo;
         } else {
@@ -39,6 +42,6 @@ class changeromail
         }
     }
 }
-//$sd = new changeromail();
-//$sd->validaremail('diego.ba.rodriguez@gmail.com','Diego','http://www.google.com');
+$s = new changeromail();
+$s->validaremail('diego.ba.rodriguez@gmail.com','Diego','http://www.google.com');
 ?>

@@ -24,27 +24,28 @@
 <body>
 	<br>
 
-
-	
-	
-	<div class="modal fade" id="ventana">
-		<div class="modal-dialog">
-			<div class="modal-content">
-            <div class="modal-header">  
-                 <h2 class="modal-title">Su cuenta ha sido registrada con exito</h2>
-                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-			<div class="modal-body">
-                  <h5>En breve le llegara un mensaje a su casilla de correo</h5>
-                  <h5> para activar su cuenta</h5>
-                  <p>Mientras tanto puedes explorar el sitio</p>
-             </div>
-             <div class="modal-footer">
-                  <button type="button" onclick="location.href='index.php';" data-dismiss="modal" class="btn btn-success">Okay</button> 
-             </div>
-            </div>
-         </div>
-    </div>
+	<div class="container">
+		<div class="col-xs-12 col-sd-6 col-md-8 col-lg-8">
+			<div class="modal fade" id="ventana">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h2 class="modal-title">Su cuenta ha sido registrada con exito</h2>
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						</div>
+						<div class="modal-body">
+							<h5>En breve le llegara un mensaje a su casilla de correo</h5>
+							<h5> para activar su cuenta</h5>
+							<p>Mientras tanto puedes explorar el sitio</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" onclick="location.href='index.php';" data-dismiss="modal" class="btn btn-success">Okay</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	
 	
@@ -58,58 +59,60 @@
  						<div class="form-group containercss">
  							<div>
  								<center><img src="images/trabajos.png" class="logo"></center>
- 								<div class="col-xs-12 col-sd-6 col-md-8	col-lg-6 inputs">
+ 								<div class="col-xs-12 col-sd-6 col-md-6	col-lg-6">
  									<input type="text" class="form-control"  id="txtnombre" name="nombre" placeholder="Nombre">
  								</div>
- 								<div class="col-xs-12 col-sd-6 col-md-8	col-lg-6">
+ 								<div class="col-xs-12 col-sd-6 col-md-6	col-lg-6">
  									<input type="text" class="form-control" id="txtapellido" name="apellido" placeholder="Apellido">
  								</div>
- 								<br>		 			
- 								<br>
- 								<div class="col-xs-12 col-sd-6 col-md-8	col-lg-6">
+ 									 			
+ 								
+ 								<div class="col-xs-12 col-sd-6 col-md-6	col-lg-6">
  									<input type="text" class="form-control" id="txtmail" name="email"  placeholder="E-Mail">
  								</div>
- 								<div class="col-xs-12 col-sd-6 col-md-8 col-lg-6">
+ 								<div class="col-xs-12 col-sd-6 col-md-6 col-lg-6">
  									<input type="password" class="form-control" id="txtcontra" name="contrasena" placeholder="Contraseña">
  								</div>
- 								<br>
- 								<br>
- 								<br>
+ 								
+ 								
+ 								
  								<!-- Para las provincias y ciudades-->
- 								<div class="col-xs-12 col-sd-6 col-md-8	col-lg-6">
- 									<select id="provincia" name="provincia" class="cinc btn btn-primary  dropdown-toggle" type="button"data-toggle="dropdown" required>Provincias
+ 								<div class="col-xs-6 col-sd-6 col-md-6 col-lg-6">
+ 									<select id="provincia" name="provincia" class="cinc btn btn-primary  dropdown-toggle" type="button" data-toggle="dropdown" required>Provincias
  										<span class="caret"></span>
  									</select>
+ 									
  								</div>
- 								<div class="col-xs-12 col-sd-6 col-md-8	col-lg-6">
- 									<select id="ciudad" name="ciudad" class="cinc btn btn-primary  dropdown-toggle" type="button" data-toggle="dropdown" required>Localidades<span class="caret"></span>
+ 								<div class="col-xs-6 col-sd-6 col-md-6 col-lg-6">
+
+ 									<select id="ciudad" name="ciudad" class="cinc btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" required>Localidades<span class="caret"></span>
  									</select>
  								</div>
- 								<br>
- 								<br>
- 								<div class="col-xs-12 col-sd-6 col-md-8	col-lg-4">
+ 								
+ 								
+ 								<div class="col-xs-12 col-sd-6 col-md-6	col-lg-6">
  									<input type="number" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
  								</div>
- 								<div class="col-xs-12 col-sd-6 col-md-8	col-lg-8">
+ 								<div class="col-xs-12 col-sd-6 col-md-6	col-lg-6">
  									<input type="text" class="form-control"  id="txtdir" name="dir" placeholder="Dirección">
  								</div>
- 								<br>
- 								<br>
+ 								
+ 								
 
- 								<div class="col-xs-12 col-sd-6 col-md-8 col-lg-12">
+ 								<div class="col-xs-12 col-sd-6 col-md-12 col-lg-12">
  									<output id="list"></output>
  									<div class="fotos btn btn-success">
  										<p><i class="icon fas fa-download"></i>Foto de Perfil</p>
  										<input type="file"  name="imagen" accept="image/*" id="fil">
  									</div>
  								</div>
- 								<br>
- 								<br> 
- 								<div class="col-xs-12 col-sd-6 col-md-8 col-lg-12">
+ 								
+ 								
+ 								<div class="col-xs-12 col-sd-6 col-md-12 col-lg-12">
  									<button type="submit" name="submit" id="boton" class="btn btn-primary fotos"  value="Upload">Registrar</button>
  								</div>
- 								<br>
- 								<br>
+ 								
+ 								
  							</div>
  						</div>
  					</div>
