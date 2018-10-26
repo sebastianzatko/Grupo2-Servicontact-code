@@ -132,6 +132,8 @@ a{
 }
  #boton{
     border-color:white;
+    width: 205px;
+    margin-left: 150px;
     
  }
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {

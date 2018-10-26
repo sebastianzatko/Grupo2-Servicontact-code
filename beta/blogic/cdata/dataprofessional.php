@@ -78,6 +78,21 @@ class dataprofessional{
             return false;
         }
     }
+    public function obtenerpuntuacionyservicios($id_profesional){
+        $con=new Conexion();
+        $query=$con->prepare("SELECT OFICIOS.PUNTUACIÓN,OFICIOS.CANTIDAD_DE_PUNTUACIONES,SERVICIOS.FACLASS,SERVICIOS.TIPO FROM OFICIOS,SERVICIOS WHERE OFICIOS.PROFESIONAL_idPROFESIONAL=? AND OFICIOS.SERVICIOS_idSERVICIO=SERVICIOS.idSERVICIO AND OFICIOS.HABILITADO=1");
+        if($query->execute(array((int)$id_profesional))){
+            $result = $query->fetchAll();
+            $datos = array();
+            foreach($result as $row){
+	            array_push($datos,[$row['PUNTUACIÓN'],$row['CANTIDAD_DE_PUNTUACIONES'],$row['FACLASS'],$row['TIPO']]);
+			}
+	        return $datos;
+        }else{
+            return false;
+        }
+        
+    }
     
 }
 

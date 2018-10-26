@@ -129,6 +129,7 @@ else{header('Location: index.php');}
                      <?php
                         
                         foreach($dataSer as $data)
+<<<<<<< HEAD
                   {
                       if($data[0]!=null and $data[1]!=null){
                           $puntuacionporcentaje=(((int)$data[0]/(int)$data[1])/5)*100;
@@ -148,6 +149,27 @@ else{header('Location: index.php');}
                   }
                      
                      
+=======
+            			{
+            			    if($data[0]!=null and $data[1]!=null){
+            			        $puntuacionporcentaje=(((int)$data[0]/(int)$data[1])/5)*100;
+            			        $puntuacionredondeado=(floor(($puntuacionporcentaje/10)*10));
+            			        
+            			        $puntuacionfinal="<div class='stars-outer'><div class='stars-inner' style=width:".(string)$puntuacionredondeado."%!important></div></div>";
+            			        
+            			    }else{
+            			        $puntuacionfinal="Este servicio todavia no ha sido calificado";
+            			    }
+            			    
+            			    
+            				
+            				echo "<i class=".$data[2]."></i><h3>".$data[3]."</h3>".$puntuacionfinal;
+            				
+            
+            			}
+                     
+                     
+>>>>>>> f32fba89033439a9e0fbef1903e60e32406886e1
                      ?>
                       
                  </div>
@@ -205,9 +227,15 @@ else{header('Location: index.php');}
                 </div>
                  <div class="modal-body">
                      <h3><i class="far fa-user"></i> <?php echo $row["NOMBRE"]; ?> <?php echo $row["APELLIDO"]; ?></h3>
+<<<<<<< HEAD
                     
                     
                     
+=======
+                    
+                    
+                    
+>>>>>>> f32fba89033439a9e0fbef1903e60e32406886e1
                       <h4>Direccion:<?php echo $row["DIRECCION"]; ?></h4>
                    
                      <br>

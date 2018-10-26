@@ -29,6 +29,16 @@ class Professional{
 	    }
 	    else {return false;}
 	}
+	public function obtenerPuntuacionYServicios($id_profesional){
+	    $prof=new dataprofessional();
+	    if(is_int($id_profesional)){
+	        $datos=$prof->obtenerpuntuacionyservicios($id_profesional);
+	        return json_encode($datos);
+	    }else{
+	        return false;
+	    }
+	}
+	//
 }
 
 ?>

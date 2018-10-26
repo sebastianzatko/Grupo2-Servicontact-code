@@ -31,7 +31,7 @@
     function enviar(){
      var buscar1= document.getElementById('buscar1').value;
 
-    var datean ='buscar1=' =buscar1;
+    var datean ='buscar1=';
     $.ajax({
       type:'POST',
       url:'ima.php',

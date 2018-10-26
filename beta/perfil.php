@@ -100,8 +100,8 @@ if (isset($_SESSION["id"])){
                         <li><a href='#' class='nomb'>".$_SESSION['nombre']."</a></li>
                       
                         <li><a href='index.php'><i class='icons iconos fas fa-home'></i></a></li>
-                        <li><a href='#'><i class='icons3 far fa-image'></i> Herramientas</a></li>
-                        <li><a href='#'><i class='icons4 iconos fas fa-wrench'></i> Galeria</a></li>";
+                        
+                        <li><a href='#'><i class='icons3 far fa-image'></i> Galeria</a></li>";
                      }else{
                        
                      }
@@ -111,9 +111,9 @@ if (isset($_SESSION["id"])){
                   <ul class="navbar-form navbar-left" id="form1" onsubmit="return enviar();" method="POST">
                    <div class="form-group">
                    
-                      <input type="text" class="form-control" name="buscar1" id="buscar1" placeholder="Buscar servicios">
+                      
                     
-                    	<button name="enviando" class="btn btn-primary" id="boton"><i class="icons iconos fas fa-search"></i> Buscar</button>
+                    	<a href="buscar.php"><button name="enviando" class="btn btn-primary" id="boton"><i class="icons iconos fas fa-search"></i> Buscar</button></a>
                       
                 	 </div>
                   </ul>

@@ -50,9 +50,8 @@ p{
 	bottom: 60px;
 }
 
-
- .cinc{
- 	margin-top: 1%;
+.cinc{
+ 
 	width: 100%;
 }
 
@@ -63,12 +62,12 @@ img{
 }
 
 .form-control{
-
+	margin-bottom: 3%;
  	 border-right: none;
      border-left: none;
      border-top: none;
  	 border-bottom-color:#81BEF7;
-     border-width: 2px;
+     border-width: 1px;
      
 }
 .form-control:hover{
@@ -92,4 +91,5 @@ img{
 	transition: 5s;
 
 }
+
 
