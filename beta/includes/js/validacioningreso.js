@@ -1,7 +1,7 @@
 var latlong="";
 
 function getIP(json) {
-	latlong="-34.8184,-58.4563";
+	latlong=json.loc;
 	
 }
 
