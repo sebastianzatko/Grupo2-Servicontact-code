@@ -15,7 +15,7 @@
     	<script src="includes/js/jquery-3.3.1.min.js"></script>
     	<script type="application/javascript" src="includes/js/notify.js"></script>
     	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
-		<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+		<script src="https://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
     	<script src="includes/js/validacioningreso.js"></script>
     	
     </head>
