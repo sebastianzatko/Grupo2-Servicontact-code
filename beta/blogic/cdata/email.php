@@ -42,6 +42,6 @@ class changeromail
         }
     }
 }
-$s = new changeromail();
-$s->validaremail('diego.ba.rodriguez@gmail.com','Diego','http://www.google.com');
+//$s = new changeromail();
+//$s->validaremail('diego.ba.rodriguez@gmail.com','Diego','http://www.google.com');
 ?>

@@ -8,7 +8,7 @@
 <head>
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  
+  <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -92,12 +92,12 @@
 <script type="text/javascript">
   
 var index="";
-var latlong="";
+var latlong="-34.8184,-58.4563";
 
 function getIP(json) {
 
   console.log("My public IP address is: ", json.ip);
-  latlong=json.loc;
+  latlong="-34.8184,-58.4563";
   console.log(latlong);
 }
 $( '.dropdown-menu .small' ).on( 'click', function( event ) {
@@ -205,7 +205,7 @@ var options = [];
        
     });
 </script>
-<script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>
+<!--<script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>-->
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
 <script type="text/javascript" src="https://www.arrowchat.com/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>
 </html>

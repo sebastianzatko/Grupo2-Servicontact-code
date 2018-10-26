@@ -6,7 +6,7 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+        <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
     	<title>Log In-Changero</title>
     	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     	<link href="bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -70,7 +70,7 @@
     
     
     <!-- Para localizacion -->
-    <script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>
+   <!-- <script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>-->
     </body>
     
     </html>
