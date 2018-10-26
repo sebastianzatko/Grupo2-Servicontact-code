@@ -47,8 +47,8 @@ div.twPc-divName {
     font-weight: 700;
     line-height: 21px;
 }
-img.twPc-avatarImg {
-    border: 2px solid #fff;
+img.img-thumbnail {
+   
     border-radius: 50%;
     box-sizing: border-box;
     color: #fff;
@@ -199,9 +199,9 @@ ul.twPc-Arrange {
         font-weight: 700;
         line-height: 21px;
     }
-    img.twPc-avatarImg {
-        border: 2px solid #fff;
-        border-radius: 7px;
+    img.img-thumbnail {
+        
+        border-radius: 5px;
         box-sizing: border-box;
         color: #fff;
         height: 80px;
