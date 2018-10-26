@@ -1,6 +1,6 @@
 <?php
 define('__ROOT1__', dirname(dirname(__FILE__)));  
-define('__DIRECTORIO__', 'https://beta.changero.online');
+define('__DIRECTORIO__', 'http://beta.changero.online');
 
     class b_user
 

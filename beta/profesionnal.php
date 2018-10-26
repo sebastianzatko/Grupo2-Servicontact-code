@@ -84,7 +84,7 @@ else{header('Location: index.php');}
           </div>
 
           <a title="" href="" class="twPc-avatarLink">
-            <img  src="<?php echo $row["FOTO_DE_PERFIL"]; ?>"  class="img-thumbnail twPc-avatarImg">
+            <img  src="<?php echo $row["FOTO_DE_PERFIL"]; ?>"  class="img-thumbnail ">
           </a>
 
           <div class="twPc-divUser">
