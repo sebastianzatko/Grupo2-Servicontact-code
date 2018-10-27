@@ -47,7 +47,7 @@ else{header('Location: index.php');}
   <link rel="stylesheet" type="text/css" href="includes/css/sidebarNavigation.css">
   <script src="includes/js/sidebarNavigation.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet"  href="includes/css/profesional.css">
+   <link rel="stylesheet"  href="includes/css/twiter.css">
    <link rel="stylesheet" type="text/css" href="includes/css/fotos.css">
  <link rel="stylesheet" type="text/css" href=" https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
   <link href="includes/css/diseno.css" rel="stylesheet">
@@ -69,22 +69,55 @@ else{header('Location: index.php');}
     echo $htmlmenu;
     
   ?>
-<img src="images/casa.jpg" class="imo">
-<img src="<?php echo $row["FOTO_DE_PERFIL"]; ?>" class="imagen">
-<a class="btn btn-default" id="nombr" href=""><?php echo $row["NOMBRE"]." ".$row["APELLIDO"]; ?></a>
- <div class=" container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <!-- Collect the nav links, forms, and other content for toggling -->
-   
-    <div class="margin1">
+  <div class="container">
+      <div class="row">
 
+      <!-- code start -->
+      <div class="twPc-div">
+          <a class="twPc-bg twPc-block"></a>
 
-        <ul  class="ula nav navbar-nav">
-           
-          <li><i class="iconsn far fa-user"></i><a class="btn btn-primary" id="letras" data-toggle="modal" href="#ventana">Informacion</a></li>
-           <li><i class="iconsn2 far fa-address-book"></i><a href="#ventana2" class="btn btn-default" id="letras1" data-toggle="modal">Servicios</a></li>
-           <li><i class="iconsn3 fas fa-chalkboard-teacher"></i><a href="#ventana1" class="btn btn-default" data-toggle="modal" id="letras2" data-toggle="modal">Contactar</a></li>
-            <div class="modal fade" id="ventana2">
+        <div>
+          <div class="twPc-button">
+                  <!-- Twitter Button | you can get from: https://about.twitter.com/tr/resources/buttons#follow -->
+                 
+                  <!-- Twitter Button -->   
+          </div>
+
+          <a title="" href="" class="twPc-avatarLink">
+            <img  src="<?php echo $row["FOTO_DE_PERFIL"]; ?>"  class="img-thumbnail ">
+          </a>
+
+          <div class="twPc-divUser">
+            <div class="twPc-divName">
+              <a href=""><?php echo $row["NOMBRE"]." ".$row["APELLIDO"]; ?></a>
+            </div>
+            <span>
+            
+            </span>
+          </div>
+
+          <div class="twPc-divStats">
+            <ul class="twPc-Arrange">
+              <li class="twPc-ArrangeSizeFit">
+                <a data-toggle="modal" href="#ventana" >
+                  <span class="twPc-StatValue"><i class="iconsn2 far fa-user"></i></span>
+                  <span class="twPc-StatLabel twPc-block">Informacion</span>
+                  
+                </a>
+              </li>
+              <li class="twPc-ArrangeSizeFit">
+                <a href="#ventana2" data-toggle="modal" >
+                  <span class="twPc-StatValue"><i class="iconsn2 far fa-address-book"></i></span>
+                  <span class="twPc-StatLabel twPc-block">Servicios</span>
+                </a>
+              </li>
+              <li class="twPc-ArrangeSizeFit">
+                <a href="#ventana1" data-toggle="modal" >
+                  <span class="twPc-StatValue"><i class="iconsn fas fa-user-cog"></i></span>
+                  <span class="twPc-StatLabel twPc-block">Contactar</span>
+                </a>
+              </li>
+           <div class="modal fade" id="ventana2">
              <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -96,23 +129,23 @@ else{header('Location: index.php');}
                      <?php
                         
                         foreach($dataSer as $data)
-            			{
-            			    if($data[0]!=null and $data[1]!=null){
-            			        $puntuacionporcentaje=(((int)$data[0]/(int)$data[1])/5)*100;
-            			        $puntuacionredondeado=(floor(($puntuacionporcentaje/10)*10));
-            			        
-            			        $puntuacionfinal="<div class='stars-outer'><div class='stars-inner' style=width:".(string)$puntuacionredondeado."%!important></div></div>";
-            			        
-            			    }else{
-            			        $puntuacionfinal="Este servicio todavia no ha sido calificado";
-            			    }
-            			    
-            			    
-            				
-            				echo "<i class=".$data[2]."></i><h3>".$data[3]."</h3>".$puntuacionfinal;
-            				
+                  {
+                      if($data[0]!=null and $data[1]!=null){
+                          $puntuacionporcentaje=(((int)$data[0]/(int)$data[1])/5)*100;
+                          $puntuacionredondeado=(floor(($puntuacionporcentaje/10)*10));
+                          
+                          $puntuacionfinal="<div class='stars-outer'><div class='stars-inner' style=width:".(string)$puntuacionredondeado."%!important></div></div>";
+                          
+                      }else{
+                          $puntuacionfinal="Este servicio todavia no ha sido calificado";
+                      }
+                      
+                      
+                    
+                    echo "<i class=".$data[2]."></i><h3>".$data[3]."</h3>".$puntuacionfinal;
+                    
             
-            			}
+                  }
                      
                      
                      ?>
@@ -197,13 +230,19 @@ else{header('Location: index.php');}
               
              </div>
            </div>
-         </ul>
-     </div>
-     
-     
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- code end -->
+      </div>
+</div>
+
+ <!-- /.container-fluid -->
   <br>
+  <br>
+   <br>
   <br>
 <div class="tabpanel">
     <ul class="nav nav-tabs" role="tablist">
