@@ -15,8 +15,9 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="includes/css/muro.css" rel="stylesheet">
   <link href="includes/css/diseno.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="includes/css/insta.css">
   <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <script src="includes/js/jquery.js"></script>
   <script src="bootstrap/bootstrap.min.js"></script>
   <script src="includes/js/sidebarNavigation.js"></script>
@@ -87,7 +88,118 @@
 </div>
 </div>   
         
-     
+<section class="team">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="col-lg-12">
+          <h6 class="description">Profesionales Mas Destacados</h6>
+          <div class="row pt-md">
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+              <div class="img-box">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/1.jpg" class="img-responsive">
+                <ul class="text-center">
+                  <a href="#"><li>Ver Perfil</li></a>
+                </ul>
+              </div>
+              <h1>Maria </h1>
+              <h2>TECNICA</h2>
+              <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+              <div class="img-box">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/2.jpg" class="img-responsive">
+                <ul class="text-center">
+                  <a href="#"><li>Ver Perfil</li></a>
+                </ul>
+              </div>
+              <h1>Crisitna Di</h1>
+              <h2>Decoradora</h2>
+               <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i></p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+              <div class="img-box">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/3.jpg" class="img-responsive">
+                <ul class="text-center">
+                  <a href="#"><li>Ver Perfil</li></a>
+                </ul>
+              </div>
+              <h1>Maria H</h1>
+              <h2>Jardinera</h2>
+             <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i></p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+              <div class="img-box">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/4.jpg" class="img-responsive">
+                <ul class="text-center">
+                  <a href="#"><li>Ver Perfil</li></a>
+                </ul>
+              </div>
+              <h1>Jony diaz</h1>
+              <h2>Electrisista</h2>
+              <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i></p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+              <div class="img-box">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/5.jpg" class="img-responsive">
+                <ul class="text-center">
+                    <a href="#"><li>Ver Perfil</li></a>
+                </ul>
+              </div>
+              <h1>Pedro gonzalez</h1>
+              <h2>plomero/gasista</h2>
+              <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i></p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+              <div class="img-box">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/6.jpg" class="img-responsive">
+                <ul class="text-center">
+                  <a href="#"><li>Ver Perfil</li></a>
+                </ul>
+              </div>
+              <h1>Charly gutierrez</h1>
+              <h2>pisinista</h2>
+              <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i></p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+              <div class="img-box">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/7.jpg" class="img-responsive">
+                <ul class="text-center">
+                  <a href="#"><li>Ver Perfil</li></a>
+                 
+                </ul>
+              </div>
+              <h1>Martin j</h1>
+              <h2>Electrisita/mecanico</h2>
+              <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i></p>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+              <div class="img-box">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/8.jpg" class="img-responsive">
+                <ul class="text-center">
+                    <a href="#"><li>Ver Perfil</li></a>
+                </ul>
+              </div>
+              <h1>falvia</h1>
+              <h2>decoradora/jardinera</h2>
+              <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i></p>
+            </div>
+           
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="col-md-10 col-md-offset-1 text-center">
+            
+            <h5>Changero <i class="fa fa-heart red"></i> by Los mejores profesionales <a href="http://www.nabeel.co.in" target="_blank"></a></h5>
+        </div>   
+    </div>
+</footer>  
  
 </body>
 
