@@ -42,6 +42,7 @@ class changeromail
         }
     }
 }
-$s = new changeromail();
-$s->validaremail('diego.ba.rodriguez@gmail.com','Diego','http://www.google.com');
+//Descomentar las 2 lineas siguientes en caso de querer probar este modulo por separado, y volver a comentar luego de finalizar el test (hacerlo en commit).
+//$s = new changeromail();
+//$s->validaremail('diego.ba.rodriguez@gmail.com','Diego','http://www.google.com');
 ?>
