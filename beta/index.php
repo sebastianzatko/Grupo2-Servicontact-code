@@ -8,11 +8,11 @@
 	<title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="includes/css/sidebarNavigation.css">
   
-  
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="includes/css/muro.css" rel="stylesheet">
   <link href="includes/css/diseno.css" rel="stylesheet">
   <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />
@@ -26,23 +26,7 @@
   
 </head>
 <body>
-  <script type="text/javascript">
-    
-    function enviar(){
-     var buscar1= document.getElementById('buscar1').value;
-
-    var datean ='buscar1=';
-    $.ajax({
-      type:'POST',
-      url:'ima.php',
-      data:datean,
-      success:function(resp){
-          $("#respa").html(resp);
-      }
-    });
-    return false
-    }
-  </script>
+ 
 	<?php
 		require "templates/menu.php";
 		
@@ -82,16 +66,29 @@
 </div>
 <br>
 
-         <div class="container1">
+        
    
       
-    <center><h3>Categorias Populares</h3>    
-         <img src="images/juan.jpg" alt="Park" class="img-responsive img-thumbnail">
-         <img src="images/gasista.jpg" alt="Park" class="img-responsive img-thumbnail">
-         <img src="images/electri.jpg" alt="Park" class="img-responsive img-thumbnail">
-         <img src="images/plomeros.jpg" alt="Park" class="img-responsive img-thumbnail">
-     </center>
+<center><h3>Categorias Populares</h3> </center>
+<br>
+<div class="galeria">
+<div class="container">
+  <div class="row">
+        <div class="profile-header-container">   
+        <div class="profile-header-img">
+                <img class="img-circle" src="images/juan.jpg" />
+                 <img class="img-circle" src="images/gasista.jpg" />
+                  <img class="img-circle" src="images/electri.jpg" />
+                   <img class="img-circle" src="images/plomeros.jpg" />
+                <!-- badge -->
+        </div>
+        </div> 
   </div>
+</div>
+</div>   
+        
+     
+ 
 </body>
 
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
