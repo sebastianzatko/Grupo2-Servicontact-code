@@ -15,6 +15,7 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="includes/css/muro.css" rel="stylesheet">
   <link href="includes/css/diseno.css" rel="stylesheet">
+   <link rel="stylesheet" href="includes/css/estilos.css">
   <link rel="stylesheet" type="text/css" href="includes/css/insta.css">
   <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -91,7 +92,7 @@
 <section class="team">
   <div class="container">
     <div class="row">
-      <div class="col-md-10 col-md-offset-1">
+      <div class="col-md-8 col-md-offset-2">
         <div class="col-lg-12">
           <h6 class="description">Profesionales Mas Destacados</h6>
           <div class="row pt-md">
@@ -194,15 +195,149 @@
 </section>
 <footer>
     <div class="container">
-        <div class="col-md-10 col-md-offset-1 text-center">
+        <div class="col-md-8 col-md-offset-2 text-center">
             
             <h5>Changero <i class="fa fa-heart red"></i> by Los mejores profesionales <a href="http://www.nabeel.co.in" target="_blank"></a></h5>
         </div>   
     </div>
-</footer>  
- 
-</body>
+</footer> 
 
+
+ <div class="team">
+  <div class="container"><main>
+      
+        <div class="container-comments">
+           
+            <div class="comments">
+               
+                <div class="photo-perfil">
+                    <img src="image/perfil.png" alt="">
+                </div>
+                
+                <div class="info-comments">
+                   
+                    <div class="header">
+                        <h4>juan gonzalez</h4>
+                        <h5>2 noviembre 2018</h5>
+                    </div>
+                    
+                    <p><img src="images/decorado.jpg" class="foter"></p>
+                    
+                    <div class="footer">
+                       
+                       <h5 class="request">Comentar</h5>
+                        <label class="icon-heart"></label>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container-comments-request">
+           
+            <div class="comments-request">
+               
+                <div class="photo-perfil-request">
+                    <img src="image/perfil2.jpg" alt="">
+                </div>
+                
+                <div class="info-comments-request">
+                   
+                    <div class="header">
+                        <h4>Julia gonzalez</h4>
+                        <h5>2 noviembre 2018</h5>
+                    </div>
+                    
+                    <p>Muy lindo decarado quisiera tener uno igual muy buen trabajo lo felicito una obra de arte</p>
+                    
+                    <div class="footer">
+                       
+                       <h5 class="request">Comentar</h5>
+                        <label class="icon-heart"></label>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container-comments">
+           
+            <div class="comments">
+               
+                <div class="photo-perfil">
+                    <img src="image/perfil.png" alt="">
+                </div>
+                
+                <div class="info-comments">
+                   
+                    <div class="header">
+                         <h4>jose gonzalez</h4>
+                        <h5>2 noviembre 2018</h5>
+                    </div>
+                    
+                    <p><img src="images/picinas.jpg" class="foter"></p>
+                    
+                    <div class="footer">
+                       
+                        <h5 class="request">Comentar</h5>
+                        <label class="icon-heart"></label>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="container-comments">
+           
+            <div class="comments">
+               
+                <div class="photo-perfil">
+                    <img src="image/perfil2.jpg" alt="">
+                </div>
+                
+                <div class="info-comments">
+                   
+                    <div class="header">
+                         <h4>julio gonzalez</h4>
+                        <h5>2 noviembre 2018</h5>
+                    </div>
+                    
+                    <p><img src="images/jardin.jpg" class="foter"></p>
+                    
+                    <div class="footer">
+                       
+                        <h5 class="request">Comentar</h5>
+                        <label class="icon-heart"></label>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+  </div>
+   </div>
+    
+    <div class="capa-data"></div>
+    <div class="container-data">
+        <div class="photo-input">
+           
+            <div class="perfil-photo">
+                <img src="image/perfil2.jpg" id="photoSelect" alt="">
+            </div>
+            <input type="file" id="loadPhoto">
+            <input type="text" placeholder="Su nombre">
+            
+        </div>
+        
+        <textarea class="mensaje" name="" id="" cols="30" rows="10" placeholder="Escriba su mensaje"></textarea>
+        
+        <button class="btn-comment">Comentar</button>
+    </div>
+ </div>
+</body>
+<script type="text/javascript" src="includes/js/script.js"></script>
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
 <script type="text/javascript" src="https://www.arrowchat.com/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>
 </html>
