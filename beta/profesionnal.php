@@ -49,6 +49,7 @@ else{header('Location: index.php');}
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet"  href="includes/css/twiter.css">
    <link rel="stylesheet" type="text/css" href="includes/css/fotos.css">
+    <link rel="stylesheet" type="text/css" href="includes/css/buscar.css">
  <link rel="stylesheet" type="text/css" href=" https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
   <link href="includes/css/diseno.css" rel="stylesheet">
   <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />

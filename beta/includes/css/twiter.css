@@ -1,3 +1,11 @@
+.glyphicon { margin-right:5px;}
+.rating .glyphicon {font-size: 22px;}
+.rating-num { margin-top:0px;font-size: 54px; }
+.progress { margin-bottom: 5px;}
+.progress-bar { text-align: left; }
+.rating-desc .col-md-3 {padding-right: 0px;}
+.sr-only { margin-left: 5px;overflow: visible;clip: auto; }
+
 .twPc-div {
     background: #fff none repeat scroll 0 0;
     border: 1px solid #e1e8ed;
@@ -5,6 +13,7 @@
     height: 200px;
     max-width: 340px; // orginal twitter width: 290px;
 }
+
 .container{
     width:80%;
 }
@@ -56,6 +65,16 @@ img.img-thumbnail {
     width: 200px;
     margin-top: -90px;
     margin-bottom: 40px;
+}
+.twPc-d {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #e1e8ed;
+    border-radius: 6px;
+    height: 250px;
+    margin-left: 150px;
+    max-width: 70%;
+    //: ;
+    
 }
 .twPc-div {
     background: #fff none repeat scroll 0 0;
@@ -131,7 +150,14 @@ ul.twPc-Arrange {
 .twPc-ArrangeSizeFit a:hover {
     text-decoration: none;
 }
-
+.well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+}
 
 @media (max-width: 1000px){
         .container{
@@ -142,14 +168,14 @@ ul.twPc-Arrange {
         font-size: 20px;
         font-weight: 500;
         transition: color 0.15s ease-in-out 0s;
-        margin-left: 40px;
+        margin-left: 30px;
     }
      .iconsn {
         display: block;
         font-size: 20px;
        
         transition: color 0.15s ease-in-out 0s;
-        margin-left: 40px;
+        margin-left: 30px;
     }
     span.twPc-StatLabel {
         color: #8899a6;
@@ -168,6 +194,16 @@ ul.twPc-Arrange {
         height: 150px;
         width: 100%;
     }
+    .twPc-d {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #e1e8ed;
+    border-radius: 6px;
+    height: 256px;
+    margin-left:10px;
+    max-width: 90%;
+    //: ;
+    
+}
     .twPc-div {
     background: #fff none repeat scroll 0 0;
     border: 1px solid #e1e8ed;

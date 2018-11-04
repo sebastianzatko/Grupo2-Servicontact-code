@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+  <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
  
@@ -29,12 +29,12 @@
 </head>
 <body>
  
-	<?php
-		require "templates/menu.php";
-		
-		echo $htmlmenu;
-		
-	?>
+  <?php
+    require "templates/menu.php";
+    
+    echo $htmlmenu;
+    
+  ?>
 
 <div class="container-fluid">
       <div id="micarouselinicio" class="carousel slide" data-ride="carousel">
@@ -201,26 +201,36 @@
         </div>   
     </div>
 </footer> 
+<br>
 
+<center><h1>Publicaciones</h1></center>
+<br>
+<br>
+<br>
+<br>
 
  <div class="team">
-  <div class="container"><main>
-      
+  <div class="container">
+    <div class="row">
+     <div class="col-lg-12">
+       <main>
+       
         <div class="container-comments">
            
             <div class="comments">
                
                 <div class="photo-perfil">
-                    <img src="image/perfil.png" alt="">
+                    <img src="image/jose.jpg" alt="">
                 </div>
-                
+            <div class="col-xs-12">
                 <div class="info-comments">
                    
                     <div class="header">
-                        <h4>juan gonzalez</h4>
-                        <h5>2 noviembre 2018</h5>
+                       <img src="images/jose.jpg" class="futer">
+                        <h4 class="h4">juan gonzalez</h4>
+                      
                     </div>
-                    
+                      <h5>2 noviembre 2018</h5>
                     <p><img src="images/decorado.jpg" class="foter"></p>
                     
                     <div class="footer">
@@ -230,7 +240,7 @@
                         
                     </div>
                 </div>
-                
+            </div>
             </div>
         </div>
         <div class="container-comments-request">
@@ -238,14 +248,15 @@
             <div class="comments-request">
                
                 <div class="photo-perfil-request">
-                    <img src="image/perfil2.jpg" alt="">
+                    <img src="images/juan.jpg" alt="">
                 </div>
                 
                 <div class="info-comments-request">
                    
                     <div class="header">
+
                         <h4>Julia gonzalez</h4>
-                        <h5>2 noviembre 2018</h5>
+                        <h5 class="h4">2 noviembre 2018</h5>
                     </div>
                     
                     <p>Muy lindo decarado quisiera tener uno igual muy buen trabajo lo felicito una obra de arte</p>
@@ -265,16 +276,17 @@
             <div class="comments">
                
                 <div class="photo-perfil">
-                    <img src="image/perfil.png" alt="">
+                    <img src="image/ramon.png" alt="">
                 </div>
-                
+            <div class="col-xs-12">
                 <div class="info-comments">
                    
                     <div class="header">
-                         <h4>jose gonzalez</h4>
-                        <h5>2 noviembre 2018</h5>
+                       <img src="images/ramon.jpg" class="futer">
+                        <h4 class="h4">jose gonzalez</h4>
+                        
                     </div>
-                    
+                    <h5>2 noviembre 2018</h5>
                     <p><img src="images/picinas.jpg" class="foter"></p>
                     
                     <div class="footer">
@@ -284,7 +296,7 @@
                         
                     </div>
                 </div>
-                
+              </div>  
             </div>
         </div>
         
@@ -295,14 +307,15 @@
                 <div class="photo-perfil">
                     <img src="image/perfil2.jpg" alt="">
                 </div>
-                
+             <div class="col-xs-12">
                 <div class="info-comments">
                    
                     <div class="header">
-                         <h4>julio gonzalez</h4>
-                        <h5>2 noviembre 2018</h5>
+                      <img src="images/ramon.jpg" class="futer">
+                         <h4 class="h4">julio gonzalez</h4>
+                        
                     </div>
-                    
+                     <h5>2 noviembre 2018</h5>
                     <p><img src="images/jardin.jpg" class="foter"></p>
                     
                     <div class="footer">
@@ -312,10 +325,13 @@
                         
                     </div>
                 </div>
-                
+               </div> 
             </div>
         </div>
-    </main>
+
+      </main>
+    </div>
+  </div>
   </div>
    </div>
     

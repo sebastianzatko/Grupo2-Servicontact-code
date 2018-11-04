@@ -62,6 +62,7 @@ main h1{
 
 .container-comments-request{
     margin-left: 100px;
+
 }
 
 .comments,
@@ -99,27 +100,32 @@ main h1{
 }
 .info-comments,
 .info-comments-request{
-  
+    width: 100%;
     background: #e6e6e6;
     transition: all 300ms;
     margin-top: 10px;
     border-bottom: 6px solid black;
+    border-radius: 5px;
 }
 
 
 .info-comments .header,
 .info-comments-request .header{
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
+    width: 100%;
+    padding: 5px ;
     background: #019CDE;
     color: white;
+     border-radius: 5px;
 
 }
-
+.h4{
+    margin-left: 10px;
+}
 .info-comments p,
 .info-comments-request p{
-    padding: 20px;
+    padding: 2px;
+    border-radius: 5px;
 }
 
 .info-comments .footer,
@@ -238,8 +244,8 @@ div.container-data{
 }
 
 @media (max-width: 650px){
-.container div.container-data{
-    width: 88%;
+ div.container-data{
+    width: 100%;
    
     position: fixed;
     background: white;
@@ -249,19 +255,57 @@ div.container-data{
     border-top: 6px solid #019CDE;
     margin: 0;
 }
+img.futer{
+    position: relative;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
 .info-comments-request{
-    margin-left: 0;
+    margin-left: 25px;
 }
 .container-comments-request{
     width: 95%;
     margin-left: 15px;
 }
 .foter{
-    width:300px ;
-    height: 250px;
+    
+    width:340px; 
+    height: 300px;
 }
+.photo-perfil-request{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-
+}
+@media (max-width: 390px){
+div.container-data{
+    width: 99%;
+   
+    position: fixed;
+    background: white;
+    padding: 10px;
+    padding-bottom: 60px;
+    z-index: 11;
+    border-top: 6px solid #019CDE;
+    margin: 0;
+}
+.info-comments-request{
+    margin-left: 15px;
+}
+.container-comments-request{
+    width: 95%;
+    margin-left: 15px;
+}
+.foter{
+    
+    width:310px ;
+    height: 282px;
+}
+}
 
 
