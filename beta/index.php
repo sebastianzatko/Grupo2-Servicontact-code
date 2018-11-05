@@ -16,6 +16,7 @@
   <link href="includes/css/muro.css" rel="stylesheet">
   <link href="includes/css/diseno.css" rel="stylesheet">
    <link rel="stylesheet" href="includes/css/estilos.css">
+    <link rel="stylesheet" href="includes/css/blog.css">
   <link rel="stylesheet" type="text/css" href="includes/css/insta.css">
   <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -192,58 +193,62 @@
       </div>
     </div>
   </div>
+  
+  
+</footer> 
 </section>
 <footer>
-    <div class="container">
+<center><div class="container">
         <div class="col-md-8 col-md-offset-2 text-center">
             
             <h5>Changero <i class="fa fa-heart red"></i> by Los mejores profesionales <a href="http://www.nabeel.co.in" target="_blank"></a></h5>
         </div>   
     </div>
-</footer> 
-<br>
-
+    <br>
+  </footer>
 <center><h1>Publicaciones</h1></center>
 <br>
-<br>
-<br>
-<br>
 
- <div class="team">
-  <div class="container">
+
+ 
+ <div class="marge container">
     <div class="row">
-     <div class="col-lg-12">
-       <main>
-       
-        <div class="container-comments">
-           
-            <div class="comments">
-               
-                <div class="photo-perfil">
-                    <img src="image/jose.jpg" alt="">
-                </div>
-            <div class="col-xs-12">
-                <div class="info-comments">
-                   
-                    <div class="header">
-                       <img src="images/jose.jpg" class="futer">
-                        <h4 class="h4">juan gonzalez</h4>
-                      
-                    </div>
-                      <h5>2 noviembre 2018</h5>
-                    <p><img src="images/decorado.jpg" class="foter"></p>
-                    
-                    <div class="footer">
+     <div class="col-lg-8">
+      <div class="row">
+     <div class="col-lg-6  col-md-6">
+
+        <aside>
+              <div class="content-footer">
+                <img class="user-small-img" src="images/ramon.jpg">
+                <span style="font-size: 16px;color: #fff;">Juan Gonzalez</span>
+                <span class="pull-right">
+                <a href="#ventana2" data-toggle="modal"><i class="fa fa-comments"></i> 30</a>
+                
+                </span>
+    
+               </div>
+
+           <img src="images/decorado.jpg" class="img-responsive">
+              
+        
+           <div class="footer">
                        
                        <h5 class="request">Comentar</h5>
                         <label class="icon-heart"></label>
                         
                     </div>
+       </aside>
+  </div>
+  <div class="modal fade" id="ventana2">
+             <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h2 class="modal-title">Comentarios</h2>
+
                 </div>
-            </div>
-            </div>
-        </div>
-        <div class="container-comments-request">
+                 <div class="modal-body">
+                   <div class="container-comments-request">
            
             <div class="comments-request">
                
@@ -256,9 +261,9 @@
                     <div class="header">
 
                         <h4>Julia gonzalez</h4>
-                        <h5 class="h4">2 noviembre 2018</h5>
+                        
                     </div>
-                    
+                    <h5>2 noviembre 2018</h5>
                     <p>Muy lindo decarado quisiera tener uno igual muy buen trabajo lo felicito una obra de arte</p>
                     
                     <div class="footer">
@@ -271,71 +276,102 @@
                 
             </div>
         </div>
-        <div class="container-comments">
-           
-            <div class="comments">
-               
-                <div class="photo-perfil">
-                    <img src="image/ramon.png" alt="">
-                </div>
-            <div class="col-xs-12">
-                <div class="info-comments">
-                   
-                    <div class="header">
-                       <img src="images/ramon.jpg" class="futer">
-                        <h4 class="h4">jose gonzalez</h4>
-                        
-                    </div>
-                    <h5>2 noviembre 2018</h5>
-                    <p><img src="images/picinas.jpg" class="foter"></p>
-                    
-                    <div class="footer">
-                       
-                        <h5 class="request">Comentar</h5>
-                        <label class="icon-heart"></label>
-                        
-                    </div>
-                </div>
-              </div>  
-            </div>
-        </div>
-        
-        <div class="container-comments">
-           
-            <div class="comments">
-               
-                <div class="photo-perfil">
-                    <img src="image/perfil2.jpg" alt="">
-                </div>
-             <div class="col-xs-12">
-                <div class="info-comments">
-                   
-                    <div class="header">
-                      <img src="images/ramon.jpg" class="futer">
-                         <h4 class="h4">julio gonzalez</h4>
-                        
-                    </div>
-                     <h5>2 noviembre 2018</h5>
-                    <p><img src="images/jardin.jpg" class="foter"></p>
-                    
-                    <div class="footer">
-                       
-                        <h5 class="request">Comentar</h5>
-                        <label class="icon-heart"></label>
-                        
-                    </div>
-                </div>
-               </div> 
-            </div>
-        </div>
+                      
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button"  data-dismiss="modal" class="btn btn-success">Cerrar</button>
 
-      </main>
+                  
+                 </div>
+              </div>
+              
+             </div>
+           </div>
+       
+        <div class="col-lg-6  col-md-6">
+
+        <aside>
+              <div class="content-footer">
+                <img class="user-small-img" src="images/ramon.jpg">
+                <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
+                <span class="pull-right">
+                <a href="#ventana2" data-toggle="modal"><i class="fa fa-comments"></i> 30</a>
+                                
+                </span>
+    
+               </div>
+
+           <img src="images/casa.jpg" class="img-responsive">
+              
+        
+           <div class="footer">
+                       
+                       <h5 class="request">Comentar</h5>
+                        <label class="icon-heart"></label>
+                        
+                    </div>
+       </aside>
+  </div>
+        
+         <div class="col-lg-6  col-md-6">
+
+        <aside>
+              <div class="content-footer">
+                <img class="user-small-img" src="images/ramon.jpg">
+                <span style="font-size: 16px;color: #fff;">jose diaz</span>
+                <span class="pull-right">
+                <a href="#ventana2" data-toggle="modal"><i class="fa fa-comments"></i> 30</a>
+                              
+                </span>
+    
+               </div>
+
+           <img src="images/jardin.jpg" class="img-responsive">
+              
+        
+           <div class="footer">
+                       
+                       <h5 class="request">Comentar</h5>
+                        <label class="icon-heart"></label>
+                        
+                    </div>
+       </aside>
+  </div> 
+  <div class="col-lg-6  col-md-6">
+
+        <aside>
+              <div class="content-footer">
+                <img class="user-small-img" src="images/ramon.jpg">
+                <span style="font-size: 16px;color: #fff;">jose diaz</span>
+                <span class="pull-right">
+                <a href="#ventana2" data-toggle="modal"><i class="fa fa-comments"></i> 30</a>
+                              
+                </span>
+    
+               </div>
+
+           <img src="images/pileta.jpg" class="img-responsive">
+              
+        
+           <div class="footer">
+                       
+                       <h5 class="request">Comentar</h5>
+                        <label class="icon-heart"></label>
+                        
+                    </div>
+       </aside>
+  </div>
+                
+       
+  </div>
+      </div>
     </div>
   </div>
-  </div>
-   </div>
+ </div>
+  </center>
     
-    <div class="capa-data"></div>
+ <div class="capa-data">
+ </div>
     <div class="container-data">
         <div class="photo-input">
            

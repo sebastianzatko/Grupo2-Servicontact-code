@@ -48,13 +48,19 @@ main h1{
 }
 
 .line{
-    width: 500px;
-    height: 2px;
+    width: 100%;
+    height: 6px;
     border-style: none;
     background: #cecece;
     margin-top: 20px;
 }
 
+.container-comments{
+  width: 100%;
+    -webkit-box-shadow: 1px 4px 16px 3px rgba(199,197,199,1);
+    -moz-box-shadow: 1px 4px 16px 3px rgba(199,197,199,1);
+    box-shadow: 1px 4px 16px 3px rgba(199,197,199,1);
+}
 .container-comments, 
 .container-comments-request{
     margin-top: 20px;
@@ -101,11 +107,13 @@ main h1{
 .info-comments,
 .info-comments-request{
     width: 100%;
+
     background: #e6e6e6;
     transition: all 300ms;
     margin-top: 10px;
     border-bottom: 6px solid black;
     border-radius: 5px;
+
 }
 
 
@@ -114,7 +122,7 @@ main h1{
     display: flex;
     width: 100%;
     padding: 5px ;
-    background: #019CDE;
+    background: #16A085;
     color: white;
      border-radius: 5px;
 
@@ -122,12 +130,20 @@ main h1{
 .h4{
     margin-left: 10px;
 }
+
 .info-comments p,
 .info-comments-request p{
     padding: 2px;
     border-radius: 5px;
 }
-
+.footer{
+     background: white;
+    padding: 10px;
+    color: #5f5f5f;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
 .info-comments .footer,
 .info-comments-request .footer{
     width: 100%;
@@ -242,7 +258,9 @@ div.container-data{
     opacity: 0.8;
     z-index: 10;
 }
-
+.marge{
+    margin-left: 200px;
+}
 @media (max-width: 650px){
  div.container-data{
     width: 100%;
@@ -254,6 +272,9 @@ div.container-data{
     z-index: 11;
     border-top: 6px solid #019CDE;
     margin: 0;
+}
+.marge{
+    margin-left:0;
 }
 img.futer{
     position: relative;
@@ -293,6 +314,9 @@ div.container-data{
     z-index: 11;
     border-top: 6px solid #019CDE;
     margin: 0;
+}
+.marge{
+    margin-left:0;
 }
 .info-comments-request{
     margin-left: 15px;
