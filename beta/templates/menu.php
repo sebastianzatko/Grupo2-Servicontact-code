@@ -14,7 +14,7 @@
 		 if(isset($_SESSION["nombre"]) and isset($_SESSION["foto"]) and isset($_SESSION["id"])){
               $responsiveprofile= "
               <ul class='nav navbar-nav navbar-right'>
-                  <li><a href=''><i class='icons5 far fa-star'></i> Mi puntuacion</a></li>
+                  <li><a href='puntuacion.php'><i class='icons5 far fa-star'></i> Mi puntuacion</a></li>
                   <li class='hidden-xs hidden-sm'><a href=''><i class='icons far fa-comments'></i></a></li>
                   <li class='hidden-md hidden-lg'><a href='arrowchat/public/mobile/'><i class='icons far fa-comments'></i> Chat Móvil</a></li>
                   <li><a href='#'><i class='icons1 far fa-bell'></i></a></li>
@@ -184,7 +184,56 @@ $htmlmenu1="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
   </div><!-- /.container-fluid -->
 </nav>";
 
+$htmlmenu4="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation' data-sidebarClass='navbar-inverse'>
+  <div class='container'>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class='navbar-header'>
 
+      <button type='button' class='navbar-toggle left-navbar-toggle' data-toggle='collapse' style='display: none' data-target='#bs-example-navbar-collapse-1' aria-expanded='false'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <div class='container'>
+        <div class='row'>
+            <div class='col-xs-1 col-md-8 col-sm-6 col-lg-4'>
+                <a href='index.php' id='buscar3'><i class='fas fa-arrow-left'></i></a>
+            </div>
+            <div class='col-xs-10 col-md-8 col-sm-6 col-lg-4'>
+               <center><spam id='buscar3'> Mi puntuacion</spam></center>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+     
+      <ul class='nav navbar-nav'>
+        ".$profile."
+        
+      </ul>
+    
+      <ul class='navbar-form navbar-left'>
+        
+       <div class='form-group'>
+       
+      
+            
+          <a href='buscar.php'><button name='enviando' class='btn btn-primary' id='boton'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
+          
+       </div>
+      </ul>
+    ".$responsiveprofile."
+          
+          
+          
+        
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>";
 
 $htmlmenu3="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation' data-sidebarClass='navbar-inverse'>
   <div class='container'>
