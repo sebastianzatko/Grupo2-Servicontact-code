@@ -152,35 +152,73 @@ if (isset($_SESSION["id"])){
               </div><!-- /.container-fluid -->
             </nav>
             
-            <?php
-            		
-            		
-            		
-            		
-            		
-            		
-            		
-            		
-            		
-            	?>
-            
-            <img src="images/casa.jpg" class="imo">
-            <img src="<?php echo $_SESSION['foto']; ?>" class="imagen">
-             <div class=" container-fluid">
+        
                 <!-- Brand and toggle get grouped for better mobile display -->
             
             	
-            	
-                <!-- Collect the nav links, forms, and other content for toggling -->
-               
-                <div class="margin1">
-                    <ul  class="ula nav navbar-nav">
-                      <li><i class="icon fas fa-user-edit"></i><a class="btn btn-primary" id="letras" data-toggle="modal" href="#ventana">Editar informacion</a></li>
-                      <li><a class="btn btn-default" id="nombr" href=""><?php echo $row["NOMBRE"]." ".$row["APELLIDO"]; ?></a></li>
-                       <div class="modal fade" id="ventana">
+       <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="col-lg-10 col-sm-6 col-xs-12">
+    <div class="card hovercard">
+        <div class="card-background">
+            <img class="card-bkimg" alt="" src="<?php echo $_SESSION['foto']; ?>">
+            <!-- http://lorempixel.com/850/280/people/9/ -->
+        </div>
+        <div class="useravatar">
+            <img alt="" src="<?php echo $_SESSION['foto']; ?>">
+        </div>
+        <div class="card-info"> <span class="card-title"><?php echo $row["NOMBRE"]." ".$row["APELLIDO"]; ?></span>
+
+        </div>
+    </div>
+    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                <div class="">Informacion</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" id="favorites" class="btn btn-default" href="#ventana" data-toggle="modal"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                <div class="">Editar perfil</div>
+            </button>
+        </div>
+        
+    </div>
+
+        <div class="well">
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab1">
+          <h3>Tus datos Personales</h3>
+          <br>
+           <label for="nombre"><?php echo $row["NOMBRE"]; ?></label>
+             
+                                 <br>
+          <label for="apellido"><?php echo $row["APELLIDO"]; ?></label>
+        
+                                 <br>
+          <label for="telefono"><?php echo $row["TELEFONO"]; ?></label>
+         
+                                 <br>
+          <label for="dir"><?php echo $row["DIRECCION"]; ?></label>
+         
+          <br>
+        </div>
+        <div class="tab-pane fade in" id="tab2">
+          <h3>This is tab 2</h3>
+          <br>
+
+        </div>
+       
+      </div>
+    </div>
+    
+    </div>
+
+            
+                   
+             <div class="modal fade" id="ventana">
                          <div class="modal-dialog">
                           <div class="modal-content">
-                            <div class="modal-header">
+                       <div class="modal-header">
             				<?php if($idactual==$_SESSION["id"]): ?>
                               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                               <h2 class="modal-title">Editar Perfil</h2>
@@ -190,7 +228,7 @@ if (isset($_SESSION["id"])){
             				?>
                             </div>
             				
-                             <div class="modal-body">
+              <div class="modal-body">
 								 <form action="./includes/php/updateuser.php" method="POST" id="formg" enctype="multipart/form-data">
                                  <label for="nombre">Nombre</label>
                                  <input type="text" name="nombre" value="<?php echo $row["NOMBRE"]; ?>" id="nombre" class="caja">
@@ -229,11 +267,11 @@ if (isset($_SESSION["id"])){
                           
                          </div>
                        </div>
-                     </ul>
+                    
                  </div>
                  
-                </div><!-- /.navbar-collapse -->
-              </div><!-- /.container-fluid -->
+            </div><!-- /.navbar-collapse -->
+         </div><!-- /.container-fluid -->
             <script>
             	
             	$( document ).ready(function() {
@@ -367,6 +405,7 @@ if (isset($_SESSION["id"])){
 	
 
 </script>
+
 </body>
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
 <script type="text/javascript" src="https://www.arrowchat.com/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>

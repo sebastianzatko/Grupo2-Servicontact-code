@@ -200,7 +200,7 @@ ul.twPc-Arrange {
     border-radius: 6px;
     height: 256px;
     margin-left:10px;
-    max-width: 90%;
+    max-width: 95%;
     //: ;
     
 }
@@ -240,9 +240,9 @@ ul.twPc-Arrange {
         border-radius: 5px;
         box-sizing: border-box;
         color: #fff;
-        height: 80px;
-        width: 100px;
-        margin-top: -20px;
+        height: 123px;
+        width: 115px;
+        margin-top: -40px;
         margin-bottom:35px;
     }
 }

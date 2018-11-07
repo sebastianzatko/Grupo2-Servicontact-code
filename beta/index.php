@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="includes/css/blog.css">
   <link rel="stylesheet" type="text/css" href="includes/css/insta.css">
   <link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="/arrowchat/external.php?type=css&amp" charset="utf-8" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href=" https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
   <script src="includes/js/jquery.js"></script>
   <script src="bootstrap/bootstrap.min.js"></script>
   <script src="includes/js/sidebarNavigation.js"></script>
@@ -99,7 +100,7 @@
           <div class="row pt-md">
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/1.jpg" class="img-responsive">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/1.jpg" class="max ">
                 <ul class="text-center">
                   <a href="#"><li>Ver Perfil</li></a>
                 </ul>
@@ -110,7 +111,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/2.jpg" class="img-responsive">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/2.jpg" class="max ">
                 <ul class="text-center">
                   <a href="#"><li>Ver Perfil</li></a>
                 </ul>
@@ -121,7 +122,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/3.jpg" class="img-responsive">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/3.jpg" class="max ">
                 <ul class="text-center">
                   <a href="#"><li>Ver Perfil</li></a>
                 </ul>
@@ -132,7 +133,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/4.jpg" class="img-responsive">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/4.jpg" class="max ">
                 <ul class="text-center">
                   <a href="#"><li>Ver Perfil</li></a>
                 </ul>
@@ -143,7 +144,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/5.jpg" class="img-responsive">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/5.jpg" class="max ">
                 <ul class="text-center">
                     <a href="#"><li>Ver Perfil</li></a>
                 </ul>
@@ -154,7 +155,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/6.jpg" class="img-responsive">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/6.jpg" class="max ">
                 <ul class="text-center">
                   <a href="#"><li>Ver Perfil</li></a>
                 </ul>
@@ -165,7 +166,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/7.jpg" class="img-responsive">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/7.jpg" class="max ">
                 <ul class="text-center">
                   <a href="#"><li>Ver Perfil</li></a>
                  
@@ -177,7 +178,7 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/8.jpg" class="img-responsive">
+                <img src="http://nabeel.co.in/files/bootsnipp/team/8.jpg" class="max">
                 <ul class="text-center">
                     <a href="#"><li>Ver Perfil</li></a>
                 </ul>
@@ -211,9 +212,10 @@
 
 
  
- <div class="marge container">
+ <div class="container">
+   
     <div class="row">
-     <div class="col-lg-8">
+     <div class="col-lg-10 col-md-offset-1">
       <div class="row">
      <div class="col-lg-6  col-md-6">
 
@@ -227,8 +229,11 @@
                 </span>
     
                </div>
-
-           <img src="images/decorado.jpg" class="img-responsive">
+            <div class="tz-gallery">
+                 <a class="lightbox" href="images/decorado.jpg">
+                <img src="images/decorado.jpg" class="img-responsive">
+                </a>
+           </div>
               
         
            <div class="footer">
@@ -248,35 +253,54 @@
 
                 </div>
                  <div class="modal-body">
-                   <div class="container-comments-request">
-           
-            <div class="comments-request">
-               
-                <div class="photo-perfil-request">
-                    <img src="images/juan.jpg" alt="">
-                </div>
-                
-                <div class="info-comments-request">
-                   
-                    <div class="header">
-
-                        <h4>Julia gonzalez</h4>
-                        
-                    </div>
-                    <h5>2 noviembre 2018</h5>
-                    <p>Muy lindo decarado quisiera tener uno igual muy buen trabajo lo felicito una obra de arte</p>
-                    
-                    <div class="footer">
-                       
-                       <h5 class="request">Comentar</h5>
-                        <label class="icon-heart"></label>
-                        
-                    </div>
-                </div>
-                
-            </div>
+                  <br>
+      <div class="comment-main-level">
+        <div class="comment-avatar">
+          <img class="user-small-img" src="images/ramon.jpg" alt="">
         </div>
-                      
+        <div class="comment-box">
+            <div class="comment-head">
+              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
+              <span>hace 20 minutos</span>
+             
+            </div>
+            <div class="comment-content">
+                    Que lindo decorado la verdad un genio sos me gustaria tener uno igual te estare hablando en los proximos dias asi charlamos
+            </div>
+          </div> 
+          </div>  
+              <br>
+               <div class="comment-main-level">
+        <div class="comment-avatar">
+          <img class="user-small-img" src="images/ramon.jpg" alt="">
+        </div>
+        <div class="comment-box">
+            <div class="comment-head">
+              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
+              <span>hace 20 minutos</span>
+             
+            </div>
+            <div class="comment-content">
+                    Que lindo decorado la verdad un genio sos me gustaria tener uno igual te estare hablando en los proximos dias asi charlamos
+            </div>
+          </div> 
+          </div>
+          <br>
+      <div class="comment-main-level">
+        <div class="comment-avatar">
+          <img class="user-small-img" src="images/ramon.jpg" alt="">
+        </div>
+        <div class="comment-box">
+            <div class="comment-head">
+              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
+              <span>hace 20 minutos</span>
+             
+            </div>
+            <div class="comment-content">
+                    Que lindo decorado la verdad un genio sos me gustaria tener uno igual te estare hablando en los proximos dias asi charlamos
+            </div>
+          </div> 
+          </div> 
                  </div>
                  <div class="modal-footer">
                    <button type="button"  data-dismiss="modal" class="btn btn-success">Cerrar</button>
@@ -286,23 +310,27 @@
               </div>
               
              </div>
+             <br>
            </div>
        
         <div class="col-lg-6  col-md-6">
 
         <aside>
               <div class="content-footer">
-                <img class="user-small-img" src="images/ramon.jpg">
-                <span style="font-size: 16px;color: #fff;">Sumit Kumar</span>
+                <img class="user-small-img" src="images/jose.jpg">
+                <span style="font-size: 16px;color: #fff;">Robertito cualigues</span>
                 <span class="pull-right">
                 <a href="#ventana2" data-toggle="modal"><i class="fa fa-comments"></i> 30</a>
                                 
                 </span>
     
                </div>
-
-           <img src="images/casa.jpg" class="img-responsive">
-              
+            <div class="tz-gallery">
+                 <a class="lightbox" href="images/casa.jpg">
+                 <img src="images/casa.jpg" class="img-responsive">
+                </a>
+           </div>
+          
         
            <div class="footer">
                        
@@ -325,9 +353,12 @@
                 </span>
     
                </div>
-
-           <img src="images/jardin.jpg" class="img-responsive">
-              
+                 <div class="tz-gallery">
+                 <a class="lightbox" href="images/jardin.jpg">
+                   <img src="images/jardin.jpg" class="img-responsive">
+                </a>
+           </div>
+           
         
            <div class="footer">
                        
@@ -348,9 +379,15 @@
                               
                 </span>
     
-               </div>
+               
 
-           <img src="images/pileta.jpg" class="img-responsive">
+      
+            </div>
+                 <div class="tz-gallery">
+                 <a class="lightbox" href="images/modernas.jpg">
+                   <img src="images/modernas.jpg" class="img-responsive">
+                </a>
+           </div>
               
         
            <div class="footer">
@@ -359,16 +396,62 @@
                         <label class="icon-heart"></label>
                         
                     </div>
-       </aside>
-  </div>
-                
-       
-  </div>
+         </aside>
+    </div>
+    
+     <div class="widget-sidebar">
+      <br>
+      <br>
+                 <h2 class="title-widget-sidebar">//Profesionales Destacados Mas cercanos</h2>
+                   <div class="content-widget-sidebar">
+                    <ul>
+                     <li class="recent-post">
+                        <div class="post-img">
+                         <img src="images/plomeros.jpg" class="img-responsive">
+                         </div>
+                        <h5>juan diazz</h5>
+                         <p><small><i class="fas fa-people-carry" data-original-title="" title=""></i> albañil</small></p>
+                        </li>
+                        <hr>
+                        
+                        <li class="recent-post">
+                        <div class="post-img">
+                         <img src="images/juan.jpg" class="img-responsive">
+                         </div>
+                       <h5>jose roman</h5>
+                         <p><small><i class="fas fa-gas-pump" data-original-title="" title=""></i> plomero</small></p>
+                        </li>
+                        <hr>
+                        
+                        <li class="recent-post">
+                        <div class="post-img">
+                         <img src="images/gasista.jpg" class="img-responsive">
+                         </div>
+                        <h5>julio gonzalez</h5>
+                         <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> gasista</small></p>
+                        </li>
+                        <hr>
+                        
+                        <li class="recent-post">
+                        <div class="post-img">
+                         <img src="images/ramon.jpg" class="img-responsive">
+                         </div>
+                        <h5>Diego diaz</h5>
+                         <p><small><i class="fas fa-charging-station" data-original-title="" title=""></i> electrista</small></p>
+                        </li>
+                        
+                        
+                    </ul>
+                   </div>
+                 </div>           
+        </div>
+
       </div>
     </div>
   </div>
- </div>
-  </center>
+
+</div>
+ 
     
  <div class="capa-data">
  </div>
@@ -376,18 +459,22 @@
         <div class="photo-input">
            
             <div class="perfil-photo">
-                <img src="image/perfil2.jpg" id="photoSelect" alt="">
+                <img src="images/jose.jpg" id="photoSelect" alt="">
             </div>
-            <input type="file" id="loadPhoto">
-            <input type="text" placeholder="Su nombre">
+            
+           <p class="nombres">Juan GONZALEZ</p>
             
         </div>
         
-        <textarea class="mensaje" name="" id="" cols="30" rows="10" placeholder="Escriba su mensaje"></textarea>
-        
-        <button class="btn-comment">Comentar</button>
+        <input class="mensaje" name="" id="" cols="30" rows="10" placeholder="Escriba su mensaje"></textarea>
+        <br>
+        <button id="btn-comment" class="btn btn-success">Comentar</button>
     </div>
  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>
 </body>
 <script type="text/javascript" src="includes/js/script.js"></script>
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>

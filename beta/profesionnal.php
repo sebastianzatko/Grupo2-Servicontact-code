@@ -48,7 +48,8 @@ else{header('Location: index.php');}
   <script src="includes/js/sidebarNavigation.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet"  href="includes/css/twiter.css">
-   <link rel="stylesheet" type="text/css" href="includes/css/fotos.css">
+   <link rel="stylesheet" type="text/css" href="includes/css/galeria.css">
+
     <link rel="stylesheet" type="text/css" href="includes/css/buscar.css">
  <link rel="stylesheet" type="text/css" href=" https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
   <link href="includes/css/diseno.css" rel="stylesheet">
@@ -118,7 +119,7 @@ else{header('Location: index.php');}
                   <span class="twPc-StatLabel twPc-block">Contactar</span>
                 </a>
               </li>
-           <div class="modal fade" id="ventana2">
+        <div class="modal fade" id="ventana2">
              <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -336,171 +337,221 @@ else{header('Location: index.php');}
 </div>
    <br>
   <br>
+<div class="twPc-d">
+ <div class="row">
+  <div class="col-xs-12 col-md-12 col-lg-12">
+   <div class="panel-body">
+                    <span>
+                        <h1 class="panel-title pull-left" style="font-size:30px;"> <?php echo $row["NOMBRE"]; ?> <?php echo $row["APELLIDO"]; ?> <small><?php echo $row["MAIL"]; ?></small> <i class="fa fa-check text-success" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="John Doe is sharing with you"></i></h1>
+                       
+                    </span>
+                    <br><br>
+                   
+                    <br><br><hr>
+                    <span class="pull-left">
+                        
+                        
+                    </span>
+                   
+                </div>
+                 <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                <div >Albunes por servicios</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                <div >Todas las fotos </div>
+            </button>
+        </div>
+       
+    </div>
+<div class="modal fade" id="ventana4">
+             <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h2 class="modal-title">Tecnico</h2>
 
-<div class="tabpanel">
-    <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation"><a aria-controls="" data-toggle="collapse" data-parent="#acordeon" role="tab" href="#collapse1"><i class="icons3 far fa-image"></i>&nbsp;&nbsp; Mis trabajos</a></li>
-      <li role="presentation"><a aria-controls=""  data-toggle="collapse" data-parent="#acordeon" href="#collapse2"><i class="icons4 iconos fas fa-wrench"></i>&nbsp;&nbsp; Mis herramientas</a></li>
-     
-         
-    </ul>
-</div>
-  
-  <div class="panel-gruop" id="acordeon" role="tablist">
-    <div class="panel panel-defaul">
-      <div class="panel-heading" role="tab" id="heading1">
-        
-      </div>
-    <div id="collapse1" class="panel-collapse collapse ">
-      <div class="panel-body" >
-             <center><div class="galeria"> 
+                </div>
+                 <div class="modal-body">
+                    <div class="galeria"> 
               <div class="tz-gallery">
                  <a class="lightbox" href="images/casa.jpg">
-                <img src="images/casa.jpg"  class="img-thumbnail" > 
+                <img src="images/casa.jpg"  > 
                 </a>
-                <a class="lightbox" href="images/casael.jpg">
-                <img src="images/casael.jpg"  class="img-thumbnail" > 
-                </a>
-               <a class="lightbox" href="images/electri.jpg">
-                <img src="images/electri.jpg"  class="img-thumbnail" > 
-                </a>
-                <a class="lightbox" href="images/casa.jpg">
-                <img src="images/casa.jpg"  class="img-thumbnail" > 
-                </a>
-                <a class="lightbox" href="images/casael.jpg">
-                <img src="images/casael.jpg"  class="img-thumbnail" > 
+                <a class="lightbox" href="images/picinas.jpg">
+                <img src="images/picinas.jpg"  > 
                 </a>
                <a class="lightbox" href="images/electri.jpg">
-                <img src="images/electri.jpg"  class="img-thumbnail" > 
+                <img src="images/electri.jpg" > 
+                </a>
+                <a class="lightbox" href="images/jardin.jpg">
+                <img src="images/jardin.jpg" > 
+                </a>
+                <a class="lightbox" href="images/decorado.jpg">
+                <img src="images/decorado.jpg"  > 
+                </a>
+               <a class="lightbox" href="images/modernas.jpg">
+                <img src="images/modernas.jpg"  > 
                 </a>
                <a class="lightbox" href="images/casa.jpg">
-                <img src="images/casa.jpg"  class="img-thumbnail" > 
+                <img src="images/casa.jpg"  > 
                 </a>
                 <a class="lightbox" href="images/casael.jpg">
-                <img src="images/casael.jpg"  class="img-thumbnail" > 
+                <img src="images/casael.jpg"  > 
+                </a>
+              <a class="lightbox" href="images/jardin.jpg">
+                <img src="images/jardin.jpg" > 
+                </a>
+                <a class="lightbox" href="images/decorado.jpg">
+                <img src="images/decorado.jpg"  > 
+                </a>
+               <a class="lightbox" href="images/modernas.jpg">
+                <img src="images/modernas.jpg"  > 
                 </a>
                <a class="lightbox" href="images/electri.jpg">
-                <img src="images/electri.jpg"  class="img-thumbnail" > 
+                <img src="images/electri.jpg" > 
                 </a>
                  <a class="lightbox" href="images/casa.jpg">
-                <img src="images/casa.jpg"  class="img-thumbnail" > 
+                <img src="images/casa.jpg" > 
                 </a>
                 <a class="lightbox" href="images/casael.jpg">
-                <img src="images/casael.jpg"  class="img-thumbnail" > 
+                <img src="images/casael.jpg"   > 
                 </a>
                <a class="lightbox" href="images/electri.jpg">
-                <img src="images/electri.jpg"  class="img-thumbnail" > 
+                <img src="images/electri.jpg"  > 
                 </a>
                  <a class="lightbox" href="images/casa.jpg">
-                <img src="images/casa.jpg"  class="img-thumbnail" > 
+                <img src="images/casa.jpg"  class="img-responsive" > 
                 </a>
                 <a class="lightbox" href="images/casael.jpg">
-                <img src="images/casael.jpg"  class="img-thumbnail" > 
+                <img src="images/casael.jpg"  class="img-responsive" > 
                 </a>
                <a class="lightbox" href="images/electri.jpg">
-                <img src="images/electri.jpg"  class="img-thumbnail" > 
+                <img src="images/electri.jpg"  class="img-responsive" > 
                 </a>
-                 <a class="lightbox" href="images/casa.jpg">
-                <img src="images/casa.jpg"  class="img-thumbnail" > 
+               <a class="lightbox" href="images/jardin.jpg">
+                <img src="images/jardin.jpg" > 
                 </a>
-                <a class="lightbox" href="images/casael.jpg">
-                <img src="images/casael.jpg"  class="img-thumbnail" > 
+                <a class="lightbox" href="images/decorado.jpg">
+                <img src="images/decorado.jpg"  > 
                 </a>
-               <a class="lightbox" href="images/electri.jpg">
-                <img src="images/electri.jpg"  class="img-thumbnail" > 
-                </a>
-               <a class="lightbox" href="images/casa.jpg">
-                <img src="images/casa.jpg"  class="img-thumbnail" > 
-                </a>
-                <a class="lightbox" href="images/casael.jpg">
-                <img src="images/casael.jpg"  class="img-thumbnail" > 
-                </a>
-               <a class="lightbox" href="images/electri.jpg">
-                <img src="images/electri.jpg"  class="img-thumbnail" > 
+               <a class="lightbox" href="images/modernas.jpg">
+                <img src="images/modernas.jpg"  > 
                 </a>
               </div>
-            </div></center>
-      </div>
-    </div>
-    </div>
-  
-   <div class="panel panel-defaul">
-      <div class="panel-heading" role="tab" id="heading2">
-        
-      </div>
-    <div id="collapse2" class="panel-collapse collapse ">
-      <div class="panel-body" >
-           <center><div class="galeria"> 
+            </div>
+                      
+
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button"  data-dismiss="modal" class="btn btn-success">Cerrar</button>
+
+                   
+                 </div>
+              </div>
+              
+             </div>
+           </div>
+        <div class="well">
+      <div class="tab-content">
+        <div class="tab-pane fade in " id="tab1">
+          <h4>Albunes</h4>
+          <br>
+          
+                      
+                  <a href="#ventana4" data-toggle="modal" style="color:black; "><p>tecnico</p>
+                    <img src="http://i.ytimg.com/i/vWtix2TtWGe9kffqnwdaMw/mq1.jpg" alt="" >
+                  </a>
+                   <a href="#ventana4" data-toggle="modal" style="color:black; "><p>electricista</p>
+                    <img src="http://i.ytimg.com/i/U6cE7pdJPc6DU2jSrKEsdQ/mq1.jpg" alt="" >
+                  </a>
+                               
+                        
+                   
+          
+       </div>
+        <div class="tab-pane fade in" id="tab2">
+          <h4>Trabajos de <?php echo $row["NOMBRE"]; ?> <?php echo $row["APELLIDO"]; ?></h4>
+
+          <br>
+          <br>
+            <div class="galeria"> 
               <div class="tz-gallery">
                  <a class="lightbox" href="images/casa.jpg">
-                <img src="images/casa.jpg"  class="img-thumbnail" > 
+                <img src="images/casa.jpg"  > 
                 </a>
-                <a class="lightbox" href="images/casael.jpg">
-                <img src="images/casael.jpg"  class="img-thumbnail" > 
-                </a>
-               <a class="lightbox" href="images/electri.jpg">
-                <img src="images/electri.jpg"  class="img-thumbnail" > 
-                </a>
-                <a class="lightbox" href="images/casa.jpg">
-                <img src="images/casa.jpg"  class="img-thumbnail" > 
-                </a>
-                <a class="lightbox" href="images/casael.jpg">
-                <img src="images/casael.jpg"  class="img-thumbnail" > 
+                <a class="lightbox" href="images/picinas.jpg">
+                <img src="images/picinas.jpg"  > 
                 </a>
                <a class="lightbox" href="images/electri.jpg">
-                <img src="images/electri.jpg"  class="img-thumbnail" > 
+                <img src="images/electri.jpg" > 
+                </a>
+                <a class="lightbox" href="images/jardin.jpg">
+                <img src="images/jardin.jpg" > 
+                </a>
+                <a class="lightbox" href="images/decorado.jpg">
+                <img src="images/decorado.jpg"  > 
+                </a>
+               <a class="lightbox" href="images/modernas.jpg">
+                <img src="images/modernas.jpg"  > 
                 </a>
                <a class="lightbox" href="images/casa.jpg">
-                <img src="images/casa.jpg"  class="img-thumbnail" > 
+                <img src="images/casa.jpg"  > 
                 </a>
                 <a class="lightbox" href="images/casael.jpg">
-                <img src="images/casael.jpg"  class="img-thumbnail" > 
+                <img src="images/casael.jpg"  > 
+                </a>
+              <a class="lightbox" href="images/jardin.jpg">
+                <img src="images/jardin.jpg" > 
+                </a>
+                <a class="lightbox" href="images/decorado.jpg">
+                <img src="images/decorado.jpg"  > 
+                </a>
+               <a class="lightbox" href="images/modernas.jpg">
+                <img src="images/modernas.jpg"  > 
                 </a>
                <a class="lightbox" href="images/electri.jpg">
-                <img src="images/electri.jpg"  class="img-thumbnail" > 
+                <img src="images/electri.jpg" > 
                 </a>
                  <a class="lightbox" href="images/casa.jpg">
-                <img src="images/casa.jpg"  class="img-thumbnail" > 
+                <img src="images/casa.jpg" > 
                 </a>
                 <a class="lightbox" href="images/casael.jpg">
-                <img src="images/casael.jpg"  class="img-thumbnail" > 
+                <img src="images/casael.jpg"   > 
                 </a>
                <a class="lightbox" href="images/electri.jpg">
-                <img src="images/electri.jpg"  class="img-thumbnail" > 
+                <img src="images/electri.jpg"  > 
                 </a>
                  <a class="lightbox" href="images/casa.jpg">
-                <img src="images/casa.jpg"  class="img-thumbnail" > 
+                <img src="images/casa.jpg"  class="img-responsive" > 
                 </a>
                 <a class="lightbox" href="images/casael.jpg">
-                <img src="images/casael.jpg"  class="img-thumbnail" > 
+                <img src="images/casael.jpg"  class="img-responsive" > 
                 </a>
                <a class="lightbox" href="images/electri.jpg">
-                <img src="images/electri.jpg"  class="img-thumbnail" > 
+                <img src="images/electri.jpg"  class="img-responsive" > 
                 </a>
-                 <a class="lightbox" href="images/casa.jpg">
-                <img src="images/casa.jpg"  class="img-thumbnail" > 
+               <a class="lightbox" href="images/jardin.jpg">
+                <img src="images/jardin.jpg" > 
                 </a>
-                <a class="lightbox" href="images/casael.jpg">
-                <img src="images/casael.jpg"  class="img-thumbnail" > 
+                <a class="lightbox" href="images/decorado.jpg">
+                <img src="images/decorado.jpg"  > 
                 </a>
-               <a class="lightbox" href="images/electri.jpg">
-                <img src="images/electri.jpg"  class="img-thumbnail" > 
-                </a>
-               <a class="lightbox" href="images/casa.jpg">
-                <img src="images/casa.jpg"  class="img-thumbnail" > 
-                </a>
-                <a class="lightbox" href="images/casael.jpg">
-                <img src="images/casael.jpg"  class="img-thumbnail" > 
-                </a>
-               <a class="lightbox" href="images/electri.jpg">
-                <img src="images/electri.jpg"  class="img-thumbnail" > 
+               <a class="lightbox" href="images/modernas.jpg">
+                <img src="images/modernas.jpg"  > 
                 </a>
               </div>
-            </div></center>
+            </div>
+        </div>
+       
       </div>
     </div>
+          </div>
+        </div>
     </div>
-  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 <script>
     baguetteBox.run('.tz-gallery');
