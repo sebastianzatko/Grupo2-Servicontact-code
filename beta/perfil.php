@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 if (isset($_SESSION["id"])){
 		if(isset($_GET["idprofile"])){
 			if((int)$_SESSION["id"]==(int)$_GET["idprofile"]){
@@ -11,8 +12,17 @@ if (isset($_SESSION["id"])){
 				$resultado=$user->obtenerDatosDeUsuario($idactual);
 				
 					if(mysqli_num_rows($resultado)==1){
-					
+						if(isset($_SESSION["idpro"])){
+							require "blogic/Galery.php";
+						  $galeria=new Galery();
+						  $fotos=$galeria->obtenerfotos((int)$_SESSION["idpro"]);
+						  require "blogic/Professional.php";
+						  $profesional=new Professional();
+						  $serviciosactivos=$profesional->obtenerPuntuacionYServicios((int)$_SESSION["idpro"]);
+							$dataSer=json_decode($serviciosactivos , true);
+						}
 						$row = mysqli_fetch_assoc($resultado);
+							
 					}else{header('Location: index.php');}
 			}else{header('Location: index.php');}	
 		}else{header('Location: index.php');}
@@ -54,6 +64,70 @@ if (isset($_SESSION["id"])){
   <script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
   <script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
   <script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
+  
+  <link rel="stylesheet"  href="includes/css/twiter.css">
+  
+  <style>
+		
+	.gallery-title
+	{
+		font-size: 36px;
+		color: #2175C4;
+		text-align: center;
+		font-weight: 500;
+		margin-bottom: 70px;
+	}
+	.gallery-title:after {
+		content: "";
+		position: absolute;
+		width: 7.5%;
+		left: 46.5%;
+		height: 45px;
+		border-bottom: 1px solid #5e5e5e;
+	}
+	.filter-button
+	{
+		font-size: 18px;
+		border: 1px solid #2175C4;
+		border-radius: 5px;
+		text-align: center;
+		color: #2175C4;
+		margin-bottom: 30px;
+
+	}
+	#agregado{
+		font-size: 18px;
+		border: 1px solid ;
+		border-radius: 5px;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.filter-button:hover
+	{
+		font-size: 18px;
+		border: 1px solid #2175C4;
+		border-radius: 5px;
+		text-align: center;
+		color: #ffffff;
+		background-color: #2175C4;
+
+	}
+	.btn-default:active .filter-button:active
+	{
+		background-color: #42B32F;
+		color: white;
+	}
+
+	.port-image
+	{
+		width: 100%;
+	}
+
+	.gallery_product
+	{
+		margin-bottom: 30px;
+	}
+	</style>
             </head>
             <body>
               <script type="text/javascript">
@@ -73,91 +147,22 @@ if (isset($_SESSION["id"])){
                 return false
                 }
               </script>
-            	<nav id="nav" class="navbar navbar-dark bg-primary sidebarNavigation" data-sidebarClass="navbar-inverse">
-              <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-            
-                  <button type="button" class="navbar-toggle left-navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                    <center><a href="buscar.php"><button type="button"  class="btn btn-primary " name="buscar1" id="buscar2" >Buscar Servicios</button></a></center>
-                 
-                </div>
-            
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                 
-                  <ul class="nav navbar-nav">
-                    
-                    <?php
-                      if(isset($_SESSION["nombre"]) and isset($_SESSION["foto"]) and isset($_SESSION["id"]) ){
-                        echo "
-                        <li><a href='#'><img src='".$_SESSION['foto']."' class='perfil'></a></li>
-                        <li><a href='#' class='nomb'>".$_SESSION['nombre']."</a></li>
-                      
-                        <li><a href='index.php'><i class='icons iconos fas fa-home'></i></a></li>
-                        
-                        <li><a href='#'><i class='icons3 far fa-image'></i> Galeria</a></li>";
-                     }else{
-                       
-                     }
-                   ?>
-                  </ul>
-            
-                  <ul class="navbar-form navbar-left" id="form1" onsubmit="return enviar();" method="POST">
-                   <div class="form-group">
-                   
-                      
-                    
-                    	<a href="buscar.php"><button name="enviando" class="btn btn-primary" id="boton"><i class="icons iconos fas fa-search"></i> Buscar</button></a>
-                      
-                	 </div>
-                  </ul>
-                  
-                      <?php
-                        if(isset($_SESSION["nombre"]) and isset($_SESSION["foto"]) and isset($_SESSION["id"])){
-                          echo "
-                          <ul class='nav navbar-nav navbar-right'>
-                              <li><a href=''><i class='icons5 far fa-star'></i> Mi puntuacion</a></li>
-                              <li><a href='#'><i class='icons far fa-comments'></i></a></li>
-                              <li><a href='#'><i class='icons1 far fa-bell'></i></a></li>
-                              <li class='dropdown'>
-                                <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><i class='icons2 far fa-user'></i> Mi perfil<span class='caret'></span></a>
-                              <img src='".$_SESSION['foto']."' class='perfiles'>
-                              <ul class='dropdown-menu'>
-                                <li><a href='perfil.php?idprofile=".$_SESSION["id"]."'>Mi perfil</a></li>
-                                <li><a href='servicios.php'>Mis servicios</a></li>
-                                <li role='separator' class='divider'></li>
-                                <li><a href='logout.php'>Salir</a></li>
-                              </ul>
-                              </li>
-                          </ul>";
-                        }else{
-                          echo "
-                          <ul class='nav navbar-nav navbar-right'>
-                            <li><a href='guardardato.php'><span class='glyphicon glyphicon-user'></span> Registrate</a></li>
-                            <li><a href='principal.php'><span class='glyphicon glyphicon-log-in'></span> Ingresar</a></li>
-                          </ul>
-                          ";
-                        }
-                       ?>
-                      
-                      
-                    
-                </div><!-- /.navbar-collapse -->
-              </div><!-- /.container-fluid -->
-            </nav>
+            	</script>
+				<?php
+					require "templates/menu.php";
+					
+					echo $htmlmenu;
+					
+				?>
+
+			 </div>
             
         
                 <!-- Brand and toggle get grouped for better mobile display -->
             
             	
        <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="col-lg-10 col-sm-6 col-xs-12">
+  <div class="col-lg-10 col-sm-10 col-xs-12">
     <div class="card hovercard">
         <div class="card-background">
             <img class="card-bkimg" alt="" src="<?php echo $_SESSION['foto']; ?>">
@@ -172,12 +177,22 @@ if (isset($_SESSION["id"])){
     </div>
     <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
         <div class="btn-group" role="group">
-            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 <div class="">Informacion</div>
             </button>
         </div>
+		<div class="btn-group" role="group">
+            <button type="button" id="stars" class="btn btn-primary" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                <div class="">Calificacion</div>
+            </button>
+        </div>
+		<div class="btn-group" role="group">
+            <button type="button" id="stars" class="btn btn-primary" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                <div class="">Galeria</div>
+            </button>
+        </div>
         <div class="btn-group" role="group">
-            <button type="button" id="favorites" class="btn btn-default" href="#ventana" data-toggle="modal"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+            <button type="button" id="favorites" class="btn btn-default" href="#ventana" data-toggle="modal"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                 <div class="">Editar perfil</div>
             </button>
         </div>
@@ -189,23 +204,123 @@ if (isset($_SESSION["id"])){
         <div class="tab-pane fade in active" id="tab1">
           <h3>Tus datos Personales</h3>
           <br>
-           <label for="nombre"><?php echo $row["NOMBRE"]; ?></label>
+           <p>Nombre: </p><label><?php echo $row["NOMBRE"]." ".$row["APELLIDO"]; ?></label>
              
+                     
                                  <br>
-          <label for="apellido"><?php echo $row["APELLIDO"]; ?></label>
-        
-                                 <br>
-          <label for="telefono"><?php echo $row["TELEFONO"]; ?></label>
+          <p>Telefono: </p><label for="telefono"><?php echo $row["TELEFONO"]; ?></label>
          
                                  <br>
-          <label for="dir"><?php echo $row["DIRECCION"]; ?></label>
+          <p>Direccion: </p><label for="dir"><?php echo $row["DIRECCION"]; ?></label>
          
           <br>
         </div>
-        <div class="tab-pane fade in" id="tab2">
-          <h3>This is tab 2</h3>
+		
+		<div class="tab-pane fade in active" id="tab3">
+          <h3>Tu Galeria</h3>
           <br>
+			<div class="row">
+			<div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				
+			</div>
 
+			<div align="center">
+				<?php
+				if(isset($fotos)){
+					if(count($fotos)!=0){
+						echo "<button class='btn btn-default filter-button' data-filter='all'>Todos</button>";
+						foreach($dataSer as $servicio){
+							echo "<button class='btn btn-default filter-button' data-filter='".$servicio[3]."'>".$servicio[3]."</button>";
+						}
+						echo "<button class='btn btn-default filter-button' data-filter='Indefinido'>Indefinidos</button>";
+					}
+				}
+			?>
+			</div>
+			<br/>
+
+			
+
+            <?php
+				
+				if(isset($fotos)){
+					if(count($fotos)==0){
+						echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> No tienes fotos :`( </h2></center></div>";
+					}else{
+						foreach($fotos as $foto){
+							echo "<div class='gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-12 filter ".$foto[2]."'> <img src='".$foto[1]."' id='".$foto[0]."' class='img-responsive port-image'></div>";
+						}
+					}
+				}else{
+					echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> Debes ser profesional para subir fotos </h2></center></div>";;
+				}
+			
+			?>
+        
+         </div>
+          <br>
+        </div>
+        <div class="tab-pane fade in" id="tab2">
+          <h3>Tu calificacion</h3>
+          <br>
+			<div class="twPc-d">
+			<div class="row">
+				
+				<div class="col-xs-12 col-md-12">
+					<div class="well well-sm">
+						<div class="row">
+							<div class="col-xs-12 col-md-12 text-center">
+								<h1 class="rating-num">
+									4.0</h1>
+								<div class="rating">
+									<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
+									</span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
+									</span><span class="glyphicon glyphicon-star-empty"></span>
+								</div>
+								<div>
+									<span class="glyphicon glyphicon-user"></span>1,050,008 total
+								</div>
+							</div>
+							
+							<div class="col-xs-12 col-md-11">
+								<div class="row rating-desc">
+									<?php
+                        
+											foreach($dataSer as $data)
+											{
+											  if($data[0]!=null and $data[1]!=null){
+												  $puntuacionporcentaje=(((int)$data[0]/(int)$data[1])/5)*100;
+												  $puntuacionredondeado=(floor(($puntuacionporcentaje/10)*10));
+												  if($puntuacionredondeado>75){
+													  $clase="progress-bar-success";
+												  }elseif($puntuacionredondeado<75 and $puntuacionredondeado>45){
+													  $clase="progress-bar-info";
+												  }elseif($puntuacionredondeado<45 and $puntuacionredondeado>15){
+													  $clase="progress-bar-warning";
+												  }else{
+													  $clase="progress-bar-danger";
+												  }
+												  $puntuacionfinal="<div class='col-xs-8 col-md-9'><div class='progress'><div class='progress-bar ".$clase."' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='width: ".(string)$puntuacionredondeado."%'><span class='sr-only'>".(string)$puntuacionredondeado."%</span></div></div></div>";
+												  
+											  }else{
+												  $puntuacionfinal="<div class='col-xs-8 col-md-9'>Este servicio todavia no ha sido calificado</div>";
+											  }
+										  
+											echo "<div class='row'><div class='col-xs-3 col-md-3 text-right'><i class='".$data[2]."'></i> ".$data[3]."</div>".$puntuacionfinal."</div>";			
+									  }
+										 
+										 
+									?>
+									
+									<!-- end 1 -->
+								</div>
+								<!-- end row -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
         </div>
        
       </div>
@@ -405,7 +520,34 @@ if (isset($_SESSION["id"])){
 	
 
 </script>
+<script>
+	$(document).ready(function(){
 
+			$(".filter-button").click(function(){
+				var value = $(this).attr('data-filter');
+				
+				if(value == "all")
+				{
+					//$('.filter').removeClass('hidden');
+					$('.filter').show('1000');
+				}
+				else
+				{
+		//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+		//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+					$(".filter").not('.'+value).hide('3000');
+					$('.filter').filter('.'+value).show('3000');
+					
+				}
+			});
+			
+			if ($(".filter-button").removeClass("active")) {
+		$(this).removeClass("active");
+		}
+		$(this).addClass("active");
+
+	});
+</script>
 </body>
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
 <script type="text/javascript" src="https://www.arrowchat.com/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>

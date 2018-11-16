@@ -174,9 +174,10 @@ var options = [];
                           distancia="No se ha registrado la distancia de este usuario"
                           
                       }else{
-                          var distanciaprimitiva=(parseFloat(datos[i][8])*1.60934);
-                          console.log(distancia);
-                          distancia="Se encuentra a "+String(distanciaprimitiva) +" kilometros aproximadamente"
+						  var s=datos[i][8];
+						  s = s.substring(0, s.indexOf('.')+2);
+						  
+                          distancia=" Se encuentra a <b>"+s +"</b> kilometros aproximadamente"
                       }
                       
                       

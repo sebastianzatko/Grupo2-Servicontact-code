@@ -1,12 +1,13 @@
 <?php
 	if(isset($_SESSION["nombre"]) and isset($_SESSION["foto"]) and isset($_SESSION["id"]) ){
             $profile= "
-            <li><a href='#'><img src='".$_SESSION["foto"]."' class='perfil'></a></li>
+			<li><a href='index.php'><i class='icons iconos fas fa-home'></i></a></li>
+            <img src='".$_SESSION["foto"]."' class='hidden-sm hidden-xs' style='width: 40px;height: 40px;border-radius: 50%;'>
             <li><a href='#' class='nomb'>".$_SESSION["nombre"]."</a></li>
           
-            <li><a href='index.php'><i class='icons iconos fas fa-home'></i></a></li>
+            
            
-            <li><a href='galeria.php'><i class='icons3 far fa-image'></i> Galeria</a></li>";
+            ";
          }else{
            $profile="";
          }
@@ -14,16 +15,17 @@
 		 if(isset($_SESSION["nombre"]) and isset($_SESSION["foto"]) and isset($_SESSION["id"])){
               $responsiveprofile= "
               <ul class='nav navbar-nav navbar-right'>
-                  <li><a href='puntuacion.php'><i class='icons5 far fa-star'></i> Mi puntuacion</a></li>
                   <li class='hidden-xs hidden-sm'><a href=''><i class='icons far fa-comments'></i></a></li>
                   <li class='hidden-md hidden-lg'><a href='arrowchat/public/mobile/'><i class='icons far fa-comments'></i> Chat Móvil</a></li>
                   <li><a href='#'><i class='icons1 far fa-bell'></i></a></li>
                   <li class='dropdown'>
-                    <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><i class='icons2 far fa-user'></i> Mi perfil<span class='caret'></span></a>
-                  <img src='".$_SESSION["foto"]."' class='perfiles'>
+                    <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><i class='fas fa-cogs'></i> Opciones<span class='caret'></span></a>
+                  
                   <ul class='dropdown-menu'>
-                    <li><a href='perfil.php?idprofile=".$_SESSION["id"]."'>Mi perfil</a></li>
-                    <li><a href='servicios.php'>Mis servicios</a></li>
+                    <li><a href='perfil.php?idprofile=".$_SESSION["id"]."'><i class='icons2 far fa-user'></i> Mi perfil</a></li>
+                    <li><a href='servicios.php'><i class='icons5 fas fa-toolbox'></i> Mis servicios</a></li>
+					<li><a href='puntuacion.php'><i class='icons5 far fa-star'></i> Mi puntuacion</a></li>
+					<li><a href='galeria.php'><i class='icons3 far fa-image'></i> Galeria</a></li>
                     <li role='separator' class='divider'></li>
                     <li><a href='logout.php'>Salir</a></li>
                   </ul>
@@ -55,19 +57,19 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
-     
+		
       <ul class='nav navbar-nav'>
         
         ".$profile."
       </ul>
-
-      <ul class='navbar-form navbar-left' id='form1'>
-          <div class='form-group'>
-           
-        	<a href='buscar.php'><button name='enviando' class='btn btn-primary' id='boton'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
+		<ul class='navbar-form navbar-left' id='form1'>
           
-            </div>
-      </ul>
+           
+        	<a href='buscar.php'><button name='enviando' class='btn btn-primary'  style='border-color: white;'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
+          
+            
+		</ul>
+      
       
           ".$responsiveprofile."
           
@@ -104,22 +106,22 @@ $htmlmenu2="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
-     
+		
       <ul class='nav navbar-nav'>
         ".$profile."
         
       </ul>
-    
-      <ul class='navbar-form navbar-left'>
+		<ul class='navbar-form navbar-left'>
         
-       <div class='form-group'>
+       
        
       
             
-        	<a href='buscar.php'><button name='enviando' class='btn btn-primary' id='boton'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
+        	<a href='buscar.php'><button name='enviando' class='btn btn-primary' style='border-color: white;'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
           
-    	 </div>
+    	
       </ul>
+      
 		".$responsiveprofile."
           
           
@@ -190,7 +192,7 @@ $htmlmenu4="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
     <div class='navbar-header'>
 
       <button type='button' class='navbar-toggle left-navbar-toggle' data-toggle='collapse' style='display: none' data-target='#bs-example-navbar-collapse-1' aria-expanded='false'>
-        <span class='sr-only'>Toggle navigation</span>
+        <span class='sr-only'></span>
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
@@ -215,17 +217,17 @@ $htmlmenu4="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
         ".$profile."
         
       </ul>
-    
-      <ul class='navbar-form navbar-left'>
+		<ul class='navbar-form navbar-left'>
         
-       <div class='form-group'>
+     
        
       
             
-          <a href='buscar.php'><button name='enviando' class='btn btn-primary' id='boton'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
+          <a href='buscar.php'><button name='enviando' class='btn btn-primary' style='border-color: white;'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
           
-       </div>
+     
       </ul>
+      
     ".$responsiveprofile."
           
           
@@ -261,22 +263,22 @@ $htmlmenu3="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
-     
+		<ul class='navbar-form navbar-left'>
+        
+       
+       
+      
+            
+          <a href='buscar.php'><button name='enviando' class='btn btn-primary' style='border-color: white;'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
+          
+      
+      </ul>
       <ul class='nav navbar-nav'>
         ".$profile."
         
       </ul>
     
-      <ul class='navbar-form navbar-left'>
-        
-       <div class='form-group'>
-       
       
-            
-          <a href='buscar.php'><button name='enviando' class='btn btn-primary' id='boton'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
-          
-       </div>
-      </ul>
     ".$responsiveprofile."
           
           

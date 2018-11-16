@@ -1,6 +1,18 @@
 <?php
 
   session_start();
+  if(isset($_SESSION["id"]) and isset($_SESSION["idpro"])){
+	  require "blogic/Professional.php";
+	  $profesional=new Professional();
+	  $servicios=$profesional->obtenerPuntuacionYServicios((int)$_SESSION['idpro']);
+	  $dataSer=json_decode($servicios , true);
+	  require "blogic/Galery.php";
+	  $galeria=new Galery();
+	  $fotos=$galeria->obtenerfotos((int)$_SESSION['idpro']);
+  }else{
+	  header("Location:principal.php");
+  }
+  
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,7 +38,70 @@
   <script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
   <script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
   <script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
-	
+  
+  
+  
+	<style>
+		
+	.gallery-title
+	{
+		font-size: 36px;
+		color: #2175C4;
+		text-align: center;
+		font-weight: 500;
+		margin-bottom: 70px;
+	}
+	.gallery-title:after {
+		content: "";
+		position: absolute;
+		width: 7.5%;
+		left: 46.5%;
+		height: 45px;
+		border-bottom: 1px solid #5e5e5e;
+	}
+	.filter-button
+	{
+		font-size: 18px;
+		border: 1px solid #2175C4;
+		border-radius: 5px;
+		text-align: center;
+		color: #2175C4;
+		margin-bottom: 30px;
+
+	}
+	#agregado{
+		font-size: 18px;
+		border: 1px solid ;
+		border-radius: 5px;
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.filter-button:hover
+	{
+		font-size: 18px;
+		border: 1px solid #2175C4;
+		border-radius: 5px;
+		text-align: center;
+		color: #ffffff;
+		background-color: #2175C4;
+
+	}
+	.btn-default:active .filter-button:active
+	{
+		background-color: #42B32F;
+		color: white;
+	}
+
+	.port-image
+	{
+		width: 100%;
+	}
+
+	.gallery_product
+	{
+		margin-bottom: 30px;
+	}
+	</style>
 </head>
 <body>
   <script type="text/javascript">
@@ -57,63 +132,151 @@
          
   
 
-<img src="<?php echo $_SESSION["foto"]; ?>" class="im2">
 
-<div class="tabpanel">
-    <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a aria-controls="" data-toggle="tab"  role="tab" href="#">Mis trabajo</a></li>
-      <li role="presentation"><a aria-controls="">Juan gonzales</a></li>
-      <li role="presentation"><a aria-controls="" data-toggle="modal"  role="tab" href="#ventana"><i class="fas fa-camera-retro"></i> subir foto</a></li>
-         <div class="modal fade" id="ventana">
+<div class="container">
+        <div class="row">
+        <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h1 class="gallery-title">Tu Galeria</h1>
+        </div>
+
+        <div align="center">
+			<button class="btn btn-default filter-button" data-filter="all">Todos</button>
+			<?php
+				foreach($dataSer as $servicio){
+					echo "<button class='btn btn-default filter-button' data-filter='".$servicio[3]."'>".$servicio[3]."</button>";
+				}
+			?>
+            <button class="btn btn-default filter-button" data-filter="Indefinido">Indefinidos</button>
+			<button class="btn btn-primary" id="agregado" data-toggle="modal" href="#ventana"><i class="fas fa-plus"></i> Agregar Nuevas Fotos</button>
+        </div>
+        <br/>
+
+		<div id="galleria">
+			<?php
+				foreach($fotos as $foto){
+					echo "<div class='gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-12 filter ".$foto[2]."'> <img src='".$foto[1]."' id='".$foto[0]."' class='img-responsive port-image'></div>";
+				}
+			
+			?>
+            
+        
+		</div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="ventana">
              <div class="modal-dialog">
               <div class="modal-content">
+			  <form action="includes/php/newphoto.php" method="POST" enctype="multipart/form-data" id="nuevafoto">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                   <h2 class="modal-title">Subir Foto</h2>
 
                 </div>
                  <div class="modal-body">
-                     
-                     
-                      <select id="provincia" name="provincia" class="btn btn-info  dropdown-toggle" type="button"data-toggle="dropdown" required>Provincias
-                        
-                                 </select>       
-                      </br>
-                               </br>
 
-                          <button type="button" id="fot1" class="btn btn-primary" ><i class="fas fa-camera-retro"></i>Elegir foto</button>
+                        <div class="form-group" style="margin-left:0px">
+							<label class="col-sm-3 control-label">
+								Multiples fotos:
+							</label>
+							<div class="col-sm-9">
+								<span class="btn btn-default btn-file">
+									<input id="input-2" name="upload[]" type="file" class="file" multiple data-show-upload="true" data-show-caption="true">
+								</span>
+							</div>
+						</div>
+						<div class="form-group" style="margin-left:0px">
+							<label class="col-sm-2 control-label">
+								Servicio:
+							</label>
+							<div class="col-sm-10">
+								<select class="btn btn-info  dropdown-toggle" type="button" name="tipo" data-toggle="dropdown" required>
+									
+									<?php
+										foreach($dataSer as $servicio){
+											echo "<option value='".$servicio[3]."' >".$servicio[3]."</option>";
+										}
+									?>
+									<option value="Indefinido" selected>Indefinido</option>
+								</select>   
+							</div>
+						</div>
 
                  </div>
                  <div class="modal-footer">
-                   <button type="button"  data-dismiss="modal" class="btn btn-default">Cerrar</button>
+                   <button type="button"  data-dismiss="modal" class="btn btn-danger">Cancelar</button>
 
-                   <button type="button"  class="btn btn-success" >Guardar cambios</button>
+                   <button type="submit"  class="btn btn-success" >Subir archivos</button>
                  </div>
+				 </form>
               </div>
               
              </div>
            </div>
-    </ul>
-</div>
-<div class="galeria">    
-    <img src="images/casa.jpg" >
-    <img src="images/casael.jpg" >
-    <img src="images/electri.jpg" >
-    <img src="images/casa.jpg" >
-    <img src="images/casael.jpg" >
-    <img src="images/electri.jpg" >
-    <img src="images/casa.jpg" >
-    <img src="images/casael.jpg" >
-    <img src="images/electri.jpg" >
-    <img src="images/casa.jpg" >
-    <img src="images/casael.jpg" >
-    <img src="images/electri.jpg" >
-    <img src="images/casa.jpg" >
-    <img src="images/casa.jpg" >
-    <img src="images/casael.jpg" >
-    <img src="images/electri.jpg" >
 
-</div>
+<script>
+	$(document).ready(function(){
+
+			$(".filter-button").click(function(){
+				var value = $(this).attr('data-filter');
+				
+				if(value == "all")
+				{
+					//$('.filter').removeClass('hidden');
+					$('.filter').show('1000');
+				}
+				else
+				{
+		//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+		//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+					$(".filter").not('.'+value).hide('3000');
+					$('.filter').filter('.'+value).show('3000');
+					
+				}
+			});
+			
+			if ($(".filter-button").removeClass("active")) {
+		$(this).removeClass("active");
+		}
+		$(this).addClass("active");
+
+	});
+</script>
+<script>
+	$("#nuevafoto").submit(function(event){
+		event.preventDefault();
+		var formData = new FormData($(this)[0]);
+		$.ajax({
+			data:formData,
+			url:this.action,
+			type:this.method,
+			processData: false,
+			contentType: false,
+			success:function(data){
+				
+				
+				if(data=="Algunos archivos no son de tipo jpg,gif o png" || data=="Algunas variables no se han ingresado" || data=="Ha ocurrido un error en la sesion"){
+					$.notify(data, "error");
+				}else{
+					var datos=$.parseJSON(data);
+					console.log(datos);
+					
+					$("#galleria").empty();
+					console.log(datos.length);
+					for(var x=0;x<datos.length;x++){
+						console.log("concha de tu vieja");
+						console.log(datos[x][0]);
+						console.log(datos[x][1]);
+						console.log(datos[x][2]);
+						$("#galleria").append("<div class='gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-12 filter "+datos[x][2]+"'> <img src='"+datos[x][1]+"' id='"+datos[x][0]+"' class='img-responsive port-image'></div>");
+					}
+				}
+			}
+		});
+	});
+
+</script>
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
 <script type="text/javascript" src="https://www.arrowchat.com/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>       
 </body>

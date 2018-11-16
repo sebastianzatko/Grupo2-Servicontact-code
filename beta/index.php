@@ -37,7 +37,12 @@
     echo $htmlmenu;
     
   ?>
-
+<center><div class="container">
+        <div class="col-md-8 col-md-offset-2 text-center">
+            
+            <h5>Changero <i class="fa fa-heart red"></i> by Los mejores profesionales(? </h5>
+        </div>   
+    </div>
 <div class="container-fluid">
       <div id="micarouselinicio" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -199,12 +204,7 @@
 </footer> 
 </section>
 <footer>
-<center><div class="container">
-        <div class="col-md-8 col-md-offset-2 text-center">
-            
-            <h5>Changero <i class="fa fa-heart red"></i> by Los mejores profesionales <a href="http://www.nabeel.co.in" target="_blank"></a></h5>
-        </div>   
-    </div>
+
     <br>
   </footer>
 <center><h1>Publicaciones</h1></center>
@@ -399,51 +399,7 @@
          </aside>
     </div>
     
-     <div class="widget-sidebar">
-      <br>
-      <br>
-                 <h2 class="title-widget-sidebar">//Profesionales Destacados Mas cercanos</h2>
-                   <div class="content-widget-sidebar">
-                    <ul>
-                     <li class="recent-post">
-                        <div class="post-img">
-                         <img src="images/plomeros.jpg" class="img-responsive">
-                         </div>
-                        <h5>juan diazz</h5>
-                         <p><small><i class="fas fa-people-carry" data-original-title="" title=""></i> albañil</small></p>
-                        </li>
-                        <hr>
-                        
-                        <li class="recent-post">
-                        <div class="post-img">
-                         <img src="images/juan.jpg" class="img-responsive">
-                         </div>
-                       <h5>jose roman</h5>
-                         <p><small><i class="fas fa-gas-pump" data-original-title="" title=""></i> plomero</small></p>
-                        </li>
-                        <hr>
-                        
-                        <li class="recent-post">
-                        <div class="post-img">
-                         <img src="images/gasista.jpg" class="img-responsive">
-                         </div>
-                        <h5>julio gonzalez</h5>
-                         <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> gasista</small></p>
-                        </li>
-                        <hr>
-                        
-                        <li class="recent-post">
-                        <div class="post-img">
-                         <img src="images/ramon.jpg" class="img-responsive">
-                         </div>
-                        <h5>Diego diaz</h5>
-                         <p><small><i class="fas fa-charging-station" data-original-title="" title=""></i> electrista</small></p>
-                        </li>
-                        
-                        
-                    </ul>
-                   </div>
-                 </div>           
+              
         </div>
 
       </div>

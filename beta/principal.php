@@ -23,7 +23,7 @@
     	<br>
     	<div class="container">
     		
-    	<center><img src="images/trabajos.png" class="logo"></center>
+    	<center><img src="images/logo.png" class="logo"></center>
      	<form method="POST" id="formingresar">
      		<center>
      		<div class="form-group">

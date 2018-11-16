@@ -13,6 +13,8 @@ require_once('conexion/conectionpdo.php');
 				}else{
 					$servicios=$servicios." OFICIOS.SERVICIOS_idSERVICIO= ".$idservicio." OR ";
 				}
+				$query2 = $con->prepare("UPDATE `SERVICIOS` SET `CANTIDADVECESBUSCADO`=`CANTIDADVECESBUSCADO`+1 WHERE idSERVICIO=?");
+				$query2->execute(array($idservicio));
 				
 			}
 			$idusuario="";
@@ -29,11 +31,13 @@ require_once('conexion/conectionpdo.php');
 						OFICIOS.CANTIDAD_DE_PUNTUACIONES,
 						SERVICIOS.TIPO,
 						SERVICIOS.FACLASS,
-						(
-                            ACOS(
-                                SIN(".$lat.") * SIN(PROFESIONALES.LATITUD) + COS(".$lat.") * COS(PROFESIONALES.LATITUD) * COS(PROFESIONALES.LONGUITUD -(".$long."))
-                            ) * 6371
-                        ) AS DISTANCIA
+							
+							111.1111 *
+							DEGREES(ACOS(COS(RADIANS(".$lat."))
+								 * COS(RADIANS(PROFESIONALES.LATITUD))
+								 * COS(RADIANS(".$long.") - RADIANS(PROFESIONALES.LONGUITUD))
+								 + SIN(RADIANS(".$lat."))
+								 * SIN(RADIANS(PROFESIONALES.LATITUD)))) AS DISTANCIA
 					FROM
 						USUARIOS,
 						OFICIOS,
@@ -44,10 +48,8 @@ require_once('conexion/conectionpdo.php');
 							".$servicios."
 						) AND OFICIOS.HABILITADO=1".$idusuario."
 						ORDER BY
-                            ACOS(
-                                SIN(".$lat.") * SIN(PROFESIONALES.LATITUD) + COS(".$lat.") * COS(PROFESIONALES.LATITUD) * COS(PROFESIONALES.LONGUITUD -(".$long."))
-                            ) * 6371
-                        DESC";
+                            DISTANCIA
+                        ASC";
 			$query = $con->prepare($sql);
 			if($query->execute()){
 				$result = $query->fetchAll();

@@ -58,7 +58,7 @@
  					<div class="col-xs-12 col-sd-6 col-md-8 col-lg-8">
  						<div class="form-group containercss">
  							<div>
- 								<center><img src="images/trabajos.png" class="logo"></center>
+ 								<center><img src="images/logo.png" class="logo"></center>
  								<div class="col-xs-12 col-sd-6 col-md-6	col-lg-6">
  									<input type="text" class="form-control"  id="txtnombre" name="nombre" placeholder="Nombre">
  								</div>
