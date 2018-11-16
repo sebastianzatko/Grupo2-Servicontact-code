@@ -1,6 +1,11 @@
 <?php
 
   session_start();
+  require("blogic/Wall.php");
+	
+	$wall=new Wall();
+	$categorias=$wall->conseguirlascategoriasmasbuscadas();
+	$imagenesdelmejorrateado=$wall->conseguirfotosdelosprofesionalesmasrateados();
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,13 +42,11 @@
     echo $htmlmenu;
     
   ?>
-<center><div class="container">
-        <div class="col-md-8 col-md-offset-2 text-center">
-            
-            <h5>Changero <i class="fa fa-heart red"></i> by Los mejores profesionales(? </h5>
-        </div>   
-    </div>
+
 <div class="container-fluid">
+
+
+		
       <div id="micarouselinicio" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#micarouselinicio" data-slide-to="0" class="active"></li>
@@ -52,15 +55,14 @@
         </ol>
       <div class="tomaño">
         <div class="carousel-inner">
-          <div class="item active">
-            <img class="imge d-block w-100" src="images/casa.jpg"  id="tan" alt="First slide">
-          </div>
-          <div class="item">
-            <img class="imge d-block w-100" src="images/casael.jpg" id="tan"  alt="Second slide">
-          </div>
-          <div class="item">
-            <img class="imge d-block w-100" src="images/electri.jpg" id="tan"  alt="Third slide">
-          </div>
+			<?php
+				foreach($imagenesdelmejorrateado as $imagen){
+					echo "<div class='item active'><img class='imge d-block w-100' src='".$imagen[2]."'  id='tan' alt='First slide'></div>";
+				}
+			
+			
+			?>
+          
         </div>
       </div>
         <a class="left carousel-control" href="#micarouselinicio" role="button" data-slide="prev">
@@ -76,6 +78,24 @@
 <br>
 
         
+   <style>
+	.unlinknormal{
+		color: #337ab7;
+		text-decoration: none;
+	}
+	.unlinknormal:hover{
+		color: #337ab7;
+	}
+	.categoria{
+		width:250px;
+		height:250px;
+		color:#337ab7;
+		-webkit-filter : hue-rotate(180deg);
+		filter : hue-rotate(180deg);
+		-webkit-filter: opacity(.5) drop-shadow(0 0 0 #337ab7);
+		filter: opacity(.5) drop-shadow(0 0 0 #337ab7);
+	}
+   </style>
    
       
 <center><h3>Categorias Populares</h3> </center>
@@ -85,10 +105,16 @@
   <div class="row">
         <div class="profile-header-container">   
         <div class="profile-header-img">
-                <img class="img-circle" src="images/juan.jpg" />
-                 <img class="img-circle" src="images/gasista.jpg" />
-                  <img class="img-circle" src="images/electri.jpg" />
-                   <img class="img-circle" src="images/plomeros.jpg" />
+				<?php
+	
+					foreach($categorias as $categoria){
+						
+						echo "<a href='buscar.php?service=".$categoria[0]."' class='unlinknormal'><img class='img-circle categoria' src='images/".$categoria[4]."' /></a>";
+					}
+					
+
+				?>
+                
                 <!-- badge -->
         </div>
         </div> 

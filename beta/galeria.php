@@ -95,6 +95,7 @@
 	.port-image
 	{
 		width: 100%;
+		height:350px;
 	}
 
 	.gallery_product

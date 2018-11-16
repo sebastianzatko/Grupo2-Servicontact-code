@@ -40,7 +40,7 @@ require_once('email.php');
                    
                     $url = 'http://beta.changero.online/verify.php?mail='.$mail.'&codigo='.$validacionHash;
                     
-					$nombreusuario = $nombre.' '.$apellido;
+                    $nombreusuario = $nombre.' '.$apellido;
                    
                     $s_email->validaremail($mail,$nombreusuario,$url);
 

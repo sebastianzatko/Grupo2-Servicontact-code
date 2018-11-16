@@ -15,11 +15,12 @@ class Galery{
 	
 		
 		$ruta=$_SERVER['DOCUMENT_ROOT'].'/files/user/'.$email."/";
-		$rutadb=__DIRECTORIO__.'/files/user/'.$email."/";
+		$rutadb='/files/user/'.$email."/";
 		mkdir($ruta,0777,true);
 		$archivo=$ruta.$foto;
 		@move_uploaded_file($tmpFilePath,$archivo);
 		$galeria = new datagalery();
+		$archivo=$rutadb.$foto;
 		$resultado=$galeria->subirfoto($archivo,(int)$idprofesional,$tipo);
 		return $resultado;
 	}

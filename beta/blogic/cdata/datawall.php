@@ -1,14 +1,14 @@
 <?php
 require_once('conexion/conectionpdo.php');
-class datawall(){
+class datawall{
 	public function conseguirserviciosmasbuscados(){
 		$con = new Conexion();
-		$query=$con->prepare("SELECT idSERVICIO,TIPO,FACLASS,CANTIDADVECESBUSCADO FROM `SERVICIOS` ORDER BY CANTIDADVECESBUSCADO DESC LIMIT 4");
+		$query=$con->prepare("SELECT idSERVICIO,TIPO,FACLASS,CANTIDADVECESBUSCADO,IMAGEN FROM `SERVICIOS` ORDER BY CANTIDADVECESBUSCADO DESC LIMIT 4");
 		$query->execute();
 		$result = $query->fetchAll();
 		$datos = array();
 		foreach($result as $row){
-			array_push($datos,[$row["idSERVICIO"],$row["TIPO"],$row["FACLASS"],$row["CANTIDADVECESBUSCADO"]]);
+			array_push($datos,[$row["idSERVICIO"],$row["TIPO"],$row["FACLASS"],$row["CANTIDADVECESBUSCADO"],$row["IMAGEN"]]);
 		}
 		return $datos;
 	}
@@ -55,7 +55,8 @@ GROUP BY
 		}
 		return $datos;
 	}
-}
+	
+
 	//Este talvez no funcione, es una query muy complicada
 	public function conseguirlosmejoresprofesionalesdelazona($lat,$long){
 		$con =new Conexion();
@@ -114,7 +115,7 @@ GROUP BY
 	}
 
 
-
+}
 
 
 
