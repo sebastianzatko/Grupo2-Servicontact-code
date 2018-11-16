@@ -6,6 +6,9 @@
 	$wall=new Wall();
 	$categorias=$wall->conseguirlascategoriasmasbuscadas();
 	$imagenesdelmejorrateado=$wall->conseguirfotosdelosprofesionalesmasrateados();
+	if(isset($_SESSION["id"]) and ( $_SESSION["id"]!="")){
+		$publicacionesdelosamigos=$wall->conseguirloslasfotosdeloscontactos((int)$_SESSION["id"]);
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,20 +52,31 @@
 		
       <div id="micarouselinicio" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-target="#micarouselinicio" data-slide-to="0" class="active"></li>
-          <li data-target="#micarouselinicio" data-slide-to="1"></li>
-          <li data-target="#micarouselinicio" data-slide-to="2"></li>
+			<?php
+				for($x=0;$x<count($imagenesdelmejorrateado);$x++){
+					echo "<li data-target='#micarouselinicio' data-slide-to='".(string)$x."' ></li>";
+				}
+			
+			?>
+          
+         
         </ol>
       <div class="tomaño">
         <div class="carousel-inner">
 			<?php
 				foreach($imagenesdelmejorrateado as $imagen){
-					echo "<div class='item active'><img class='imge d-block w-100' src='".$imagen[2]."'  id='tan' alt='First slide'></div>";
+					echo "<div class='item nolosoñe'><img class='imge d-block w-100' src='".$imagen[2]."'  id='tan' alt='First slide'/></div>";
 				}
 			
 			
 			?>
-          
+			<script>
+				$(document).ready(function(){
+					$(".nolosoñe").first().addClass("active");
+				});
+				
+			
+			</script>
         </div>
       </div>
         <a class="left carousel-control" href="#micarouselinicio" role="button" data-slide="prev">
@@ -98,9 +112,9 @@
    </style>
    
       
-<center><h3>Categorias Populares</h3> </center>
+<center><h3 class="hidden-sm hidden-xs" >Categorias Populares</h3> </center>
 <br>
-<div class="galeria">
+<div class="galeria hidden-sm hidden-xs">
 <div class="container">
   <div class="row">
         <div class="profile-header-container">   
@@ -229,211 +243,191 @@
   
 </footer> 
 </section>
-<footer>
-
-    <br>
-  </footer>
-<center><h1>Publicaciones</h1></center>
-<br>
+	<?php if(isset($publicacionesdelosamigos)):?>
+	<center><h3>Publicaciones</h3></center>
+	<br>
 
 
- 
- <div class="container">
-   
-    <div class="row">
-     <div class="col-lg-10 col-md-offset-1">
-      <div class="row">
-     <div class="col-lg-6  col-md-6">
+	 
+	 <div class="container">
+	   
+		<div class="row">
+		 <div class="col-lg-10 col-md-offset-1">
+		  <div class="row">
+		 <div class="col-lg-6  col-md-6">
+			<?php
+				foreach($publicacionesdelosamigos as $publicacion){
+					//echo "<aside><div class='content-footer'><img class='user-small-img' src='images/ramon.jpg'><span style='font-size: 16px;color: #fff;'>Juan Gonzalez</span><span class='pull-right'><a href='#ventana2' data-toggle='modal'><i class='fa fa-comments'></i> 30</a></span></div><div class='tz-gallery'><a class='lightbox' href='images/decorado.jpg'><img src='images/decorado.jpg' class='img-responsive'></a></div><div class='footer'><h5 class='request'>Comentar</h5><label class='icon-heart'></label></div></aside></div>";
+				}
+			
+			
+			?>
+				
+	  <aside><div class='content-footer'><img class='user-small-img' src='images/ramon.jpg'><span style='font-size: 16px;color: #fff;'>Juan Gonzalez</span><span class='pull-right'><a href='#ventana2' data-toggle='modal'><i class='fa fa-comments'></i> 30</a></span></div><div class='tz-gallery'><a class='lightbox' href='images/decorado.jpg'><img src='images/decorado.jpg' class='img-responsive'></a></div><div class='footer'><h5 class='request'>Comentar</h5><label class='icon-heart'></label></div></aside></div>
+	  <div class="modal fade" id="ventana2">
+				 <div class="modal-dialog">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					  <h2 class="modal-title">Comentarios</h2>
 
-        <aside>
-              <div class="content-footer">
-                <img class="user-small-img" src="images/ramon.jpg">
-                <span style="font-size: 16px;color: #fff;">Juan Gonzalez</span>
-                <span class="pull-right">
-                <a href="#ventana2" data-toggle="modal"><i class="fa fa-comments"></i> 30</a>
-                
-                </span>
-    
-               </div>
-            <div class="tz-gallery">
-                 <a class="lightbox" href="images/decorado.jpg">
-                <img src="images/decorado.jpg" class="img-responsive">
-                </a>
-           </div>
-              
-        
-           <div class="footer">
-                       
-                       <h5 class="request">Comentar</h5>
-                        <label class="icon-heart"></label>
-                        
-                    </div>
-       </aside>
-  </div>
-  <div class="modal fade" id="ventana2">
-             <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h2 class="modal-title">Comentarios</h2>
+					</div>
+					 <div class="modal-body">
+					  <br>
+		  <div class="comment-main-level">
+			<div class="comment-avatar">
+			  <img class="user-small-img" src="images/ramon.jpg" alt="">
+			</div>
+			<div class="comment-box">
+				<div class="comment-head">
+				  <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
+				  <span>hace 20 minutos</span>
+				 
+				</div>
+				<div class="comment-content">
+						Que lindo decorado la verdad un genio sos me gustaria tener uno igual te estare hablando en los proximos dias asi charlamos
+				</div>
+			  </div> 
+			  </div>  
+				  <br>
+				   <div class="comment-main-level">
+			<div class="comment-avatar">
+			  <img class="user-small-img" src="images/ramon.jpg" alt="">
+			</div>
+			<div class="comment-box">
+				<div class="comment-head">
+				  <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
+				  <span>hace 20 minutos</span>
+				 
+				</div>
+				<div class="comment-content">
+						Que lindo decorado la verdad un genio sos me gustaria tener uno igual te estare hablando en los proximos dias asi charlamos
+				</div>
+			  </div> 
+			  </div>
+			  <br>
+		  <div class="comment-main-level">
+			<div class="comment-avatar">
+			  <img class="user-small-img" src="images/ramon.jpg" alt="">
+			</div>
+			<div class="comment-box">
+				<div class="comment-head">
+				  <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
+				  <span>hace 20 minutos</span>
+				 
+				</div>
+				<div class="comment-content">
+						Que lindo decorado la verdad un genio sos me gustaria tener uno igual te estare hablando en los proximos dias asi charlamos
+				</div>
+			  </div> 
+			  </div> 
+					 </div>
+					 <div class="modal-footer">
+					   <button type="button"  data-dismiss="modal" class="btn btn-success">Cerrar</button>
 
-                </div>
-                 <div class="modal-body">
-                  <br>
-      <div class="comment-main-level">
-        <div class="comment-avatar">
-          <img class="user-small-img" src="images/ramon.jpg" alt="">
-        </div>
-        <div class="comment-box">
-            <div class="comment-head">
-              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
-              <span>hace 20 minutos</span>
-             
-            </div>
-            <div class="comment-content">
-                    Que lindo decorado la verdad un genio sos me gustaria tener uno igual te estare hablando en los proximos dias asi charlamos
-            </div>
-          </div> 
-          </div>  
-              <br>
-               <div class="comment-main-level">
-        <div class="comment-avatar">
-          <img class="user-small-img" src="images/ramon.jpg" alt="">
-        </div>
-        <div class="comment-box">
-            <div class="comment-head">
-              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
-              <span>hace 20 minutos</span>
-             
-            </div>
-            <div class="comment-content">
-                    Que lindo decorado la verdad un genio sos me gustaria tener uno igual te estare hablando en los proximos dias asi charlamos
-            </div>
-          </div> 
-          </div>
-          <br>
-      <div class="comment-main-level">
-        <div class="comment-avatar">
-          <img class="user-small-img" src="images/ramon.jpg" alt="">
-        </div>
-        <div class="comment-box">
-            <div class="comment-head">
-              <h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
-              <span>hace 20 minutos</span>
-             
-            </div>
-            <div class="comment-content">
-                    Que lindo decorado la verdad un genio sos me gustaria tener uno igual te estare hablando en los proximos dias asi charlamos
-            </div>
-          </div> 
-          </div> 
-                 </div>
-                 <div class="modal-footer">
-                   <button type="button"  data-dismiss="modal" class="btn btn-success">Cerrar</button>
+					  
+					 </div>
+				  </div>
+				  
+				 </div>
+				 <br>
+			   </div>
+		   
+			<div class="col-lg-6  col-md-6">
 
-                  
-                 </div>
-              </div>
-              
-             </div>
-             <br>
-           </div>
-       
-        <div class="col-lg-6  col-md-6">
+			<aside>
+				  <div class="content-footer">
+					<img class="user-small-img" src="images/jose.jpg">
+					<span style="font-size: 16px;color: #fff;">Robertito cualigues</span>
+					<span class="pull-right">
+					<a href="#ventana2" data-toggle="modal"><i class="fa fa-comments"></i> 30</a>
+									
+					</span>
+		
+				   </div>
+				<div class="tz-gallery">
+					 <a class="lightbox" href="images/casa.jpg">
+					 <img src="images/casa.jpg" class="img-responsive">
+					</a>
+			   </div>
+			  
+			
+			   <div class="footer">
+						   
+						   <h5 class="request">Comentar</h5>
+							<label class="icon-heart"></label>
+							
+						</div>
+		   </aside>
+	  </div>
+			
+			 <div class="col-lg-6  col-md-6">
 
-        <aside>
-              <div class="content-footer">
-                <img class="user-small-img" src="images/jose.jpg">
-                <span style="font-size: 16px;color: #fff;">Robertito cualigues</span>
-                <span class="pull-right">
-                <a href="#ventana2" data-toggle="modal"><i class="fa fa-comments"></i> 30</a>
-                                
-                </span>
-    
-               </div>
-            <div class="tz-gallery">
-                 <a class="lightbox" href="images/casa.jpg">
-                 <img src="images/casa.jpg" class="img-responsive">
-                </a>
-           </div>
-          
-        
-           <div class="footer">
-                       
-                       <h5 class="request">Comentar</h5>
-                        <label class="icon-heart"></label>
-                        
-                    </div>
-       </aside>
-  </div>
-        
-         <div class="col-lg-6  col-md-6">
+			<aside>
+				  <div class="content-footer">
+					<img class="user-small-img" src="images/ramon.jpg">
+					<span style="font-size: 16px;color: #fff;">jose diaz</span>
+					<span class="pull-right">
+					<a href="#ventana2" data-toggle="modal"><i class="fa fa-comments"></i> 30</a>
+								  
+					</span>
+		
+				   </div>
+					 <div class="tz-gallery">
+					 <a class="lightbox" href="images/jardin.jpg">
+					   <img src="images/jardin.jpg" class="img-responsive">
+					</a>
+			   </div>
+			   
+			
+			   <div class="footer">
+						   
+						   <h5 class="request">Comentar</h5>
+							<label class="icon-heart"></label>
+							
+						</div>
+		   </aside>
+	  </div> 
+	  <div class="col-lg-6  col-md-6">
 
-        <aside>
-              <div class="content-footer">
-                <img class="user-small-img" src="images/ramon.jpg">
-                <span style="font-size: 16px;color: #fff;">jose diaz</span>
-                <span class="pull-right">
-                <a href="#ventana2" data-toggle="modal"><i class="fa fa-comments"></i> 30</a>
-                              
-                </span>
-    
-               </div>
-                 <div class="tz-gallery">
-                 <a class="lightbox" href="images/jardin.jpg">
-                   <img src="images/jardin.jpg" class="img-responsive">
-                </a>
-           </div>
-           
-        
-           <div class="footer">
-                       
-                       <h5 class="request">Comentar</h5>
-                        <label class="icon-heart"></label>
-                        
-                    </div>
-       </aside>
-  </div> 
-  <div class="col-lg-6  col-md-6">
+			<aside>
+				  <div class="content-footer">
+					<img class="user-small-img" src="images/ramon.jpg">
+					<span style="font-size: 16px;color: #fff;">jose diaz</span>
+					<span class="pull-right">
+					<a href="#ventana2" data-toggle="modal"><i class="fa fa-comments"></i> 30</a>
+								  
+					</span>
+		
+				   
 
-        <aside>
-              <div class="content-footer">
-                <img class="user-small-img" src="images/ramon.jpg">
-                <span style="font-size: 16px;color: #fff;">jose diaz</span>
-                <span class="pull-right">
-                <a href="#ventana2" data-toggle="modal"><i class="fa fa-comments"></i> 30</a>
-                              
-                </span>
-    
-               
+		  
+				</div>
+					 <div class="tz-gallery">
+					 <a class="lightbox" href="images/modernas.jpg">
+					   <img src="images/modernas.jpg" class="img-responsive">
+					</a>
+			   </div>
+				  
+			
+			   <div class="footer">
+						   
+						   <h5 class="request">Comentar</h5>
+							<label class="icon-heart"></label>
+							
+						</div>
+			 </aside>
+		</div>
+		
+				  
+			</div>
 
-      
-            </div>
-                 <div class="tz-gallery">
-                 <a class="lightbox" href="images/modernas.jpg">
-                   <img src="images/modernas.jpg" class="img-responsive">
-                </a>
-           </div>
-              
-        
-           <div class="footer">
-                       
-                       <h5 class="request">Comentar</h5>
-                        <label class="icon-heart"></label>
-                        
-                    </div>
-         </aside>
-    </div>
-    
-              
-        </div>
-
-      </div>
-    </div>
-  </div>
+		  </div>
+		</div>
+	  </div>
 
 </div>
- 
+ <?php endif; ?>
     
  <div class="capa-data">
  </div>
