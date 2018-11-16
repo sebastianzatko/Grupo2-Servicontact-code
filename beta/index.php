@@ -127,7 +127,7 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="col-lg-12">
-          <h6 class="description">Profesionales Mas Destacados</h6>
+          <h3>Profesionales Mas Destacados</h3>
           <div class="row pt-md">
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
