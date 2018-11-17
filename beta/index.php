@@ -45,7 +45,8 @@
     echo $htmlmenu;
     
   ?>
-
+<br>
+<br>
 <div class="container-fluid">
 
 
@@ -100,9 +101,7 @@
 	.unlinknormal:hover{
 		color: #337ab7;
 	}
-	.categoria{
-		width:250px;
-		height:250px;
+	.img-circle{
 		color:#337ab7;
 		-webkit-filter : hue-rotate(180deg);
 		filter : hue-rotate(180deg);
@@ -110,11 +109,11 @@
 		filter: opacity(.5) drop-shadow(0 0 0 #337ab7);
 	}
    </style>
-   
+   <br><br>
       
-<center><h3 class="hidden-sm hidden-xs" >Categorias Populares</h3> </center>
+<center><h3 class="" >Categorias Populares</h3> </center>
 <br>
-<div class="galeria hidden-sm hidden-xs">
+<center><div class="galeria">
 <div class="container">
   <div class="row">
         <div class="profile-header-container">   
@@ -123,7 +122,7 @@
 	
 					foreach($categorias as $categoria){
 						
-						echo "<a href='buscar.php?service=".$categoria[0]."' class='unlinknormal'><img class='img-circle categoria' src='images/".$categoria[4]."' /></a>";
+						echo "<a href='buscar.php?service=".$categoria[0]."' class='unlinknormal'><img class='img-circle' src='images/".$categoria[4]."' /></a>";
 					}
 					
 
@@ -134,14 +133,21 @@
         </div> 
   </div>
 </div>
-</div>   
-        
+</div>  </center>
+ 
+
+        <br><br>
 <section class="team">
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="col-lg-12">
-          <h3>Profesionales Mas Destacados</h3>
+			<style>
+				.titucloespecial{
+					top:0px;
+				}
+			</style>
+          <h3 class="titucloespecial">Profesionales Mas Destacados</h3>
           <div class="row pt-md">
             <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
               <div class="img-box">
@@ -240,7 +246,7 @@
     </div>
   </div>
   
-  
+  <br><br>
 </footer> 
 </section>
 	<?php if(isset($publicacionesdelosamigos)):?>

@@ -98,7 +98,7 @@ var latlong="-34.8184,-58.4563";
 function getIP(json) {
 
   console.log("My public IP address is: ", json.ip);
-  latlong="-34.8184,-58.4563";
+  latlong=json.loc;
   console.log(latlong);
 }
 $( '.dropdown-menu .small' ).on( 'click', function( event ) {

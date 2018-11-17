@@ -33,7 +33,7 @@
 
 
 
-.profile-header-img > img.img-circle {
+.profile-header-img a > img.img-circle {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -63,7 +63,7 @@
 }
 
 @media(max-width: 460px){
-    .profile-header-img > img.img-circle {
+    .profile-header-img a > img.img-circle {
     width: 80px;
     height: 80px;
     
@@ -93,6 +93,9 @@ h3{
 
 
    
+}
+.carousel{
+	top:+40px;
 }
 
 }

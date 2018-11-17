@@ -2,8 +2,8 @@
 	if(isset($_SESSION["nombre"]) and isset($_SESSION["foto"]) and isset($_SESSION["id"]) ){
             $profile= "
 			<li><a href='index.php'><i class='icons iconos fas fa-home'></i></a></li>
-            <img src='".$_SESSION["foto"]."' class='hidden-sm hidden-xs' style='width: 40px;height: 40px;border-radius: 50%;'>
-            <li><a href='#' class='nomb'>".$_SESSION["nombre"]."</a></li>
+            <img src='".$_SESSION["foto"]."' class='' style='width: 40px;height: 40px;border-radius: 50%;'>
+            <li><a href='perfil.php?idprofile=".$_SESSION["id"]."' class='nomb'>".$_SESSION["nombre"]."</a></li>
           
             
            
@@ -46,7 +46,7 @@
     <div class='navbar-header'>
 
       <button type='button' class='navbar-toggle left-navbar-toggle' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1' aria-expanded='false'>
-        <span class='sr-only'>Toggle navigation</span>
+        <span class='sr-only' style='overflow:hidden;'>Toggle navigation</span>
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
@@ -86,7 +86,7 @@ $htmlmenu2="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
     <div class='navbar-header'>
 
       <button type='button' class='navbar-toggle left-navbar-toggle' data-toggle='collapse' style='display: none' data-target='#bs-example-navbar-collapse-1' aria-expanded='false'>
-        <span class='sr-only'>Toggle navigation</span>
+        <span class='sr-only' style='overflow:hidden;'>Toggle navigation</span>
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
@@ -141,7 +141,7 @@ $htmlmenu1="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
     <div class='navbar-header'>
 
       <button type='button' class='navbar-toggle left-navbar-toggle' data-toggle='collapse' style='display: none' data-target='#bs-example-navbar-collapse-1' aria-expanded='false'>
-        <span class='sr-only'>Toggle navigation</span>
+        <span class='sr-only' style='overflow:hidden;'>Toggle navigation</span>
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
@@ -248,7 +248,7 @@ $htmlmenu3="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
       </button>
-      <div class='container'>
+      <div class='container hidden-md hidden-lg'>
         <div class='row'>
             <div class='col-xs-1 col-md-8 col-sm-6 col-lg-4'>
                 <a href='index.php' id='buscar3'><i class='fas fa-arrow-left'></i></a>
