@@ -264,11 +264,11 @@ if (isset($_SESSION["id"])){
         <div class="tab-pane fade in" id="tab2">
           <h3>Tu calificacion</h3>
           <br>
-			<div class="twPc-d">
+			
 			<div class="row">
 				
 				<div class="col-xs-12 col-md-12">
-					<div class="well well-sm">
+					
 						<div class="row">
 							<div class="col-xs-12 col-md-12 text-center">
 								<h1 class="rating-num">
@@ -307,7 +307,7 @@ if (isset($_SESSION["id"])){
 												  $puntuacionfinal="<div class='col-xs-8 col-md-9'>Este servicio todavia no ha sido calificado</div>";
 											  }
 										  
-											echo "<div class='row'><div class='col-xs-3 col-md-3 text-right'><i class='".$data[2]."'></i> ".$data[3]."</div>".$puntuacionfinal."</div>";			
+											echo "<br><div class='row'><div class='col-xs-3 col-md-3 text-right'><i class='".$data[2]."'></i> ".$data[3]."</div>".$puntuacionfinal."</div>";			
 									  }
 										 
 										 
@@ -318,10 +318,10 @@ if (isset($_SESSION["id"])){
 								<!-- end row -->
 							</div>
 						</div>
-					</div>
+					
 				</div>
 			</div>
-		</div>
+		
         </div>
        
       </div>

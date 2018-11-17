@@ -45,8 +45,8 @@
     echo $htmlmenu;
     
   ?>
-<br>
-<br>
+
+
 <div class="container-fluid">
 
 
@@ -93,36 +93,20 @@
 <br>
 
         
-   <style>
-	.unlinknormal{
-		color: #337ab7;
-		text-decoration: none;
-	}
-	.unlinknormal:hover{
-		color: #337ab7;
-	}
-	.img-circle{
-		color:#337ab7;
-		-webkit-filter : hue-rotate(180deg);
-		filter : hue-rotate(180deg);
-		-webkit-filter: opacity(.5) drop-shadow(0 0 0 #337ab7);
-		filter: opacity(.5) drop-shadow(0 0 0 #337ab7);
-	}
-   </style>
-   <br><br>
+
       
 <center><h3 class="" >Categorias Populares</h3> </center>
 <br>
-<center><div class="galeria">
-<div class="container">
-  <div class="row">
+<div class="galeria">
+    <div class="container">
+   <div class="row">
         <div class="profile-header-container">   
         <div class="profile-header-img">
 				<?php
 	
 					foreach($categorias as $categoria){
 						
-						echo "<a href='buscar.php?service=".$categoria[0]."' class='unlinknormal'><img class='img-circle' src='images/".$categoria[4]."' /></a>";
+						echo "<a href='buscar.php?service=".$categoria[0]."'> <img class='img-circle' src='images/".$categoria[4]."' /></a>";
 					}
 					
 
@@ -133,7 +117,7 @@
         </div> 
   </div>
 </div>
-</div>  </center>
+</div>  
  
 
         <br><br>
