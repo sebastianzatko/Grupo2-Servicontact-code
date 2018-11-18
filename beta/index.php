@@ -95,12 +95,13 @@
         
 
       
-<center><h3 class="" >Categorias Populares</h3> </center>
+
 <br>
 <div class="galeria">
     <div class="container">
    <div class="row">
-        <div class="profile-header-container">   
+        <div class="profile-header-container"> 
+        <h3 class="center" >Categorias Populares</h3>
         <div class="profile-header-img">
 				<?php
 	

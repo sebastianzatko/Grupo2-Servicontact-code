@@ -74,11 +74,18 @@
         background: linear-gradient(to bottom, #184AE6, #92A9F2, #0C3DD5  );
 }
 .container-fluid{
-    margin-top: 100px;
+    margin-top: 110px;
+}
+
+.center {
+    display: block;
+    text-align: -webkit-center;
+    margin-top: 40px;
+    margin-bottom: 0px;
 }
 h3{
     position: relative;
-    top: -375px;
+
 }
 .galeria {
    
@@ -94,6 +101,8 @@ h3{
 
    
 }
-
+#micarouselinicio{
+    margin-top: 10px;
+}
 
 }

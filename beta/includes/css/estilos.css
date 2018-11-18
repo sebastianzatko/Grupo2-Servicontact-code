@@ -336,7 +336,9 @@ div.container-data{
     margin: 0;
 }
 
-
+.container-fluid{
+    margin-top: 110px;
+}
 .info-comments-request{
     margin-left: 15px;
 }
