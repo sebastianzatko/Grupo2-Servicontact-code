@@ -18,7 +18,11 @@ a{
 
 }
 .container-fluid{
-    width: 75%;
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: none;
+    margin-left: none;
 }
 .imagen{
     position: relative;

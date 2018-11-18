@@ -77,7 +77,7 @@
         
     </div>
   </div>
-</nav>'";
+</nav>";
 
 
 $htmlmenu2="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation' data-sidebarClass='navbar-inverse'>
