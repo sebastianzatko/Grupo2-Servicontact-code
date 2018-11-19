@@ -294,7 +294,7 @@ V.I.ea={stringify:function(a){var d=a.f,b=a.b,c=this.z;a.s();for(var a=[],e=0;e<
 		}
 		
 		window.onresize = window.onscroll = function() {
-			scaletab();
+			//scaletab();
 		};
 		window.onload = function() {
 			scaletab();
