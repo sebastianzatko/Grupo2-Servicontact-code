@@ -209,5 +209,5 @@ var options = [];
 </script>
 <!--<script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>-->
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
-<script type="text/javascript" src="https://www.arrowchat.com/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>
+<script type="text/javascript" src="/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>
 </html>

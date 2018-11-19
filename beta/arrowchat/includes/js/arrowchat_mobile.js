@@ -2,23 +2,6 @@ if(typeof(jqac) === 'undefined') {
 	jqac = jQuery;
 }
 
-/*!
-  jQuery Cookie Plugin v1.4.0
-  https://github.com/carhartl/jquery-cookie
- */
-(function(factory){if(typeof define==='function'&&define.amd){define(['jqac'],factory);}else{factory(jqac);}}(function($){var pluses=/\+/g;function encode(s){return config.raw?s:encodeURIComponent(s);}
-function decode(s){return config.raw?s:decodeURIComponent(s);}
-function stringifyCookieValue(value){return encode(config.json?JSON.stringify(value):String(value));}
-function parseCookieValue(s){if(s.indexOf('"')===0){s=s.slice(1,-1).replace(/\\"/g,'"').replace(/\\\\/g,'\\');}
-try{s=decodeURIComponent(s.replace(pluses,' '));return config.json?JSON.parse(s):s;}catch(e){}}
-function read(s,converter){var value=config.raw?s:parseCookieValue(s);return $.isFunction(converter)?converter(value):value;}
-var config=$.cookie=function(key,value,options){if(value!==undefined&&!$.isFunction(value)){options=$.extend({},config.defaults,options);if(typeof options.expires==='number'){var days=options.expires,t=options.expires=new Date();t.setDate(t.getDate()+days);}
-return(document.cookie=[encode(key),'=',stringifyCookieValue(value),options.expires?'; expires='+options.expires.toUTCString():'',options.path?'; path='+options.path:'',options.domain?'; domain='+options.domain:'',options.secure?'; secure':''].join(''));}
-var result=key?undefined:{};var cookies=document.cookie?document.cookie.split('; '):[];for(var i=0,l=cookies.length;i<l;i++){var parts=cookies[i].split('=');var name=decode(parts.shift());var cookie=parts.join('=');if(key&&key===name){result=read(cookie,value);break;}
-if(!key&&(cookie=read(cookie))!==undefined){result[name]=cookie;}}
-return result;};config.defaults={};$.removeCookie=function(key,options){if($.cookie(key)===undefined){return false;}
-$.cookie(key,'',$.extend({},options,{expires:-1}));return!$.cookie(key);};}));
-
 if (c_push_engine == "1") {
 /**
  * ArrowPush v3.7.2
@@ -120,28 +103,23 @@ V.I.ea={stringify:function(a){var d=a.f,b=a.b,c=this.z;a.s();for(var a=[],e=0;e<
 		var $body = a('body');
 		
 		function runarrowchat() {
-			if (c_enable_mobile == 1) {
-				if (a.cookie('ac_hide_mobile') != 1) {
-					$body.append('<div id="arrowchat_mobiletab"><div id="arrowchat_mobiletab_new"><span class="arrowchat_mobiletab_new_count">0</span></div>' + lang[145] + ' (<span id="arrowchat_mobiletab_count">0</span>)</div>');
-					$body.append('<div class="arrowchat_notify_box"><div class="arrowchat_notify_box_wrapper"><div class="arrowchat_notify_avatar"></div><div class="arrowchat_notify_info_wrapper"><div class="arrowchat_notify_username"></div><div class="arrowchat_notify_msg"></div></div><div class="arrowchat_clearfix"></div></div></div>');
-					a("#arrowchat_mobiletab_new").hide();
-					
-					if (c_push_engine == 1) {
-						push = PUBNUB.init({
-							publish_key   : c_push_publish,
-							subscribe_key : c_push_subscribe
-						});
-					}
-					
-					pushSubscribe();
-					loadBuddyList();
-					receiveCore();
-					
-					a("#arrowchat_mobiletab").click(function () {
-						window.open(c_ac_path + 'public/mobile/', 'mobiletab', '_blank');
-					});
-				}
+			$body.append('<div id="arrowchat_mobiletab_new"><span class="arrowchat_mobiletab_new_count">0</span> ' + lang[115] + '</div><div id="arrowchat_mobiletab">' + lang[145] + ' (<span id="arrowchat_mobiletab_count">0</span>)</div>');
+			a("#arrowchat_mobiletab_new").hide();
+			
+			if (c_push_engine == 1) {
+				push = PUBNUB.init({
+					publish_key   : c_push_publish,
+					subscribe_key : c_push_subscribe
+				});
 			}
+			
+			pushSubscribe();
+			loadBuddyList();
+			receiveCore();
+			
+			a("#arrowchat_mobiletab").click(function () {
+				window.open(c_ac_path + 'public/mobile/', 'mobiletab', '_blank');
+			});
 		}
 		
 		function pushSubscribe() {
@@ -152,50 +130,21 @@ V.I.ea={stringify:function(a){var d=a.f,b=a.b,c=this.z;a.s();for(var a=[],e=0;e<
 		
 		function pushReceive(data) {
 			if ("messages" in data) {
-				receiveMessage(data.messages.id, data.messages.from, data.messages.message, data.messages.sent, data.messages.self, data.messages.old);
 				addToCount(1);
-			}
-		}
-		function stripslashes(str) {
-			str=str.replace(/\\'/g,'\'');
-			str=str.replace(/\\"/g,'"');
-			str=str.replace(/\\0/g,'\0');
-			str=str.replace(/\\\\/g,'\\');
-			return str;
-		}
-		function receiveMessage(id, from, message, sent, self, old) {
-			if (from != u_id && typeof(uc_name[from]) != "undefined") {
-				message = stripslashes(message);
-				a(".arrowchat_notify_avatar").html('<img src="' + uc_avatar[from] + '" alt="" />');
-				a(".arrowchat_notify_username").html(uc_name[from]);
-				a(".arrowchat_notify_msg").html(message);
-				clearTimeout(message_timeout);
-				a(".arrowchat_notify_box").show("slide", { direction: "up"}, 250);
-				message_timeout = setTimeout(function () {
-					a(".arrowchat_notify_box").hide("slide", { direction: "up"}, 250);
-				}, 5000);
-				a(".arrowchat_notify_box").unbind('click');
-				a(".arrowchat_notify_box").click(function() {
-					clearTimeout(message_timeout);
-					a(".arrowchat_notify_box").hide();
-					window.open(c_ac_path + 'public/mobile/#chatwith-' + from, 'mobiletab', '_blank');
-				});
 			}
 		}
 		function addToCount(number) {
 			var count = parseInt(a(".arrowchat_mobiletab_new_count").html()) + number;
-			var fontSize = parseInt(a('#arrowchat_mobiletab').css('font-size'), 10);
-			a("#arrowchat_mobiletab_new").css("line-height", a("#arrowchat_mobiletab").css("font-size"));
-			a("#arrowchat_mobiletab_new").css("top", "-" + fontSize/2 + "px");
-			a("#arrowchat_mobiletab_new").css("right", fontSize/2 + "px");
 			a(".arrowchat_mobiletab_new_count").html(count);
 			a("#arrowchat_mobiletab_new").show();
+			scaletab();
 		}
 		function loadBuddyList() {
 			clearTimeout(Z);
 			a.ajax({
 				url: c_ac_path + "includes/json/receive/receive_buddylist.php?mobile=1",
 				cache: false,
+				global: false,
 				type: "get",
 				dataType: "json",
 				success: function (b) {
@@ -224,6 +173,7 @@ V.I.ea={stringify:function(a){var d=a.f,b=a.b,c=this.z;a.s();for(var a=[],e=0;e<
 			var url = c_ac_path + "includes/json/receive/receive_core.php?hash=" + u_hash_id + "&init=" + acsi + "&room=0";
 			xOptions = a.ajax({
 				url: url,
+				global: false,
 				dataType: "jsonp",
 				success: function (b) {
 					var new_messages = 0;
@@ -231,8 +181,6 @@ V.I.ea={stringify:function(a){var d=a.f,b=a.b,c=this.z;a.s();for(var a=[],e=0;e<
 						a.each(b, function (e, l) {
 							if (e == "messages") {
 								a.each(l, function (f, h) {
-									if (acsi != 1)
-										receiveMessage(h.id, h.from, h.message, h.sent, h.self, 1);
 									new_messages++;
 								});
 							}
@@ -259,29 +207,90 @@ V.I.ea={stringify:function(a){var d=a.f,b=a.b,c=this.z;a.s();for(var a=[],e=0;e<
 					a.each(e, function (l, f) {
 						if (f.s == "available" || f.s == "away" || f.s == "busy") 
 							onlineNumber++;
-                        uc_status[f.id] = f.s;
-                        uc_name[f.id] = f.n;
-                        uc_avatar[f.id] = f.a;
-                        uc_link[f.id] = f.l
 					});
-					a("#arrowchat_mobiletab_count").html(onlineNumber);
+					a("#arrowchat_mobiletab").html(lang[145] + ' (<span id="arrowchat_mobiletab_count">' + onlineNumber + '</span>)');
 				}
 			})
 		}
 		function scaletab() {
+			var tab = document.getElementById('arrowchat_mobiletab');
+			var newcount = document.getElementById('arrowchat_mobiletab_new');
+			var lowerleft = [window.pageXOffset,(window.pageYOffset+window.innerHeight)];
+			var lowerright = [(lowerleft[0] + window.innerWidth),lowerleft[1]];
 			var zoomFactor = window.innerWidth/document.documentElement.clientWidth;
-
-			if (zoomFactor < 1) {
-				a("#arrowchat_mobiletab").hide();
-				a(".arrowchat_notify_box").hide();
-			} else {
-				a("#arrowchat_mobiletab").show();
+			var count = parseInt(a(".arrowchat_mobiletab_new_count").html());
+			var devicewidth = false;
+			if (typeof(a('meta[name=viewport]').attr('content')) != "undefined") {
+				if (a('meta[name=viewport]').attr('content').search(/device-width/i) > -1)
+					devicewidth = true;
 			}
 			
-			var fontSize = parseInt(a('#arrowchat_mobiletab').css('font-size'), 10);
-			a("#arrowchat_mobiletab_new").css("line-height", a("#arrowchat_mobiletab").css("font-size"));
-			a("#arrowchat_mobiletab_new").css("top", "-" + fontSize/2 + "px");
-			a("#arrowchat_mobiletab_new").css("right", fontSize/2 + "px");
+			if (window.innerWidth > window.innerHeight) {
+				// Landscape Mode
+				tab.style.width = (lowerright[0] - lowerleft[0])/4 + 'px';
+				tab.style.height = parseInt(window.innerHeight/6) + 'px';
+				tab.style.left = lowerright[0] - a("#arrowchat_mobiletab").outerWidth() - 20 + 'px';
+				tab.style.top = lowerleft[1]-tab.offsetHeight + 'px';
+				if (devicewidth)
+					tab.style.fontSize = parseInt(zoomFactor*37) + '%';
+				else
+					tab.style.fontSize = parseInt(zoomFactor*20) + 'px';
+				
+				newcount.style.width = (lowerright[0] - lowerleft[0])/12 + 'px';
+				newcount.style.height = parseInt(window.innerHeight/12) + (a("#arrowchat_mobiletab").outerHeight()/3)  + 'px';
+				newcount.style.left = lowerright[0] - a("#arrowchat_mobiletab_new").outerWidth() - 22 + 'px';
+				newcount.style.top = lowerleft[1]-tab.offsetHeight-a("#arrowchat_mobiletab_new").outerHeight()+(a("#arrowchat_mobiletab").outerHeight()/1.6) + 'px';
+				if (devicewidth)
+					newcount.style.fontSize = parseInt(zoomFactor*21) + '%';
+				else
+					newcount.style.fontSize = parseInt(zoomFactor*13) + 'px';
+				
+				if ((lowerright[0] - lowerleft[0])/4 <= 50) {
+					a("#arrowchat_mobiletab").addClass("arrowchat_mobiletab_hide");
+					a("#arrowchat_mobiletab_new").hide();
+				} else {
+					a("#arrowchat_mobiletab").removeClass("arrowchat_mobiletab_hide");
+					if (count > 0)
+						a("#arrowchat_mobiletab_new").show();
+				}
+
+			} else {
+				// Portrait Mode
+				tab.style.width = (lowerright[0] - lowerleft[0])/2 + 'px';
+				tab.style.height = parseInt(window.innerHeight/10) + 'px';
+				tab.style.left = lowerright[0] - a("#arrowchat_mobiletab").outerWidth() - 20 + 'px';
+				tab.style.top = lowerleft[1]-tab.offsetHeight + 'px';
+				if (devicewidth)
+					tab.style.fontSize = parseInt(zoomFactor*80) + '%';
+				else
+					tab.style.fontSize = parseInt(zoomFactor*40) + 'px';
+				
+				newcount.style.width = (lowerright[0] - lowerleft[0])/6 + 'px';
+				newcount.style.height = parseInt(window.innerHeight/20) + (a("#arrowchat_mobiletab").outerHeight()/3)  + 'px';
+				newcount.style.left = lowerright[0] - a("#arrowchat_mobiletab_new").outerWidth() - 22 + 'px';
+				newcount.style.top = lowerleft[1]-tab.offsetHeight-a("#arrowchat_mobiletab_new").outerHeight()+(a("#arrowchat_mobiletab").outerHeight()/1.6) + 'px';
+				if (devicewidth)
+					newcount.style.fontSize = parseInt(zoomFactor*45) + '%';
+				else
+					newcount.style.fontSize = parseInt(zoomFactor*25) + 'px';
+
+				if ((lowerright[0] - lowerleft[0])/2 <= 60) {
+					a("#arrowchat_mobiletab").addClass("arrowchat_mobiletab_hide");
+					a("#arrowchat_mobiletab_new").hide();
+				} else {
+					a("#arrowchat_mobiletab").removeClass("arrowchat_mobiletab_hide");
+					if (count > 0)
+						a("#arrowchat_mobiletab_new").show();
+				}
+			}
+			
+			if ((lowerright[0] - lowerleft[0])/2 <= 200) {
+				a("#arrowchat_mobiletab").addClass("arrowchat_mobiletab_corners");
+				a("#arrowchat_mobiletab_new").addClass("arrowchat_mobiletab_new_corners");
+			} else {
+				a("#arrowchat_mobiletab").removeClass("arrowchat_mobiletab_corners");
+				a("#arrowchat_mobiletab_new").removeClass("arrowchat_mobiletab_new_corners");
+			}
 		}
 		
 		window.onresize = window.onscroll = function() {
@@ -293,13 +302,8 @@ V.I.ea={stringify:function(a){var d=a.f,b=a.b,c=this.z;a.s();for(var a=[],e=0;e<
 		
 		var Z,
 			CHA,
-			zoomFactor2 = window.innerWidth/document.documentElement.clientWidth,
-			message_timeout,
 			acsi = 1;
-			
-		arguments.callee.chatWith = function (b) {
-			window.open(c_ac_path + 'public/mobile/#chatwith-' + b, 'mobiletab', '_blank');
-		};
+		
 		arguments.callee.runarrowchat = runarrowchat;
 	}
 })(jqac);

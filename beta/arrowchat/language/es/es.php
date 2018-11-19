@@ -101,7 +101,7 @@
 	$language[24]			=	"Limpiar conversaci&oacute;n";													// Displayed in the chat popup to clear chat history
 	$language[30]			=	"Nuevo mensaje desde";														// DISPLAYS USERNAME AFTER - Blinks in the title of the browser on new messages
 	$language[59]			=	"M&aacute;s &#9660;";															// The text to display more chat options
-	$language[60]			=	"Comenzar videollamada";															// The video chat option in the more menu
+	$language[60]			=	"Abrir en una ventana";															// The video chat option in the more menu
 	$language[61]			=	"Has recibido una solicitud de videochat. Ignora el mensaje para rechazar.";// The message to send when a video chat is reuqested
 	$language[62]			=	"Aceptar";																// Accept a video chat request
 	$language[63]			=	"Tu solicitud de videochat ha sido enviada";								// Displayed when a user sends a video chat request
@@ -114,7 +114,7 @@
 	$language[85]			=	"¿Quieres denunciar a &eacute;ste usuario?";								// Asks the user if they want to report another user
 	$language[86]			=	"Examinar";																// The text to browse for a file when uploading
 	$language[87]			=	"Pulsa examinar para subir un archivo o ";										// Text to display when uploading a file
-	$language[88]			=	"Convertir todas las conversaciones en ventana";										// Displays when mouseover the popout chat icon
+	$language[88]			=	"Comenzar videollamada";										// Displays when mouseover the popout chat icon
 	$language[89]			=	"Cerrar chat";															// Displays when mouserver the close icon
 	$language[90]			=	"Tu";																	// Displays on mosueover of your own chat text
 	$language[102]			=	"El mensaje no se ha enviado. &eacute;ste usuario te ha bloqueado.";						// Displays this when a user tries to send a message to another user who has them blocked
