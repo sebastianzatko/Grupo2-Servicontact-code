@@ -107,6 +107,10 @@
     .port-image{
     	height: 200px;
     }
+.form-group {
+    display: block;
+    margin-left: 0;
+}
 }
 	</style>
 </head>
@@ -214,7 +218,7 @@
 							<label class="col-sm-3 control-label">
 								Multiples fotos:
 							</label>
-							<div class="col-sm-9">
+							<div class="">
 								<span class="btn btn-default btn-file">
 									<input id="input-2" name="upload[]" type="file" class="file" multiple data-show-upload="true" data-show-caption="true">
 								</span>

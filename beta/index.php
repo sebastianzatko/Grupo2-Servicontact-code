@@ -1,5 +1,4 @@
 <?php
-
   session_start();
   require("blogic/Wall.php");
 	
@@ -98,7 +97,7 @@
 
 <br>
 <div class="galeria">
-   <div class="container">
+    <div class="container">
    <div class="row">
         <div class="profile-header-container"> 
         <h3 class="center" >Categorias Populares</h3>
@@ -107,10 +106,10 @@
 	
 					foreach($categorias as $categoria){
 						
-						echo "<a href='buscar.php?service=".$categoria[0]."'> <img class='img-circle' src='images/".$categoria[4]."' /></a>";
-					}
+						echo "<div class='categ'><a class='negro' href='buscar.php?service=".$categoria[0]."'> <img class='img-circle' src='images/".$categoria[4]."'/><ul class='text1-center1'>
+                  <span>".$categoria[1]."</span></ul></a></div>";
+					}	
 					
-
 				?>
                 
                 <!-- badge -->
@@ -121,6 +120,7 @@
 </div>  
  
 
+        <br><br>
 <section class="team">
   <div class="container">
     <div class="row">
