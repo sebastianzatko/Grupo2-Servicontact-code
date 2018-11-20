@@ -112,6 +112,13 @@
     margin-left: 0;
 }
 }
+ @media (max-width:380px){
+ 	.form-group{
+ 		display: block;
+ 		margin-left:0;
+        
+    }
+}
 	</style>
 </head>
 <body>
