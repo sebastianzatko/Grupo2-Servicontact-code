@@ -302,8 +302,16 @@ V.I.ea={stringify:function(a){var d=a.f,b=a.b,c=this.z;a.s();for(var a=[],e=0;e<
 		
 		var Z,
 			CHA,
+			//zoomFactor2 = window.innerWidth/document.documentElement.clientWidth,
+			message_timeout,
+			push_room = {},
+			push_uid,
+			push_arrowchat,
 			acsi = 1;
-		
+			
+		arguments.callee.chatWith = function (b) {
+			window.open(c_ac_path + 'public/mobile/#chatwith-' + b, 'mobiletab', '_blank');
+		};
 		arguments.callee.runarrowchat = runarrowchat;
 	}
 })(jqac);
