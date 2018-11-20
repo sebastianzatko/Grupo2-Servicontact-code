@@ -107,8 +107,9 @@
 	
 					foreach($categorias as $categoria){
 						
-						echo "<a href='buscar.php?service=".$categoria[0]."'> <img class='img-circle' src='images/".$categoria[4]."' /></a>";
-					}
+						echo "<div class='categ'><a class='negro' href='buscar.php?service=".$categoria[0]."'> <img class='img-circle' src='images/".$categoria[4]."'/><ul class='text1-center1'>
+                  <span>".$categoria[1]."</span></ul></a></div>";
+					}	
 					
 
 				?>

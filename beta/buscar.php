@@ -45,7 +45,7 @@
         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
           <div class="button-group">
             <center><button type="button" id="buscar2" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Buscar servicios <span class="caret"></span></button>
-              <ul class="dropdown-menu" style="width: 100%;">
+              <ul class="dropdown-menu">
                 <?php
                 require "blogic/Services.php";
                 $servicios=new services;
@@ -53,7 +53,7 @@
                 $dataAr = json_decode($listaservicios , true);
                 foreach($dataAr as $data)
                         {                            
-                                echo "<li><a class='small' data-value='option1' data-id='".$data[0]."' tabIndex='-1'><input type='checkbox' class='js-switch' value='".$data[0]."'/><span class='spa'> <i class='".$data[2]."'></i> " .$data[1]."</span></a></li>";
+                                echo "<li class='col-xs-6 col-sm-12 col-md-3 col-lg-3'><a class='small' data-value='option1' data-id='".$data[0]."' tabIndex='-1'><input type='checkbox' class='js-switch' value='".$data[0]."'/><span class='spa'> <i class='".$data[2]."'></i> " .$data[1]."</span></a></li>";
                         }
                         ?>
                         <script type="text/javascript">

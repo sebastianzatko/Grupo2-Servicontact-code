@@ -111,6 +111,7 @@
  								<div class="col-xs-12 col-sd-6 col-md-12 col-lg-12">
  									<button type="submit" name="submit" id="boton" class="btn btn-primary fotos"  value="Upload">Registrar</button>
  								</div>
+ 								<a href='principal.php'><span>¿Ya tienes cuenta?</span></a>
  								
  								
  							</div>

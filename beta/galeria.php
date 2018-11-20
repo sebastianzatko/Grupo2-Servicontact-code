@@ -66,7 +66,7 @@
 		border-radius: 5px;
 		text-align: center;
 		color: #2175C4;
-		margin-bottom: 30px;
+		margin-bottom: 2px;
 
 	}
 	#agregado{
@@ -102,6 +102,12 @@
 	{
 		margin-bottom: 30px;
 	}
+
+@media(max-width: 460px){
+    .port-image{
+    	height: 200px;
+    }
+}
 	</style>
 </head>
 <body>
@@ -136,33 +142,60 @@
 
 <div class="container">
         <div class="row">
-        <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h1 class="gallery-title">Tu Galeria</h1>
+        <div class="gallery col-lg-10 col-md-10 col-sm-10 col-xs-6">
+            <h1 class="">Tu Galeria</h1>
         </div>
-
-        <div align="center">
-			<button class="btn btn-default filter-button" data-filter="all">Todos</button>
-			<?php
-				foreach($dataSer as $servicio){
-					echo "<button class='btn btn-default filter-button' data-filter='".$servicio[3]."'>".$servicio[3]."</button>";
-				}
-			?>
-            <button class="btn btn-default filter-button" data-filter="Indefinido">Indefinidos</button>
-			<button class="btn btn-primary" id="agregado" data-toggle="modal" href="#ventana"><i class="fas fa-plus"></i> Agregar Nuevas Fotos</button>
+        <div class="gallery col-lg-1 col-md-1 col-sm-1 col-xs-6">
+			<button class="btn btn-primary" id="agregado" data-toggle="modal" href="#ventana"><i class="fas fa-plus"></i> Agregar Fotos</button>
+<div class="dropdown gallery">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Albumnes
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+  				<li class='col-xs-12 col-sm-12 col-md-3 col-lg-3'><button class="btn btn-default filter-button" data-filter="Todos">Todos</button></li>
+  					<?php
+					foreach($dataSer as $servicio){
+						echo "
+						<li class='col-xs-12 col-sm-12 col-md-12 col-lg-12'c><button class='btn btn-default filter-button' data-filter='".$servicio[3]."'>".$servicio[3]."</button></li>";
+					}
+				?>
+<li class="col-xs-12 col-sm-12 col-md-3 col-lg-3"><button class="btn btn-default filter-button" data-filter="Indefinido">Indefinido</button></li>
+  </ul>
+</div>
+        </div>
+    </div>
+<div class="row">
+	
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        	<center><h3 id="tituloseleccionado">Estas son tus fotos</h3></center>
         </div>
         <br/>
 
 		<div id="galleria">
 			<?php
-				foreach($fotos as $foto){
-					echo "<div class='gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-12 filter ".$foto[2]."'> <img src='".$foto[1]."' id='".$foto[0]."' class='img-responsive port-image'></div>";
+				if(isset($fotos)){
+					if(count($fotos)==0){
+						echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> No exiten fotos :`( </h2></center></div>";
+					}else{
+						foreach($fotos as $foto){
+					echo "<div class='gallery_product col-lg-4 col-md-4 col-sm-3 col-xs-6 filter ".$foto[2]."'><a href='#".$foto[2]."' data-toggle='modal' style='color:black;'>
+					<img src='".$foto[1]."' id='".$foto[0]."' class='img-responsive port-image'></a></div>";//link
+							echo "<div class='modal fade' id='".$foto[2]."'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'> ";//modal inicio
+									echo "<img src='".$foto[1]."' id='".$foto[0]."' class='img-responsive port-image'>";
+							
+							echo "</div><div class='modal-footer'><button type='button'  data-dismiss='modal' class='btn btn-success'>Cerrar</button></div></div></div></div></div>";//modal cierre
+							
+						}
+					}
+				}else{
+					echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> Solo un profesional puede tener fotos</h2></center></div></div>";;
 				}
+			
+
 			
 			?>
             
-        
-		</div>
         </div>
+    </div>
     </div>
 </section>
 
@@ -221,8 +254,10 @@
 
 			$(".filter-button").click(function(){
 				var value = $(this).attr('data-filter');
+				$("#tituloseleccionado").empty();
+				$("#tituloseleccionado").html(value);
 				
-				if(value == "all")
+				if(value == "Todos")
 				{
 					//$('.filter').removeClass('hidden');
 					$('.filter').show('1000');
