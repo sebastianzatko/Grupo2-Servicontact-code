@@ -59,6 +59,16 @@
 				</div>
 			</div>
 		</div>
+		<div>
+		    <div class="btn-group dropup">
+            <button class="btn btn-info btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Citar <span class="glyphicon glyphicon-bookmark"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Solicitar Cita</a></li>
+                <li><a href="#">Programar Cita</a></li>
+            </ul>
+            </div>
+		</div>
 		<div class="arrowchat_giphy_button">
 			<div class="arrowchat_more_wrapper arrowchat_giphy_popout">
 				<div class="arrowchat_more_popout">
