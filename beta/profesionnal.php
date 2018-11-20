@@ -375,14 +375,14 @@ else{header('Location: index.php');}
 
         <div class="well">
       <div class="tab-content">
-        <div class="tab-pane fade in active " id="tab1">
+        <div class="tab-pane fade in " id="tab1">
           <h4>Albumes</h4>
           <br>
 				<?php
 				
 				if(isset($fotos)){
 					if(count($fotos)==0){
-						echo "<center><h2> No exiten fotos :`( </h2></center>";
+						echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> No exiten fotos :`( </h2></center></div>";
 					}else{
 						foreach($fotos as $foto){
 							echo "<a href='#".$foto[2]."' data-toggle='modal' style='color:black;'><p>".$foto[2]."</p> <img src='http://i.ytimg.com/i/vWtix2TtWGe9kffqnwdaMw/mq1.jpg' alt='' ></a>";//link
