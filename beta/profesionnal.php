@@ -17,11 +17,11 @@ if(isset($_GET["idprofile"])){
             $idprofesional=$profesional->getid((int)$idactual);
           $serviciosactivos=$profesional->obtenerPuntuacionYServicios((int)$idprofesional);
           $dataSer=json_decode($serviciosactivos , true);
-		  require "blogic/Galery.php";
-		  $galeria=new Galery();
-		  $fotos=$galeria->obtenerfotos((int)$idprofesional);
-		  $pictures=$fotos;
-		  $imagenes=$fotos;
+      require "blogic/Galery.php";
+      $galeria=new Galery();
+      $fotos=$galeria->obtenerfotos((int)$idprofesional);
+      $pictures=$fotos;
+      $imagenes=$fotos;
         
         
       }
@@ -91,7 +91,7 @@ else{header('Location: index.php');}
           </div>
 
           <a title="" href="" class="twPc-avatarLink">
-            <img  src="<?php echo $row["FOTO_DE_PERFIL"]; ?>"  class="img-thumbnail ">
+            <img  src="<?php echo $row["FOTO_DE_PERFIL"]; ?>"  class="img-thumbnail1 ">
           </a>
 
           <div class="twPc-divUser">
@@ -359,53 +359,56 @@ else{header('Location: index.php');}
                     </span>
                    
                 </div>
-                 <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-        <div class="btn-group" role="group">
-            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <div >Albunes por servicios</div>
-            </button>
+               <div data-spy="scroll" class="tabbable-panel">
+        <div class="tabbable-line">
+          <ul class="nav nav-tabs ">
+            <li class="active">
+              <a href="#tab1" data-toggle="tab">
+              Albunes Por Servicios</a>
+            </li>
+            <li>
+              <a href="#tab2" data-toggle="tab">Todas Las fotos
+             </a>
+            </li>
+           
+          </ul>
+          
         </div>
-        <div class="btn-group" role="group">
-            <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                <div >Todas las fotos </div>
-            </button>
-        </div>
-       
-    </div>
+      </div>
 
         <div class="well">
       <div class="tab-content">
         <div class="tab-pane fade in active " id="tab1">
           <h4>Albumes</h4>
           <br>
-				<?php
-				
-				if(isset($fotos)){
-					if(count($fotos)==0){
-						echo "<center><h2> No exiten fotos :`( </h2></center>";
-					}else{
-						foreach($fotos as $foto){
-							echo "<a href='#".$foto[2]."' data-toggle='modal' style='color:black;'><p>".$foto[2]."</p> <img src='http://i.ytimg.com/i/vWtix2TtWGe9kffqnwdaMw/mq1.jpg' alt='' ></a>";//link
-							echo "<div class='modal fade' id='".$foto[2]."'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'><div class='galeria'><div class='tz-gallery'> ";//modal inicio
-							foreach($pictures as $picture){
-								if($picture[2]==$foto[2]){
-									echo "<a class='lightbox' href='".$picture[1]."'><img src='".$picture[1]."'></a>";
-								}
-							}
-							echo "</div></div></div><div class='modal-footer'><button type='button'  data-dismiss='modal' class='btn btn-success'>Cerrar</button></div></div></div></div></div>";//modal cierre
-							
-						}
-					}
-				}else{
-					echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> Solo un profesional puede tener fotos</h2></center></div></div>";;
-				}
-			
-				?>
+        <?php
+        
+        if(isset($fotos)){
+          if(count($fotos)==0){
+            echo "<center><h2> No exiten fotos :`( </h2></center>";
+          }else{
+            foreach($fotos as $foto){
+              echo "<a href='#".$foto[2]."' data-toggle='modal' style='color:black;'><p>".$foto[2]."</p> <img src='http://i.ytimg.com/i/vWtix2TtWGe9kffqnwdaMw/mq1.jpg' alt='' ></a>";//link
+              echo "<div class='modal fade' id='".$foto[2]."'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'><div class='galeria'><div class='tz-gallery'> ";//modal inicio
+              foreach($pictures as $picture){
+                if($picture[2]==$foto[2]){
+                  echo "<a class='lightbox' href='".$picture[1]."'><img src='".$picture[1]."'></a>";
+                }
+              }
+              echo "</div></div></div><div class='modal-footer'><button type='button'  data-dismiss='modal' class='btn btn-success'>Cerrar</button></div></div></div></div></div>";//modal cierre
+              
+            }
+          }
+        }else{
+          echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> Solo un profesional puede tener fotos</h2></center></div></div>";;
+        }
+      
+        ?>
        
-					  
-							  
+            
+                
 
-						 
+             
                                
                         
                    
@@ -417,24 +420,24 @@ else{header('Location: index.php');}
           <br>
           <br>
             <div class="galeria"> 
-				
+        
               <div class="tz-gallery">
                  <?php
-				
-				if(isset($imagenes)){
-					if(count($imagenes)==0){
-						echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> No exiten fotos :`( </h2></center></div>";
-					}else{
-						foreach($imagenes as $imagen){
-							
-							echo "<a class='lightbox' href='".$imagen[1]."'><img src='".$imagen[1]."'></a>";
-						}
-					}
-				}else{
-					echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> Solo un profesional puede tener fotos</h2></center></div>";;
-				}
-			
-				?>
+        
+        if(isset($imagenes)){
+          if(count($imagenes)==0){
+            echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> No exiten fotos :`( </h2></center></div>";
+          }else{
+            foreach($imagenes as $imagen){
+              
+              echo "<a class='lightbox' href='".$imagen[1]."'><img src='".$imagen[1]."'></a>";
+            }
+          }
+        }else{
+          echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> Solo un profesional puede tener fotos</h2></center></div>";;
+        }
+      
+        ?>
                
               </div>
             </div>
@@ -455,14 +458,14 @@ else{header('Location: index.php');}
         var idprofesional=$(this).data("idpro");
         jqac.arrowchat.chatWith(idprofesional);
         $.ajax({
-			data:{idcliente:idcliente,idprofesional:idprofesional},
-			url:"includes/php/newcontact.php",
-			type:"POST",
-			success: function (data) {
-				    console.log(data);
-				}
-			}
-		)
+      data:{idcliente:idcliente,idprofesional:idprofesional},
+      url:"includes/php/newcontact.php",
+      type:"POST",
+      success: function (data) {
+            console.log(data);
+        }
+      }
+    )
     });
 </script>
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
