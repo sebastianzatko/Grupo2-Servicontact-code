@@ -64,8 +64,8 @@
             <button class="btn btn-info btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Citar <span class="glyphicon glyphicon-bookmark"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="#">Solicitar Cita</a></li>
-                <li><a href="#">Programar Cita</a></li>
+                <li><a href="#" onclick="sol_cita('+b+')">Solicitar Cita</a></li>
+                <li><a href="#" onclick="pro_cita(b)" data-toggle="modal" id="'+b+'" data-target="#formcita">Programar Cita</a></li>
             </ul>
             </div>
 		</div>

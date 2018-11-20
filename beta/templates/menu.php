@@ -288,8 +288,53 @@ $htmlmenu3="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
   </div><!-- /.container-fluid -->
 </nav>";
 
-
-
-
+$modalcita = '<!-- MODAL CITAS -->
+<div class="modal" id="formcita" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title">Crear cita</h4>
+        </div>
+        <div class="modal-body">
+        <div>
+          <form action="#" type="post" role="form">
+          	<div>
+            	<label for="servicios">Servicios a contratar:</label>
+            </div>
+            <div>
+            	<select multiple class="form-control" id="servicios">
+  					<option>Albañil</option>
+ 					<option>Cerrajero</option>
+ 					<option>Plomero</option>
+  					<option>Electricista</option>
+  					<option>Carpintero</option>
+				</select>
+            </div>
+          	<div>
+                <label for="servicios">Ingrese fecha:</label>
+            </div>
+            <div>
+            	<input type="date" class="form-control" id="fecha">
+            </div>
+          	<div>
+            	<label for="servicios">Ingrese hora:</label>
+            </div>
+            <div>
+            	<input type="time" class="form-control" id="hora">
+            </div>
+          </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- FIN DE MODAL-->';
+echo $modalcita;
 
 ?>
