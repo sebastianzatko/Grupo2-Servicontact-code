@@ -163,189 +163,138 @@ if (isset($_SESSION["id"])){
             
             	
        <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="col-lg-10 col-sm-10 col-xs-12">
-    <div class="card hovercard">
-        <div class="card-background">
-            <img class="card-bkimg" alt="" src="<?php echo $_SESSION['foto']; ?>">
-            <!-- http://lorempixel.com/850/280/people/9/ -->
-        </div>
-        <div class="useravatar">
-            <img alt="" src="<?php echo $_SESSION['foto']; ?>">
-        </div>
-        <div class="card-info"> <span class="card-title"><?php echo $row["NOMBRE"]." ".$row["APELLIDO"]; ?></span>
+ <div class="container">
+    <div class="row">
+    <div class="col-lg-12 col-xs-12">
 
-        </div>
-    </div>
-    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-        <div class="btn-group" role="group">
-            <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <div class="">Informacion</div>
-            </button>
-        </div>
-		<div class="btn-group" role="group">
-            <button type="button" id="stars" class="btn btn-primary" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                <div class="">Calificacion</div>
-            </button>
-        </div>
-		<div class="btn-group" role="group">
-            <button type="button" id="stars" class="btn btn-primary" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
-                <div class="">Galeria</div>
-            </button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" id="favorites" class="btn btn-default" href="#ventana" data-toggle="modal"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                <div class="">Editar perfil</div>
-            </button>
-        </div>
-        
-    </div>
+            <div class="card hovercard">
+                <div class="cardheader" style="background:url(http://f.fwallpapers.com/images/beautiful-nature-554.jpg) no-repeat">
 
+                </div>
+                <div class="avatar">
+                    <a href="http://www.doweb.in/"><img alt="" src="<?php echo $row["FOTO_DE_PERFIL"]; ?>"></a>
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <h2> <?php echo $row["NOMBRE"]; ?> <?php echo $row["APELLIDO"]; ?></h2>
+                    </div>
+                  
+                </div>
+      <div data-spy="scroll" class="tabbable-panel">
+        <div class="tabbable-line">
+          <ul class="nav nav-tabs ">
+            <li class="active">
+              <a href="#tab1" data-toggle="tab">
+              informacion</a>
+            </li>
+            <li>
+              <a href="#tab2" data-toggle="tab">Calificacion
+             </a>
+            </li>
+            <li>
+              <a href="#tab3" data-toggle="tab">Fotos
+             </a>
+            </li>
+             <li>
+              <a  href="#ventana" data-toggle="modal">Editar
+             </a>
+            </li>
+          </ul>
+          
+        </div>
         <div class="well">
       <div class="tab-content">
-        <div class="tab-pane fade in active" id="tab1">
+        <div class="tab-pane fade active in" id="tab1">
           <h3>Tus datos Personales</h3>
           <br>
-           <p>Nombre: </p><label><?php echo $row["NOMBRE"]." ".$row["APELLIDO"]; ?></label>
+           <p>Nombre: </p><label>Alexis Lacour</label>
              
                      
                                  <br>
-          <p>Telefono: </p><label for="telefono"><?php echo $row["TELEFONO"]; ?></label>
+          <p>Telefono: </p><label for="telefono">43960460</label>
          
                                  <br>
-          <p>Direccion: </p><label for="dir"><?php echo $row["DIRECCION"]; ?></label>
+          <p>Direccion: </p><label for="dir">uruguay 878</label>
          
           <br>
         </div>
-		
-		<div class="tab-pane fade in active" id="tab3">
+    
+    <div class="tab-pane fade" id="tab3">
           <h3>Tu Galeria</h3>
           <br>
-			<div class="row">
-			<div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				
-			</div>
-
-			<div align="center">
-				<?php
-				if(isset($fotos)){
-					if(count($fotos)!=0){
-						echo "<button class='btn btn-default filter-button' data-filter='all'>Todos</button>";
-						foreach($dataSer as $servicio){
-							echo "<button class='btn btn-default filter-button' data-filter='".$servicio[3]."'>".$servicio[3]."</button>";
-						}
-						echo "<button class='btn btn-default filter-button' data-filter='Indefinido'>Indefinidos</button>";
-					}
-				}
-			?>
-			</div>
-			<br/>
-
-			
-
-            <?php
-				
-				if(isset($fotos)){
-					if(count($fotos)==0){
-						echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> No tienes fotos :`( </h2></center></div>";
-					}else{
-						foreach($fotos as $foto){
-							echo "<div class='gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-12 filter ".$foto[2]."'> <img src='".$foto[1]."' id='".$foto[0]."' class='img-responsive port-image'></div>";
-						}
-					}
-				}else{
-					echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> Debes ser profesional para subir fotos </h2></center></div>";;
-				}
-			
-			?>
+      <div class="row">
+      <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
         
+      </div>
+
+      <div align="center">
+        <button class="btn btn-default filter-button" data-filter="all">Todos</button><button class="btn btn-default filter-button" data-filter="Electricista">Electricista</button><button class="btn btn-default filter-button" data-filter="Cerrajero">Cerrajero</button><button class="btn btn-default filter-button" data-filter="Albañil">Albañil</button><button class="btn btn-default filter-button" data-filter="Gasista">Gasista</button><button class="btn btn-default filter-button" data-filter="Plomero">Plomero</button><button class="btn btn-default filter-button" data-filter="Fletero">Fletero</button><button class="btn btn-default filter-button" data-filter="Indefinido">Indefinidos</button>     </div>
+      <br>
+
+      
+
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-12 filter Albañil"> <img src="/files/user/alexislacour08@gmail.com/IMG-20181117-WA0002.jpg" id="57" class="img-responsive port-image"></div>        
          </div>
           <br>
         </div>
-        <div class="tab-pane fade in" id="tab2">
+        <div class="tab-pane fade" id="tab2">
           <h3>Tu calificacion</h3>
           <br>
-			
-			<div class="row">
-				
-				<div class="col-xs-12 col-md-12">
-					
-						<div class="row">
-							<div class="col-xs-12 col-md-12 text-center">
-								<h1 class="rating-num">
-									4.0</h1>
-								<div class="rating">
-									<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
-									</span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
-									</span><span class="glyphicon glyphicon-star-empty"></span>
-								</div>
-								<div>
-									<span class="glyphicon glyphicon-user"></span>1,050,008 total
-								</div>
-							</div>
-							
-							<div class="col-xs-12 col-md-11">
-								<div class="row rating-desc">
-									<?php
-                        
-											foreach($dataSer as $data)
-											{
-											  if($data[0]!=null and $data[1]!=null){
-												  $puntuacionporcentaje=(((int)$data[0]/(int)$data[1])/5)*100;
-												  $puntuacionredondeado=(floor(($puntuacionporcentaje/10)*10));
-												  if($puntuacionredondeado>75){
-													  $clase="progress-bar-success";
-												  }elseif($puntuacionredondeado<75 and $puntuacionredondeado>45){
-													  $clase="progress-bar-info";
-												  }elseif($puntuacionredondeado<45 and $puntuacionredondeado>15){
-													  $clase="progress-bar-warning";
-												  }else{
-													  $clase="progress-bar-danger";
-												  }
-												  $puntuacionfinal="<div class='col-xs-8 col-md-9'><div class='progress'><div class='progress-bar ".$clase."' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='width: ".(string)$puntuacionredondeado."%'><span class='sr-only'>".(string)$puntuacionredondeado."%</span></div></div></div>";
-												  
-											  }else{
-												  $puntuacionfinal="<div class='col-xs-8 col-md-9'>Este servicio todavia no ha sido calificado</div>";
-											  }
-										  
-											echo "<br><div class='row'><div class='col-xs-3 col-md-3 text-right'><i class='".$data[2]."'></i> ".$data[3]."</div>".$puntuacionfinal."</div>";			
-									  }
-										 
-										 
-									?>
-									
-									<!-- end 1 -->
-								</div>
-								<!-- end row -->
-							</div>
-						</div>
-					
-				</div>
-			</div>
-		
+      
+      <div class="row">
+        
+        <div class="col-xs-12 col-md-12">
+          
+            <div class="row">
+              <div class="col-xs-12 col-md-12 text-center">
+                <h1 class="rating-num">
+                  4.0</h1>
+                <div class="rating">
+                  <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
+                  </span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
+                  </span><span class="glyphicon glyphicon-star-empty"></span>
+                </div>
+                <div>
+                  <span class="glyphicon glyphicon-user"></span>1,050,008 total
+                </div>
+              </div>
+              
+              <div class="col-xs-12 col-md-11">
+                <div class="row rating-desc">
+                  <br><div class="row"><div class="col-xs-3 col-md-3 text-right"><i class="fas fa-charging-station"></i> Electricista</div><div class="col-xs-8 col-md-9">Este servicio todavia no ha sido calificado</div></div><br><div class="row"><div class="col-xs-3 col-md-3 text-right"><i class="fas fa-key"></i> Cerrajero</div><div class="col-xs-8 col-md-9">Este servicio todavia no ha sido calificado</div></div><br><div class="row"><div class="col-xs-3 col-md-3 text-right"><i class="fas fa-people-carry"></i> Albañil</div><div class="col-xs-8 col-md-9">Este servicio todavia no ha sido calificado</div></div><br><div class="row"><div class="col-xs-3 col-md-3 text-right"><i class="fas fa-gas-pump"></i> Gasista</div><div class="col-xs-8 col-md-9">Este servicio todavia no ha sido calificado</div></div><br><div class="row"><div class="col-xs-3 col-md-3 text-right"><i class="fas fa-toolbox"></i> Plomero</div><div class="col-xs-8 col-md-9">Este servicio todavia no ha sido calificado</div></div><br><div class="row"><div class="col-xs-3 col-md-3 text-right"><i class="fas fa-truck-moving"></i> Fletero</div><div class="col-xs-8 col-md-9">Este servicio todavia no ha sido calificado</div></div>                 
+                  <!-- end 1 -->
+                </div>
+                <!-- end row -->
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    
         </div>
        
       </div>
     </div>
-    
+      </div>
+
     </div>
 
-            
-                   
-             <div class="modal fade" id="ventana">
+        </div>
+<div class="modal fade" id="ventana">
                          <div class="modal-dialog">
                           <div class="modal-content">
                        <div class="modal-header">
-            				<?php if($idactual==$_SESSION["id"]): ?>
+                    <?php if($idactual==$_SESSION["id"]): ?>
                               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                               <h2 class="modal-title">Editar Perfil</h2>
-            				<?php 
-            					else:
-            					endif;
-            				?>
+                    <?php 
+                      else:
+                      endif;
+                    ?>
                             </div>
-            				
+                    
               <div class="modal-body">
-								 <form action="./includes/php/updateuser.php" method="POST" id="formg" enctype="multipart/form-data">
+                 <form action="./includes/php/updateuser.php" method="POST" id="formg" enctype="multipart/form-data">
                                  <label for="nombre">Nombre</label>
                                  <input type="text" name="nombre" value="<?php echo $row["NOMBRE"]; ?>" id="nombre" class="caja">
                                  <br>
@@ -360,17 +309,17 @@ if (isset($_SESSION["id"])){
                                  <br>
                                   <select id="provincia" name="provincia" class="btn btn-primary  dropdown-toggle" type="button" data-toggle="dropdown" required>Provincias
                                  </select>       
-            					</br>
-            					            					</br>
-            					            					            					
-                				<select id="ciudad" name="ciudad" class="btn btn-primary  dropdown-toggle" type="button" data-toggle="dropdown" required>Localidades<span class="caret"></span>
-                				</select>
-            					<br>
-            					<output id="list"></output>
-            					<br>
-            					<div class="fotos btn btn-primary">
-            					    <p ><i class="fas fa-camera-retro"></i> Editar Foto </p>
-            					    <input type="file" class="form-control"  name="fil" id="fil">
+                      </br>
+                                            </br>
+                                                                  
+                        <select id="ciudad" name="ciudad" class="btn btn-primary  dropdown-toggle" type="button" data-toggle="dropdown" required>Localidades<span class="caret"></span>
+                        </select>
+                      <br>
+                      <output id="list"></output>
+                      <br>
+                      <div class="fotos btn btn-primary">
+                          <p ><i class="fas fa-camera-retro"></i> Editar Foto </p>
+                          <input type="file" class="form-control"  name="fil" id="fil">
                                   </div>
                              </div>
                              <div class="modal-footer">
@@ -378,113 +327,15 @@ if (isset($_SESSION["id"])){
             
                                <button type="submit" class="btn btn-success" >Guardar cambios</button>
                              </div>
-							<form>
+              <form>
                           </div>
                           
                          </div>
                        </div>
                     
                  </div>
-                 
-            </div><!-- /.navbar-collapse -->
-         </div><!-- /.container-fluid -->
-            <script>
-            	
-            	$( document ).ready(function() {
-            		
-            		$.getJSON('ciudades-argentinas.json',function(result){
-            				$.each(result,function(i,provincia){
-            					var selecionado="";
-            					if(provincia.nombre=="<?php echo $row["PROVINCIA"]; ?>"){
-            						selecionado="selected";
-            					}
-            					
-            					var opcion="<option value='"+provincia.nombre+"' "+selecionado+" data-id='"+provincia.id+"'>"+provincia.nombre+"</option>";
-            					$("#provincia").append(opcion);
-            				})
-            				var selecionado=$("#provincia").find('option:selected').data('id');
-            			
-            				$.getJSON('ciudades-argentinas.json',function(result){
-            				$.each(result,function(ciudad,nombreciudad){
-            				if(selecionado==nombreciudad.id){
-            					$.each(nombreciudad.ciudades,function(i,city){
-            					    
-            						var selecionado="";
-            						if(city.nombre=="<?php echo $row["LOCALIDAD"]; ?>"){
-            							selecionado="selected";
-            						}
-            						var opcion="<option "+selecionado+" value='"+city.nombre+"'>"+city.nombre+"</option>";
-            						
-            						$("#ciudad").append(opcion);
-            					})
-            					
-            				}
-            			})
-            		})
-            			})
-            		
-            		
-            	});
-            
-            	$("#provincia").change(function(){
-            		$('#ciudad').attr('disabled', false)
-            		var idprovincia=$(this).find(":selected").data('id');
-            		$("#ciudad option").each(function() {
-            			$(this).remove();
-            		});
-            		$.getJSON('ciudades-argentinas.json',function(result){
-            			$.each(result,function(ciudad,nombreciudad){
-            				if(idprovincia==nombreciudad.id){
-            					$.each(nombreciudad.ciudades,function(i,city){
-            						
-            						var opcion="<option value='"+city.nombre+"'>"+city.nombre+"</option>";
-            						$("#ciudad").append(opcion);
-            					})
-            					
-            				}
-            			})
-            		})
-            	}
-            
-            	);
-            
-            		
-            	</script>
-            
-            
-            		<!-- Para el placeholder de la imagen-->
-            	<script>
-                          function archivo(evt) {
-                              var files = evt.target.files; // FileList object
-                         
-                              // Obtenemos la imagen del campo "file".
-                              for (var i = 0, f; f = files[i]; i++) {
-                                //Solo admitimos imágenes.
-                                if (!f.type.match('image.*')) {
-                                    continue;
-                                }
-                         
-                                var reader = new FileReader();
-                         
-                                reader.onload = (function(theFile) {
-                                    return function(e) {
-                                      // Insertamos la imagen
-                                     document.getElementById("list").innerHTML = ['<img class="imagen1 thumb img-circle thumbnailmascota" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
-                                    };
-                                })(f);
-                         
-                                reader.readAsDataURL(f);
-                              }
-                          }
-                         
-                          document.getElementById('fil').addEventListener('change', archivo, false);
-                  </script>
-            	  <script>
-            		$( document ).ready(function() {
-            			document.getElementById("list").innerHTML = ['<img class="imagen1 thumb img-circle thumbnailmascota" src="<?php echo $row["FOTO_DE_PERFIL"]; ?>"/>'];
-            		});
-            	  </script>
-            	  
+  </div>
+</div>
 <script>
 	$("#formg").submit(function(){
 		event.preventDefault();
