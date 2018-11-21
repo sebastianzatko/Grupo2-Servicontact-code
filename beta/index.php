@@ -120,7 +120,6 @@
 </div>  
  
 
-        <br><br>
 <section class="team">
   <div class="container">
     <div class="row">

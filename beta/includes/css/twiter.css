@@ -277,7 +277,7 @@ Licensed under MIT
   margin: 0px;
 }
 .tabbable-line > .nav-tabs > li {
-  margin-right: 2px;
+  margin-right: -6px;
 }
 .tabbable-line > .nav-tabs > li > a {
   border: 0;
@@ -361,6 +361,22 @@ Licensed under MIT
     font-size:16px;
 }
 
+.fb-image-profile
+{
+    margin: -45px 10px 0px 25px;
+    z-index: 9;
+    width: 20%; 
+}
+}
+@media (max-width:370px){
+    
+.fb-profile-text>h1{
+    font-weight: 700;
+    font-size:16px;
+}
+.tabbable-line > .nav-tabs > li {
+  margin-right: -18px;
+}
 .fb-image-profile
 {
     margin: -45px 10px 0px 25px;

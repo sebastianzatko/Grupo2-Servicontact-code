@@ -182,10 +182,11 @@ if (isset($_SESSION["id"])){
                 </div>
       <div data-spy="scroll" class="tabbable-panel">
         <div class="tabbable-line">
+       
           <ul class="nav nav-tabs ">
             <li class="active">
               <a href="#tab1" data-toggle="tab">
-              informacion</a>
+              Datos</a>
             </li>
             <li>
               <a href="#tab2" data-toggle="tab">Calificacion
@@ -200,7 +201,7 @@ if (isset($_SESSION["id"])){
              </a>
             </li>
           </ul>
-          
+       
         </div>
         <div class="well">
       <div class="tab-content">
@@ -336,6 +337,103 @@ if (isset($_SESSION["id"])){
                  </div>
   </div>
 </div>
+  <script>
+            	
+            	$( document ).ready(function() {
+            		
+            		$.getJSON('ciudades-argentinas.json',function(result){
+            				$.each(result,function(i,provincia){
+            					var selecionado="";
+            					if(provincia.nombre=="<?php echo $row["PROVINCIA"]; ?>"){
+            						selecionado="selected";
+            					}
+            					
+            					var opcion="<option value='"+provincia.nombre+"' "+selecionado+" data-id='"+provincia.id+"'>"+provincia.nombre+"</option>";
+            					$("#provincia").append(opcion);
+            				})
+            				var selecionado=$("#provincia").find('option:selected').data('id');
+            			
+            				$.getJSON('ciudades-argentinas.json',function(result){
+            				$.each(result,function(ciudad,nombreciudad){
+            				if(selecionado==nombreciudad.id){
+            					$.each(nombreciudad.ciudades,function(i,city){
+            					    
+            						var selecionado="";
+            						if(city.nombre=="<?php echo $row["LOCALIDAD"]; ?>"){
+            							selecionado="selected";
+            						}
+            						var opcion="<option "+selecionado+" value='"+city.nombre+"'>"+city.nombre+"</option>";
+            						
+            						$("#ciudad").append(opcion);
+            					})
+            					
+            				}
+            			})
+            		})
+            			})
+            		
+            		
+            	});
+            
+            	$("#provincia").change(function(){
+            		$('#ciudad').attr('disabled', false)
+            		var idprovincia=$(this).find(":selected").data('id');
+            		$("#ciudad option").each(function() {
+            			$(this).remove();
+            		});
+            		$.getJSON('ciudades-argentinas.json',function(result){
+            			$.each(result,function(ciudad,nombreciudad){
+            				if(idprovincia==nombreciudad.id){
+            					$.each(nombreciudad.ciudades,function(i,city){
+            						
+            						var opcion="<option value='"+city.nombre+"'>"+city.nombre+"</option>";
+            						$("#ciudad").append(opcion);
+            					})
+            					
+            				}
+            			})
+            		})
+            	}
+            
+            	);
+            
+            		
+            	</script>
+            
+            
+            		<!-- Para el placeholder de la imagen-->
+            	<script>
+                          function archivo(evt) {
+                              var files = evt.target.files; // FileList object
+                         
+                              // Obtenemos la imagen del campo "file".
+                              for (var i = 0, f; f = files[i]; i++) {
+                                //Solo admitimos imágenes.
+                                if (!f.type.match('image.*')) {
+                                    continue;
+                                }
+                         
+                                var reader = new FileReader();
+                         
+                                reader.onload = (function(theFile) {
+                                    return function(e) {
+                                      // Insertamos la imagen
+                                     document.getElementById("list").innerHTML = ['<img class="imagen1 thumb img-circle thumbnailmascota" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+                                    };
+                                })(f);
+                         
+                                reader.readAsDataURL(f);
+                              }
+                          }
+                         
+                          document.getElementById('fil').addEventListener('change', archivo, false);
+                  </script>
+            	  <script>
+            		$( document ).ready(function() {
+            			document.getElementById("list").innerHTML = ['<img class="imagen1 thumb img-circle thumbnailmascota" src="<?php echo $row["FOTO_DE_PERFIL"]; ?>"/>'];
+            		});
+            	  </script>
+            	  
 <script>
 	$("#formg").submit(function(){
 		event.preventDefault();
@@ -372,36 +470,9 @@ if (isset($_SESSION["id"])){
 	
 
 </script>
-<script>
-	$(document).ready(function(){
 
-			$(".filter-button").click(function(){
-				var value = $(this).attr('data-filter');
-				
-				if(value == "all")
-				{
-					//$('.filter').removeClass('hidden');
-					$('.filter').show('1000');
-				}
-				else
-				{
-		//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
-		//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
-					$(".filter").not('.'+value).hide('3000');
-					$('.filter').filter('.'+value).show('3000');
-					
-				}
-			});
-			
-			if ($(".filter-button").removeClass("active")) {
-		$(this).removeClass("active");
-		}
-		$(this).addClass("active");
-
-	});
-</script>
 </body>
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
-<script type="text/javascript" src="/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>
+<script type="text/javascript" src="https://www.arrowchat.com/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>
 </html>
 <?php ?>
