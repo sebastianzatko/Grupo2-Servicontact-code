@@ -48,7 +48,7 @@ class dataprofessional{
 		$query = $con->prepare("SELECT idPROFESIONAL, USUARIO_idUSUARIO FROM PROFESIONALES WHERE (USUARIO_idUSUARIO = ?)");
 		if($query->execute(array($id_usuario))){
             $result = $query->fetchAll();
-            if (isset($result)&& count($result!=0)){
+            if (isset($result[0]['idPROFESIONAL'])&& count($result!=0)){
                 $idprofesional = $result[0]['idPROFESIONAL'];
                 return $idprofesional;
             }

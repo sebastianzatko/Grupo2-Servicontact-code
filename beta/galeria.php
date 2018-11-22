@@ -378,6 +378,7 @@
     baguetteBox.run('.tz-gallery');
 </script>
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
-<script type="text/javascript" src="/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>       
+<script type="text/javascript" src="/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script> 
+<script type="text/javascript" src="/includes/js/citas.js"></script>      
 </body>
 </html>

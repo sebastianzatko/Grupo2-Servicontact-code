@@ -58,8 +58,11 @@ function main(){
         $profesional= (int)$_POST['profesional'];
         $P = new Professional();
         $idprofesional = $P->getid($profesional);
+        if ($idprofesional!=false){
         $servicios = $P->obtenerPuntuacionYServicios((int)$idprofesional);
         echo $servicios;
+		}
+		else {echo json_encode(false);}
     }
     }
 }

@@ -288,16 +288,27 @@ $htmlmenu3="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
   </div><!-- /.container-fluid -->
 </nav>";
 
-$modalcita = '<!-- MODAL CITAS -->
+$myid=-1;
+if (isset($_SESSION['id'])){
+    $myid=$_SESSION['id'];
+}
+
+$modalcita = '<style>
+#not'.$myid.'{
+    display: none;
+}
+</style>
+<!-- MODAL CITAS -->
 <div class="modal" id="formcita" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title">Crear cita</h4>
+          <h2 class="modal-title">Crear cita</h2>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" id="formulariocita">
+        <h3 id="citah3"></h3>
         <div>
           <form action="#" type="post" role="form">
           	<div>
@@ -320,6 +331,7 @@ $modalcita = '<!-- MODAL CITAS -->
             	<input type="time" class="form-control" id="hora">
             </div>
                 <input type="hidden" class="form-control" id="prof">
+                <input type="hidden" class="form-control" id='.$myid.'>
           </form>
           </div>
         </div>
@@ -331,6 +343,7 @@ $modalcita = '<!-- MODAL CITAS -->
     </div>
 </div>
 <!-- FIN DE MODAL-->';
+
 echo $modalcita;
 
 ?>

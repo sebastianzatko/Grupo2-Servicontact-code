@@ -2,7 +2,7 @@ $(document).ready(function(){
     var d = new Date();
     var day = d.getDate();
     if (d.getHours() == 24){
-        var next = new Date(new Date(datestring).valueOf() + 1*24*60*60*1000)
+        var next = new Date(new Date(datestring).valueOf() + 1*24*60*60*1000);
         day = next;
     }
     var strDate = d.getFullYear() + "-" + (d.getMonth()+1) + "-" + day;
@@ -43,6 +43,8 @@ function sol_cita(cliente){
 }
 
 function cargarform(profesional){
+    $("#citah3").text("");
+    $('select').children('option').remove();
     $("#prof").val(profesional);
     $.ajax({
         url: "https://beta.changero.online/includes/php/sistemacitas.php",
@@ -50,9 +52,18 @@ function cargarform(profesional){
         data: {tipo:8,profesional:profesional} ,
         success: function (response) {
             var servicios = jQuery.parseJSON(response);
+            if (servicios!==false){
+                $('#formulariocita').children().show();
+                $('#submitform').show();
             for (var i = 0; i < servicios.length; i++){
                 $('#servicios').append($('<option>', {value:servicios[i][1], text:servicios[i][3]}));
-            }       
+                }
+            }
+            else{
+                $('#formulariocita').children().hide();
+                $('#submitform').hide();
+                $("#citah3").text("Este usuario no brinda servicios :(").show();
+            }
         }
     });
 }
@@ -89,4 +100,49 @@ function cancelar(profesional,notificacion){
 
 }
 
+function m_cargarform(){
+    var profesional = getid();
+    $("#citah3").text("");
+    $('select').children('option').remove();
+    $("#prof").val(profesional);
+    $.ajax({
+        url: "https://beta.changero.online/includes/php/sistemacitas.php",
+        type: "post",
+        data: {tipo:8,profesional:profesional} ,
+        success: function (response) {
+            var servicios = jQuery.parseJSON(response);
+            if (servicios!==false){
+                $('#formulariocita').children().show();
+                $('#submitform').show();
+            for (var i = 0; i < servicios.length; i++){
+                $('#servicios').append($('<option>', {value:servicios[i][1], text:servicios[i][3]}));
+                }
+            }
+            else{
+                $('#formulariocita').children().hide();
+                $('#submitform').hide();
+                $("#citah3").text("Este usuario no brinda servicios :(").show();
+            }
+        }
+    });
+}
 
+function m_sol_cita(){
+    var cliente = getid();
+    $.ajax({
+    url: "https://beta.changero.online/includes/php/sistemacitas.php",
+    type: "post",
+    data: {tipo:1,cliente:cliente} ,
+    success: function (response) {
+            console.log(response);
+        }
+    });
+    
+}
+function getid(){
+    var getdata = document.getElementsByClassName('chat_user_content');
+    getdata = getdata[0].getAttribute('id');
+    var id = getdata.split('_');
+    id = id[2];
+    return id;
+}

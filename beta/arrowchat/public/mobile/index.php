@@ -40,18 +40,33 @@
 		<script type="text/javascript" charset="utf-8" src="<?php echo $base_url; ?><?php echo AC_FOLDER_PUBLIC; ?>/mobile/includes/js/jquery-mobile.js"></script>
 		<script type="text/javascript" src="<?php echo $base_url; ?>external.php?type=djs" charset="utf-8"></script> 
 		<script type="text/javascript" src="<?php echo $base_url; ?>external.php?type=mjs" charset="utf-8"></script>
+<?php
+session_start();
+$myid=-1;
+if (isset($_SESSION['id'])){
+    $myid=$_SESSION['id'];
+}
+
+$css = '<style>
+#not'.$myid.'{
+    display: none;
+}
+</style>';
+echo $css;
+?>
 	</head>
     <body>
-    <!-- MODAL CITAS -->
+<!-- MODAL CITAS -->
 <div class="modal" id="formcita" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title">Crear cita</h4>
+          <h2 class="modal-title">Crear cita</h2>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" id="formulariocita">
+        <h3 id="citah3"></h3>
         <div>
           <form action="#" type="post" role="form">
           	<div>
@@ -74,6 +89,7 @@
             	<input type="time" class="form-control" id="hora">
             </div>
                 <input type="hidden" class="form-control" id="prof">
+                <input type="hidden" class="form-control" id='.$myid.'>
           </form>
           </div>
         </div>
@@ -89,14 +105,15 @@
             <div data-theme="b" data-role="header" data-position="fixed" data-tap-toggle="false">
                 <h3>
                     <?php echo $language[110]; ?>
-					
                 </h3>
 				<a data-role="button" id="home-button" data-iconshadow="false" data-iconpos="notext" data-ajax="false" data-theme="b" href="<?php echo $home_url; ?>" data-icon="home" data-shadow="false" data-corners="false"></a>
 				<a id="settings-button" data-iconpos="notext" data-iconshadow="false" data-theme="b" data-rel="dialog" data-transition="slidedown" href="#settings-page" data-icon="gear" data-shadow="false" data-corners="false"></a>
+				<br/>
             </div>
             <div data-role="content">
 				<ul id="buddylist-container-chatroom" data-role="listview" data-divider-theme="c" data-inset="false"></ul>
-				<ul id="buddylist-container-recent" data-role="listview" data-divider-theme="c" data-inset="false"></ul>
+				<ul class="alert" id="buddylist-container-recent" data-role="listview" data-divider-theme="c" data-inset="false"><br/></ul>
+				
                 <ul id="buddylist-container-available" data-role="listview" data-divider-theme="c" data-inset="false"></ul>
 				<ul id="buddylist-container-away" data-role="listview" data-divider-theme="c" data-inset="false"></ul>
             </div>
@@ -105,7 +122,7 @@
             <div data-theme="b" data-role="header" data-position="fixed" data-tap-toggle="false">
                 <h3 id="username-header">
 					<?php echo $language[110]; ?>
-					
+				</br>
                 </h3>
                 <a data-role="button" id="back-button" data-direction="reverse" data-transition="slide" data-theme="b" href="#page1" data-icon="arrow-l" data-iconshadow="false" data-iconpos="left" class="back_buttons">
 					<?php echo $language[113]; ?>
@@ -118,7 +135,8 @@
 					<div style="width:100%; float:left; margin-top:-5px;padding-right:80px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing: border-box;">
 						<input id="textinput1" placeholder="" value="" type="text" />
 					</div>
-					<a id="send_button" data-role="button" data-inline="true" data-transition="none" data-theme="b" href="javascript:;" style="float:right; margin-right: 10px; margin-top:-35px">
+					<div class="btn-group dropup open" style="float:right; margin-right: 70px; margin-top:-46px;"> <button data-role="button" class="btn btn-info btn-lg btn-block dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">Citar <span class="glyphicon glyphicon-bookmark"></span> </button> <ul class="dropdown-menu"> <li><a href="#" onclick="m_sol_cita()">Solicitar Cita</a></li> <li><a href="#" onclick="m_cargarform()" data-toggle="modal" id="102" data-target="#formcita">Programar Cita</a></li> </ul> </div>
+					<a id="send_button" class="btn btn-info btn-lg" type="button" data-role="button" data-inline="true" data-transition="none" data-theme="" href="javascript:;" style="float:right; margin-right: 10px; margin-top:-37px">
 						<?php echo $language[114]; ?>
 					</a>
                 </div>
@@ -170,7 +188,8 @@
 			<div data-theme="b" data-role="header" data-tap-toggle="false">
 				<h1></h1>
 			</div>
-			<div data-theme="d" data-role="content" id="user-options-content"></div>
+			<div data-theme="d" data-role="content" id="user-options-content">
+			</div>
 		</div>
 		<div data-role="page" id="settings-page">
 			<div data-theme="b" data-role="header" data-tap-toggle="false">

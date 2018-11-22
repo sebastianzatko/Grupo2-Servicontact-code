@@ -3,11 +3,13 @@ require_once('conexion/conectionpdo.php');
 
 class data_cita {
 	public function notificacion($from,$to,$mensaje){
+	    $t = time();
 		$con = new Conexion();
-		$query = $con->prepare("INSERT INTO arrowchat (`from`, `to`, `message`, `sent`, `read`, `user_read`, `direction`, `cita`) VALUES (:idcli, :idprof, :msj,1,0,0,0,1)");
+		$query = $con->prepare("INSERT INTO arrowchat (`from`, `to`, `message`, `sent`, `read`, `cita`) VALUES (:idcli, :idprof, :msj, :time,0,1)");
 		$query->bindParam(':idprof', $to);
 		$query->bindParam(':idcli', $from);
 		$query->bindParam(':msj', $mensaje);
+		$query->bindParam(':time',$t);
 		if ($query->execute()) {
 				$idnot = $con->lastInsertId();
 				$msj2 = str_replace(":idnotificacion",$idnot,$mensaje);
@@ -142,4 +144,5 @@ class data_cita {
 		
 		}
 }
+
 ?>
