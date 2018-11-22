@@ -23,24 +23,68 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 	<head>
 		<title>Mobile Chat</title>
-		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<meta name="apple-touch-fullscreen" content="yes" />
-		
 		<link rel="apple-touch-icon" href="images/apple-touch-icon.png"/> 
 		<link rel="stylesheet" href="<?php echo $base_url; ?><?php echo AC_FOLDER_PUBLIC; ?>/mobile/includes/css/jquery-mobile.css" />
 		<link type="text/css" rel="stylesheet" id="arrowchat_css" media="all" href="<?php echo $base_url; ?><?php echo AC_FOLDER_PUBLIC; ?>/mobile/includes/css/style.css" charset="utf-8" />
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-
+		
+        <script src="https://code.jquery.com/jquery-1.11.2.js"integrity="sha256-WMJwNbei5YnfOX5dfgVCS5C4waqvc+/0fV7W2uy3DyU="crossorigin="anonymous"></script>
+        <script src="https://beta.changero.online/bootstrap/bootstrap.min.js"></script>
+        <link href='http://fonts.googleapis.m/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="<?php echo $base_url; ?><?php echo AC_FOLDER_INCLUDES; ?>/js/jquery.js"></script>
 		<script type="text/javascript" charset="utf-8" src="<?php echo $base_url; ?><?php echo AC_FOLDER_PUBLIC; ?>/mobile/includes/js/jquery-mobile.js"></script>
 		<script type="text/javascript" src="<?php echo $base_url; ?>external.php?type=djs" charset="utf-8"></script> 
-		<script type="text/javascript" src="<?php echo $base_url; ?>external.php?type=mjs" charset="utf-8"></script> 
+		<script type="text/javascript" src="<?php echo $base_url; ?>external.php?type=mjs" charset="utf-8"></script>
 	</head>
     <body>
+    <!-- MODAL CITAS -->
+<div class="modal" id="formcita" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title">Crear cita</h4>
+        </div>
+        <div class="modal-body">
+        <div>
+          <form action="#" type="post" role="form">
+          	<div>
+            	<label for="servicios">Servicios a contratar:</label>
+            </div>
+            <div>
+            	<select multiple class="form-control" id="servicios">
+				</select>
+            </div>
+          	<div>
+                <label for="servicios">Ingrese fecha:</label>
+            </div>
+            <div>
+            	<input type="date" class="form-control" id="fecha">
+            </div>
+          	<div>
+            	<label for="servicios">Ingrese hora:</label>
+            </div>
+            <div>
+            	<input type="time" class="form-control" id="hora">
+            </div>
+                <input type="hidden" class="form-control" id="prof">
+          </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
+          <button type="button" id="submitform" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- FIN DE MODAL-->
         <div data-role="page" id="page1">
             <div data-theme="b" data-role="header" data-position="fixed" data-tap-toggle="false">
                 <h3>
@@ -163,4 +207,5 @@
 			</div>
 		</div>
     </body>
+    <script type="text/javascript" src="https://beta.changero.online/includes/js/citas.js"></script>
 </html>

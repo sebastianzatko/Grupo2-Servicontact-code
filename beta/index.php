@@ -120,6 +120,7 @@
 </div>  
  
 
+        <br><br>
 <section class="team">
   <div class="container">
     <div class="row">
@@ -440,8 +441,12 @@
 <script>
     baguetteBox.run('.tz-gallery');
 </script>
+<br/>
+<br/>
+<br/>
 </body>
 <script type="text/javascript" src="includes/js/script.js"></script>
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
 <script type="text/javascript" src="/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>
+<script type="text/javascript" src="/includes/js/citas.js"></script>
 </html>

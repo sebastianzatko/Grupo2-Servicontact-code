@@ -10,6 +10,12 @@ class data_cita {
 		$query->bindParam(':msj', $mensaje);
 		if ($query->execute()) {
 				$idnot = $con->lastInsertId();
+				$msj2 = str_replace(":idnotificacion",$idnot,$mensaje);
+				$con2 = new Conexion();
+				$query2 = $con2->prepare("UPDATE `arrowchat` SET `message` = :msj WHERE `arrowchat`.`id` = :idnot");
+				$query2->bindParam(':idnot', $idnot);
+				$query2->bindParam(':msj', $msj2);
+				$query2->execute();
 				$con = null;
 				$query = null;
 				return $idnot;
@@ -42,7 +48,8 @@ class data_cita {
 		$query3->bindParam(':prof', $profesional);
 		$query3->bindParam(':f', $fecha);
 		$query3->bindParam(':h', $hora);
-		$query3->bindParam(':serv', $servicios);
+		$servi = join(",",$servicios);
+		$query3->bindParam(':serv', $servi);
 		if ($query3->execute()) {
 				$id = $con3->lastInsertId();
 				$con3 = null;
@@ -58,17 +65,18 @@ class data_cita {
 		
 	public function aceptar_cita($idcita,$idprofesional){
 	    $con = new Conexion();
-		$query = $con->prepare("UPDATE CITAS SET estado='2' WHERE id_cita =:idcita and idprofesional=:prof");
+		$query = $con->prepare("UPDATE CITAS SET estado='2' WHERE id_cita =:idcita and idprofesional=:prof and estado='1'");
 		$query->bindParam(':idcita', $idcita);
 		$query->bindParam(':prof', $idprofesional);
 		if ($query->execute()) {
 		    $con2 = new Conexion();
-			$query2 = $con2->prepare("SELECT `idcliente` FROM `CITAS` WHERE id_cita=:id");
+			$query2 = $con2->prepare("SELECT `idcliente` , `fecha` FROM `CITAS` WHERE id_cita=:id");
 			$query2->bindParam(':id',$idcita);
 			if ($query2->execute()){
 				$result = $query2->fetchAll();
 				$idcliente = $result[0]['idcliente'];
-				return $idcliente;
+				$fecha = $result[0]['fecha'];
+				return [$idcliente,$fecha];
 				}else{return false;}
 						
 		}else {return false;}
@@ -81,40 +89,57 @@ class data_cita {
 		$query->bindParam(':prof',$idprofesional);
 		if ($query->execute()) {
 		    $con2 = new Conexion();
-			$query2 = $con2->prepare("SELECT `idcliente` FROM `CITAS` WHERE id_cita=:id");
+			$query2 = $con2->prepare("SELECT `idcliente`, `fecha` FROM `CITAS` WHERE id_cita=:id");
 			$query2->bindParam(':id',$idcita);
 			if ($query2->execute()){
 				$result = $query2->fetchAll();
 				$idcliente = $result[0]['idcliente'];
-				return $idcliente;
+				$fecha = $result[0]['fecha'];
+				return [$idcliente,$fecha];
 				}else{return false;}
 						
 		}else {return false;}
 		
 		}
-	public function finalizar_trabajo($idcita,$idprofesional){
+	public function sol_finalizar_trabajo($idcita,$idprofesional){
 	    $con = new Conexion();
-		$query = $con->prepare("UPDATE CITAS SET estado='3' WHERE id_cita =:idcita and idprofesional=:prof");
+		$query = $con->prepare("UPDATE CITAS SET estado='3' WHERE id_cita =:idcita and idprofesional=:prof and estado=2");
 		$query->bindParam(':idcita', $idcita);
 		$query->bindParam(':prof',$idprofesional);
 		if ($query->execute()) {
 		    $con2 = new Conexion();
-			$query2 = $con2->prepare("SELECT `idcliente` FROM `CITAS` WHERE id_cita=:id");
+			$query2 = $con2->prepare("SELECT `idcliente`,`fecha`,`servicios` FROM `CITAS` WHERE id_cita=:id");
 			$query2->bindParam(':id',$idcita);
 			if ($query2->execute()){
 				$result = $query2->fetchAll();
 				$idcliente = $result[0]['idcliente'];
-				return $idcliente;
+				$fecha = $result[0]['fecha'];
+				$serv = $result[0]['servicios'];
+				return [$idcliente,$fecha,$serv];
+				}else{return false;}
+						
+		}else {return false;}
+		
+		}
+		public function finalizar_trabajo($idcita,$idcliente){
+	    $con = new Conexion();
+		$query = $con->prepare("UPDATE CITAS SET estado='4' WHERE id_cita =:idcita and idcliente=:cli and estado='3'");
+		$query->bindParam(':idcita', $idcita);
+		$query->bindParam(':cli',$idcliente);
+		if ($query->execute()) {
+		    $con2 = new Conexion();
+			$query2 = $con2->prepare("SELECT `idprofesional`,`fecha`,`servicios` FROM `CITAS` WHERE id_cita=:id");
+			$query2->bindParam(':id',$idcita);
+			if ($query2->execute()){
+				$result = $query2->fetchAll();
+				$idprofesional = $result[0]['idprofesional'];
+				$fecha = $result[0]['fecha'];
+				$serv = $result[0]['servicios'];
+				return [$idprofesional,$fecha,$serv];
 				}else{return false;}
 						
 		}else {return false;}
 		
 		}
 }
-
-//$cita = new data_cita();
-//$r = $cita->finalizar_trabajo(6);
-//echo json_encode($r);
-
-//INSERT INTO `CITAS` (`id_cita`, `idprofesional`, `idcliente`, `fecha`, `hora`, `servicios`, `estado`) VALUES (NULL, '120', '170', '2018-11-22', '16:00', '[1,2,3,4,5,6,7]', '1')
 ?>

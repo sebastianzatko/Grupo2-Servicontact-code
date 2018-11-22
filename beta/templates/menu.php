@@ -304,32 +304,28 @@ $modalcita = '<!-- MODAL CITAS -->
             	<label for="servicios">Servicios a contratar:</label>
             </div>
             <div>
-            	<select multiple class="form-control" id="servicios" required>
-  					<option>Albañil</option>
- 					<option>Cerrajero</option>
- 					<option>Plomero</option>
-  					<option>Electricista</option>
-  					<option>Carpintero</option>
+            	<select multiple class="form-control" id="servicios">
 				</select>
             </div>
           	<div>
                 <label for="servicios">Ingrese fecha:</label>
             </div>
             <div>
-            	<input type="date" min="'.date("Y-m-d").'" step="1" value="'.date("Y-m-d").'" class="form-control" id="fecha" required>
+            	<input type="date" class="form-control" id="fecha">
             </div>
           	<div>
             	<label for="servicios">Ingrese hora:</label>
             </div>
             <div>
-            	<input type="time" class="form-control" id="hora" required>
+            	<input type="time" class="form-control" id="hora">
             </div>
+                <input type="hidden" class="form-control" id="prof">
           </form>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
-          <button type="submit" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+          <button type="button" id="submitform" class="btn btn-success" data-dismiss="modal">Aceptar</button>
         </div>
       </div>
     </div>

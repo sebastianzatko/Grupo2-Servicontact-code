@@ -1,24 +1,56 @@
 <?php
 include_once('cdata/datacita.php');
+session_start();
+function txtservicios($servicios){
+    if (count($servicios)>=1){
+            foreach($servicios as $key=>$s){
+                if ($key==0){
+                    $servtxt = $s;
+                }
+        	    elseif (($key+1)==count($servicios)){
+        		    $servtxt = $servtxt.' y '.$s;
+        		}
+        		else{
+        		    $servtxt = $servtxt.', '.$s;
+        		}
+        	}
+        	return $servtxt;
+        }
+    else{return $servicios;}
+}
 
-$not_puntuacion = '';
+function fechaCastellano ($fecha) {
+  $fecha = substr($fecha, 0, 10);
+  $numeroDia = date('d', strtotime($fecha));
+  $dia = date('l', strtotime($fecha));
+  $mes = date('F', strtotime($fecha));
+  $anio = date('Y', strtotime($fecha));
+  $dias_ES = array("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo");
+  $dias_EN = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+  $nombredia = str_replace($dias_EN, $dias_ES, $dia);
+  $meses_ES = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+  $meses_EN = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+  $nombreMes = str_replace($meses_EN, $meses_ES, $mes);
+  return $nombredia." ".$numeroDia." de ".$nombreMes;
+}
 
 Class cita{
 	//1
 	public function solicitud_cita($profesional,$cliente){
-	        $not_sol_cita = '<div class="alert alert-dismissible">
+	        $not_sol_cita = "<div class='alert alert-dismissible'>
 	        El profesional esta solicitando que marques una cita para brindarte sus servicios. 
 	        Elije a continuacion Citar para marcar una fecha y hora.
 	        <br/>
 	        <br/>
-	        <a href="#" class="btn btn-success btn-xs" data-toggle="modal" data-target="#formcita">Citar</a> 
-	        <a href="#"  class="btn btn-danger btn-xs" data-dismiss="alert" aria-label="close">Rechazar</a>
+	        <a href='#' onclick=cargarform(".$profesional.") class='btn btn-success btn-xs' data-toggle='modal' data-target='#formcita'>Citar</a> 
+	        <a href='#' onclick='cancelar(".$profesional.",:idnotificacion)' class='btn btn-danger btn-xs' data-dismiss='alert' aria-label='close'>Rechazar</a>
 	        <br/>
 	        <br/>
 	        Solo tu puedes ver este mensaje.
-	        </div>';
+	        </div>";
 			$cita = new data_cita();
-			if($cita->notificacion($profesional,$cliente,$not_sol_cita,1))
+			$idcita = $cita->notificacion($profesional,$cliente,$not_sol_cita);
+			if($idcita!=false)
 			{
 				return true;
 			}else{return false;}
@@ -41,70 +73,68 @@ Class cita{
 	//3
 	public function programar_cita($profesional,$cliente,$fecha,$hora,$servicios){
 		$cita = new data_cita();
-		$idcita=$cita->nueva_cita($profesional,$cliente,$fecha,$hora,$servicios);
-		//$not_A_cita = '<div class="alert">Recibiste una cita desde este cliente para tu/s servicio/s de <b>'.$servicios.'<b> para el dia <b>'.$fecha.'</b> a las <b>'.$hora.' hs</b>.<br/><a href="#" class="btn btn-success btn-xs">Aceptar</a> <a href="#"  class="btn btn-danger btn-xs">Rechazar</a><br/><br/>Solo tu puedes ver este mensaje.</div><div class="alert"></div>';
+		$idcita = $cita->nueva_cita($profesional,$cliente,$fecha,$hora,$servicios);
+		$servtxt = txtservicios($servicios);
+		$not_A_cita = '<div class="alert alert-dismissible">Recibiste una cita desde este cliente para tu/s servicio/s de 
+		<b>'.$servtxt.'</b> para el dia 
+		<b>'.fechaCastellano($fecha).'</b> a las 
+		<b>'.$hora.' hs</b>.
+		<br/>
+		<a href="#" onclick="aceptarcita('.$idcita.',:idnotificacion)" class="btn btn-success btn-xs" data-dismiss="alert" aria-label="close">Aceptar</a> 
+		<a href="#" onclick="rechazarcita('.$idcita.',:idnotificacion)" class="btn btn-danger btn-xs" data-dismiss="alert" aria-label="close">Rechazar</a>
+		<br/>
+		<br/>
+		Solo tu puedes ver este mensaje.
+		</div>';
 		if ($idcita!=false){
 			$cita->notificacion($cliente,$profesional,$not_A_cita);
 		}
 		else{return false;}
 	}
 	//4
-	public function aceptar_cita($idcita,$profesional){
+	public function aceptar_cita($idcita,$profesional,$idnot){
 		$cita = new data_cita();
-		$r = $cita->aceptar_cita($idcita,$profesional);
+		$r = $cita->aceptar_cita($idcita,$profesional,$idnot);
+		if ($r!=false){
+		    $not_cita_aceptada = '<div class="alert">El profesional ya aceptó tu cita para el dia '.fechaCastellano($r[1]).'.</div>';
+		    $cita->notificacion($profesional,$r[0],$not_cita_aceptada);
+		    $cita->borrar_notificacion($idnot,$profesional);
+		}
 		return $r;
 		}
 	//5
-	public function rechazar_cita($idcita,$profesional){
+	public function rechazar_cita($idcita,$profesional,$idnot){
 		$cita = new data_cita();
-		$idcliente = $cita->rechazar_cita($idcita,$profesional);
-		//$not_cita_rechazada = '<div class="alert alert-dismissible">El profesional no aceptó tu cita para el dia '.$fecha.'. Por servicios de '.$servicios.'.<br/><br/>Solo tu puedes ver este mensaje.</div>';
+		$r = $cita->rechazar_cita($idcita,$profesional);
+		$not_cita_rechazada = '<div class="alert">El profesional no aceptó tu cita para el dia '.fechaCastellano($r[0]).'.<br/><br/>Solo tu puedes ver este mensaje.</div>';
 		if ($r!=false){
-			$cita->notificacion($profesional,$idcliente,$not_cita_rechazada);
+			$cita->notificacion($profesional,$r[0],$not_cita_rechazada);
+			$cita->borrar_notificacion($idnot,$profesional);
 			}
 		}
 	//6
-	public function finalizar_trabajo($idcita,$idprofesional){
+	public function finalizar_trabajo($idcita,$profesional){
 		$cita = new data_cita();
-		$r = $cita->finalizar_trabajo($idcita,$profesional);
-		//$not_T_finalizado = '<div class="alert alert-dismissible">El profesional marcó como finalizado sus servicios de '.$servicios.'. ¿Estas de acuerdo? <br/><br/><a href="#" class="btn btn-success btn-xs" data-toggle="modal" data-target="#formcita">Si</a> <a href="#"  class="btn btn-danger btn-xs" data-dismiss="alert" aria-label="close">No</a><br/><br/>Solo tu puedes ver este mensaje.</div>';
+		$r = $cita->sol_finalizar_trabajo($idcita,$profesional);
+		echo json_encode($r);
+		$servtxt = explode(",",$r[2]);
+		$servicios = txtservicios($servtxt);
+		$not_T_finalizado = '<div class="alert">
+		El profesional marcó como finalizado sus servicios de <b>'.$servicios.'<b/>, comenzados desde el dia <b>'.fechaCastellano($r[1]).'<b/>. ¿Estas de acuerdo?<br/>
+		<a href="#" onclick="finalizado('.$idcita.')" class="btn btn-success btn-xs">Si</a> 
+		<a href="#" onclick="nofinalizado('.$idcita.')" class="btn btn-danger btn-xs" data-dismiss="alert" aria-label="close">No</a>
+		<br/><br/>Solo tu puedes ver este mensaje.</div>';
 		if ($r!=false){
-			$cita->notificacion($profesional,$idcliente,$not_T_finalizado);
+			$cita->notificacion($profesional,$r[0],$not_T_finalizado);
 			}
 		}
+	public function finalizado($idcita,$cliente){
+	    $cita = new data_cita();
+	    $r = $cita->finalizar_trabajo($idcita,$cliente);
+	    $servtxt = explode(",",$r[2]);
+		$servicios = txtservicios($servtxt);
+	    $notificacion = '<div class="alert">El cliente ya confirmo que has finalizado tus servicios como <b>'.$servicios.'<b/> que comenzaste el dia <b>'.fechaCastellano($r[1]).'<b/>.</div>';
+	    $cita->notificacion($cliente,$r[0],$notificacion);
+	}
 }
-
-function main(){
-    if (isset($_POST['tipo'])){
-    //1
-    if (($_POST['tipo']==1)and isset($_POST['cliente'])){
-        $profesional = $_SESSION['id'];
-        
-    }
-    //2
-    elseif (($_POST['tipo']==2) and isset($_POST['profesional']) and isset($_POST['idnot'])){
-        $cliente = $_SESSION['id'];
-        
-    }
-    //3
-    elseif (($_POST['tipo']==3) and isset($_POST['profesional']) and isset($_POST['fecha']) and isset($_POST['hora']) and isset($_POST['servicios'])){
-        $cliente = $_SESSION['id'];
-        
-    }
-    //4
-    elseif (($_POST['tipo']==4) and isset($_POST['cita'])){
-        $profesional = $_SESSION['id'];
- 
-    }
-    //5
-    elseif (($_POST['tipo']==5) and isset($_POST['cita'])){
-        $profesional = $_SESSION['id'];
-    }
-    //6
-    elseif (($_POST['tipo']==6) and isset($_POST['cita'])){
-        $profesional = $_SESSION['id'];
-    }
-    }
-}
-
 ?>

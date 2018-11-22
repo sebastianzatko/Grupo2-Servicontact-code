@@ -65,7 +65,7 @@
             </button>
             <ul class="dropdown-menu">
                 <li><a href="#" onclick="sol_cita('+b+')">Solicitar Cita</a></li>
-                <li><a href="#" onclick="pro_cita(b)" data-toggle="modal" id="'+b+'" data-target="#formcita">Programar Cita</a></li>
+                <li><a href="#" onclick="cargarform('+b+')" data-toggle="modal" id="'+b+'" data-target="#formcita">Programar Cita</a></li>
             </ul>
             </div>
 		</div>
