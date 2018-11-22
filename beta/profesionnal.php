@@ -71,6 +71,11 @@ else{header('Location: index.php');}
  
  
 </head>
+<style>
+    #mdialTamanio{
+      width: 90% !important;
+    }
+  </style>
 <body>
  
   <?php
@@ -365,11 +370,11 @@ else{header('Location: index.php');}
     <div data-spy="scroll" class="tabbable-panel">
         <div class="tabbable-line">
           <ul class="nav nav-tabs ">
-            <li class="active">
+            <li>
               <a href="#tab1" data-toggle="tab">
               Albunes Por Servicios</a>
             </li>
-            <li>
+            <li class="active">
               <a href="#tab2" data-toggle="tab">Todas Las fotos
              </a>
             </li>
@@ -381,8 +386,8 @@ else{header('Location: index.php');}
 
     <div class="well">
       <div class="tab-content">
-        <div class="tab-pane fade in active " id="tab1">
-          <h4>Albumes</h4>
+        <div class="tab-pane fade in  " id="tab1">
+          <h4>Albunes</h4>
           <br>
          <div class="galeria"> 
             <?php
@@ -400,12 +405,12 @@ else{header('Location: index.php');}
                      
                       if(isset($fotos)){
                         if(count($fotos)==0){
-                          echo "<center><h2> No exiten fotos :`( </h2></center>";
+                          echo "<center><h2> No exiten Albunes :`( </h2></center>";
                         }else{
 
                           foreach($fotos as $foto){
                             
-                            echo "<div class='galeria'><div class='tz-gallery'><div class='modal fade' id='".$foto[2]."'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'> ";//modal inicio
+                            echo "<div class='galeria'><div class='tz-gallery'><div class='modal fade' id='".$foto[2]."'><div class='modal-dialog' id='mdialTamanio'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'> ";//modal inicio
                             foreach($pictures as $picture){
                               if($picture[2]==$foto[2]){
                                 echo "<a class='lightbox' href='".$picture[1]."'><img class='grande' src='".$picture[1]."'></a>";
@@ -416,7 +421,7 @@ else{header('Location: index.php');}
                           }
                         }
                       }else{
-                        echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> Solo un profesional puede tener fotos</h2></center></div></div>";;
+                        echo "<center><h2> Solo un profesional puede tener fotos</h2></center></div>";;
                       }
                     
                       ?>
@@ -432,7 +437,7 @@ else{header('Location: index.php');}
                    
           
        </div>
-      <div class="tab-pane fade in" id="tab2">
+      <div class="tab-pane fade in active" id="tab2">
           <h4>Trabajos de <?php echo $row["NOMBRE"]; ?> <?php echo $row["APELLIDO"]; ?></h4>
 
           <br>
@@ -441,10 +446,16 @@ else{header('Location: index.php');}
         
           <div class="tz-gallery">
                 <?php
+                if(isset($fotos)){
+                        if(count($fotos)==0){
+                          echo "<center><h2> No exiten fotos :`( </h2></center>";
+                        }
+                        else{
                   foreach($fotos as $foto){
                     echo " <a class='lightbox' href='".$foto[1]."'><img src='".$foto[1]."' id='".$foto[0]."' ></a>";
                   }
-                
+                }
+              }
                 ?>
             
         
