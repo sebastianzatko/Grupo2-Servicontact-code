@@ -14,14 +14,17 @@ if(isset($_GET["idprofile"])){
         
         require "blogic/Professional.php";
           $profesional=new Professional();
-            $idprofesional=$profesional->getid((int)$idactual);
-          $serviciosactivos=$profesional->obtenerPuntuacionYServicios((int)$idprofesional);
-          $dataSer=json_decode($serviciosactivos , true);
+          $idprofesional=$profesional->getid((int)$idactual);
+          $servicios=$profesional->obtenerPuntuacionYServicios((int)$idprofesional);
+          $dataSer=json_decode($servicios , true);
+          
+    
+         
       require "blogic/Galery.php";
-      $galeria=new Galery();
-      $fotos=$galeria->obtenerfotos((int)$idprofesional);
-      $pictures=$fotos;
-      $imagenes=$fotos;
+    $galeria=new Galery();
+     $fotos=$galeria->obtenerfotos((int)$idprofesional);
+    $pictures=$fotos;
+      
         
         
       }
@@ -359,7 +362,7 @@ else{header('Location: index.php');}
                     </span>
                    
                 </div>
-               <div data-spy="scroll" class="tabbable-panel">
+    <div data-spy="scroll" class="tabbable-panel">
         <div class="tabbable-line">
           <ul class="nav nav-tabs ">
             <li class="active">
@@ -376,71 +379,77 @@ else{header('Location: index.php');}
         </div>
       </div>
 
-        <div class="well">
+    <div class="well">
       <div class="tab-content">
         <div class="tab-pane fade in active " id="tab1">
           <h4>Albumes</h4>
           <br>
-        <?php
-        
-        if(isset($fotos)){
-          if(count($fotos)==0){
-            echo "<center><h2> No exiten fotos :`( </h2></center>";
-          }else{
-            foreach($fotos as $foto){
-              echo "<a href='#".$foto[2]."' data-toggle='modal' style='color:black;'><p>".$foto[2]."</p> <img src='http://i.ytimg.com/i/vWtix2TtWGe9kffqnwdaMw/mq1.jpg' alt='' ></a>";//link
-              echo "<div class='modal fade' id='".$foto[2]."'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'><div class='galeria'><div class='tz-gallery'> ";//modal inicio
-              foreach($pictures as $picture){
-                if($picture[2]==$foto[2]){
-                  echo "<a class='lightbox' href='".$picture[1]."'><img src='".$picture[1]."'></a>";
-                }
-              }
-              echo "</div></div></div><div class='modal-footer'><button type='button'  data-dismiss='modal' class='btn btn-success'>Cerrar</button></div></div></div></div></div>";//modal cierre
-              
-            }
-          }
-        }else{
-          echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> Solo un profesional puede tener fotos</h2></center></div></div>";;
-        }
-      
-        ?>
+         <div class="galeria"> 
+            <?php
+              if(isset($fotos)){
+                if(count($fotos)!=0){
+                      foreach($dataSer as $servicio){
+                        
+                        echo "<a href='#".$servicio[3]."' data-toggle='modal' style='color:black;'><p style='margin-left:3px;'>".$servicio[3]."</p> <img src='http://i.ytimg.com/i/vWtix2TtWGe9kffqnwdaMw/mq1.jpg' alt='' ></a>";
+                      }
+                    }
+                  }
+              ?>
+                       
+                      <?php
+                     
+                      if(isset($fotos)){
+                        if(count($fotos)==0){
+                          echo "<center><h2> No exiten fotos :`( </h2></center>";
+                        }else{
+
+                          foreach($fotos as $foto){
+                            
+                            echo "<div class='galeria'><div class='tz-gallery'><div class='modal fade' id='".$foto[2]."'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'> ";//modal inicio
+                            foreach($pictures as $picture){
+                              if($picture[2]==$foto[2]){
+                                echo "<a class='lightbox' href='".$picture[1]."'><img class='grande' src='".$picture[1]."'></a>";
+                              }
+                            }
+                            echo "</div></div></div><div class='modal-footer'><button type='button'  data-dismiss='modal' class='btn btn-success'>Cerrar</button></div></div></div></div></div>";//modal cierre
+                            
+                          }
+                        }
+                      }else{
+                        echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> Solo un profesional puede tener fotos</h2></center></div></div>";;
+                      }
+                    
+                      ?>
        
-            
+                 </div>   
                 
 
              
                                
                         
                    
+                        
+                   
           
        </div>
-        <div class="tab-pane fade in" id="tab2">
+      <div class="tab-pane fade in" id="tab2">
           <h4>Trabajos de <?php echo $row["NOMBRE"]; ?> <?php echo $row["APELLIDO"]; ?></h4>
 
           <br>
           <br>
-            <div class="galeria"> 
+        <div class="galeria"> 
         
-              <div class="tz-gallery">
-                 <?php
+          <div class="tz-gallery">
+                <?php
+                  foreach($fotos as $foto){
+                    echo " <a class='lightbox' href='".$foto[1]."'><img src='".$foto[1]."' id='".$foto[0]."' ></a>";
+                  }
+                
+                ?>
+            
         
-        if(isset($imagenes)){
-          if(count($imagenes)==0){
-            echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> No exiten fotos :`( </h2></center></div>";
-          }else{
-            foreach($imagenes as $imagen){
-              
-              echo "<a class='lightbox' href='".$imagen[1]."'><img src='".$imagen[1]."'></a>";
-            }
-          }
-        }else{
-          echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> Solo un profesional puede tener fotos</h2></center></div>";;
-        }
-      
-        ?>
-               
-              </div>
-            </div>
+    </div>
+  </div>
         </div>
        
       </div>

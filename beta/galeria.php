@@ -172,11 +172,11 @@
                             <div data-spy="scroll" class="tabbable-panel">
                                     <div class="tabbable-line">
                                       <ul class="nav nav-tabs ">
-                                        <li class="active">
+                                        <li >
                                           <a href="#tab1" data-toggle="tab">
                                           Albunes</a>
                                         </li>
-                                        <li>
+                                        <li class="active">
                                         <a href="#tab2" data-toggle="tab">Todas
                                          </a>
                                         </li>
@@ -188,7 +188,7 @@
                         </div>
                         <div class="well">
       <div class="tab-content">
-        <div class="tab-pane fade in active " id="tab1">
+        <div class="tab-pane fade in  " id="tab1">
           <h4>Albumes</h4>
           <br>
           <div class="galeria"> 
@@ -208,10 +208,10 @@
 
             foreach($fotos as $foto){
               
-              echo "<div class='modal fade' id='".$foto[2]."'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'><div class='galeria'><div class='tz-gallery'> ";//modal inicio
+              echo "<div class='galeria'><div class='tz-gallery'><div class='modal fade' id='".$foto[2]."'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'> ";//modal inicio
               foreach($pictures as $picture){
                 if($picture[2]==$foto[2]){
-                  echo "<a class='lightbox' href='".$picture[1]."'><img src='".$picture[1]."'></a>";
+                  echo "<a class='lightbox' href='".$picture[1]."'><img class='grande' src='".$picture[1]."'></a>";
                 }
               }
               echo "</div></div></div><div class='modal-footer'><button type='button'  data-dismiss='modal' class='btn btn-success'>Cerrar</button></div></div></div></div></div>";//modal cierre
@@ -233,7 +233,7 @@
                    
           
        </div>
-    <div class="tab-pane fade in" id="tab2">
+    <div class="tab-pane fade in active" id="tab2">
          
          
       
