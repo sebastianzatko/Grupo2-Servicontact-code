@@ -37,7 +37,7 @@ function fechaCastellano ($fecha) {
 Class cita{
 	//1
 	public function solicitud_cita($profesional,$cliente){
-	        $not_sol_cita = "<div class='alert alert-dismissible'>
+	        $not_sol_cita = "<div id='not".$profesional."' class='alert alert-dismissible'>
 	        El profesional esta solicitando que marques una cita para brindarte sus servicios. 
 	        Elije a continuacion Citar para marcar una fecha y hora.
 	        <br/>
@@ -57,7 +57,7 @@ Class cita{
 		}
 	//2	
 	public function rechazar_solicitud_cita($profesional,$cliente,$idnot){
-	    $not_sol_cita_rechazada = '<div class="alert alert-dismissible">
+	    $not_sol_cita_rechazada = '<div id="not'.$cliente.'" class="alert alert-dismissible">
 	    El cliente ha deseado no pactar una cita por el momento.
 	    <br/>
 	    <br/>
@@ -75,7 +75,7 @@ Class cita{
 		$cita = new data_cita();
 		$idcita = $cita->nueva_cita($profesional,$cliente,$fecha,$hora,$servicios);
 		$servtxt = txtservicios($servicios);
-		$not_A_cita = '<div class="alert alert-dismissible">Recibiste una cita desde este cliente para tu/s servicio/s de 
+		$not_A_cita = '<div id="not'.$cliente.'" class="alert alert-dismissible">Recibiste una cita desde este cliente para tu/s servicio/s de 
 		<b>'.$servtxt.'</b> para el dia 
 		<b>'.fechaCastellano($fecha).'</b> a las 
 		<b>'.$hora.' hs</b>.
@@ -96,7 +96,7 @@ Class cita{
 		$cita = new data_cita();
 		$r = $cita->aceptar_cita($idcita,$profesional,$idnot);
 		if ($r!=false){
-		    $not_cita_aceptada = '<div class="alert">El profesional ya aceptó tu cita para el dia '.fechaCastellano($r[1]).'.</div>';
+		    $not_cita_aceptada = '<div id="not'.$profesional.'" class="alert">El profesional ya aceptó tu cita para el dia '.fechaCastellano($r[1]).'.</div>';
 		    $cita->notificacion($profesional,$r[0],$not_cita_aceptada);
 		    $cita->borrar_notificacion($idnot,$profesional);
 		}
@@ -106,7 +106,7 @@ Class cita{
 	public function rechazar_cita($idcita,$profesional,$idnot){
 		$cita = new data_cita();
 		$r = $cita->rechazar_cita($idcita,$profesional);
-		$not_cita_rechazada = '<div class="alert">El profesional no aceptó tu cita para el dia '.fechaCastellano($r[0]).'.<br/><br/>Solo tu puedes ver este mensaje.</div>';
+		$not_cita_rechazada = '<div id="not'.$profesional.'" class="alert">El profesional no aceptó tu cita para el dia '.fechaCastellano($r[0]).'.<br/><br/>Solo tu puedes ver este mensaje.</div>';
 		if ($r!=false){
 			$cita->notificacion($profesional,$r[0],$not_cita_rechazada);
 			$cita->borrar_notificacion($idnot,$profesional);
@@ -119,7 +119,7 @@ Class cita{
 		echo json_encode($r);
 		$servtxt = explode(",",$r[2]);
 		$servicios = txtservicios($servtxt);
-		$not_T_finalizado = '<div class="alert">
+		$not_T_finalizado = '<div id="not'.$profesional.'" class="alert">
 		El profesional marcó como finalizado sus servicios de <b>'.$servicios.'<b/>, comenzados desde el dia <b>'.fechaCastellano($r[1]).'<b/>. ¿Estas de acuerdo?<br/>
 		<a href="#" onclick="finalizado('.$idcita.')" class="btn btn-success btn-xs">Si</a> 
 		<a href="#" onclick="nofinalizado('.$idcita.')" class="btn btn-danger btn-xs" data-dismiss="alert" aria-label="close">No</a>
@@ -133,7 +133,7 @@ Class cita{
 	    $r = $cita->finalizar_trabajo($idcita,$cliente);
 	    $servtxt = explode(",",$r[2]);
 		$servicios = txtservicios($servtxt);
-	    $notificacion = '<div class="alert">El cliente ya confirmo que has finalizado tus servicios como <b>'.$servicios.'<b/> que comenzaste el dia <b>'.fechaCastellano($r[1]).'<b/>.</div>';
+	    $notificacion = '<div id="not'.$cliente.'" class="alert">El cliente ya confirmo que has finalizado tus servicios como <b>'.$servicios.'<b/> que comenzaste el dia <b>'.fechaCastellano($r[1]).'<b/>.</div>';
 	    $cita->notificacion($cliente,$r[0],$notificacion);
 	}
 }
