@@ -249,8 +249,8 @@
 				
 					echo "<div id='publicaciones'>";
 					//echo "<aside><div class='content-footer'><img class='user-small-img' src='images/ramon.jpg'><span style='font-size: 16px;color: #fff;'>Juan Gonzalez</span><span class='pull-right'><a href='#ventana2' data-toggle='modal'><i class='fa fa-comments'></i> 30</a></span></div><div class='tz-gallery'><a class='lightbox' href='images/decorado.jpg'><img src='images/decorado.jpg' class='img-responsive'></a></div><div class='footer'><h5 class='request'>Comentar</h5><label class='icon-heart'></label></div></aside></div>";
-					echo "</div>"
-					echo "<script src='includes/js/publicaciones.js'></script>"
+					echo "</div>";
+					echo "<script src='includes/js/publicaciones.js'></script>";
 				
 			
 			
