@@ -173,12 +173,11 @@
                                     <div class="tabbable-line">
                                       <ul class="nav nav-tabs ">
                                         <li >
-                                        <a href="#tab2" data-toggle="tab">Todas
-
-                                        </li>
-                                        <li class="active">
                                           <a href="#tab1" data-toggle="tab">
                                           Albunes</a>
+                                        </li>
+                                        <li class="active">
+                                        <a href="#tab2" data-toggle="tab">Todas
                                          </a>
                                         </li>
                                        
@@ -189,7 +188,7 @@
                         </div>
                         <div class="well">
       <div class="tab-content">
-        <div class="tab-pane fade in  " id="tab2">
+        <div class="tab-pane fade in  " id="tab1">
           <h4>Albumes</h4>
           <br>
           <div class="galeria"> 
@@ -232,7 +231,7 @@
                    
           
        </div>
-    <div class="tab-pane fade in active" id="tab1">
+    <div class="tab-pane fade in active" id="tab2">
          
          
       
@@ -297,14 +296,13 @@
 									<option value="Indefinido" selected>Indefinido</option>
 								</select>   
 							</div>
-							<div class="col-sm-10" id="contenido2">
 						</div>
 
                  </div>
                  <div class="modal-footer">
                    <button type="button"  data-dismiss="modal" class="btn btn-danger">Cancelar</button>
 
-                   <button type="submit"  class="btn btn-success" id="btn-subir">Subir archivos</button>
+                   <button type="submit"  class="btn btn-success" >Subir archivos</button>
                  </div>
 				 </form>
               </div>
@@ -341,12 +339,8 @@
 	});
 </script>
 <script>
-  $("#contenido2").empty();
-  var strincargando="<div class='row'><h3>Cargando datos... Por favor espere.</h3><div class='progress progress-striped active page-progress-bar'><div class='progress-bar' style='width: 100%;'></div></div></div>";
-  $("#contenido2").append(strincargando);
 	$("#nuevafoto").submit(function(event){
 		event.preventDefault();
-		$('#btn-subir').prop("disabled";true);
 		var formData = new FormData($(this)[0]);
 		$.ajax({
 			data:formData,
@@ -371,9 +365,6 @@
 						console.log(datos[x][1]);
 						console.log(datos[x][2]);
 						$("#galleria").append("<div class='gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-12 filter "+datos[x][2]+"'> <img src='"+datos[x][1]+"' id='"+datos[x][0]+"' class='img-responsive port-image'></div>");
-						$("#contenido2").empty();
-						var correcto = "<div class='alert alert-success'><strong>Hecho!</strong> Foto subida con exito</div>";
-						$('#contenido2').append(correcto);
 					}
 				}
 			}
