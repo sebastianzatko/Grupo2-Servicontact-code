@@ -62,13 +62,25 @@
         
         ".$profile."
       </ul>
-		<ul class='navbar-form navbar-left' id='form1'>
-          
-           
-        	<a href='buscar.php'><button name='enviando' class='btn btn-primary'  style='border-color: white;'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
-
+      <ul class='navbar-form navbar-left'>
+        
+       <div class='form-group'>
+       
+      
             
-		</ul>
+      <div class='container'>
+        <div class='row'>
+            <div class='col-xs-10 col-md-9 col-sm-8 col-lg-12'>
+          <a href='buscar.php'><button name='enviando' class='btn btn-primary'  style='border-color: white;'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
+            </div>
+            <div class='col-xs-1 col-md-3 col-sm-4 col-lg-1'>
+               <center><a href='index.php' class='btn'><spam id='buscar3'> Changero</spam></a></center>
+            </div>
+        </div>
+        </div>
+          
+       </div>
+      </ul>
       
       
           ".$responsiveprofile."
@@ -169,11 +181,17 @@ $htmlmenu1="<nav id='nav' class='navbar navbar-dark bg-primary sidebarNavigation
     
       <ul class='navbar-form navbar-left'>
         
-       <div class='form-group'>
+       <div class='form-group medio'>
        
       
             
-        	<a href='buscar.php'><button name='enviando' class='btn btn-primary' id='boton'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
+      <div class='container'>
+        <div class='row'>
+            <div class='col-xs-10 col-md-12 col-sm-10 col-lg-12'>
+               <center><spam id='buscar4'> Servicios Changero</spam></center>
+            </div>
+        </div>
+        </div>
           
     	 </div>
       </ul>

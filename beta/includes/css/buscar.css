@@ -1,7 +1,7 @@
 
 .redireccionamiento{
-	color:#0645AD!important;
-	
+    color:#0645AD!important;
+    
 }
 
 
@@ -15,6 +15,10 @@ a{
     width: 95%;
     
     
+}
+
+#buscar4{
+    display: block;
 }
 
 #tan{
@@ -40,6 +44,8 @@ a{
     text-decoration:none;
     display: none;
 }
+
+
 
 .form-control{  
      transition: 2s;
@@ -177,6 +183,11 @@ a{
 
         
     }
+
+.medio{
+    padding-right: 1px;
+    margin-left: 200px;
+}
 @media (max-width: 1000px){
     .form-group{
        position: relative;
@@ -216,7 +227,12 @@ a{
         color: white;
         margin: .2rem 0;
     }
-     
+
+    .medio{
+
+    padding-right: 1px;
+    margin-left: 100px;
+} 
      
  }
 
@@ -286,6 +302,14 @@ a{
    color: white;
    
 }
+
+    .medio{
+    
+    padding-right: 1px;
+    margin-left: 80px;
+} 
+
+
 }
 #buscar2::placeholder{
       color: white;
@@ -307,8 +331,7 @@ a{
 .container{
     width: 100%;
 }
-    
- 
+
 
 
  @media(max-width: 650px){
@@ -321,7 +344,15 @@ a{
        width: 100%;
         margin-left:0;
     }
+      #buscar4{
+    display: none;   
+}
+    .medio{
     
+    padding-right: 1px;
+    margin-left: 60px;
+} 
+
  }
 
 
@@ -404,7 +435,8 @@ a{
      .container{
         width: 100%;
         }
-  
+
+
  }
 
  @media (max-width:380px){
