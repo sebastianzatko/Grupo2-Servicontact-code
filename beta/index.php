@@ -34,7 +34,8 @@
   <script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
   <script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
   <script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
-  
+  <script type="application/javascript" src="includes/js/notify.js"></script>
+  <link rel="stylesheet" href="includes/css/estrellas.css" />
 </head>
 <body>
  
@@ -130,98 +131,13 @@
 				.titucloespecial{
 					top:0px;
 				}
+				.max{
+					height:300px;
+				}
 			</style>
           <h3 class="titucloespecial">Profesionales Mas Destacados</h3>
-          <div class="row pt-md">
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-              <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/1.jpg" class="max ">
-                <ul class="text-center">
-                  <a href="#"><li>Ver Perfil</li></a>
-                </ul>
-              </div>
-              <h1>Maria </h1>
-              <h2>TECNICA</h2>
-              <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-              <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/2.jpg" class="max ">
-                <ul class="text-center">
-                  <a href="#"><li>Ver Perfil</li></a>
-                </ul>
-              </div>
-              <h1>Crisitna Di</h1>
-              <h2>Decoradora</h2>
-               <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i></p>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-              <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/3.jpg" class="max ">
-                <ul class="text-center">
-                  <a href="#"><li>Ver Perfil</li></a>
-                </ul>
-              </div>
-              <h1>Maria H</h1>
-              <h2>Jardinera</h2>
-             <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i></p>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-              <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/4.jpg" class="max ">
-                <ul class="text-center">
-                  <a href="#"><li>Ver Perfil</li></a>
-                </ul>
-              </div>
-              <h1>Jony diaz</h1>
-              <h2>Electrisista</h2>
-              <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i></p>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-              <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/5.jpg" class="max ">
-                <ul class="text-center">
-                    <a href="#"><li>Ver Perfil</li></a>
-                </ul>
-              </div>
-              <h1>Pedro gonzalez</h1>
-              <h2>plomero/gasista</h2>
-              <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i></p>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-              <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/6.jpg" class="max ">
-                <ul class="text-center">
-                  <a href="#"><li>Ver Perfil</li></a>
-                </ul>
-              </div>
-              <h1>Charly gutierrez</h1>
-              <h2>pisinista</h2>
-              <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i></p>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-              <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/7.jpg" class="max ">
-                <ul class="text-center">
-                  <a href="#"><li>Ver Perfil</li></a>
-                 
-                </ul>
-              </div>
-              <h1>Martin j</h1>
-              <h2>Electrisita/mecanico</h2>
-              <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i></p>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-              <div class="img-box">
-                <img src="http://nabeel.co.in/files/bootsnipp/team/8.jpg" class="max">
-                <ul class="text-center">
-                    <a href="#"><li>Ver Perfil</li></a>
-                </ul>
-              </div>
-              <h1>falvia</h1>
-              <h2>decoradora/jardinera</h2>
-              <p>Calificacion <i class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star" style="color: #FFC300"></i><i style="color: #FFC300" class="fas fa-star"></i><i style="color: #FFC300" class="fas fa-star"></i><i class="fas fa-star"></i></p>
-            </div>
+          <div class="row pt-md" id="profesionalesmasdestacadosdetuzona">
+            
            
            
           </div>
@@ -233,100 +149,39 @@
   <br><br>
 </footer> 
 </section>
-	<?php if(isset($_SESSION["id"])):?>
-	<center><h3>Publicaciones</h3></center>
-	<br>
+	<?php if(isset($_SESSION["id"]) and $_SESSION["id"]!=""):?>
+			<center><h3>Publicaciones</h3></center>
+			<br>
 
 
-	 
-	 <div class="container">
-	   
-		<div class="row">
-		 <div class="col-lg-10 col-md-offset-1">
-		  <div class="row">
-		 <div class="col-lg-6  col-md-6">
-			<?php
+			 
+			 <div class="container">
+			  
+				<div class="row">
+				 <div class="col-lg-10 col-md-offset-1">
+				  <div class="row">
+					 <?php
+						
+							echo "<div id='publicaciones'>";
+							//echo "<aside><div class='content-footer'><img class='user-small-img' src='images/ramon.jpg'><span style='font-size: 16px;color: #fff;'>Juan Gonzalez</span><span class='pull-right'><a href='#ventana2' data-toggle='modal'><i class='fa fa-comments'></i> 30</a></span></div><div class='tz-gallery'><a class='lightbox' href='images/decorado.jpg'><img src='images/decorado.jpg' class='img-responsive'></a></div><div class='footer'><h5 class='request'>Comentar</h5><label class='icon-heart'></label></div></aside></div>";
+							echo "</div>";
+							echo "<div id='almacenamientodemodales'>";
+							echo "</div>";
+							echo "<script src='includes/js/publicaciones.js'></script>";
+						
+					
+					
+					?>
+				 
 				
-					echo "<div id='publicaciones'>";
-					//echo "<aside><div class='content-footer'><img class='user-small-img' src='images/ramon.jpg'><span style='font-size: 16px;color: #fff;'>Juan Gonzalez</span><span class='pull-right'><a href='#ventana2' data-toggle='modal'><i class='fa fa-comments'></i> 30</a></span></div><div class='tz-gallery'><a class='lightbox' href='images/decorado.jpg'><img src='images/decorado.jpg' class='img-responsive'></a></div><div class='footer'><h5 class='request'>Comentar</h5><label class='icon-heart'></label></div></aside></div>";
-					echo "</div>";
-					echo "<script src='includes/js/publicaciones.js'></script>";
-				
-			
-			
-			?>
-				
-	  <aside><div class='content-footer'><img class='user-small-img' src='images/ramon.jpg'><span style='font-size: 16px;color: #fff;'>Juan Gonzalez</span><span class='pull-right'><a href='#ventana2' data-toggle='modal'><i class='fa fa-comments'></i> 30</a></span></div><div class='tz-gallery'><a class='lightbox' href='images/decorado.jpg'><img src='images/decorado.jpg' class='img-responsive'></a></div><div class='footer'><h5 class='request'>Comentar</h5><label class='icon-heart'></label></div></aside></div>
-	  
-		   
-			
-			
-			 <div class="col-lg-6  col-md-6">
+						  
+					</div>
 
-			<aside>
-				  <div class="content-footer">
-					<img class="user-small-img" src="images/ramon.jpg">
-					<span style="font-size: 16px;color: #fff;">jose diaz</span>
-					<span class="pull-right">
-					<a href="#ventana2" data-toggle="modal"><i class="fa fa-comments"></i> 30</a>
-								  
-					</span>
-		
-				   </div>
-					 <div class="tz-gallery">
-					 <a class="lightbox" href="images/jardin.jpg">
-					   <img src="images/jardin.jpg" class="img-responsive">
-					</a>
-			   </div>
-			   
-			
-			   <div class="footer">
-						   
-						   <h5 class="request">Comentar</h5>
-							<label class="icon-heart"></label>
-							
-						</div>
-		   </aside>
-	  </div> 
-	  <div class="col-lg-6  col-md-6">
-
-			<aside>
-				  <div class="content-footer">
-					<img class="user-small-img" src="images/ramon.jpg">
-					<span style="font-size: 16px;color: #fff;">jose diaz</span>
-					<span class="pull-right">
-					<a href="#ventana2" data-toggle="modal"><i class="fa fa-comments"></i> 30</a>
-								  
-					</span>
-		
-				   
-
-		  
+				  </div>
 				</div>
-					 <div class="tz-gallery">
-					 <a class="lightbox" href="images/modernas.jpg">
-					   <img src="images/modernas.jpg" class="img-responsive">
-					</a>
-			   </div>
-				  
-			
-			   <div class="footer">
-						   
-						   <h5 class="request">Comentar</h5>
-							<label class="icon-heart"></label>
-							
-						</div>
-			 </aside>
-		</div>
-		
-				  
-			</div>
+			  </div>
 
-		  </div>
 		</div>
-	  </div>
-
-</div>
  <?php endif; ?>
     
  <div class="capa-data">
@@ -359,4 +214,7 @@
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
 <script type="text/javascript" src="/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>
 <script type="text/javascript" src="/includes/js/citas.js"></script>
+<script type="text/javascript" src="includes/js/comentar.js"></script>
+<script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>
+<script type="text/javascript" src="includes/js/obtenermejoresprofesionales.js"></script>
 </html>

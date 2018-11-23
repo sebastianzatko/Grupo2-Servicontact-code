@@ -43,7 +43,23 @@
     <div class="container1">
       <div class="row">
         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-          <div class="button-group">
+			<!-- Para las provincias y ciudades-->
+			<form class="form-inline" id="busquedaconfiltros" >
+			
+				<div class="col-xs-6 col-sd-6 col-md-6 col-lg-6">
+					<select id="provincia" name="provincia" class="cinc btn btn-success  dropdown-toggle" type="button" data-toggle="dropdown" required>Provincias
+						<span class="caret"></span>
+					</select>
+					
+				</div>
+				<div class="col-xs-6 col-sd-6 col-md-6 col-lg-6">
+
+					<select id="ciudad" name="ciudad" class="cinc btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" required>Localidades<span class="caret"></span>
+					</select>
+				</div>
+				<button type="submit" class="btn btn-primary pull-right">Aplicar Filtros</button>
+			</form>
+          <div class="button-group" >
             <center><button type="button" id="buscar2" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Buscar servicios <span class="caret"></span></button>
               <ul class="dropdown-menu">
                 <?php
@@ -138,6 +154,7 @@ var options = [];
     type:"POST",
     success:function(data){
       if(data!==false){
+		  console.log(data);
         $("#contenido").empty();
         var datos=JSON.parse(data);
           
@@ -207,6 +224,7 @@ var options = [];
        
     });
 </script>
+<script type="text/javascript" src="includes/js/busquedafiltrada.js"></script>
 <!--<script type="application/javascript" src="http://ipinfo.io/?format=jsonp&callback=getIP"></script>-->
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
 <script type="text/javascript" src="/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>

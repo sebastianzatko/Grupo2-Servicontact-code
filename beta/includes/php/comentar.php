@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	if(isset($_SESSION["id"])){
 		if(isset($_POST["comentario"]) and isset($_POST["id_publicacion"])){
 			$comentario=$_POST["comentario"];

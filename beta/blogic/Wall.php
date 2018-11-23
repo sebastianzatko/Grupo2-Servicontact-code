@@ -20,9 +20,9 @@ include_once('cdata/datawall.php');
 			return $datos;
 		}
 		
-		public function conseguirloslasfotosdeloscontactos($idusuario){
+		public function conseguirloslasfotosdeloscontactos($idusuario,$paginacion,$limite){
 			$muro=new datawall();
-			$datos=$muro->conseguirlafotosdeloscontactos($idusuario);
+			$datos=$muro->conseguirlafotosdeloscontactos($idusuario,$paginacion,$limite);
 			return $datos;
 		}
 	}

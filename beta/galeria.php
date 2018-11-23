@@ -205,9 +205,10 @@
           if(count($fotos)==0){
             echo "<center><h2> No exiten fotos :`( </h2></center>";
           }else{
+
             foreach($fotos as $foto){
               
-              echo "<div class='modal fade' id='".$foto[2]."'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'><div class='galeria'><div class='tz-gallery'> ";//modal inicio
+              echo "<div class='galeria'><div class='tz-gallery'><div class='modal fade' id='".$foto[2]."'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body' id='fotos".$foto[2]."'> ";//modal inicio
               foreach($pictures as $picture){
                 if($picture[2]==$foto[2]){
                   echo "<a class='lightbox' href='".$picture[1]."'><img class='grande' src='".$picture[1]."'></a>";
@@ -224,6 +225,7 @@
         ?>
        
          </div>   
+                
 
              
                                
@@ -238,7 +240,7 @@
 
 		<div class="galeria"> 
         
-          <div class="tz-gallery">
+          <div class="tz-gallery" id='todaslasfotos'>
 			<?php
 				foreach($fotos as $foto){
 					echo " <a class='lightbox' href='".$foto[1]."'><img src='".$foto[1]."' id='".$foto[0]."' ></a>";
@@ -354,17 +356,20 @@
 				if(data=="Algunos archivos no son de tipo jpg,gif o png" || data=="Algunas variables no se han ingresado" || data=="Ha ocurrido un error en la sesion"){
 					$.notify(data, "error");
 				}else{
+					location.reload();
 					var datos=$.parseJSON(data);
 					console.log(datos);
-					
-					$("#galleria").empty();
+					for(var x=0;x<datos.length;x++){
+						$("fotos"+datos[x][2]).empty();
+					}
+					$("#todaslasfotos").empty();
 					console.log(datos.length);
 					for(var x=0;x<datos.length;x++){
-						console.log("concha de tu vieja");
 						console.log(datos[x][0]);
 						console.log(datos[x][1]);
 						console.log(datos[x][2]);
-						$("#galleria").append("<div class='gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-12 filter "+datos[x][2]+"'> <img src='"+datos[x][1]+"' id='"+datos[x][0]+"' class='img-responsive port-image'></div>");
+						$("#todaslasfotos").append("<a class='lightbox' href='"+datos[x][1]+"'><img src='"+datos[x][1]+"' id='"+datos[x][0]+"' ></a>");
+						
 					}
 				}
 			}
@@ -376,6 +381,7 @@
     baguetteBox.run('.tz-gallery');
 </script>
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
-<script type="text/javascript" src="/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>       
+<script type="text/javascript" src="/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script> 
+<script type="text/javascript" src="/includes/js/citas.js"></script>      
 </body>
 </html>
