@@ -268,7 +268,7 @@ if (isset($_SESSION["id"])){
           <h3>Tu calificacion</h3>
           <br>
       
-      <div class="twPc-d">
+      
       <div class="row">
         
         <div class="col-xs-12 col-md-12">
@@ -321,8 +321,7 @@ if (isset($_SESSION["id"])){
                 </div>
                 <!-- end row -->
               </div>
-          
-        </div>
+      
       </div>
     
         </div>
@@ -529,7 +528,6 @@ if (isset($_SESSION["id"])){
 
 </body>
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
-<script type="text/javascript" src="/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>
-<script type="text/javascript" src="/includes/js/citas.js"></script>
+<script type="text/javascript" src="https://www.arrowchat.com/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>
 </html>
 <?php ?>
