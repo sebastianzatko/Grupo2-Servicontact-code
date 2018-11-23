@@ -1,5 +1,4 @@
 <?php
-
   session_start();
 ?>
 
@@ -13,7 +12,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   
-  <link href="includes/css/diseno.css" rel="stylesheet">
+ 
    <link href="includes/css/buscar.css" rel="stylesheet">
   <link rel="stylesheet" href="includes/css/sidebarNavigation.css">
   <link rel="stylesheet" href="includes/css/switchery.css">
@@ -26,8 +25,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="includes/js/sidebarNavigation.js"></script>
   <script type="text/javascript" src="includes/js/switchery.js"></script>
-	<script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
-	<script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
+  <script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
   <script type="text/javascript" src="https://www.arrowchat.com/js/fancybox2/jquery.fancybox.pack.js"></script>
 </head>
 
@@ -43,24 +42,30 @@
     <div class="container1">
       <div class="row">
         <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-			<!-- Para las provincias y ciudades-->
-			<form class="form-inline" id="busquedaconfiltros" >
-			
-				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-					<select id="provincia" name="provincia" class="cinc btn btn-success  dropdown-toggle" type="button" data-toggle="dropdown" required>Provincias
-						<span class="caret"></span>
-					</select>
-					
-				</div>
-				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-
-					<select id="ciudad" name="ciudad" class="cinc btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" required>Localidades<span class="caret"></span>
-					</select>
-				</div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-				<button type="submit" class="btn btn-primary pull-right">Aplicar Filtros</button>
+      <!-- Para las provincias y ciudades-->
+      <form class="form-inline" id="busquedaconfiltros" >
+      
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+          <select id="provincia" name="provincia" class="dropdown-menu1 col-xs-12  dropdown-toggle" type="button" data-toggle="dropdown" required>Provincias
+            <span class="caret"></span>
+          </select>
+          
         </div>
-			</form>
+        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+
+          <select id="ciudad" name="ciudad" class="dropdown-menu1 col-xs-12  dropdown-toggle" type="button" data-toggle="dropdown" required>Localidades<span class="caret"></span>
+          </select>
+        </div>
+        <br class="hidden-lg">
+        <br class="hidden-lg">
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <button type="submit" class="col-xs-12 btn btn-primary pull-right">Aplicar Filtros</button>
+        </div>
+        <br class="hidden-lg">
+        <br class="hidden-lg">
+        <br class="hidden-xs">
+        <br>
+      </form>
           <div class="button-group" >
             <center><button type="button" id="buscar2" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Buscar servicios <span class="caret"></span></button>
               <ul class="dropdown-menu">
@@ -112,9 +117,7 @@
   
 var index="";
 var latlong="-34.8184,-58.4563";
-
 function getIP(json) {
-
   console.log("My public IP address is: ", json.ip);
   latlong=json.loc;
   console.log(latlong);
@@ -122,7 +125,6 @@ function getIP(json) {
 $( '.dropdown-menu .small' ).on( 'click', function( event ) {
     return false;
 })
-
 var options = [];
     $( '.dropdown-menu .small' ).on( 'click', function( event ) {
        var $target = $( event.currentTarget ),
@@ -142,7 +144,6 @@ var options = [];
   
   console.log(serviciosABuscar);
   
-
   
   $("#contenido").empty();
   var strincargando="<div class='row'><h3>Cargando datos... Por favor espere.</h3><div class='progress progress-striped active page-progress-bar'><div class='progress-bar' style='width: 100%;'></div></div></div>";
@@ -156,7 +157,7 @@ var options = [];
     type:"POST",
     success:function(data){
       if(data!==false){
-		  console.log(data);
+      console.log(data);
         $("#contenido").empty();
         var datos=JSON.parse(data);
           
@@ -193,9 +194,9 @@ var options = [];
                           distancia="No se ha registrado la distancia de este usuario"
                           
                       }else{
-						  var s=datos[i][8];
-						  s = s.substring(0, s.indexOf('.')+2);
-						  
+              var s=datos[i][8];
+              s = s.substring(0, s.indexOf('.')+2);
+              
                           distancia=" Se encuentra a <b>"+s +"</b> kilometros aproximadamente"
                       }
                       
