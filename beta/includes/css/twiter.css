@@ -158,7 +158,9 @@ ul.twPc-Arrange {
     border: 1px solid #e3e3e3;
     border-radius: 4px;
 }
-
+.modif{
+    padding: 0px !important;
+}
 @media (max-width: 1000px){
         .container{
         width:100%;
@@ -353,6 +355,9 @@ Licensed under MIT
     margin: 0 5px;
 }
 
+.modif{
+    padding: 0px !important;
+}
 
 @media (max-width:768px){
     
@@ -369,6 +374,9 @@ Licensed under MIT
 }
 #buscar4{
     display: none;   
+}
+.modif{
+    padding: 0px !important;
 }
 }
 @media (max-width:370px){
@@ -388,5 +396,8 @@ Licensed under MIT
 }
 #buscar4{
     display: none;   
+}
+.modif{
+    padding: 0px !important;
 }
 }

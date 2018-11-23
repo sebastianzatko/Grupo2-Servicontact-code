@@ -129,9 +129,17 @@ i.red{
 .negro{
     color:black;
 }
+
+.modif{
+    padding: 0px!important;
+}
 @media(max-width:750px){
     #buscar4{
     display: none;   
+}
+
+.modif{
+    padding: 0px!important;
 }
 }
 
@@ -168,9 +176,15 @@ a{
 #buscar4{
     display: none;   
 }
+.modif{
+    padding: 0px
+}
 }
 @media(max-width: 390px){
     #buscar4{
     display: none;   
+}
+.modif{
+    padding: 0px !important;
 }
 }

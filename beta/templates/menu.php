@@ -2,7 +2,7 @@
 	if(isset($_SESSION["nombre"]) and isset($_SESSION["foto"]) and isset($_SESSION["id"]) ){
             $profile= "
 			
-            <li><a href='perfil.php?idprofile=".$_SESSION["id"]."' class='nomb'><img src='".$_SESSION["foto"]."' class='' style='width: 40px;height: 40px;border-radius: 50%;'></a></li>
+            <li><a href='perfil.php?idprofile=".$_SESSION["id"]."' class='nomb modif'><img src='".$_SESSION["foto"]."' class='' style='width: 40px;height: 40px;border-radius: 50%;'></a></li>
             <li><a href='perfil.php?idprofile=".$_SESSION["id"]."' class='nomb'>".$_SESSION["nombre"]." </a></li>
           <li><a href='index.php'><i class='icons iconos fas fa-home'></i></a></li>
             
