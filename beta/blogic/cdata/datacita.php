@@ -144,11 +144,17 @@ class data_cita {
 		
 		}
 		public function getcita($idcita){
+		    $con = new Conexion();
+			$query = $con->prepare("SELECT `idprofesional`, `idcliente`, `fecha`, `servicios`, `estado` FROM `CITAS` WHERE id_cita=:id");
+			$query->bindParam(':id',$idcita);
+			if ($query->execute()){
+			    $resultado = $query->fetchAll();
 			    $idprofesional = $resultado[0]['idprofesional'];
 			    $idcliente = $resultado[0]['idcliente'];
 			    $fecha = $resultado[0]['fecha'];
 			    $servicios = $resultado[0]['servicios'];
 			    $estado = $resultado[0]['estado'];
+			    return [$idprofesional,$idcliente,$fecha,$servicios,$estado];
 			}
 			else{return false;}
 		}
