@@ -321,7 +321,9 @@ img.futer{
     border-radius: 50%;
     overflow: hidden;
 }
-
+#buscar4{
+    display: none;   
+}
 }
 @media (max-width: 390px){
 div.container-data{
@@ -350,6 +352,9 @@ div.container-data{
     
     width:310px ;
     height: 282px;
+}
+#buscar4{
+    display: none;   
 }
 }
 

@@ -352,6 +352,9 @@ a{
     padding-right: 1px;
     margin-left: 60px;
 } 
+#buscar4{
+    display: none;   
+}
 
  }
 
@@ -435,7 +438,9 @@ a{
      .container{
         width: 100%;
         }
-
+      #buscar4{
+    display: none;   
+}
 
  }
 
@@ -462,4 +467,7 @@ a{
         font-size:14px;
        
     }
+#buscar4{
+    display: none;   
+}
  }

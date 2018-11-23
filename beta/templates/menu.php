@@ -1,10 +1,10 @@
 <?php
 	if(isset($_SESSION["nombre"]) and isset($_SESSION["foto"]) and isset($_SESSION["id"]) ){
             $profile= "
-			<li><a href='index.php'><i class='icons iconos fas fa-home'></i></a></li>
-            <img src='".$_SESSION["foto"]."' class='' style='width: 40px;height: 40px;border-radius: 50%;'>
-            <li><a href='perfil.php?idprofile=".$_SESSION["id"]."' class='nomb'>".$_SESSION["nombre"]."</a></li>
-          
+			
+            <li><a href='perfil.php?idprofile=".$_SESSION["id"]."' class='nomb'><img src='".$_SESSION["foto"]."' class='' style='width: 40px;height: 40px;border-radius: 50%;'></a></li>
+            <li><a href='perfil.php?idprofile=".$_SESSION["id"]."' class='nomb'>".$_SESSION["nombre"]." </a></li>
+          <li><a href='index.php'><i class='icons iconos fas fa-home'></i></a></li>
             
            
             ";
@@ -62,7 +62,7 @@
         
         ".$profile."
       </ul>
-      <ul class='navbar-form navbar-left'>
+      <ul class='navbar-form navbar-left' id='buscar4'>
         
        <div class='form-group'>
        
@@ -74,7 +74,7 @@
           <a href='buscar.php'><button name='enviando' class='btn btn-primary'  style='border-color: white;'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
             </div>
             <div class='col-xs-1 col-md-3 col-sm-4 col-lg-1'>
-               <center><a href='index.php' class='btn'><spam id='buscar3'> Changero</spam></a></center>
+               <center><a href='index.php' class='btn'><spam id='buscar4'> Changero</spam></a></center>
             </div>
         </div>
         </div>

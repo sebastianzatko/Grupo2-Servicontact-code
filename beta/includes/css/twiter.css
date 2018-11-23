@@ -367,6 +367,9 @@ Licensed under MIT
     z-index: 9;
     width: 20%; 
 }
+#buscar4{
+    display: none;   
+}
 }
 @media (max-width:370px){
     
@@ -382,5 +385,8 @@ Licensed under MIT
     margin: -45px 10px 0px 25px;
     z-index: 9;
     width: 20%; 
+}
+#buscar4{
+    display: none;   
 }
 }
