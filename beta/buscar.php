@@ -46,18 +46,20 @@
 			<!-- Para las provincias y ciudades-->
 			<form class="form-inline" id="busquedaconfiltros" >
 			
-				<div class="col-xs-6 col-sd-6 col-md-6 col-lg-6">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 					<select id="provincia" name="provincia" class="cinc btn btn-success  dropdown-toggle" type="button" data-toggle="dropdown" required>Provincias
 						<span class="caret"></span>
 					</select>
 					
 				</div>
-				<div class="col-xs-6 col-sd-6 col-md-6 col-lg-6">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
 					<select id="ciudad" name="ciudad" class="cinc btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" required>Localidades<span class="caret"></span>
 					</select>
 				</div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 				<button type="submit" class="btn btn-primary pull-right">Aplicar Filtros</button>
+        </div>
 			</form>
           <div class="button-group" >
             <center><button type="button" id="buscar2" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Buscar servicios <span class="caret"></span></button>
