@@ -1,5 +1,5 @@
 <?php
-//require_once('email.php');
+require_once('email.php');
     
     class d_User{
 
@@ -36,13 +36,13 @@
                 
                 if($stmt->execute()){
                     
-                    //$s_email = new changeromail();
+                    $s_email = new changeromail();
                    
-                    //$url = 'http://beta.changero.online/verify.php?mail='.$mail.'&codigo='.$validacionHash;
+                    $url = 'http://beta.changero.online/verify.php?mail='.$mail.'&codigo='.$validacionHash;
                     
-                   //$nombreusuario = $nombre.' '.$apellido;
+                   $nombreusuario = $nombre.' '.$apellido;
                    
-                    //$s_email->validaremail($mail,$nombreusuario,$url);
+                    $s_email->validaremail($mail,$nombreusuario,$url);
 
                 }else{
                    

@@ -66,7 +66,7 @@
           
            
         	<a href='buscar.php'><button name='enviando' class='btn btn-primary'  style='border-color: white;'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
-          
+
             
 		</ul>
       
