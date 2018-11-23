@@ -1,6 +1,6 @@
 // Starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;
-$(".button-checkbox").hide();
+//$(".button-checkbox").hide();
 
 (function($, window) {
   var Starrr;
@@ -154,7 +154,6 @@ $( document ).ready(function() {
   });
 });
 
-
 function cargarfpuntuacion(id){
     $.ajax({
         url: "https://beta.changero.online/includes/php/calificar.php",
@@ -162,7 +161,16 @@ function cargarfpuntuacion(id){
         data: {cita:id} ,
         success: function (response) {
             var respuesta = jQuery.parseJSON(response);
-            console.log(respuesta);
+            //console.log(respuesta);
+            var nombre = respuesta[1];
+            //servicios respuesta[0][3]
+            //fecha respuesta[0][2]
+            var servicios = respuesta[0][3].split(',');
+            $("#puntuacion").html(nombre);
+            for (var i = 0; i < servicios.length; i++){
+                $('#puntuar').append($('<h3>'+servicios[i]+'<h3/><div id="" class="row lead evaluation"><div id="colorstar" class="starrr ratable"></div><span id="count">0</span> estrellas(s) -<span id="meaning"></span></div>'));
+                $(".starrr").starrr();
+            }
         }
     });
 }

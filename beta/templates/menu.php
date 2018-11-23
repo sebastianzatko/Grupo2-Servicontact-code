@@ -361,7 +361,7 @@ $modalcita = '<style>
     </div>
 </div>
 <!-- FIN DE MODAL-->';
-$modalpuntuar = '<!-- MODAL CITAS -->
+$modalpuntuar = '<!-- MODAL PUNTUACION -->
 <div class="modal" id="formpuntuar" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
@@ -372,18 +372,11 @@ $modalpuntuar = '<!-- MODAL CITAS -->
         </div>
         <div class="modal-body" id="formulariopuntuacion">
         <center>
-        <h3 id="puntuacion"></h3>
+        <h2 id="puntuacion"></h2>
         <h4>Califique a este profesional por sus servicios a continuacion.</h4>
+        <br/>
         <div id="puntuar">
-        <div class="row lead evaluation">
-        <div id="colorstar" class="starrr ratable"></div>
-        <span id="count">0</span> estrellas(s) -<span id="meaning"> </span>
-        <div class="indicators" style="display:none">
-        <div id="textwr">puntuacion</div>
-        <input id="rate[]" name="rate[]" type="text" placeholder="" class="form-control input-md" style="display:none;">
-        <input id="rating[]" name="rating[]" type="text" placeholder="" class="form-control input-md rateval" style="display:none;">
-        </div>
-        </div>
+        
         </div>
         <center/>
         </div>
