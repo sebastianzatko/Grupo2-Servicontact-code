@@ -97,10 +97,12 @@ else{header('Location: index.php');}
                  
                   <!-- Twitter Button -->   
           </div>
-
-          <a title="" href="" class="twPc-avatarLink">
-            <img  src="<?php echo $row["FOTO_DE_PERFIL"]; ?>"  class="img-thumbnail1 ">
+          
+          <div class="tz-gallery">
+           <a class="lightbox twPc-avatarLink" href="<?php echo $row["FOTO_DE_PERFIL"]; ?>">
+             <img  src="<?php echo $row["FOTO_DE_PERFIL"]; ?>"  class="img-thumbnail1 ">
           </a>
+         </div>
 
           <div class="twPc-divUser">
             <div class="twPc-divName">
@@ -410,7 +412,7 @@ else{header('Location: index.php');}
 
                           foreach($fotos as $foto){
                             
-                            echo "<div class='galeria'><div class='tz-gallery'><div class='modal fade' id='".$foto[2]."'><div class='modal-dialog' id='mdialTamanio'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'> ";//modal inicio
+                            echo "<div class='modal fade' id='".$foto[2]."'><div class='modal-dialog' id='mdialTamanio'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'><div class='galeria'><div class='tz-gallery'> ";//modal inicio
                             foreach($pictures as $picture){
                               if($picture[2]==$foto[2]){
                                 echo "<a class='lightbox' href='".$picture[1]."'><img class='grande' src='".$picture[1]."'></a>";

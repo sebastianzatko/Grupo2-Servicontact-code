@@ -205,10 +205,9 @@
           if(count($fotos)==0){
             echo "<center><h2> No exiten fotos :`( </h2></center>";
           }else{
-
             foreach($fotos as $foto){
               
-              echo "<div class='galeria'><div class='tz-gallery'><div class='modal fade' id='".$foto[2]."'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'> ";//modal inicio
+              echo "<div class='modal fade' id='".$foto[2]."'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'><div class='galeria'><div class='tz-gallery'> ";//modal inicio
               foreach($pictures as $picture){
                 if($picture[2]==$foto[2]){
                   echo "<a class='lightbox' href='".$picture[1]."'><img class='grande' src='".$picture[1]."'></a>";
@@ -225,7 +224,6 @@
         ?>
        
          </div>   
-                
 
              
                                
@@ -378,7 +376,6 @@
     baguetteBox.run('.tz-gallery');
 </script>
 <script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script>
-<script type="text/javascript" src="/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script> 
-<script type="text/javascript" src="/includes/js/citas.js"></script>      
+<script type="text/javascript" src="/arrowchat/external.php?type=js&v=2r13" charset="utf-8"></script>       
 </body>
 </html>
