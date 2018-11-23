@@ -136,5 +136,11 @@ Class cita{
 	    $notificacion = '<div id="not'.$cliente.'" class="alert">El cliente ya confirmo que has finalizado tus servicios como <b>'.$servicios.'<b/> que comenzaste el dia <b>'.fechaCastellano($r[1]).'<b/>.</div>';
 	    $cita->notificacion($cliente,$r[0],$notificacion);
 	}
+	
+	public function getcita($idcita){
+	    $cita = new data_cita();
+	    $r = $cita->getcita($idcita);
+	    return $r;
+	}
 }
 ?>

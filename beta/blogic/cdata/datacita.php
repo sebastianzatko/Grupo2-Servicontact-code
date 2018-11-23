@@ -143,6 +143,15 @@ class data_cita {
 		}else {return false;}
 		
 		}
+		public function getcita($idcita){
+			    $idprofesional = $resultado[0]['idprofesional'];
+			    $idcliente = $resultado[0]['idcliente'];
+			    $fecha = $resultado[0]['fecha'];
+			    $servicios = $resultado[0]['servicios'];
+			    $estado = $resultado[0]['estado'];
+			}
+			else{return false;}
+		}
 }
 
 ?>

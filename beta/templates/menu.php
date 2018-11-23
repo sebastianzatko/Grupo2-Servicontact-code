@@ -361,7 +361,43 @@ $modalcita = '<style>
     </div>
 </div>
 <!-- FIN DE MODAL-->';
-
+$modalpuntuar = '<!-- MODAL CITAS -->
+<div class="modal" id="formpuntuar" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title">Crear cita</h2>
+        </div>
+        <div class="modal-body" id="formulariopuntuacion">
+        <center>
+        <h3 id="puntuacion"></h3>
+        <h4>Califique a este profesional por sus servicios a continuacion.</h4>
+        <div id="puntuar">
+        <div class="row lead evaluation">
+        <div id="colorstar" class="starrr ratable"></div>
+        <span id="count">0</span> estrellas(s) -<span id="meaning"> </span>
+        <div class="indicators" style="display:none">
+        <div id="textwr">puntuacion</div>
+        <input id="rate[]" name="rate[]" type="text" placeholder="" class="form-control input-md" style="display:none;">
+        <input id="rating[]" name="rating[]" type="text" placeholder="" class="form-control input-md rateval" style="display:none;">
+        </div>
+        </div>
+        </div>
+        <center/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
+            <span class="button-checkbox">
+            <button type="button" id="submitcalificacion" class="btn criteria btn-default" data-color="info"><i class="state-icon fa fa-square-o"></i> Calificar</button>
+            <input type="checkbox" class="hidden">
+            </span>  
+        </div>
+      </div>
+    </div>
+</div>
+<!-- FIN DE MODAL-->';
 echo $modalcita;
-
+echo $modalpuntuar;
 ?>
