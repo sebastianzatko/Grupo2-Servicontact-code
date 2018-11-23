@@ -368,7 +368,7 @@ $modalpuntuar = '<!-- MODAL PUNTUACION -->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title">Crear cita</h2>
+          <h2 class="modal-title">Calificar</h2>
         </div>
         <div class="modal-body" id="formulariopuntuacion">
         <center>
