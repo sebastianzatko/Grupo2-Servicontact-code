@@ -129,6 +129,11 @@ i.red{
 .negro{
     color:black;
 }
+@media(max-width:750px){
+    #buscar4{
+    display: none;   
+}
+}
 
 @media(max-width: 460px){
     .team{
@@ -159,5 +164,13 @@ i.red{
 }
 a{
     color:black;
+}
+#buscar4{
+    display: none;   
+}
+}
+@media(max-width: 390px){
+    #buscar4{
+    display: none;   
 }
 }
