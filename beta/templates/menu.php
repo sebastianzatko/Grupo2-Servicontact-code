@@ -70,7 +70,7 @@
             
       <div class='container'>
         <div class='row'>
-            <div class='col-xs-10 col-md-9 col-sm-8 col-lg-12'>
+            <div class='col-xs-10 col-md-9 col-sm-8 col-lg-10'>
           <a href='buscar.php'><button name='enviando' class='btn btn-primary'  style='border-color: white;'><i class='icons iconos fas fa-search'></i> Buscar</button></a>
             </div>
             <div class='col-xs-1 col-md-3 col-sm-4 col-lg-1'>
