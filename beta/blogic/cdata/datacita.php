@@ -143,6 +143,27 @@ class data_cita {
 		}else {return false;}
 		
 		}
+		
+		public function nofinalizado($idcita,$idcliente){
+	    $con = new Conexion();
+		$query = $con->prepare("UPDATE CITAS SET estado='2' WHERE id_cita =:idcita and idcliente=:cli and estado='3'");
+		$query->bindParam(':idcita', $idcita);
+		$query->bindParam(':cli',$idcliente);
+		if ($query->execute()) {
+		    $con2 = new Conexion();
+			$query2 = $con2->prepare("SELECT `idprofesional`,`fecha`,`servicios` FROM `CITAS` WHERE id_cita=:id");
+			$query2->bindParam(':id',$idcita);
+			if ($query2->execute()){
+				$result = $query2->fetchAll();
+				$idprofesional = $result[0]['idprofesional'];
+				$fecha = $result[0]['fecha'];
+				$serv = $result[0]['servicios'];
+				return [$idprofesional,$fecha,$serv];
+				}else{return false;}
+						
+		}else {return false;}
+		
+		}
 		public function getcita($idcita){
 		    $con = new Conexion();
 			$query = $con->prepare("SELECT `idprofesional`, `idcliente`, `fecha`, `servicios`, `estado` FROM `CITAS` WHERE id_cita=:id");

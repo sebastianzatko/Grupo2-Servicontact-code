@@ -146,3 +146,17 @@ function getid(){
     id = id[2];
     return id;
 }
+function finalizado(id){
+	
+	}
+
+function nofinalizado(id){
+    $.ajax({
+    url: "https://beta.changero.online/includes/php/sistemacitas.php",
+    type: "post",
+    data: {tipo:'nofinalizado',cita:id} ,
+    success: function (response) {
+            console.log(response);
+        }
+    });
+}

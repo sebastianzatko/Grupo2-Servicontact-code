@@ -105,7 +105,7 @@ $(function() {
 });
 
 $( document ).ready(function() {
-    var correspondence=["","Muy malo","Malo","Bueno","Muy bueno","Excelente"];
+var correspondence=["","Muy malo","Malo","Bueno","Muy bueno","Excelente"];
       
   $('.ratable').on('starrr:change', function(e, value){
     $(".button-checkbox").show();
@@ -137,11 +137,23 @@ $( document ).ready(function() {
   
   $(document).on('click', "#submitcalificacion", function() {
 		var stars = $('.ratable').closest('.evaluation').children('#count').html();
-        console.log(stars);
+		var cant = document.getElementsByClassName("evaluation").length;
+		var puntuaciones = [];
+		var servicio;
+		var puntos;
+		for (var i = 0; i < cant; i++){
+		    puntos = $('div#star'+i+' .ratable').closest('.evaluation').children('#count').html();
+		    servicio = $('#serv'+i+'').val();
+		    var sp = [puntos,servicio];
+		    puntuaciones.push(sp);
+		}
+        console.log(puntuaciones);
+        var idprofesional = $("#profes").val();
+        var idcita = $("#cita").val();
         $.ajax({
         url: "https://beta.changero.online/includes/php/calificar.php",
         type: "post",
-        data: {puntuacion:stars,profesional:11,cita:123} ,
+        data: {puntuacion:puntuaciones,profesional:idprofesional,cita:idcita} ,
         success: function (response) {
             var respuesta = jQuery.parseJSON(response);
             console.log(respuesta);
@@ -154,22 +166,27 @@ $( document ).ready(function() {
   });
 });
 
-function cargarfpuntuacion(id){
+function finalizado(id){
     $.ajax({
         url: "https://beta.changero.online/includes/php/calificar.php",
         type: "post",
         data: {cita:id} ,
         success: function (response) {
             var respuesta = jQuery.parseJSON(response);
-            //console.log(respuesta);
-            var nombre = respuesta[1];
-            //servicios respuesta[0][3]
-            //fecha respuesta[0][2]
-            var servicios = respuesta[0][3].split(',');
-            $("#puntuacion").html(nombre);
-            for (var i = 0; i < servicios.length; i++){
-                $('#puntuar').append($('<h3>'+servicios[i]+'<h3/><div id="" class="row lead evaluation"><div id="colorstar" class="starrr ratable"></div><span id="count">0</span> estrellas(s) -<span id="meaning"></span></div>'));
-                $(".starrr").starrr();
+            console.log(respuesta);
+            if (respuesta!==false){
+                var nombre = respuesta[1];
+                var idprofesional = respuesta[0][0];
+                var servicios = respuesta[2];
+                $("#puntuacion").html(nombre);
+                $('#puntuar').children().remove();
+                $("#cita").val(id);
+                $("#profes").val(idprofesional);
+                for (var i = 0; i < servicios.length; i++){
+                    $('#puntuar').append($('<h3>'+servicios[i][1]+'<h3/><input id="serv'+i+'" value="'+servicios[i][0]+'" type="hidden"><div id="star'+i+'" class="row lead evaluation"><div id="colorstar" class="starrr ratable"></div><span id="count">0</span> estrellas(s) - <span id="meaning"></span></div>'));
+                    $(".starrr").starrr();
+                    actualizar();
+                }
             }
         }
     });
@@ -243,3 +260,39 @@ $(function () {
     });
 });
 
+$('.starrr').starrr({
+  change: function(e, value){
+    alert('new rating is ' + value)
+  }
+})
+
+function actualizar(){
+	var correspondence=["","Muy malo","Malo","Bueno","Muy bueno","Excelente"];
+    $('.ratable').on('starrr:change', function(e, value){
+    $(".button-checkbox").show();
+     $(this).closest('.evaluation').children('#count').html(value);
+     $(this).closest('.evaluation').children('#meaning').html(correspondence[value]);
+     
+    var currentval=  $(this).closest('.evaluation').children('#count').html();
+     
+    var target=  $(this).closest('.evaluation').children('.indicators');
+    target.css("color","black");
+    target.children('.rateval').val(currentval);
+    target.children('#textwr').html(' ');
+   
+    
+    if(value<3){
+     target.css("color","red").show(); 
+     target.children('#textwr').text('Muy mal servicio');
+    }
+    else{
+        if(value>3){    
+            target.css("color","green").show(); 
+            target.children('#textwr').html('Excelente Servicio');
+        }else{
+       target.hide();  
+        }
+    }
+    
+ });
+}

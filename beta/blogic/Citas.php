@@ -137,6 +137,15 @@ Class cita{
 	    $cita->notificacion($cliente,$r[0],$notificacion);
 	}
 	
+	public function nofinalizado($idcita,$cliente){
+	    $cita = new data_cita();
+	    $r = $cita->nofinalizado($idcita,$cliente);
+	    $servtxt = explode(",",$r[2]);
+		$servicios = txtservicios($servtxt);
+	    $notificacion = '<div id="not'.$cliente.'" class="alert">El cliente informó que no has finalizado tus servicios como <b>'.$servicios.'<b/> que comenzaste el dia <b>'.fechaCastellano($r[1]).'<b/>.</div>';
+	    $cita->notificacion($cliente,$r[0],$notificacion);
+	}
+	
 	public function getcita($idcita){
 	    $cita = new data_cita();
 	    $r = $cita->getcita($idcita);

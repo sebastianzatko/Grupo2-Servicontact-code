@@ -6,9 +6,9 @@ class Puntuar{
 		$data=$puntuacion->puntuarusuario($idusuario,$puntuacion);
 		return $data;
 	}
-	public function puntuarprofesion($idoficio,$puntuacion){
+	public function puntuarprofesion($idprof,$idservicio,$puntuacion){
 		$puntuaction=new datapuntuar();
-		$data=$puntuacion->puntuarprofesion($idoficio,$puntuacion);
+		$data=$puntuacion->puntuarprofesion($idprof,$idservicio,$puntuacion);
 		return $data;
 	}
 }

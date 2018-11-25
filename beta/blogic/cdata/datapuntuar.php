@@ -11,10 +11,10 @@ class datapuntuar{
 			return false;
 		}
 	}
-	public function puntuarprofesion($idoficio,$puntuacion){
-		$sql="UPDATE OFICIOS SET PUNTUACION=PUNTUACION+? , CANTIDAD_DE_PUNTUACIONES=CANTIDAD_DE_PUNTUACIONES+1 WHERE ID_OFICIO=?";
+	public function puntuarprofesion($idprof,$idservicio,$puntuacion){
+		$sql="UPDATE OFICIOS SET PUNTUACION=PUNTUACION+? , CANTIDAD_DE_PUNTUACIONES=CANTIDAD_DE_PUNTUACIONES+1 WHERE PROFESIONAL_idPROFESIONAL=? AND SERVICIOS_idSERVICIO=?";
 		$query=$con->prepare($sql);
-		if($query->execute(array($puntuacion,$idoficio))){
+		if($query->execute(array($puntuacion,$idprof,$idservicio))){
 			return true;
 		}else{
 			print_r($query->errorInfo());
