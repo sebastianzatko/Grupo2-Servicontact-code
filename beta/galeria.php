@@ -192,39 +192,53 @@
           <h4>Albumes</h4>
           <br>
           <div class="galeria"> 
-        <?php
-				foreach($dataSer as $servicio){
-					
-					echo "<a href='#".$servicio[3]."' data-toggle='modal' style='color:black;'><p style='margin-left:3px;'>".$servicio[3]."</p> <img src='http://i.ytimg.com/i/vWtix2TtWGe9kffqnwdaMw/mq1.jpg' alt='' ></a>";
-				}
-			?>
-         
-        <?php
-       
-        if(isset($fotos)){
-          if(count($fotos)==0){
-            echo "<center><h2> No exiten fotos :`( </h2></center>";
-          }else{
+            <?php
+              if(isset($fotos)){
+                if(count($fotos)!=0){
+                        $servictios=array();
+                        $fotitos=array();
+                        foreach($fotos as $foto){
+                            if(in_array($foto[2],$servictios)){
+                                
+                            }else{
+                                array_push($servictios,$foto[2]);
+                                array_push($fotitos,$foto[1]);
+                            }
+                        }
+                      for($x=0;$x<count($servictios);$x++){
+                        
+                        echo "<a href='#".$servictios[$x]."' data-toggle='modal' style='color:black;'><p style='margin-left:3px;'>".$servictios[$x]."</p> <img src='".$fotitos[$x]."' alt='' ></a>";
+                      }
+                    }
+                  }
+              ?>
+                       
+                      <?php
+                     
+                      if(isset($fotos)){
+                        if(count($fotos)==0){
+                          echo "<center><h2> No exiten Albunes :`( </h2></center>";
+                        }else{
 
-            foreach($fotos as $foto){
-              
-              echo "<div class='galeria'><div class='tz-gallery'><div class='modal fade' id='".$foto[2]."'><div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body' id='fotos".$foto[2]."'> ";//modal inicio
-              foreach($pictures as $picture){
-                if($picture[2]==$foto[2]){
-                  echo "<a class='lightbox' href='".$picture[1]."'><img class='grande' src='".$picture[1]."'></a>";
-                }
-              }
-              echo "</div></div></div><div class='modal-footer'><button type='button'  data-dismiss='modal' class='btn btn-success'>Cerrar</button></div></div></div></div></div>";//modal cierre
-              
-            }
-          }
-        }else{
-          echo "<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'><center><h2> Solo un profesional puede tener fotos</h2></center></div></div>";;
-        }
-      
-        ?>
+                          foreach($fotos as $foto){
+                            
+                            echo "<div class='modal fade' id='".$foto[2]."'><div class='modal-dialog' id='mdialTamanio'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> <h2 class='modal-title'>".$foto[2]."</h2><div class='modal-body'><div class='galeria'><div class='tz-gallery'> ";//modal inicio
+                            foreach($pictures as $picture){
+                              if($picture[2]==$foto[2]){
+                                echo "<a class='lightbox' href='".$picture[1]."'><img class='grande' src='".$picture[1]."'></a>";
+                              }
+                            }
+                            echo "</div></div></div><div class='modal-footer'><button type='button'  data-dismiss='modal' class='btn btn-success'>Cerrar</button></div></div></div></div></div>";//modal cierre
+                            
+                          }
+                        }
+                      }else{
+                        echo "<center><h2> Solo un profesional puede tener fotos</h2></center></div>";;
+                      }
+                    
+                      ?>
        
-         </div>   
+                 </div>   
                 
 
              
@@ -238,19 +252,27 @@
          
       
 
-		<div class="galeria"> 
-        
-          <div class="tz-gallery" id='todaslasfotos'>
-			<?php
-				foreach($fotos as $foto){
-					echo " <a class='lightbox' href='".$foto[1]."'><img src='".$foto[1]."' id='".$foto[0]."' ></a>";
-				}
-			
-			?>
-            
-        
-		</div>
-	</div>
+		<div class="container">
+					  
+				<div class="container">
+					  <div id="masonry">
+					    
+
+							
+					        <div class="tz-gallery" id='todaslasfotos'>
+								<?php
+									foreach($fotos as $foto){
+										echo "<div class='item'> <a class='lightbox' href='".$foto[1]."'><img src='".$foto[1]."' id='".$foto[0]."' ></a><div>";
+									}
+								
+								?>
+					            
+					        
+							</div>
+						
+					</div>
+				</div>
+			</div>
     </div>
   </div>
        
