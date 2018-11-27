@@ -3,6 +3,17 @@ require_once('conexion/conectionpdo.php');
 
 class datawork{
 
+	public function getnombreapellido($id){
+		$con = new Conexion();
+		$query = $con->prepare("SELECT `NOMBRE`,`APELLIDO` FROM `USUARIOS` WHERE `idUSUARIO`=:id");
+		$query->bindParam(':id',$id);
+		if ($query->execute()){
+			$result = $query->fetchAll();
+			$nombre = $result[0]['NOMBRE'].' '.$result[0]['APELLIDO'];
+			return $nombre;
+		}
+		else{return false;}
+	}
 	public function getfinishedworks($idprofesional){
 		$con2 = new Conexion();
 		$query2 = $con2->prepare("SELECT `idcliente`, `fecha`, `hora`, `servicios`, `estado` FROM `CITAS` WHERE idprofesional = :id AND (estado=3 or estado=4)");
