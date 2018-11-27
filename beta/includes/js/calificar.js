@@ -105,35 +105,6 @@ $(function() {
 });
 
 $( document ).ready(function() {
-var correspondence=["","Muy malo","Malo","Bueno","Muy bueno","Excelente"];
-      
-  $('.ratable').on('starrr:change', function(e, value){
-    $(".button-checkbox").show();
-     $(this).closest('.evaluation').children('#count').html(value);
-     $(this).closest('.evaluation').children('#meaning').html(correspondence[value]);
-     
-    var currentval=  $(this).closest('.evaluation').children('#count').html();
-     
-    var target=  $(this).closest('.evaluation').children('.indicators');
-    target.css("color","black");
-    target.children('.rateval').val(currentval);
-    target.children('#textwr').html(' ');
-   
-    
-    if(value<3){
-     target.css("color","red").show(); 
-     target.children('#textwr').text('Muy mal servicio');
-    }
-    else{
-        if(value>3){    
-            target.css("color","green").show(); 
-            target.children('#textwr').html('Excelente Servicio');
-        }else{
-       target.hide();  
-        }
-    }
-    
-  });
   
   $(document).on('click', "#submitcalificacion", function() {
 		var stars = $('.ratable').closest('.evaluation').children('#count').html();
@@ -157,8 +128,8 @@ var correspondence=["","Muy malo","Malo","Bueno","Muy bueno","Excelente"];
         success: function (response) {
             var respuesta = jQuery.parseJSON(response);
             console.log(respuesta);
-        }
-    });
+          }
+        });
     });
   
   $('#hearts-existing').on('starrr:change', function(e, value){
@@ -178,7 +149,7 @@ function finalizado(id){
                 var nombre = respuesta[1];
                 var idprofesional = respuesta[0][0];
                 var servicios = respuesta[2];
-                $("#puntuacion").html(nombre);
+                $("#puntuacion").html("Calificar a "+nombre);
                 $('#puntuar').children().remove();
                 $("#cita").val(id);
                 $("#profes").val(idprofesional);
@@ -267,7 +238,7 @@ $('.starrr').starrr({
 })
 
 function actualizar(){
-	var correspondence=["","Muy malo","Malo","Bueno","Muy bueno","Excelente"];
+	var correspondence=["","Muy malo","Regular","Bueno","Muy bueno","Excelente"];
     $('.ratable').on('starrr:change', function(e, value){
     $(".button-checkbox").show();
      $(this).closest('.evaluation').children('#count').html(value);

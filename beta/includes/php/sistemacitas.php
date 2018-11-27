@@ -13,7 +13,7 @@ function main(){
         $response = $cita->solicitud_cita($profesional,$cliente);
         echo json_encode($response);
     }
-    //2
+    //2 rechazar cita del cliente
     elseif (($_POST['tipo']==2) and isset($_POST['idprof']) and isset($_POST['idnot'])){
         $cliente = $_SESSION['id'];
         $profesional = $_POST['idprof'];

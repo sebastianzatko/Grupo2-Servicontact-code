@@ -1,7 +1,7 @@
 <?php
 require_once('email.php');
     
-    class d_User{
+    class d_user{
 
         public function verificarUsuarioExistente($email){
             require "conexion/conection.php";

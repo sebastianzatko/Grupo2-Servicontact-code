@@ -1,9 +1,9 @@
 <?php
 define('__ROOT1__', dirname(dirname(__FILE__)));  
 define('__DIRECTORIO__', 'https://beta.changero.online');
+include_once("cdata/datauser.php");
 
     class b_user
-
     {
         public $idusuario;
         public $nombre;
@@ -17,8 +17,6 @@ define('__DIRECTORIO__', 'https://beta.changero.online');
 
 
         public function ingresar($email,$contrasena,$lat,$long){
-            include "cdata/datauser.php";
-
             $datos=new d_user;
             if(strlen($email)<120){
                 if($datos->dataIngresar($email,$contrasena,$lat,$long)){
@@ -29,9 +27,6 @@ define('__DIRECTORIO__', 'https://beta.changero.online');
             }
         }
         public function registrar($nombre,$apellido,$telefono,$mail,$contrasena,$fotoperfil,$direccion,$provincia,$localidad){
-           
-            include "cdata/datauser.php";
-
             function obtenerExtencion($str){
                 $nose=explode('.',$str);
                 $se=end($nose);
@@ -63,8 +58,6 @@ define('__DIRECTORIO__', 'https://beta.changero.online');
             }
         }
         public function confirmaremail($mail,$codigo){
-            include "cdata/datauser.php";
-
             $datos=new d_user;
             
             if(strlen($mail)<120 and strlen($codigo)<200){
@@ -76,14 +69,13 @@ define('__DIRECTORIO__', 'https://beta.changero.online');
             }
         }
         public function modificarUsuario($nombre,$apellido,$telefono,$fotoperfil,$direccion,$provincia,$localidad){
-            include "cdata/datauser.php";
             session_start();
             function obtenerExtencion($str){
                 $nose=explode('.',$str);
                 $se=end($nose);
                 return $se;
             }
-			$datos=new d_user;
+			$datos=new d_user();
 			if($fotoperfil['name']!="" and $fotoperfil['size']!=0){
 			    
 			    /* Esto no unlinkea un carajo */
@@ -120,15 +112,8 @@ define('__DIRECTORIO__', 'https://beta.changero.online');
 			}
         }
         public function obtenerDatosDeUsuario($idUsuario){
-			
-			function obtenerExtencion($str){
-				$nose=explode('.',$str);
-				$se=end($nose);
-				return $se;
-			}
-            include "cdata/datauser.php";
-            $datos=new d_user;
-            $resultado=$datos->obtenerDatosDeUsuario($idUsuario);
+            $datos = new d_user();
+            $resultado = $datos->obtenerDatosDeUsuario($idUsuario);
             return $resultado;
         }
 		
@@ -140,9 +125,4 @@ define('__DIRECTORIO__', 'https://beta.changero.online');
 		}
 
     }
-
-
-
-
-
 ?>

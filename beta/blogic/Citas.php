@@ -116,18 +116,20 @@ Class cita{
 	public function finalizar_trabajo($idcita,$profesional){
 		$cita = new data_cita();
 		$r = $cita->sol_finalizar_trabajo($idcita,$profesional);
-		echo json_encode($r);
 		$servtxt = explode(",",$r[2]);
 		$servicios = txtservicios($servtxt);
 		$not_T_finalizado = '<div id="not'.$profesional.'" class="alert">
 		El profesional marcó como finalizado sus servicios de <b>'.$servicios.'<b/>, comenzados desde el dia <b>'.fechaCastellano($r[1]).'<b/>. ¿Estas de acuerdo?<br/>
-		<a href="#" onclick="finalizado('.$idcita.')" class="btn btn-success btn-xs">Si</a> 
+		<a href="#" onclick="finalizado('.$idcita.')" class="btn btn-success btn-xs" data-toggle="modal" data-target="#formpuntuar">Si</a> 
 		<a href="#" onclick="nofinalizado('.$idcita.')" class="btn btn-danger btn-xs" data-dismiss="alert" aria-label="close">No</a>
 		<br/><br/>Solo tu puedes ver este mensaje.</div>';
 		if ($r!=false){
 			$cita->notificacion($profesional,$r[0],$not_T_finalizado);
+			return true;
 			}
-		}
+		else{return false;}
+	}
+
 	public function finalizado($idcita,$cliente){
 	    $cita = new data_cita();
 	    $r = $cita->finalizar_trabajo($idcita,$cliente);

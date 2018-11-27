@@ -368,17 +368,14 @@ $modalpuntuar = '<!-- MODAL PUNTUACION -->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title">Calificar</h2>
+          <h2 id="puntuacion" class="modal-title">Calificar</h2>
         </div>
         <div class="modal-body" id="formulariopuntuacion">
         <center>
-        <h2 id="puntuacion"></h2>
         <h4>Califique a este profesional por sus servicios a continuacion.</h4>
-        <br/>
         <input id="cita" type="hidden">
         <input id="profes" type="hidden">
         <div id="puntuar">
-        
         </div>
         <center/>
         </div>
@@ -395,4 +392,5 @@ $modalpuntuar = '<!-- MODAL PUNTUACION -->
 <!-- FIN DE MODAL-->';
 echo $modalcita;
 echo $modalpuntuar;
+
 ?>

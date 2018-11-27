@@ -15,6 +15,7 @@ $(document).ready(function(){
         }
     });
     
+    //programar la cita
     $(document).on('click', "#submitform", function() {
         var selectedValues = $('#servicios').val();
         var fecha = $('#fecha').val();
@@ -31,6 +32,7 @@ $(document).ready(function(){
     });
 });
 
+//solicitar cita en chat web
 function sol_cita(cliente){
     $.ajax({
         url: "https://beta.changero.online/includes/php/sistemacitas.php",
@@ -42,6 +44,7 @@ function sol_cita(cliente){
     });
 }
 
+//cargar formulario de citas web
 function cargarform(profesional){
     $("#citah3").text("");
     $('select').children('option').remove();
@@ -68,6 +71,7 @@ function cargarform(profesional){
     });
 }
 
+
 function aceptarcita(cita,notificacion){
     $.ajax({
         url: "https://beta.changero.online/includes/php/sistemacitas.php",
@@ -78,6 +82,7 @@ function aceptarcita(cita,notificacion){
         }
     });
 }
+//rechazar solicitud de cita del profesional
 function rechazarcita(cita,notificacion){
     $.ajax({
         url: "https://beta.changero.online/includes/php/sistemacitas.php",
@@ -87,7 +92,9 @@ function rechazarcita(cita,notificacion){
             console.log(response);
         }
     });
-} 
+}
+
+//rechazar cita del cliente
 function cancelar(profesional,notificacion){
     $.ajax({
         url: "https://beta.changero.online/includes/php/sistemacitas.php",
@@ -100,6 +107,7 @@ function cancelar(profesional,notificacion){
 
 }
 
+//cargar formulario de citas en móvil
 function m_cargarform(){
     var profesional = getid();
     $("#citah3").text("");
@@ -121,12 +129,13 @@ function m_cargarform(){
             else{
                 $('#formulariocita').children().hide();
                 $('#submitform').hide();
-                $("#citah3").text("Este usuario no brinda servicios :(").show();
+                $("#citah3").text("Este usuario no brinda servicios \n:(").show();
             }
         }
     });
 }
 
+//enviar solicitud de cita en movil
 function m_sol_cita(){
     var cliente = getid();
     $.ajax({
@@ -139,6 +148,7 @@ function m_sol_cita(){
     });
     
 }
+
 function getid(){
     var getdata = document.getElementsByClassName('chat_user_content');
     getdata = getdata[0].getAttribute('id');
@@ -146,6 +156,7 @@ function getid(){
     id = id[2];
     return id;
 }
+
 function finalizado(id){
 	
 	}
