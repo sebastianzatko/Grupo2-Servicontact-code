@@ -1,33 +1,30 @@
 <?php
-require_once('conexion/conectionpdo.php');
+include_once('conexion/conectionpdo.php');
+
 class datapuntuar{
-	public function puntuarusuario($idusuario,$puntuacion){
+	public function dpuntuarusuario($idusuario,$puntuacion){
 		$con = new Conexion();
-		$sql="UPDATE USUARIOS SET PUNTUACION=PUNTUACION+:p , CANTIDAD_DE_PUNTUACIONES=CANTIDAD_DE_PUNTUACIONES+1 WHERE idUSUARIO=:id";
-		$query=$con->prepare($sql);
+		$query = $con->prepare("UPDATE USUARIOS SET PUNTUACIÓN=(PUNTUACIÓN+:p) , CANTIDADDEPUNTUACIONES=(CANTIDADDEPUNTUACIONES+'1') WHERE idUSUARIO=:id");
 		$query->bindParam(':p',$puntuacion);
 		$query->bindParam(':id', $idusuario);
 		if($query->execute()){
 			return true;
 		}else{
-			print_r($query->errorInfo());
+			//print_r($query->errorInfo());
 			return false;
 		}
 	}
-	public function puntuarprofesion($idprof,$idservicio,$puntuacion){
+	public function dpuntuarprofesion($idprof,$idservicio,$puntuacion){
 		$con = new Conexion();
-		$sql="UPDATE OFICIOS SET PUNTUACION=PUNTUACION+:p , CANTIDAD_DE_PUNTUACIONES=CANTIDAD_DE_PUNTUACIONES+1 WHERE PROFESIONAL_idPROFESIONAL=:idp AND SERVICIOS_idSERVICIO=:ids";
-		$query->bindParam(':p',$puntuacion);
-		$query->bindParam(':idp', $idprof);
-		$query->bindParam(':ids', $idservicio);
-		$query=$con->prepare($sql);
-		if($query->execute()){
+		$query = $con->prepare("UPDATE `OFICIOS` SET `PUNTUACIÓN`=`PUNTUACIÓN`+?,`CANTIDAD_DE_PUNTUACIONES`=`CANTIDAD_DE_PUNTUACIONES`+1 WHERE `PROFESIONAL_idPROFESIONAL`=? AND `SERVICIOS_idSERVICIO`=?");
+		if ($query->execute(array($puntuacion,$idprof,$idservicio))){
 			return true;
 		}else{
-			print_r($query->errorInfo());
 			return false;
 		}
 	}
 }
-
+//$p = new datapuntuar();
+//$res = $p->dpuntuarprofesion(16,6,5);
+//echo json_encode($res);
 ?>

@@ -55,11 +55,12 @@ function cargarform(profesional){
         data: {tipo:8,profesional:profesional} ,
         success: function (response) {
             var servicios = jQuery.parseJSON(response);
+            console.log(servicios);
             if (servicios!==false){
                 $('#formulariocita').children().show();
                 $('#submitform').show();
             for (var i = 0; i < servicios.length; i++){
-                $('#servicios').append($('<option>', {value:servicios[i][1], text:servicios[i][3]}));
+                $('#servicios').append($('<option>', {value:servicios[i][3], text:servicios[i][3]}));
                 }
             }
             else{

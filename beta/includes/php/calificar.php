@@ -36,11 +36,12 @@ if (isset($_SESSION['id'])){
         $idprofU = $_POST['profesional'];
         $idcita = $_POST['cita'];
         $professional = new Professional();
-        $idprofessional = $professional->getid($idprofU);
+        $idprofessional = $professional->getid((int)$idprofU);
         $puntuar = new Puntuar();
         foreach ($puntaje as $p){
-            $puntuar->puntuarprofesion($idprofessional,$p[1],$p[0]);
-            $puntuar->puntuarusuario($idprofU,$p[0]);
+            echo json_encode([$idprofessional,$p[1],$p[0]]);
+            $s= $puntuar->puntuarprofesion($idprofessional,$p[1],$p[0]);
+            //$puntuar->puntuarusuario($idprofU,$p[0]);
         }
         $cita= new cita();
         $cita->finalizado($idcita,$cliente);

@@ -1,18 +1,16 @@
 <?php
-require_once('cdata/datapuntuar.php');
+include_once('cdata/datapuntuar.php');
+
 class Puntuar{
 	public function puntuarusuario($idusuario,$puntuacion){
 		$puntuacion=new datapuntuar();
-		$data=$puntuacion->puntuarusuario($idusuario,$puntuacion);
-		return $data;
+		$res=$puntuacion->dpuntuarusuario($idusuario,$puntuacion);
+		return $res;
 	}
 	public function puntuarprofesion($idprof,$idservicio,$puntuacion){
-		$puntuacion=new datapuntuar();
-		$data=$puntuacion->puntuarprofesion($idprof,$idservicio,$puntuacion);
-		return $data;
+		$p = new datapuntuar();
+		$res = $p->dpuntuarprofesion($idprof,$idservicio,$puntuacion);
+		return $res;
 	}
 }
-
-
-
 ?>
