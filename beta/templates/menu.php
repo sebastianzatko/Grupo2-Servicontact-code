@@ -24,6 +24,7 @@
                   <ul class='dropdown-menu'>
                     <li><a href='perfil.php?idprofile=".$_SESSION["id"]."'><i class='icons2 far fa-user'></i> Mi perfil</a></li>
                     <li><a href='servicios.php'><i class='icons5 fas fa-toolbox'></i> Mis servicios</a></li>
+                    <li><a href='trabajos.php'><i class='icons5 fas fa-toolbox'></i> Mis trabajos</a></li>
 					<li><a href='puntuacion.php'><i class='icons5 far fa-star'></i> Mi puntuacion</a></li>
 					<li><a href='galeria.php'><i class='icons3 far fa-image'></i> Galeria</a></li>
                     <li role='separator' class='divider'></li>
@@ -375,6 +376,7 @@ $modalpuntuar = '<!-- MODAL PUNTUACION -->
         <h4>Califique a este profesional por sus servicios a continuacion.</h4>
         <input id="cita" type="hidden">
         <input id="profes" type="hidden">
+        <input id="idnot" type="hidden">
         <div id="puntuar">
         </div>
         <center/>
@@ -382,7 +384,7 @@ $modalpuntuar = '<!-- MODAL PUNTUACION -->
         <div class="modal-footer">
           <button type="button" class="btn" data-dismiss="modal">Cerrar</button>
             <span class="button-checkbox">
-            <button type="button" id="submitcalificacion" class="btn criteria btn-default" data-color="info"><i class="state-icon fa fa-square-o"></i> Calificar</button>
+            <button type="button" id="submitcalificacion" data-dismiss="modal" class="btn criteria btn-default" data-color="info"><i class="state-icon fa fa-square-o"></i> Calificar</button>
             <input type="checkbox" class="hidden">
             </span>  
         </div>

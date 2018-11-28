@@ -50,8 +50,12 @@ function main(){
         $profesional = $_SESSION['id'];
     }
     //7
-    elseif (($_POST['tipo']==7) and isset($_POST['cita'])){
+    elseif (($_POST['tipo']=='nofinalizado') and isset($_POST['cita']) and isset($_POST['idnotificacion'])){
         $cliente = $_SESSION['id'];
+        $idcita = $_POST['cita'];
+        $idnot = $_POST['idnotificacion'];
+        $cita->nofinalizado($idcita,$cliente);
+        $cita->borrarnot($idnot,$cliente);
     }
     //8
     elseif (($_POST['tipo']==8) and isset($_POST['profesional'])){

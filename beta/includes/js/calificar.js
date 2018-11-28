@@ -121,10 +121,11 @@ $( document ).ready(function() {
         console.log(puntuaciones);
         var idprofesional = $("#profes").val();
         var idcita = $("#cita").val();
+        var idnot = $("#idnot").val();
         $.ajax({
         url: "https://beta.changero.online/includes/php/calificar.php",
         type: "post",
-        data: {puntuacion:puntuaciones,profesional:idprofesional,cita:idcita} ,
+        data: {puntuacion:puntuaciones,profesional:idprofesional,cita:idcita,idnotificacion:idnot} ,
         success: function (response) {
             var respuesta = jQuery.parseJSON(response);
             console.log(respuesta);
@@ -137,11 +138,11 @@ $( document ).ready(function() {
   });
 });
 
-function finalizado(id){
+function finalizado(id,idnot){
     $.ajax({
         url: "https://beta.changero.online/includes/php/calificar.php",
         type: "post",
-        data: {cita:id} ,
+        data: {cita:id,idnotificacion:idnot} ,
         success: function (response) {
             var respuesta = jQuery.parseJSON(response);
             console.log(respuesta);
@@ -149,14 +150,17 @@ function finalizado(id){
                 var nombre = respuesta[1];
                 var idprofesional = respuesta[0][0];
                 var servicios = respuesta[2];
+                var idnot = respuesta[3];
                 $("#puntuacion").html("Calificar a "+nombre);
                 $('#puntuar').children().remove();
                 $("#cita").val(id);
+                $("#idnot").val(idnot);
                 $("#profes").val(idprofesional);
                 for (var i = 0; i < servicios.length; i++){
                     $('#puntuar').append($('<h3>'+servicios[i][1]+'<h3/><input id="serv'+i+'" value="'+servicios[i][0]+'" type="hidden"><div id="star'+i+'" class="row lead evaluation"><div id="colorstar" class="starrr ratable"></div><span id="count">0</span> estrellas(s) - <span id="meaning"></span></div>'));
                     $(".starrr").starrr();
                     actualizar();
+                    $('#formpuntuar').modal('show');
                 }
             }
         }

@@ -118,10 +118,10 @@ Class cita{
 		$r = $cita->sol_finalizar_trabajo($idcita,$profesional);
 		$servtxt = explode(",",$r[2]);
 		$servicios = txtservicios($servtxt);
-		$not_T_finalizado = '<div id="not'.$profesional.'" class="alert">
+		$not_T_finalizado = '<div id="not'.$profesional.'" class="alert alert-dismissible">
 		El profesional marcó como finalizado sus servicios de <b>'.$servicios.'<b/>, comenzados desde el dia <b>'.fechaCastellano($r[1]).'<b/>. ¿Estas de acuerdo?<br/>
-		<a href="#" onclick="finalizado('.$idcita.')" class="btn btn-success btn-xs" data-toggle="modal" data-target="#formpuntuar">Si</a> 
-		<a href="#" onclick="nofinalizado('.$idcita.')" class="btn btn-danger btn-xs" data-dismiss="alert" aria-label="close">No</a>
+		<a href="#" onclick="finalizado('.$idcita.',:idnotificacion)" class="btn btn-success btn-xs" data-dismiss="alert">Si</a> 
+		<a href="#" onclick="nofinalizado('.$idcita.',:idnotificacion)" class="btn btn-danger btn-xs" data-dismiss="alert">No</a>
 		<br/><br/>Solo tu puedes ver este mensaje.</div>';
 		if ($r!=false){
 			$cita->notificacion($profesional,$r[0],$not_T_finalizado);
@@ -135,7 +135,9 @@ Class cita{
 	    $r = $cita->finalizar_trabajo($idcita,$cliente);
 	    $servtxt = explode(",",$r[2]);
 		$servicios = txtservicios($servtxt);
-	    $notificacion = '<div id="not'.$cliente.'" class="alert">El cliente ya confirmo que has finalizado tus servicios como <b>'.$servicios.'<b/> que comenzaste el dia <b>'.fechaCastellano($r[1]).'<b/>.</div>';
+	    $notificacion = '<div id="not'.$cliente.'" class="alert">El cliente ya confirmo que has finalizado tus servicios como <b>'.$servicios.'<b/> que comenzaste el dia <b>'.fechaCastellano($r[1]).'<b/>
+	    <a href="#" onclick="puntuarcliente('.$cliente.',:idnotificacion)" class="btn btn-success btn-xs" data-dismiss="alert" aria-label="close">Puntuar Cliente</a>
+	    <br/><br/>Solo tu puedes ver este mensaje.</div>';
 	    $cita->notificacion($cliente,$r[0],$notificacion);
 	}
 	
@@ -144,7 +146,8 @@ Class cita{
 	    $r = $cita->nofinalizado($idcita,$cliente);
 	    $servtxt = explode(",",$r[2]);
 		$servicios = txtservicios($servtxt);
-	    $notificacion = '<div id="not'.$cliente.'" class="alert">El cliente informó que no has finalizado tus servicios como <b>'.$servicios.'<b/> que comenzaste el dia <b>'.fechaCastellano($r[1]).'<b/>.</div>';
+	    $notificacion = '<div id="not'.$cliente.'" class="alert">El cliente informó que no has finalizado tus servicios como <b>'.$servicios.'<b/> que comenzaste el dia <b>'.fechaCastellano($r[1]).'<b/>. Tus servicios quedarán en estado pendiente.
+	    <br/>Solo tu puedes ver este mensaje.</div>';
 	    $cita->notificacion($cliente,$r[0],$notificacion);
 	}
 	
@@ -152,6 +155,12 @@ Class cita{
 	    $cita = new data_cita();
 	    $r = $cita->getcita($idcita);
 	    return $r;
+	}
+
+	public function borrarnot($idnot,$to){
+		$cita = new data_cita();
+		$r = $cita->borrar_notificacion($idnot,$to);
+		return $r;
 	}
 }
 ?>

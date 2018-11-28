@@ -29,12 +29,13 @@ if (isset($_SESSION['id'])){
         echo json_encode($datos);
     }
     
-    elseif (isset($_POST['puntuacion']) and isset($_POST['profesional']) and isset($_POST['cita']))
+    elseif (isset($_POST['puntuacion']) and isset($_POST['profesional']) and isset($_POST['cita']) and isset($_POST['idnotificacion']))
     {
         $cliente = $_SESSION['id'];
         $puntaje = $_POST['puntuacion'];
         $idprofU = $_POST['profesional'];
         $idcita = $_POST['cita'];
+        $idnot = $_POST['idnotificacion'];
         $professional = new Professional();
         $idprofessional = $professional->getid((int)$idprofU);
         $puntuar = new Puntuar();
@@ -45,9 +46,11 @@ if (isset($_SESSION['id'])){
         }
         $cita= new cita();
         $cita->finalizado($idcita,$cliente);
+        $cita->borrarnot($idnot,$cliente);
     }
-    elseif (isset($_POST['cita'])){
+    elseif (isset($_POST['cita']) and isset($_POST['idnotificacion'])){
         $idcita = $_POST['cita'];
+        $idnot = $_POST['idnotificacion'];
         $cita = new cita();
         $datos = $cita->getcita((int)$idcita);
         $serviciossinid = explode(",", $datos[3]);
@@ -59,7 +62,7 @@ if (isset($_SESSION['id'])){
             $nombre = $d['NOMBRE'];
             $S = serviciosid($serviciossinid);
         }
-        echo json_encode([$datos,$nombre,$S]);
+        echo json_encode([$datos,$nombre,$S,$idnot]);
     }
 }
 ?>

@@ -158,15 +158,11 @@ function getid(){
     return id;
 }
 
-function finalizado(id){
-	
-	}
-
-function nofinalizado(id){
+function nofinalizado(idcita,idnot){
     $.ajax({
     url: "https://beta.changero.online/includes/php/sistemacitas.php",
     type: "post",
-    data: {tipo:'nofinalizado',cita:id} ,
+    data: {tipo:'nofinalizado',cita:idcita,idnotificacion:idnot} ,
     success: function (response) {
             console.log(response);
         }
