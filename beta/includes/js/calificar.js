@@ -106,33 +106,6 @@ $(function() {
 
 $( document ).ready(function() {
   
-  $(document).on('click', "#submitcalificacion", function() {
-		var stars = $('.ratable').closest('.evaluation').children('#count').html();
-		var cant = document.getElementsByClassName("evaluation").length;
-		var puntuaciones = [];
-		var servicio;
-		var puntos;
-		for (var i = 0; i < cant; i++){
-		    puntos = $('div#star'+i+' .ratable').closest('.evaluation').children('#count').html();
-		    servicio = $('#serv'+i+'').val();
-		    var sp = [puntos,servicio];
-		    puntuaciones.push(sp);
-		}
-        console.log(puntuaciones);
-        var idprofesional = $("#profes").val();
-        var idcita = $("#cita").val();
-        var idnot = $("#idnot").val();
-        $.ajax({
-        url: "https://beta.changero.online/includes/php/calificar.php",
-        type: "post",
-        data: {puntuacion:puntuaciones,profesional:idprofesional,cita:idcita,idnotificacion:idnot} ,
-        success: function (response) {
-            var respuesta = jQuery.parseJSON(response);
-            console.log(respuesta);
-          }
-        });
-    });
-  
   $('#hearts-existing').on('starrr:change', function(e, value){
     $('#count-existing').html(value);
   });
@@ -151,11 +124,14 @@ function finalizado(id,idnot){
                 var idprofesional = respuesta[0][0];
                 var servicios = respuesta[2];
                 var idnot = respuesta[3];
+                $("#descripcion").html("Califique a este profesional por sus servicios a continuacion.");
                 $("#puntuacion").html("Calificar a "+nombre);
                 $('#puntuar').children().remove();
                 $("#cita").val(id);
                 $("#idnot").val(idnot);
                 $("#profes").val(idprofesional);
+                $("#calificarcliente").removeAttr("onclick"); 
+                $('#calificarcliente').attr('id','submitcalificacion');
                 for (var i = 0; i < servicios.length; i++){
                     $('#puntuar').append($('<h3>'+servicios[i][1]+'<h3/><input id="serv'+i+'" value="'+servicios[i][0]+'" type="hidden"><div id="star'+i+'" class="row lead evaluation"><div id="colorstar" class="starrr ratable"></div><span id="count">0</span> estrellas(s) - <span id="meaning"></span></div>'));
                     $(".starrr").starrr();
@@ -270,4 +246,68 @@ function actualizar(){
     }
     
  });
+$(document).on('click', "#submitcalificacion", function() {
+    var stars = $('.ratable').closest('.evaluation').children('#count').html();
+    var cant = document.getElementsByClassName("evaluation").length;
+    var puntuaciones = [];
+    var servicio;
+    var puntos;
+    for (var i = 0; i < cant; i++){
+        puntos = $('div#star'+i+' .ratable').closest('.evaluation').children('#count').html();
+        servicio = $('#serv'+i+'').val();
+        var sp = [puntos,servicio];
+        puntuaciones.push(sp);
+    }
+        console.log(puntuaciones);
+        var idprofesional = $("#profes").val();
+        var idcita = $("#cita").val();
+        var idnot = $("#idnot").val();
+        $.ajax({
+        url: "https://beta.changero.online/includes/php/calificar.php",
+        type: "post",
+        data: {puntuacion:puntuaciones,profesional:idprofesional,cita:idcita,idnotificacion:idnot} ,
+        success: function (response) {
+            var respuesta = jQuery.parseJSON(response);
+            console.log(respuesta);
+            $('#puntuar').children().remove();
+          }
+        });
+    });
+}
+
+function puntuarcliente(id,idnot){
+  $.ajax({
+        url: "https://beta.changero.online/includes/php/calificar.php",
+        type: "post",
+        data: {getname:id} ,
+        success: function (response) {
+            var respuesta = jQuery.parseJSON(response);
+            console.log(respuesta);
+            $('#puntuar').children().remove();
+            $("#puntuacion").html("Calificar a "+respuesta);
+            $("#descripcion").html("Califique a continuación el trato con este cliente.");
+            $('#puntuar').append($('<div id="star" class="row lead evaluation"><div id="colorstar" class="starrr ratable"></div><span id="count">0</span> estrellas(s) - <span id="meaning"></span></div>'));
+            $(".starrr").starrr();
+            actualizar();
+            $('#submitcalificacion').attr('id','calificarcliente');
+            $('#calificarcliente').attr('onclick','sendcalificacion('+id+','+idnot+')'); 
+            $('#formpuntuar').modal('show');
+          }
+  }); 
+}
+
+function sendcalificacion(id,idnot){
+  var stars = $('div#star .ratable').closest('.evaluation').children('#count').html();
+  $.ajax({
+        url: "https://beta.changero.online/includes/php/calificar.php",
+        type: "post",
+        data: {puntuarcliente:id,idnotificacion:idnot,p:stars} ,
+        success: function (response) {
+          var respuesta = jQuery.parseJSON(response);
+          console.log(respuesta);
+          $('#puntuar').children().remove();
+          $("#puntuacion").html("Calificar");
+          $("#calificarcliente").removeAttr("onclick"); 
+  }
+});
 }

@@ -1,9 +1,9 @@
 <?php
-include_once('../../blogic/User.php');
 include_once('../../blogic/Services.php');
 include_once('../../blogic/Puntuar.php');
 include_once('../../blogic/Citas.php');
 include_once('../../blogic/Professional.php');
+include_once('../../blogic/Works.php');
 
 function serviciosid($servicios){
     $serviciosconid = [];
@@ -39,11 +39,19 @@ if (isset($_SESSION['id'])){
         $professional = new Professional();
         $idprofessional = $professional->getid((int)$idprofU);
         $puntuar = new Puntuar();
+        $estrellas = [];
         foreach ($puntaje as $p){
-            echo json_encode([$idprofessional,$p[1],$p[0]]);
+            //echo json_encode([$idprofessional,$p[1],$p[0]]);
             $s= $puntuar->puntuarprofesion($idprofessional,$p[1],$p[0]);
-            //$puntuar->puntuarusuario($idprofU,$p[0]);
+            if ($p == 1){
+            array_push($estrellas,$p[0]);
+            }
+            else{
+            array_push($estrellas,$p[0]);
+            }
         }
+        $res = $puntuar->puntuacionestrellas($idprofessional,'PROFESIONAL',$estrellas);
+        echo json_encode($res);
         $cita= new cita();
         $cita->finalizado($idcita,$cliente);
         $cita->borrarnot($idnot,$cliente);
@@ -56,13 +64,33 @@ if (isset($_SESSION['id'])){
         $serviciossinid = explode(",", $datos[3]);
         if ($datos[4] = 3){
             $idU = $datos[0];
-            $usuario = new b_user();
-            $datosU = $usuario->obtenerDatosDeUsuario($idU);
-            $d = $datosU->fetch_array();
-            $nombre = $d['NOMBRE'];
+            $works = new Works();
+            $nombre = $works->getnombre($idU);
             $S = serviciosid($serviciossinid);
         }
         echo json_encode([$datos,$nombre,$S,$idnot]);
+    }
+    elseif (isset($_POST['getname'])){
+        $id = $_POST['getname'];
+        $works = new Works();
+        $nombrecliente = $works->getnombre($id);
+        echo json_encode($nombrecliente);
+    }
+    elseif (isset($_POST['puntuarcliente']) and isset($_POST['idnotificacion']) and isset($_POST['p'])){
+        $idprofesional = $_SESSION['id'];
+        $idcliente = $_POST['puntuarcliente'];
+        $idnot = $_POST['idnotificacion'];
+        $puntuacion = $_POST['p'];
+        $puntuar = new Puntuar();
+        $res = $puntuar->puntuarusuario($idcliente,$puntuacion);
+        if ($res == true){
+            $estrellas = [$puntuacion];
+            $res = $puntuar->puntuacionestrellas($idcliente,'CLIENTE',$estrellas);
+            $cita= new cita();
+            $cita->borrarnot($idnot,$idprofesional);
+            echo json_encode($res);
+        }
+        else{echo json_encode(false);}
     }
 }
 ?>

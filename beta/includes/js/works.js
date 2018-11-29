@@ -40,10 +40,15 @@ function getpendientes(){
             var accion1, accion2;
             var fila;
             accion2 = '<button class="btn btn-danger btn-sm" onclick="cancelar()"><span class="glyphicon glyphicon-ban-circle"></span></button>';
+            if (res.lenght!==0){
             for (var i = 0; i < res.length; i++){
             	accion1 = '<button class="btn btn-success btn-sm" onclick="finalizartrabajo('+res[i][4]+')"><span class="glyphicon glyphicon-ok-circle"></span></button>';
             	fila = '<tr><td>'+res[i][0]+'</td><td class="hidden-sm hidden-xs">Fecha: '+res[i][1]+'\nHora: '+res[i][2]+'</td><td>'+res[i][3]+'</td><td>'+accion1+accion2+'</td></tr>';
             	$('#bodypendientes').append(fila);
+        	}
+        	}
+        	else{
+        		$('#bodypendientes').append('No hay nada que mostrar');
         	}
         }
     });
@@ -63,4 +68,8 @@ function finalizartrabajo(id){
             }
         }
     });
+}
+
+function cancelar(){
+console.log('en desarrollo ;)');
 }

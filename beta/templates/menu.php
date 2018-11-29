@@ -373,7 +373,7 @@ $modalpuntuar = '<!-- MODAL PUNTUACION -->
         </div>
         <div class="modal-body" id="formulariopuntuacion">
         <center>
-        <h4>Califique a este profesional por sus servicios a continuacion.</h4>
+        <h4 id="descripcion"></h4>
         <input id="cita" type="hidden">
         <input id="profes" type="hidden">
         <input id="idnot" type="hidden">
