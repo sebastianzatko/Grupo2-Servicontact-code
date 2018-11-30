@@ -124,7 +124,7 @@ function m_cargarform(){
                 $('#formulariocita').children().show();
                 $('#submitform').show();
             for (var i = 0; i < servicios.length; i++){
-                $('#servicios').append($('<option>', {value:servicios[i][1], text:servicios[i][3]}));
+                $('#servicios').append($('<option>', {value:servicios[i][3], text:servicios[i][3]}));
                 }
             }
             else{

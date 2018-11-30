@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-if(isset($_GET["idprofile"])){
+if(isset($_GET["idprofile"]) and $_GET["idprofile"]!="" and $_GET["idprofile"]!=$_SESSION["id"]){
   
     $idactual=$_GET["idprofile"];
     require "blogic/User.php";
@@ -20,18 +20,24 @@ if(isset($_GET["idprofile"])){
           
     
          
-      require "blogic/Galery.php";
-    $galeria=new Galery();
-     $fotos=$galeria->obtenerfotos((int)$idprofesional);
-    $pictures=$fotos;
+              require "blogic/Galery.php";
+            $galeria=new Galery();
+             $fotos=$galeria->obtenerfotos((int)$idprofesional);
+            $pictures=$fotos;
       
         
         
-      }
-      else{header('Location: index.php');}
-    }
+      }else{header('Location: index.php');}
+    }else{
   
-else{header('Location: index.php');}
+        if($_GET["idprofile"]=$_SESSION["id"]){
+            header("Location:perfil.php?idprofile=".$_SESSION["id"]);
+        }else{
+            header('Location: index.php');
+        }
+    }
+    
+
 
 
 
@@ -103,7 +109,29 @@ else{header('Location: index.php');}
              <img  src="<?php echo $row["FOTO_DE_PERFIL"]; ?>"  class="img-thumbnail1 ">
           </a>
          </div>
-
+    <?php if($row["puntuaciontotal"]!=""): ?>
+    
+        
+        <div class="col-xs-12 col-md-12">
+          <div class="well well-sm">
+            <div class="row">
+              <div class="col-xs-12 col-md-12 text-center">
+                <h1 class="rating-num">
+                  <?php 
+                        $puntc=(float)$row["puntuaciontotal"];
+                      
+                        echo $puntc; 
+                  ?></h1>
+                
+                <div>
+                  <span class="glyphicon glyphicon-user"></span>Puntuacion de Usuario
+                </div>
+              </div>
+              </div>
+              </div>
+              </div>
+      <?php endif; ?>
+      
           <div class="twPc-divUser">
             <div class="twPc-divName">
               <a href=""><?php echo $row["NOMBRE"]." ".$row["APELLIDO"]; ?></a>
@@ -192,7 +220,7 @@ else{header('Location: index.php');}
                     <?php
                         if(isset($_SESSION["id"])){
                             //aca faltaria el boton para que abra el mensaje instantaneo y eso
-                            echo "<label>Telefono:</label><p><b>".$row["TELEFONO"]."</b></p><br><button type='button' style='color: white;' class='btn btn-primary' id='contactar' data-idpro='".$idactual."' data-idclient='".$_SESSION["id"]."' ><i class='far fa-comment-alt' style='color: white;' ></i> Mensaje privado</button>";
+                            echo "<label>Telefono:</label><p><b>".$row["TELEFONO"]."</b></p><br><button type='button' style='color: white;' class='btn btn-primary' id='contactar' data-idpro='".$idactual."' data-idclient='".$_SESSION["id"]." ' data-dismiss='modal' ><i class='far fa-comment-alt' style='color: white;' ></i> Mensaje privado</button>";
                         }else{
                             //aca va para ingresar sesion
                             echo "<small>Para contactarse con este profesional debe iniciar sesion</small><br><a href='principal.php'><button type='button' class='btn btn-primary' style='color: white;'><span class='glyphicon glyphicon-log-in'></span>  Iniciar Sesion</button></a>";
@@ -263,93 +291,7 @@ else{header('Location: index.php');}
   <br>
    <br>
   <br>
-<div class="twPc-d">
-    <div class="row">
-        <div class="col-xs-12 col-md-12">
-            <div class="well well-sm">
-                <div class="row">
-                    <div class="col-xs-12 col-md-12 text-center">
-                        <h1 class="rating-num">
-                            4.0</h1>
-                        <div class="rating">
-                            <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
-                            </span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
-                            </span><span class="glyphicon glyphicon-star-empty"></span>
-                        </div>
-                        <div>
-                            <span class="glyphicon glyphicon-user"></span>1,050,008 total
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-md-6">
-                        <div class="row rating-desc">
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>5
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress progress-striped">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                        <span class="sr-only">80%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end 5 -->
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>4
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                        <span class="sr-only">60%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end 4 -->
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>3
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                        <span class="sr-only">40%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end 3 -->
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>2
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                        <span class="sr-only">20%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end 2 -->
-                            <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>1
-                            </div>
-                            <div class="col-xs-8 col-md-9">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 15%">
-                                        <span class="sr-only">15%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end 1 -->
-                        </div>
-                        <!-- end row -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
    <br>
   <br>
 <div class="twPc-d">
@@ -395,9 +337,19 @@ else{header('Location: index.php');}
             <?php
               if(isset($fotos)){
                 if(count($fotos)!=0){
-                      foreach($dataSer as $servicio){
+                        $servictios=array();
+                        $fotitos=array();
+                        foreach($fotos as $foto){
+                            if(in_array($foto[2],$servictios)){
+                                
+                            }else{
+                                array_push($servictios,$foto[2]);
+                                array_push($fotitos,$foto[1]);
+                            }
+                        }
+                      for($x=0;$x<count($servictios);$x++){
                         
-                        echo "<a href='#".$servicio[3]."' data-toggle='modal' style='color:black;'><p style='margin-left:3px;'>".$servicio[3]."</p> <img src='http://i.ytimg.com/i/vWtix2TtWGe9kffqnwdaMw/mq1.jpg' alt='' ></a>";
+                        echo "<a href='#".$servictios[$x]."' data-toggle='modal' style='color:black;'><p style='margin-left:3px;'>".$servictios[$x]."</p> <img src='".$fotitos[$x]."' alt='' ></a>";
                       }
                     }
                   }
@@ -407,7 +359,7 @@ else{header('Location: index.php');}
                      
                       if(isset($fotos)){
                         if(count($fotos)==0){
-                          echo "<center><h2> No exiten Albunes :`( </h2></center>";
+                          echo "<center><h2> No existen Albunes :`( </h2></center>";
                         }else{
 
                           foreach($fotos as $foto){
@@ -450,7 +402,7 @@ else{header('Location: index.php');}
                 <?php
                 if(isset($fotos)){
                         if(count($fotos)==0){
-                          echo "<center><h2> No exiten fotos :`( </h2></center>";
+                          echo "<center><h2> No existen fotos :`( </h2></center>";
                         }
                         else{
                   foreach($fotos as $foto){

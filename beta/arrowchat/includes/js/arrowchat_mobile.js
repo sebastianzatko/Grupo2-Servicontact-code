@@ -104,6 +104,7 @@ V.I.ea={stringify:function(a){var d=a.f,b=a.b,c=this.z;a.s();for(var a=[],e=0;e<
 		
 		function runarrowchat() {
 			$body.append('<div id="arrowchat_mobiletab_new"><span class="arrowchat_mobiletab_new_count">0</span> ' + lang[115] + '</div><div id="arrowchat_mobiletab">' + lang[145] + ' (<span id="arrowchat_mobiletab_count">0</span>)</div>');
+			$body.append('<div class="arrowchat_notify_box"><div class="arrowchat_notify_box_wrapper"><div class="arrowchat_notify_avatar"></div><div class="arrowchat_notify_info_wrapper"><div class="arrowchat_notify_username"></div><div class="arrowchat_notify_msg"></div></div><div class="arrowchat_clearfix"></div></div></div>');
 			a("#arrowchat_mobiletab_new").hide();
 			
 			if (c_push_engine == 1) {
@@ -133,11 +134,41 @@ V.I.ea={stringify:function(a){var d=a.f,b=a.b,c=this.z;a.s();for(var a=[],e=0;e<
 				addToCount(1);
 			}
 		}
-		function addToCount(number) {
+		function receiveMessage(id, from, message, sent, self, old) {
+			if (from != u_id && typeof(uc_name[from]) != "undefined") {
+				message = stripslashes(message);
+				a(".arrowchat_notify_avatar").html('<img src="' + uc_avatar[from] + '" alt="" />');
+				a(".arrowchat_notify_username").html(uc_name[from]);
+				a(".arrowchat_notify_msg").html(message);
+				clearTimeout(message_timeout);
+				a(".arrowchat_notify_box").show("slide", { direction: "up"}, 250);
+				message_timeout = setTimeout(function () {
+					a(".arrowchat_notify_box").hide("slide", { direction: "up"}, 250);
+				}, 5000);
+				a(".arrowchat_notify_box").unbind('click');
+				a(".arrowchat_notify_box").click(function() {
+					clearTimeout(message_timeout);
+					a(".arrowchat_notify_box").hide();
+					window.open(c_ac_path + 'public/mobile/#chatwith-' + from, 'mobiletab', '_blank');
+				});
+			}
+		}
+		/*function addToCount(number) {
 			var count = parseInt(a(".arrowchat_mobiletab_new_count").html()) + number;
 			a(".arrowchat_mobiletab_new_count").html(count);
 			a("#arrowchat_mobiletab_new").show();
 			scaletab();
+		}*/
+		function addToCount(number) {
+			var ventana_alto = $(window).height();
+			var count = parseInt(a(".arrowchat_mobiletab_new_count").html()) + number;
+			var fontSize = parseInt(a('#arrowchat_mobiletab').css('font-size'), 10);
+			//a("#arrowchat_mobiletab_new").css("line-height", a("#arrowchat_mobiletab").css("font-size"));
+			a("#arrowchat_mobiletab_new").css("top", ventana_alto - 88 + "px");
+			a("#arrowchat_mobiletab_new").css("right", fontSize/2 + "px");
+			a("#arrowchat_mobiletab_new").css("position", "fixed");
+			a(".arrowchat_mobiletab_new_count").html(count);
+			a("#arrowchat_mobiletab_new").show();
 		}
 		function loadBuddyList() {
 			clearTimeout(Z);
@@ -212,7 +243,7 @@ V.I.ea={stringify:function(a){var d=a.f,b=a.b,c=this.z;a.s();for(var a=[],e=0;e<
 				}
 			})
 		}
-		function scaletab() {
+		/*function scaletab() {
 			var tab = document.getElementById('arrowchat_mobiletab');
 			var newcount = document.getElementById('arrowchat_mobiletab_new');
 			var lowerleft = [window.pageXOffset,(window.pageYOffset+window.innerHeight)];
@@ -291,10 +322,38 @@ V.I.ea={stringify:function(a){var d=a.f,b=a.b,c=this.z;a.s();for(var a=[],e=0;e<
 				a("#arrowchat_mobiletab").removeClass("arrowchat_mobiletab_corners");
 				a("#arrowchat_mobiletab_new").removeClass("arrowchat_mobiletab_new_corners");
 			}
+		}*/
+		function scaletab() {
+			var zoomFactor = window.innerWidth/document.documentElement.clientWidth;
+			var ventana_alto = $(window).height();
+			var elemento = $("#arrowchat_mobiletab");
+			var posicion = elemento.offset();
+			console.log(posicion.top);
+			if (zoomFactor < 1) {
+				a("#arrowchat_mobiletab").hide();
+				a(".arrowchat_notify_box").hide();
+			} else {
+				a("#arrowchat_mobiletab").show();
+			}
+
+			var fontSize = parseInt($('#arrowchat_mobiletab').css('font-size'), 10);
+			a("#arrowchat_mobiletab_new").css("position", "fixed");
+			//a("#arrowchat_mobiletab_new").css("line-height", a("#arrowchat_mobiletab").css("font-size"));
+			a("#arrowchat_mobiletab_new").css("top", ventana_alto - 88 + "px");
+			a("#arrowchat_mobiletab_new").css("right", fontSize + "px");
+			//a("#arrowchat_mobiletab_new").offset({top: alto,left: Pl});
 		}
-		
+
+		function stripslashes(str) {
+			str=str.replace(/\\'/g,'\'');
+			str=str.replace(/\\"/g,'"');
+			str=str.replace(/\\0/g,'\0');
+			str=str.replace(/\\\\/g,'\\');
+			return str;
+		}
+
 		window.onresize = window.onscroll = function() {
-			//scaletab();
+			scaletab();
 		};
 		window.onload = function() {
 			scaletab();
@@ -302,7 +361,7 @@ V.I.ea={stringify:function(a){var d=a.f,b=a.b,c=this.z;a.s();for(var a=[],e=0;e<
 		
 		var Z,
 			CHA,
-			//zoomFactor2 = window.innerWidth/document.documentElement.clientWidth,
+			zoomFactor2 = window.innerWidth/document.documentElement.clientWidth,
 			message_timeout,
 			push_room = {},
 			push_uid,

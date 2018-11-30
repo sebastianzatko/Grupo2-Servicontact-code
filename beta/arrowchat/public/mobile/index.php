@@ -44,6 +44,7 @@
 	</head>
     <body>
 <?php
+session_start();
 $myid=-1;
 if (isset($_SESSION['id'])){
     $myid=$_SESSION['id'];
