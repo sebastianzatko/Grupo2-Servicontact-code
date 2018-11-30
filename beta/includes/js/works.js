@@ -15,7 +15,7 @@ function getfinalizados(){
             var estado;
             var fila;
             var clase;
-        if (res.lenght>0){
+        if (res.length>0){
             $('#infofinalizados').text('');
             for (var i = 0; i < res.length; i++){
             	if (res[i][4]==3){
