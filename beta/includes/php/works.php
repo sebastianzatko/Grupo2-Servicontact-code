@@ -34,6 +34,12 @@ if (isset($_SESSION['id'])){
 		$response = $cita->finalizar_trabajo($idcita,$idprofesional);
 		echo json_encode($response);
 	}
+	elseif (isset($_POST['cancelar'])){
+		$idcita = $_POST['cancelar'];
+		$cita = new cita();
+		$response = $cita->cancelar($idcita,$idprofesional);
+		echo json_encode($response);
+	}
 }
 else{echo json_encode('false');}
 ?>

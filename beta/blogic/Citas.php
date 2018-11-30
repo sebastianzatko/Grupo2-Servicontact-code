@@ -106,10 +106,11 @@ Class cita{
 	public function rechazar_cita($idcita,$profesional,$idnot){
 		$cita = new data_cita();
 		$r = $cita->rechazar_cita($idcita,$profesional);
-		$not_cita_rechazada = '<div id="not'.$profesional.'" class="alert">El profesional no aceptó tu cita para el dia '.fechaCastellano($r[0]).'.<br/><br/>Solo tu puedes ver este mensaje.</div>';
+		$not_cita_rechazada = '<div id="not'.$profesional.'" class="alert">El profesional no aceptó tu cita para el dia '.fechaCastellano($r[1]).'.<br/><br/>Solo tu puedes ver este mensaje.</div>';
 		if ($r!=false){
 			$cita->notificacion($profesional,$r[0],$not_cita_rechazada);
 			$cita->borrar_notificacion($idnot,$profesional);
+			return true;
 			}
 		}
 	//6
@@ -149,6 +150,15 @@ Class cita{
 	    $notificacion = '<div id="not'.$cliente.'" class="alert">El cliente informó que no has finalizado tus servicios como <b>'.$servicios.'<b/> que comenzaste el dia <b>'.fechaCastellano($r[1]).'<b/>. Tus servicios quedarán en estado pendiente.
 	    <br/>Solo tu puedes ver este mensaje.</div>';
 	    $cita->notificacion($cliente,$r[0],$notificacion);
+	}
+	public function cancelar($idcita,$profesional){
+		$cita = new data_cita();
+		$r = $cita->rechazar_cita($idcita,$profesional);
+		$cita_cancelada = '<div id="not'.$profesional.'" class="alert">El profesional decidió cancelar tu cita para el dia '.fechaCastellano($r[1]).'.<br/><br/>Solo tu puedes ver este mensaje.</div>';
+		if ($r!=false){
+			$cita->notificacion($profesional,$r[0],$cita_cancelada);
+			return true;
+		}
 	}
 	
 	public function getcita($idcita){
