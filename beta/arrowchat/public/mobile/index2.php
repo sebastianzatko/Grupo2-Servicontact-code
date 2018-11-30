@@ -257,5 +257,5 @@ echo $modalpuntuar;
 		</div>
     </body>
     <script type="text/javascript" src="https://beta.changero.online/includes/js/citas.js"></script>
-    <script type="text/javascript" src="/includes/js/calificar.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://beta.changero.online/includes/js/calificar.js" charset="utf-8"></script>
 </html>

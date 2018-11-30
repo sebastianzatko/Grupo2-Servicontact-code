@@ -39,8 +39,8 @@
 		<script type="text/javascript" src="/arrowchat/includes/js/jquery.js"></script>
 		<script type="text/javascript" charset="utf-8" src="/arrowchat/public/mobile/includes/js/jquery-mobile.js"></script>
 		<script type="text/javascript" src="/arrowchat/includes/js/jquery-ui.js"></script>
-		<script type="text/javascript" src="/arrowchat/external.php?type=djs" charset="utf-8"></script> 
-		<script type="text/javascript" src="/arrowchat/external.php?type=mjs" charset="utf-8"></script> 
+		<script type="text/javascript" src="<?php echo $base_url; ?>external.php?type=djs" charset="utf-8"></script> 
+		<script type="text/javascript" src="<?php echo $base_url; ?>external.php?type=mjs" charset="utf-8"></script>
 	</head>
     <body>
 <?php
@@ -137,7 +137,7 @@ echo $modalpuntuar;
                 <h3>
                     <?php echo $language[110]; ?>
                 </h3>
-				<a data-role="button" id="home-button" data-iconshadow="false" data-iconpos="notext" data-ajax="false" data-theme="b" href="../../" data-icon="home" data-shadow="false" data-corners="false"></a>
+				<a data-role="button" id="home-button" data-iconshadow="false" data-iconpos="notext" data-ajax="false" data-theme="b" href="<?php echo $home_url; ?>" data-icon="home" data-shadow="false" data-corners="false"></a>
 				<a id="settings-button" data-iconpos="notext" data-iconshadow="false" data-theme="b" data-rel="dialog" data-transition="slidedown" href="#settings-page" data-icon="gear" data-shadow="false" data-corners="false"></a>
             </div>
             <div data-role="content">
@@ -153,8 +153,7 @@ echo $modalpuntuar;
 					<?php echo $language[110]; ?>
 				</br>
                 </h3>
-                <a data-role="button" id="back-button" data-direction="reverse" data-transition="slide" data-theme="b" href="#page1" data-icon="arrow-l" data-iconshadow="false" data-iconpos="left" class="back_buttons">
-                	<?php echo $language[113]; ?>
+                <a data-role="button" id="home-button" data-iconshadow="false" data-iconpos="notext" data-ajax="false" data-theme="b" href="#page1" data-icon="home" data-shadow="false" data-corners="false" class="ui-link ui-btn-left ui-btn ui-btn-b ui-icon-home ui-btn-icon-notext" role="button"><?php echo $language[113]; ?>
                 </a>
             </div>
             <div data-role="content" class="chat_user_content">
@@ -331,5 +330,5 @@ echo $modalpuntuar;
 		</div>
     </body>
     <script type="text/javascript" src="https://beta.changero.online/includes/js/citas.js"></script>
-    <script type="text/javascript" src="/includes/js/calificar.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://beta.changero.online/includes/js/calificar.js" charset="utf-8"></script>
 </html>

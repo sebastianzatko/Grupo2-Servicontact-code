@@ -639,6 +639,7 @@ input.mobile_search {
 	padding-top: 8px;
 	padding-bottom: 20px;
 }
+.alert { color: black; }
 html[xmlns] .arrowchat_clearfix {
     display: block;
 }
